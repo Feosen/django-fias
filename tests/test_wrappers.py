@@ -3,11 +3,10 @@ from __future__ import unicode_literals, absolute_import
 
 import datetime
 import os
-import pytest
-import rarfile
 import shutil
 import tempfile
 
+import rarfile
 from django.test import TestCase
 
 from fias.importer.source.wrapper import (
@@ -16,6 +15,7 @@ from fias.importer.source.wrapper import (
     RarArchiveWrapper,
 )
 from .info import FAKE_DIR_PATH, FAKE_ARCHIVE_PATH, FAKE_FILES
+
 
 class TestSourceWrapper(TestCase):
 

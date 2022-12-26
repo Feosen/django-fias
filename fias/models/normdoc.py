@@ -2,14 +2,12 @@
 from __future__ import unicode_literals, absolute_import
 
 from django.db import models
-from django.utils.encoding import python_2_unicode_compatible
 
 from fias.fields import UUIDField
 
 __all__ = ['NormDoc', 'NDocType']
 
 
-@python_2_unicode_compatible
 class NDocType(models.Model):
     """
     Тип нормативного документа

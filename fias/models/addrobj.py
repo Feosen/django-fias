@@ -2,7 +2,6 @@
 from __future__ import unicode_literals, absolute_import
 
 import six
-from django.utils.encoding import python_2_unicode_compatible
 from django.db import models
 
 from fias.fields import UUIDField
@@ -13,7 +12,6 @@ from fias.models.status import CenterSt, CurentSt, OperStat
 __all__ = ['AddrObj']
 
 
-@python_2_unicode_compatible
 class AddrObj(June2016Update):
     """
     Классификатор адресообразующих элементов

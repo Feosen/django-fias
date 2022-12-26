@@ -3,29 +3,29 @@ from __future__ import unicode_literals, absolute_import
 
 from django.dispatch import Signal
 
-pre_fetch_version = Signal(providing_args=[])
-post_fetch_version = Signal(providing_args=[])
+pre_fetch_version = Signal()
+post_fetch_version = Signal()
 
-pre_download = Signal(providing_args=['url'])
-post_download = Signal(providing_args=['url', 'path'])
+pre_download = Signal()
+post_download = Signal()
 
-pre_unpack = Signal(providing_args=['archive'])
-post_unpack = Signal(providing_args=['archive', 'dst'])
+pre_unpack = Signal()
+post_unpack = Signal()
 
-pre_load = Signal(providing_args=['src'])
-post_load = Signal(providing_args=['wrapper'])
+pre_load = Signal()
+post_load = Signal()
 
-pre_drop_indexes = Signal(providing_args=['table'])
-post_drop_indexes = Signal(providing_args=['table'])
+pre_drop_indexes = Signal()
+post_drop_indexes = Signal()
 
-pre_restore_indexes = Signal(providing_args=['table'])
-post_restore_indexes = Signal(providing_args=['table'])
+pre_restore_indexes = Signal()
+post_restore_indexes = Signal()
 
-pre_import_table = Signal(providing_args=['table'])
-post_import_table = Signal(providing_args=['table'])
+pre_import_table = Signal()
+post_import_table = Signal()
 
-pre_import = Signal(providing_args=['msg'])
-post_import = Signal(providing_args=['msg'])
+pre_import = Signal()
+post_import = Signal()
 
-pre_update = Signal(providing_args=['before', 'after'])
-post_update = Signal(providing_args=['before', 'after'])
+pre_update = Signal()
+post_update = Signal()

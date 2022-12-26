@@ -2,7 +2,6 @@
 from __future__ import unicode_literals, absolute_import
 
 from django.db import models
-from django.utils.encoding import python_2_unicode_compatible
 
 __all__ = [
     'ActStat', 'CenterSt', 'CurentSt',
@@ -11,7 +10,6 @@ __all__ = [
 ]
 
 
-@python_2_unicode_compatible
 class ActStat(models.Model):
     """
     Статус актуальности ФИАС
@@ -28,7 +26,6 @@ class ActStat(models.Model):
         return self.name
 
 
-@python_2_unicode_compatible
 class CenterSt(models.Model):
     """
     Статус центра
@@ -45,7 +42,6 @@ class CenterSt(models.Model):
         return self.name
 
 
-@python_2_unicode_compatible
 class CurentSt(models.Model):
     """
     Статус актуальности КЛАДР 4.0
@@ -62,7 +58,6 @@ class CurentSt(models.Model):
         return self.name
 
 
-@python_2_unicode_compatible
 class EstStat(models.Model):
     """
     Признак владения
@@ -80,7 +75,6 @@ class EstStat(models.Model):
         return self.name
 
 
-@python_2_unicode_compatible
 class HSTStat(models.Model):
     """
     Статус состояния домов
@@ -97,7 +91,6 @@ class HSTStat(models.Model):
         return self.name
 
 
-@python_2_unicode_compatible
 class IntvStat(models.Model):
     """
     Статус интервалов домов
@@ -115,7 +108,6 @@ class IntvStat(models.Model):
         return self.name
 
 
-@python_2_unicode_compatible
 class OperStat(models.Model):
     """
     Статус действия
@@ -132,7 +124,6 @@ class OperStat(models.Model):
         return self.name
 
 
-@python_2_unicode_compatible
 class StrStat(models.Model):
     """
     Признак строения

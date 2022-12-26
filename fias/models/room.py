@@ -2,7 +2,6 @@
 from __future__ import unicode_literals, absolute_import
 
 from django.db import models
-from django.utils.encoding import python_2_unicode_compatible
 
 from fias.fields import UUIDField
 from fias.models.house import House
@@ -11,7 +10,6 @@ from fias.models.status import OperStat
 __all__ = ['Room', 'FlatType', 'RoomType']
 
 
-@python_2_unicode_compatible
 class AbstractType(models.Model):
     name = models.CharField('Наименование типа', max_length=255)
     shortname = models.CharField('Краткое наименование типа', max_length=255)
@@ -47,7 +45,6 @@ class RoomType(AbstractType):
     rmtypeid = models.PositiveIntegerField('Идентификатор типа комнаты', primary_key=True)
 
 
-@python_2_unicode_compatible
 class Room(models.Model):
     """
     Классификатор помещений

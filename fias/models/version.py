@@ -1,6 +1,5 @@
 # coding: utf-8
 from __future__ import unicode_literals, absolute_import
-from django.utils.encoding import python_2_unicode_compatible
 
 from django.db import models
 
@@ -16,7 +15,6 @@ class VersionManager(models.Manager):
             return self.get_queryset().filter(dumpdate__lte=date).latest('dumpdate')
 
 
-@python_2_unicode_compatible
 class Version(models.Model):
 
     class Meta:
@@ -37,7 +35,6 @@ class Version(models.Model):
         return '{0} from {1}'.format(self.ver, self.dumpdate)
 
 
-@python_2_unicode_compatible
 class Status(models.Model):
 
     class Meta:

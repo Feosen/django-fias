@@ -2,13 +2,13 @@
 from __future__ import unicode_literals, absolute_import
 
 from django.db import connections, OperationalError
-from django.http import Http404, JsonResponse
-from django.utils.encoding import smart_text
+from django.http import JsonResponse
+from django.utils.encoding import force_str
 from django.views.generic.list import BaseListView
 from django_select2.views import AutoResponseView
 
-from .config import SPHINX_ADDROBJ_INDEX, SEARCHD_CONNECTION
 from fias.models import AddrObj
+from .config import SPHINX_ADDROBJ_INDEX, SEARCHD_CONNECTION
 
 connections.databases['fias_search'] = SEARCHD_CONNECTION
 
@@ -83,7 +83,7 @@ class GetAreasListView(BaseListView):
         return JsonResponse({
             'results': [
                 {
-                    'text': smart_text(obj),
+                    'text': force_str(obj),
                     'id': obj.pk,
                 }
                 for obj in context['object_list']
