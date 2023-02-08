@@ -1,11 +1,7 @@
-
-test_project/static/*
-test_project/logs/*
-
 *.sqlite*
 
 # Intellij Idea
-/.idea/*
+.idea/*
 
 __pycache__
 

@@ -4,43 +4,26 @@ from __future__ import unicode_literals, absolute_import
 
 __all__ = ['validators']
 
-
-def socr_base_validator(item, **kwargs):
-    return item.scname and item.socrname
+from fias.config import TableName
 
 
 def common_validator(item, today, **kwargs):
     return item.startdate < today < item.enddate
 
 
-def addrobj_validator(item, today, **kwargs):
+def chained_validator(item, today, **kwargs):
     return (
-        not item.nextid and
-        item.actstatus and
+        #not item.nextid and  # TODO: Does it required?
+        item.isactual and
         common_validator(item, today=today, **kwargs)
     )
 
-
-def room_validator(item, today, **kwargs):
-    return (
-        not item.nextid and
-        common_validator(item, today=today, **kwargs)
-    )
-
-
-def stead_validator(item, today, **kwargs):
-    return (
-        not item.nextid and
-        common_validator(item, today=today, **kwargs)
-    )
 
 validators = {
-    'socrbase': socr_base_validator,
-
-    'addrobj': addrobj_validator,
-    'house': common_validator,
-    'houseint': common_validator,
-    'landmark': common_validator,
-    'room': room_validator,
-    'stead': stead_validator,
+    TableName.ADDR_OBJ: chained_validator,
+    TableName.ADDR_OBJ_PARAM: common_validator,
+    TableName.HOUSE: chained_validator,
+    TableName.HOUSE_PARAM: common_validator,
+    TableName.ADM_HIERARCHY: common_validator,
+    TableName.MUN_HIERARCHY: common_validator,
 }

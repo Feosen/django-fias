@@ -2,15 +2,19 @@
 from __future__ import unicode_literals, absolute_import
 
 import datetime
-from django.conf import settings
-from django import db
-from django.db import IntegrityError
-from progress.helpers import WritelnMixin
 from sys import stderr
+from typing import List
+
+from django import db
+from django.conf import settings
+from django.db import IntegrityError
+from django.db.models import Model
+from progress.helpers import WritelnMixin
 
 from fias.importer.signals import (
     pre_import_table, post_import_table
 )
+from fias.importer.table.table import AbstractTableList, Table
 from fias.importer.validators import validators
 
 
@@ -42,7 +46,8 @@ class LoadingBar(WritelnMixin):
             return None
         return getattr(self, key, None)
 
-    def update(self, loaded=0, updated=0, skipped=0, errors=0, regress_depth=0, regress_len=0, regress_iteration=0):
+    def update(self, loaded: int = 0, updated: int = 0, skipped: int = 0, errors: int = 0, regress_depth: int = 0,
+               regress_len: int = 0, regress_iteration: int = 0):
         if loaded:
             self.loaded = loaded
         if updated:
@@ -59,12 +64,12 @@ class LoadingBar(WritelnMixin):
             regress_len = '{0}:{1}'.format(regress_iteration, regress_len)
             stack_len = len(self.stack)
             if stack_len == self.depth:
-                self.stack[self.depth-1] = regress_len
+                self.stack[self.depth - 1] = regress_len
             elif stack_len < self.depth:
                 self.stack.append(regress_len)
             else:
                 self.stack = self.stack[0:self.depth]
-                self.stack[self.depth-1] = regress_len
+                self.stack[self.depth - 1] = regress_len
 
             self.stack_str = '/'.join(self.stack)
 
@@ -74,7 +79,7 @@ class LoadingBar(WritelnMixin):
 
 class TableLoader(object):
 
-    def __init__(self, limit=10000):
+    def __init__(self, limit: int = 10000):
         self.limit = int(limit)
         self.counter = 0
         self.upd_counter = 0
@@ -82,19 +87,18 @@ class TableLoader(object):
         self.err_counter = 0
         self.today = datetime.date.today()
 
-    def validate(self, table, item):
+    def validate(self, table: Table, item: Model):
         if item is None or item.pk is None:
             return False
 
         return validators.get(table.name, lambda x, **kwargs: True)(item, today=self.today)
 
-    def regressive_create(self, table, objects, bar, depth=1):
+    def regressive_create(self, table: Table, objects: List, bar: LoadingBar, depth: int = 1):
         count = len(objects)
         batch_len = count // 3 or 1
         batch_count = count // batch_len
         if batch_count * batch_len < count:
             batch_count += 1
-        objects = list(objects)
 
         for i in range(0, batch_count):
             batch = objects[i * batch_len:(i + 1) * batch_len]
@@ -111,7 +115,7 @@ class TableLoader(object):
                 else:
                     self.regressive_create(table, batch, bar=bar, depth=depth + 1)
 
-    def create(self, table, objects, bar):
+    def create(self, table: Table, objects: List, bar: LoadingBar):
         try:
             table.model.objects.bulk_create(objects)
         except (IntegrityError, ValueError):
@@ -122,12 +126,12 @@ class TableLoader(object):
         if settings.DEBUG:
             db.reset_queries()
 
-    def load(self, tablelist, table):
+    def load(self, tablelist: AbstractTableList, table: Table):
         pre_import_table.send(sender=self.__class__, table=table)
         self.do_load(tablelist=tablelist, table=table)
         post_import_table.send(sender=self.__class__, table=table)
 
-    def do_load(self, tablelist, table):
+    def do_load(self, tablelist: AbstractTableList, table: Table):
         bar = LoadingBar(table=table.name, filename=table.filename)
         bar.update()
 
@@ -144,12 +148,12 @@ class TableLoader(object):
             self.counter += 1
 
             if self.counter and self.counter % self.limit == 0:
-                self.create(table, objects, bar=bar)
+                self.create(table, list(objects), bar=bar)
                 objects.clear()
                 bar.update(loaded=self.counter, skipped=self.skip_counter)
 
         if objects:
-            self.create(table, objects, bar=bar)
+            self.create(table, list(objects), bar=bar)
 
         bar.update(loaded=self.counter, skipped=self.skip_counter)
         bar.finish()
@@ -157,11 +161,11 @@ class TableLoader(object):
 
 class TableUpdater(TableLoader):
 
-    def __init__(self, limit=10000):
+    def __init__(self, limit: int = 10000):
         self.upd_limit = 100
         super(TableUpdater, self).__init__(limit=limit)
 
-    def do_load(self, tablelist, table):
+    def do_load(self, tablelist: AbstractTableList, table: Table):
         bar = LoadingBar(table=table.name, filename=table.filename)
 
         model = table.model
@@ -182,7 +186,7 @@ class TableUpdater(TableLoader):
                     self.upd_counter += 1
 
             if self.counter and self.counter % self.limit == 0:
-                self.create(table, objects, bar=bar)
+                self.create(table, list(objects), bar=bar)
                 objects.clear()
                 bar.update(loaded=self.counter)
 
@@ -190,7 +194,7 @@ class TableUpdater(TableLoader):
                 bar.update(updated=self.upd_counter)
 
         if objects:
-            self.create(table, objects, bar=bar)
+            self.create(table, list(objects), bar=bar)
 
         bar.update(loaded=self.counter, updated=self.upd_counter, skipped=self.skip_counter)
         bar.finish()

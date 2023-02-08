@@ -2,9 +2,13 @@
 from __future__ import unicode_literals, absolute_import
 
 import os
+
 from django.db.models import Min
-from fias.config import TABLES
+
+from fias import config
 from fias.importer.indexes import remove_indexes_from_model, restore_indexes_for_model
+from fias.importer.loader import TableLoader, TableUpdater
+from fias.importer.log import log
 from fias.importer.signals import (
     pre_drop_indexes, post_drop_indexes,
     pre_restore_indexes, post_restore_indexes,
@@ -12,8 +16,6 @@ from fias.importer.signals import (
 )
 from fias.importer.source import *
 from fias.importer.table import BadTableError
-from fias.importer.loader import TableLoader, TableUpdater
-from fias.importer.log import log
 from fias.models import Status, Version
 
 
@@ -44,7 +46,7 @@ def get_tablelist(path, version=None, data_format='xml', tempdir=None):
 
 
 def get_table_names(tables):
-    return tables if tables else TABLES
+    return tables if tables else config.TABLES
 
 
 def load_complete_data(path=None,
@@ -64,42 +66,43 @@ def load_complete_data(path=None,
         if tbl not in tablelist.tables:
             continue
 
-        try:
-            st = Status.objects.get(table=tbl)
+        st_qs = Status.objects.all()
+        if config.REGIONS != config.ALL:
+            st_qs = st_qs.filter(table=tbl, region__in=config.REGIONS)
+        if st_qs.exists():
             if truncate:
-                st.delete()
-                raise Status.DoesNotExist()
-        except Status.DoesNotExist:
-            # Берём для работы любую таблицу с именем tbl
-            first_table = tablelist.tables[tbl][0]
+                st_qs.delete()
+            else:
+                st = st_qs[0]
+                log.warning(f'Table `{st.table}` has version `{st.ver}`. '
+                            'Please use --truncate for replace '
+                            'all table contents. Skipping...')
+                continue
+        # Берём для работы любую таблицу с именем tbl
+        first_table = tablelist.tables[tbl][0]
 
-            # Очищаем таблицу перед импортом
-            if truncate:
-                first_table.truncate()
+        # Очищаем таблицу перед импортом
+        if truncate:
+            first_table.truncate()
 
-            # Удаляем индексы из модели перед импортом
-            if not keep_indexes:
-                pre_drop_indexes.send(sender=object.__class__, table=first_table)
-                remove_indexes_from_model(model=first_table.model)
-                post_drop_indexes.send(sender=object.__class__, table=first_table)
+        # Удаляем индексы из модели перед импортом
+        if not keep_indexes:
+            pre_drop_indexes.send(sender=object.__class__, table=first_table)
+            remove_indexes_from_model(model=first_table.model)
+            post_drop_indexes.send(sender=object.__class__, table=first_table)
 
-            # Импортируем все таблицы модели
-            for table in tablelist.tables[tbl]:
-                loader = TableLoader(limit=limit)
-                loader.load(tablelist=tablelist, table=table)
-
-            # Восстанавливаем удалённые индексы
-            if not keep_indexes:
-                pre_restore_indexes.send(sender=object.__class__, table=first_table)
-                restore_indexes_for_model(model=first_table.model)
-                post_restore_indexes.send(sender=object.__class__, table=first_table)
-
-            st = Status(table=tbl, ver=tablelist.version)
+        # Импортируем все таблицы модели
+        for table in tablelist.tables[tbl]:
+            loader = TableLoader(limit=limit)
+            loader.load(tablelist=tablelist, table=table)
+            st = Status(region=table.region, table=tbl, ver=tablelist.version)
             st.save()
-        else:
-            log.warning('Table `{0}` has version `{1}`. '
-                        'Please use --truncate for replace '
-                        'all table contents. Skipping...'.format(st.table, st.ver))
+
+        # Восстанавливаем удалённые индексы
+        if not keep_indexes:
+            pre_restore_indexes.send(sender=object.__class__, table=first_table)
+            restore_indexes_for_model(model=first_table.model)
+            post_restore_indexes.send(sender=object.__class__, table=first_table)
 
     post_import.send(sender=object.__class__, version=tablelist.version)
 

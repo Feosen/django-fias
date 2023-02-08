@@ -1,23 +1,25 @@
 # coding: utf-8
 from __future__ import unicode_literals, absolute_import
 
-from fias.models import Version
+from typing import List, Type
 
 from fias.importer.signals import pre_load, post_load
 from fias.importer.table import TableFactory
-
+from fias.models import Version
 from .wrapper import SourceWrapper
+from ..table.table import AbstractTableList
+from ... import config
 
 
 class TableListLoadingError(Exception):
     pass
 
 
-class TableList(object):
-    wrapper_class = SourceWrapper
-    wrapper = None
+class TableList(AbstractTableList):
+    wrapper_class: Type[SourceWrapper] = SourceWrapper
+    wrapper: SourceWrapper = None
 
-    table_list = None
+    table_list: dict = None
     date = None
     version_info = None
 
@@ -35,10 +37,10 @@ class TableList(object):
         self.wrapper = self.load_data(src)
         post_load.send(sender=self.__class__, wrapper=self.wrapper)
 
-    def load_data(self, source):
+    def load_data(self, source: str) -> SourceWrapper:
         return self.wrapper_class(source=source)
 
-    def get_table_list(self):
+    def get_table_list(self) -> List[str]:
         return self.wrapper.get_file_list()
 
     @property
@@ -47,7 +49,8 @@ class TableList(object):
             self.table_list = {}
             for filename in self.get_table_list():
                 table = TableFactory.parse(filename=filename)
-                if table is None:
+                if table is None or (config.ALL == config.REGIONS
+                                     or table.region is not None and table.region not in config.REGIONS):
                     continue
                 self.table_list.setdefault(table.name, []).append(table)
 
@@ -59,8 +62,7 @@ class TableList(object):
     @property
     def dump_date(self):
         if self.date is None:
-            first_name = self.get_table_list()[0]
-            self.date = self.get_date_info(first_name)
+            self.date = self.wrapper.get_date()
 
         return self.date
 

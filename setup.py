@@ -7,6 +7,8 @@ import re
 import subprocess
 import sys
 
+# TODO: finish it
+
 from fias.version import __version__
 
 

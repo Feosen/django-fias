@@ -12,5 +12,5 @@ class EmptyDirError(TableListLoadingError):
 class DirectoryTableList(TableList):
     wrapper_class = DirectoryWrapper
 
-    def load_data(self, source):
+    def load_data(self, source: str):
         return self.wrapper_class(source=source, is_temporary=False)

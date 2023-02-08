@@ -2,19 +2,28 @@
 from __future__ import unicode_literals, absolute_import
 
 import datetime
-from lxml import etree
+from typing import Type, Iterable
 
 from django.db import models
-from fias.fields import UUIDField
-from .table import BadTableError, Table, TableIterator, ParentLookupException
+from django.db.models import Model
+from lxml import etree
+
+from .table import BadTableError, Table, TableIterator, AbstractTableList, RowConvertor
 
 _bom_header = b'\xef\xbb\xbf'
 
 
+field_map = {
+    #'house': {
+    #    'id': 'recordid',
+    #}
+}
+
+
 class XMLIterator(TableIterator):
 
-    def __init__(self, fd, model):
-        super(XMLIterator, self).__init__(fd=fd, model=model)
+    def __init__(self, fd, model: Type[Model], row_convertor: RowConvertor):
+        super(XMLIterator, self).__init__(fd=fd, model=model, row_convertor=row_convertor)
 
         self.related_fields = dict({
             (f.name, f.remote_field.model) for f in self.model._meta.get_fields()
@@ -23,7 +32,7 @@ class XMLIterator(TableIterator):
 
         self.uuid_fields = dict({
             (f.name, f) for f in self.model._meta.get_fields()
-            if isinstance(f, UUIDField)
+            if isinstance(f, models.UUIDField)
         })
 
         self.date_fields = dict({
@@ -34,6 +43,11 @@ class XMLIterator(TableIterator):
         self.int_fields = dict({
             (f.name, f) for f in self.model._meta.get_fields()
             if isinstance(f, models.IntegerField)
+        })
+
+        self.boolean_fields = dict({
+            (f.name, f) for f in self.model._meta.get_fields()
+            if isinstance(f, models.BooleanField)
         })
 
         self._context = etree.iterparse(self._fd)
@@ -59,7 +73,11 @@ class XMLIterator(TableIterator):
             elif key in self.int_fields:
                 if value == '':
                     value = None
+                else:
+                    value = int(value)
                 yield (key, value)
+            elif key in self.boolean_fields:
+                yield (key, value in ('1', 'y', 'yes', 't', 'true', 'on', '+'))
             else:
                 yield (key, value)
 
@@ -73,13 +91,38 @@ class XMLIterator(TableIterator):
         return item
 
 
+class XMLRowConvertor(RowConvertor):
+    field_map: dict
+    fields: set
+    values: dict
+
+    def __init__(self, model: Type[Model], region: str, table_name: str):
+        super(XMLRowConvertor, self).__init__()
+        self.field_map = field_map.get(table_name, {})
+        self.fields = set(f.name for f in model._meta.get_fields())
+        self.values = {}
+        if region:
+            self.values['region'] = region
+
+    def convert(self, row: dict) -> dict:
+        for k, v in self.field_map.items():
+            row[v] = row.pop(k)
+        return self.values | row
+
+    def clear(self, row: dict) -> dict:
+        for k in set(row.keys()) - self.fields:
+            del row[k]
+        return row
+
+
 class XMLTable(Table):
     iterator = XMLIterator
+    row_convertor = XMLRowConvertor
 
-    def __init__(self, filename, **kwargs):
+    def __init__(self, filename: str, **kwargs):
         super(XMLTable, self).__init__(filename=filename, **kwargs)
 
-    def rows(self, tablelist):
+    def rows(self, tablelist: AbstractTableList) -> Iterable:
         if self.deleted:
             return []
 
@@ -94,6 +137,6 @@ class XMLTable(Table):
             pass
 
         try:
-            return self.iterator(xml, self.model)
+            return self.iterator(xml, self.model, self.row_convertor(self.model, self.region, self.name))
         except etree.XMLSyntaxError as e:
             raise BadTableError('Error occured during opening table `{0}`: {1}'.format(self.name, str(e)))

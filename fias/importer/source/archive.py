@@ -14,8 +14,6 @@ from fias.importer.signals import (
     pre_download, post_download,
     pre_unpack, post_unpack,
 )
-from fias.importer.table import table_dbf_re, table_dbt_re
-
 from .tablelist import TableList, TableListLoadingError
 from .directory import DirectoryTableList
 from .wrapper import RarArchiveWrapper
@@ -54,16 +52,6 @@ class LocalArchiveTableList(TableList):
 
         if not archive.namelist():
             raise BadArchiveError('Archive: `{}`, is empty'.format(source))
-
-        first_name = archive.namelist()[0]
-        if table_dbf_re.match(first_name) or table_dbt_re.match(first_name):
-            pre_unpack.send(sender=self.__class__, archive=archive)
-
-            path = LocalArchiveTableList.unpack(archive=archive, tempdir=self.tempdir)
-
-            post_unpack.send(sender=self.__class__, archive=archive, dst=path)
-
-            return DirectoryTableList.wrapper_class(source=path, is_temporary=True)
 
         return self.wrapper_class(source=archive)
 

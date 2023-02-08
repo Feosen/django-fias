@@ -2,36 +2,60 @@
 from __future__ import unicode_literals, absolute_import
 
 from django.db import models
-from fias.fields import UUIDField
 
-__all__ = ['Common', 'June2016Update']
-
-
-class Common(models.Model):
-
-    class Meta:
-        abstract = True
-
-    ifnsfl = models.CharField('Код ИФНС ФЗ', max_length=4, blank=True, null=True)
-    terrifnsfl = models.CharField('Код территориального участка ИФНС ФЛ', max_length=4, blank=True, null=True)
-    ifnsul = models.CharField('Код ИФНС ЮЛ', max_length=4, blank=True, null=True)
-    terrifnsul = models.CharField('Код территориального участка ИФНС ЮЛ', max_length=4, blank=True, null=True)
-
-    okato = models.CharField('ОКАТО', max_length=11, blank=True, null=True)
-    oktmo = models.CharField('ОКТМО', max_length=11, blank=True, null=True)
-
-    postalcode = models.CharField('Почтовый индекс', max_length=6, blank=True, null=True)
-
-    updatedate = models.DateField('Дата время внесения записи')
-    startdate = models.DateField('Начало действия записи')
-    enddate = models.DateField('Окончание действия записи')
-    normdoc = UUIDField('Внешний ключ на нормативный документ', blank=True, null=True)
+__all__ = ['AbstractModel', 'AbstractObj', 'AbstractParam', 'AbstractType', 'ParamType']
 
 
-class June2016Update(Common):
+class AbstractModel(models.Model):
+    updatedate = models.DateField(verbose_name='дата внесения (обновления) записи')
+    startdate = models.DateField(verbose_name='начало действия записи')
+    enddate = models.DateField(verbose_name='окончание действия записи')
 
     class Meta:
         abstract = True
 
-    cadnum = models.CharField('Кадастровый номер', max_length=100, blank=True, null=True)
-    divtype = models.CharField('Тип адресации', max_length=1, default=0)
+
+class AbstractObj(AbstractModel):
+    region = models.CharField(verbose_name='код региона', max_length=2)
+    isactive = models.BooleanField(verbose_name='статус активности')
+    isactual = models.BooleanField(verbose_name='Статус актуальности')
+    objectid = models.BigIntegerField(verbose_name='глобальный уникальный идентификатор объекта', primary_key=True)
+    objectguid = models.UUIDField(verbose_name='глобальный уникальный идентификатор адресного объекта')
+
+    class Meta:
+        abstract = True
+        indexes = [models.Index(fields=['objectguid'])]
+
+
+class AbstractType(AbstractModel):
+    id = models.SmallAutoField(verbose_name='id', primary_key=True)
+    name = models.CharField(verbose_name='наименование', max_length=255)
+    shortname = models.CharField(verbose_name='краткое наименование', max_length=255, blank=True, null=True)
+    desc = models.CharField(verbose_name='описание', max_length=255, blank=True, null=True)
+    isactive = models.BooleanField(verbose_name='статус активности')
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        abstract = True
+
+
+class AbstractParam(AbstractModel):
+    region = models.CharField(verbose_name='код региона', max_length=2)
+    objectid = models.BigIntegerField(verbose_name='глобальный уникальный идентификатор объекта')
+    typeid = models.SmallIntegerField(verbose_name='тип')
+    value = models.CharField(verbose_name='значение', max_length=250)
+
+    class Meta:
+        abstract = True
+        indexes = [models.Index(fields=['objectid']), models.Index(fields=['typeid'])]
+
+
+class ParamType(AbstractType):
+
+    class Meta(AbstractType.Meta):
+        abstract = False
+        app_label = 'fias'
+        verbose_name = 'тип параметра'
+        verbose_name_plural = 'типы параметров'

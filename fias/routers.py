@@ -5,17 +5,19 @@ from fias.config import DEFAULT_DB_ALIAS, DATABASE_ALIAS
 
 
 class FIASRouter(object):
+    __APP_LABELS = ('fias', 'target')
     ALLOWED_REL = ['AddrObj']
     
     def db_for_read(self, model, **hints):
-        if model._meta.app_label == 'fias':
+        if model._meta.app_label in self.__APP_LABELS:
             return DATABASE_ALIAS
         return None
 
     def db_for_write(self, model, **hints):
-        if model._meta.app_label == 'fias':
+        if model._meta.app_label in self.__APP_LABELS:
             return DATABASE_ALIAS
         else:
+            # TODO: check it!
             """\
             Странный хак, но без него
             джанго не может правильно определить БД для записи\
@@ -33,15 +35,15 @@ class FIASRouter(object):
         но запретить ссылаться из бд ФИАС в другие БД
         """
 
-        if obj1._meta.app_label == 'fias' and obj2._meta.app_label == 'fias':
+        if obj1._meta.app_label in self.__APP_LABELS and obj2._meta.app_label in self.__APP_LABELS:
             return True
-        elif obj1._meta.app_label == 'fias' and obj1._meta.object_name in self.ALLOWED_REL:
+        elif obj1._meta.app_label in self.__APP_LABELS and obj1._meta.object_name in self.ALLOWED_REL:
             return True
         return None
 
     def allow_migrate(self, db, app_label, model=None, **hints):
         """Разрешить синхронизацию моделей в базе ФИАС"""
-        if app_label == 'fias':
+        if app_label in self.__APP_LABELS:
             return db == DATABASE_ALIAS
         elif db == DATABASE_ALIAS:
             return False

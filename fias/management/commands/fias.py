@@ -7,14 +7,12 @@ import sys
 from django.conf import settings
 from django.utils.translation import activate
 
-from fias.config import TABLES
-from fias.importer.source import TableListLoadingError
-from fias.importer.commands import auto_update_data, load_complete_data
-from fias.importer.version import fetch_version_info
-from fias.management.utils.weights import rewrite_weights
-from fias.models import Status
-
 from fias.compat import BaseCommandCompatible, DJANGO_VERSION
+from fias.config import TABLES
+from fias.importer.commands import auto_update_data, load_complete_data
+from fias.importer.source import TableListLoadingError
+from fias.importer.version import fetch_version_info
+from fias.models import Status
 
 
 class Command(BaseCommandCompatible):
@@ -24,7 +22,6 @@ class Command(BaseCommandCompatible):
                 ' [--update [--skip]]'\
                 ' [--format <xml|dbf>] [--limit=<N>] [--tables=<{0}>]'\
                 ' [--update-version-info <yes|no>]'\
-                ' [--fill-weights]' \
                 ' [--keep-indexes]' \
                 ' [--tempdir <path>]' \
                 ''.format(','.join(TABLES))
@@ -90,12 +87,6 @@ class Command(BaseCommandCompatible):
             "default": "yes",
             "help": "Update list of available database versions from http://fias.nalog.ru"
         },
-        "--fill-weights": {
-            "action": "store_true",
-            "dest": "weights",
-            "default": False,
-            "help": "Fill default weights"
-        },
         "--keep-indexes": {
             "action": "store_true",
             "dest": "keep_indexes",
@@ -130,9 +121,7 @@ class Command(BaseCommandCompatible):
         update = options.pop('update')
         skip = options.pop('skip')
 
-        weights = options.pop('weights')
-
-        if not any([src, remote, update, weights]):
+        if not any([src, remote, update]):
             self.error(self.usage_str)
 
         tempdir = options.pop('tempdir')
@@ -187,8 +176,6 @@ class Command(BaseCommandCompatible):
             except TableListLoadingError as e:
                 self.error(str(e))
 
-        if weights:
-            rewrite_weights()
 
     def error(self, message, code=1):
         print(message)

@@ -80,12 +80,12 @@ def post_unpack_callback(sender, archive, dst, **kwargs):
 
 @receiver(pre_import_table)
 def pre_import_table_callback(sender, table, **kwargs):
-    pass
+    print('Loading region {0} table "{1}" started at {2}'.format(table.region, table.name, timezone.now()))
 
 
 @receiver(post_import_table)
 def post_import_table_callback(sender, table, **kwargs):
-    pass
+    print('Region {0} table "{1}" loaded at {2}'.format(table.region, table.name, timezone.now()))
 
 
 @receiver(pre_import)

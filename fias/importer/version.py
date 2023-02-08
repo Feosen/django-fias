@@ -13,10 +13,12 @@ from fias.config import PROXY
 from fias.importer.signals import pre_fetch_version, post_fetch_version
 from fias.models import Version
 
+
 wsdl_source = "http://fias.nalog.ru/WebServices/Public/DownloadService.asmx?WSDL"
 json_source = "http://fias.nalog.ru/WebServices/Public/GetAllDownloadFileInfo"
 
-def parse_item_as_dict(item, update_all=False):
+
+def parse_item_as_dict(item: dict, update_all=False):
     """
     Разбор данных о версии как словаря
     """
@@ -24,21 +26,9 @@ def parse_item_as_dict(item, update_all=False):
         ver=item['VersionId'],
         dumpdate=datetime.datetime.strptime(item['TextVersion'][-10:], "%d.%m.%Y").date(),
     )
-
     if created or update_all:
-        setattr(ver, 'complete_xml_url', item['FiasCompleteXmlUrl'])
-        setattr(ver, 'complete_dbf_url', item['FiasCompleteDbfUrl'])
-
-        if hasattr(item, 'FiasDeltaXmlUrl'):
-            setattr(ver, 'delta_xml_url', item['FiasDeltaXmlUrl'])
-        else:
-            setattr(ver, 'delta_xml_url', None)
-
-        if hasattr(item, 'FiasDeltaDbfUrl'):
-            setattr(ver, 'delta_dbf_url', item['FiasDeltaDbfUrl'])
-        else:
-            setattr(ver, 'delta_dbf_url', None)
-
+        ver.complete_xml_url = item.get('GarXMLFullURL', None)
+        ver.delta_xml_url = item.get('GarXMLDeltaURL', None)
         ver.save()
 
 
@@ -50,20 +40,9 @@ def parse_item_as_object(item, update_all=False):
         ver=item.VersionId,
         dumpdate=datetime.datetime.strptime(item.TextVersion[-10:], "%d.%m.%Y").date(),
     )
-
     if created or update_all:
-        setattr(ver, 'complete_xml_url', item.FiasCompleteXmlUrl)
-        setattr(ver, 'complete_dbf_url', item.FiasCompleteDbfUrl)
-
-        if hasattr(item, 'FiasDeltaXmlUrl'):
-            setattr(ver, 'delta_xml_url', item.FiasDeltaXmlUrl)
-        else:
-            setattr(ver, 'delta_xml_url', None)
-
-        if hasattr(item, 'FiasDeltaDbfUrl'):
-            setattr(ver, 'delta_dbf_url', item.FiasDeltaDbfUrl)
-        else:
-            setattr(ver, 'delta_dbf_url', None)
+        ver.complete_xml_url = item.GarXMLFullURL
+        ver.delta_xml_url = item.GarXMLDeltaURL
 
         ver.save()
 
