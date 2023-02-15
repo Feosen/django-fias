@@ -5,8 +5,6 @@ from django.db import models
 
 __all__ = ['Version', 'Status']
 
-# TODO: Rewrite
-
 
 class VersionManager(models.Manager):
 
@@ -14,7 +12,7 @@ class VersionManager(models.Manager):
         try:
             return self.get_queryset().filter(dumpdate=date).latest('dumpdate')
         except Version.DoesNotExist:
-            return self.get_queryset().filter(dumpdate__lte=date).latest('dumpdate')
+            return self.get_queryset().filter(dumpdate__gte=date).earliest('dumpdate')
 
 
 class Version(models.Model):

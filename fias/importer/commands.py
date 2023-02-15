@@ -2,7 +2,11 @@
 from __future__ import unicode_literals, absolute_import
 
 import os
+from pathlib import Path
+from typing import Tuple, Union
 
+from django.core.exceptions import ValidationError
+from django.core.validators import URLValidator
 from django.db.models import Min
 
 from fias import config
@@ -17,9 +21,10 @@ from fias.importer.signals import (
 from fias.importer.source import *
 from fias.importer.table import BadTableError
 from fias.models import Status, Version
+from fias.typing import Url
 
 
-def get_tablelist(path, version=None, data_format='xml', tempdir=None):
+def get_tablelist(path: Union[Path, Url, None], version: Version = None, data_format: str = 'xml', tempdir: Path = None):
     assert data_format in ['xml', 'dbf'], \
         'Unsupported data format: `{0}`. Available choices: {1}'.format(data_format, ', '.join(['xml', 'dbf']))
 
@@ -30,33 +35,27 @@ def get_tablelist(path, version=None, data_format='xml', tempdir=None):
         tablelist = RemoteArchiveTableList(src=url, version=latest_version, tempdir=tempdir)
 
     else:
-        if os.path.isfile(path):
-            tablelist = LocalArchiveTableList(src=path, version=version, tempdir=tempdir)
-
-        elif os.path.isdir(path):
-            tablelist = DirectoryTableList(src=path, version=version, tempdir=tempdir)
-
-        elif path.startswith('http://') or path.startswith('https://') or path.startswith('//'):
+        try:
+            URLValidator()(path)
             tablelist = RemoteArchiveTableList(src=path, version=version, tempdir=tempdir)
-
-        else:
-            raise TableListLoadingError('Path `{0}` is not valid table list source'.format(path))
+        except ValidationError:
+            path = Path(path)
+            if path.is_file():
+                tablelist = LocalArchiveTableList(src=path, version=version, tempdir=tempdir)
+            elif path.is_dir():
+                tablelist = DirectoryTableList(src=path, version=version, tempdir=tempdir)
+            else:
+                raise TableListLoadingError(f'Path `{path}` is not valid table list source')
 
     return tablelist
 
 
-def get_table_names(tables):
+def get_table_names(tables: Union[Tuple[str], None]):
     return tables if tables else config.TABLES
 
 
-def load_complete_data(path=None,
-                       data_format='xml',
-                       truncate=False,
-                       limit=10000, tables=None,
-                       keep_indexes=False,
-                       tempdir=None,
-                       ):
-
+def load_complete_data(path: str = None, data_format: str = 'xml', truncate: bool = False, limit: int = 10000,
+                       tables: Tuple[str] = None, keep_indexes: bool = False, tempdir: Path = None):
     tablelist = get_tablelist(path=path, data_format=data_format, tempdir=tempdir)
 
     pre_import.send(sender=object.__class__, version=tablelist.version)
@@ -107,7 +106,8 @@ def load_complete_data(path=None,
     post_import.send(sender=object.__class__, version=tablelist.version)
 
 
-def update_data(path=None, version=None, skip=False, data_format='xml', limit=1000, tables=None, tempdir=None):
+def update_data(path: Path = None, version: Version = None, skip: bool = False, data_format: str = 'xml',
+                limit: int = 1000, tables: Tuple[str] = None, tempdir: Path = None):
     tablelist = get_tablelist(path=path, version=version, data_format=data_format, tempdir=tempdir)
 
     for tbl in get_table_names(tables):
@@ -115,15 +115,15 @@ def update_data(path=None, version=None, skip=False, data_format='xml', limit=10
         if tbl not in tablelist.tables:
             continue
 
-        st = Status.objects.get(table=tbl)
-
-        if st.ver.ver >= tablelist.version.ver:
-            log.info('Update of the table `{0}` is not needed [{1} <= {2}]. Skipping...'.format(
-                tbl, st.ver.ver, tablelist.version.ver
-            ))
-            continue
-
         for table in tablelist.tables[tbl]:
+            try:
+                st = Status.objects.get(table=table.name, region=table.region)
+            except Status.DoesNotExist:
+                log.info(f'Can not update table `{table.name}`, region `{table.region}`: no data in database. Skipping…')
+                continue
+            if st.ver.ver >= tablelist.version.ver:
+                log.info(f'Update of the table `{table.name}` is not needed [{st.ver.ver} <= {tablelist.version.ver}]. Skipping…')
+                continue
             loader = TableUpdater(limit=limit)
             try:
                 loader.load(tablelist=tablelist, table=table)
@@ -132,12 +132,45 @@ def update_data(path=None, version=None, skip=False, data_format='xml', limit=10
                     log.error(str(e))
                 else:
                     raise
+            st.ver = tablelist.version
+            st.save()
 
-        st.ver = tablelist.version
-        st.save()
+
+def manual_update_data(path: Path = None, skip: bool = False, data_format: str = 'xml', limit: int = 1000,
+                       tables: Tuple[str] = None, tempdir: Path = None):
+    min_version = Status.objects.filter(table__in=get_table_names(None)).aggregate(Min('ver'))['ver__min']
+
+    version_map = {}
+
+    for child in path.iterdir():
+        tablelist = get_tablelist(path=child, version=None, data_format=data_format, tempdir=tempdir)
+        version_map[tablelist.version] = child
+
+    if min_version is not None:
+        min_ver = Version.objects.get(ver=min_version)
+
+        for version in Version.objects.filter(ver__gt=min_version).order_by('ver'):
+            try:
+                src = version_map[version]
+            except KeyError:
+                raise TableListLoadingError(f'No file for version {version}.')
+
+            pre_update.send(sender=object.__class__, before=min_ver, after=version)
+
+            update_data(
+                path=src, version=version, skip=skip,
+                data_format=data_format, limit=limit,
+                tables=tables, tempdir=tempdir,
+            )
+
+            post_update.send(sender=object.__class__, before=min_ver, after=version)
+            min_ver = version
+    else:
+        raise TableListLoadingError('Not available. Please import the data before updating')
 
 
-def auto_update_data(skip=False, data_format='xml', limit=1000, tables=None, tempdir=None):
+def auto_update_data(skip: bool = False, data_format: str = 'xml', limit: int = 1000, tables: Tuple[str] = None,
+                     tempdir: Path = None):
     min_version = Status.objects.filter(table__in=get_table_names(None)).aggregate(Min('ver'))['ver__min']
 
     if min_version is not None:

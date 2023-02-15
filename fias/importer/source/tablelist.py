@@ -1,7 +1,9 @@
 # coding: utf-8
 from __future__ import unicode_literals, absolute_import
 
-from typing import List, Type
+import datetime
+from pathlib import Path
+from typing import List, Type, IO
 
 from fias.importer.signals import pre_load, post_load
 from fias.importer.table import TableFactory
@@ -20,10 +22,10 @@ class TableList(AbstractTableList):
     wrapper: SourceWrapper = None
 
     table_list: dict = None
-    date = None
-    version_info = None
+    date: datetime.date = None
+    version_info: Version = None
 
-    def __init__(self, src, version=None, tempdir=None):
+    def __init__(self, src, version: Version = None, tempdir: Path = None):
         self.info_version = version
         self.src = src
         self.tempdir = tempdir
@@ -44,7 +46,7 @@ class TableList(AbstractTableList):
         return self.wrapper.get_file_list()
 
     @property
-    def tables(self):
+    def tables(self) -> dict:
         if self.table_list is None:
             self.table_list = {}
             for filename in self.get_table_list():
@@ -56,21 +58,21 @@ class TableList(AbstractTableList):
 
         return self.table_list
 
-    def get_date_info(self, name):
+    def get_date_info(self, name: str) -> datetime.date:
         return self.wrapper.get_date_info(filename=name)
 
     @property
-    def dump_date(self):
+    def dump_date(self) -> datetime.date:
         if self.date is None:
             self.date = self.wrapper.get_date()
 
         return self.date
 
-    def open(self, filename):
+    def open(self, filename: str) -> IO:
         return self.wrapper.open(filename=filename)
 
     @property
-    def version(self):
+    def version(self) -> Version:
         if self.version_info is None:
             self.version_info = Version.objects.nearest_by_date(self.dump_date)
         return self.version_info

@@ -1,21 +1,19 @@
 # coding: utf-8
 from __future__ import unicode_literals, absolute_import
 
+import tempfile
 import zipfile
-
-from django.conf import settings
+from pathlib import Path
 
 import rarfile
-import tempfile
+from django.conf import settings
 from progress.bar import Bar
 
 from fias.compat import urlretrieve, HTTPError
 from fias.importer.signals import (
     pre_download, post_download,
-    pre_unpack, post_unpack,
 )
 from .tablelist import TableList, TableListLoadingError
-from .directory import DirectoryTableList
 from .wrapper import RarArchiveWrapper
 
 # Задаем UNRAR_TOOL глобально
@@ -34,12 +32,12 @@ class LocalArchiveTableList(TableList):
     wrapper_class = RarArchiveWrapper
 
     @staticmethod
-    def unpack(archive, tempdir=None):
+    def unpack(archive: rarfile.RarFile, tempdir=None):
         path = tempfile.mkdtemp(dir=tempdir)
         archive.extractall(path)
         return path
 
-    def load_data(self, source):
+    def load_data(self, source: Path):
         try:
             archive = rarfile.RarFile(source)
         # except (rarfile.NotRarFile, rarfile.BadRarFile) as e:
@@ -65,15 +63,15 @@ class DlProgressBar(Bar):
 class RemoteArchiveTableList(LocalArchiveTableList):
     download_progress_class = DlProgressBar
 
-    def load_data(self, source):
+    def load_data(self, source: str):
         progress = self.download_progress_class()
 
-        def update_progress(count, block_size, total_size):
+        def update_progress(count, block_size: int, total_size: int):
             progress.goto(int(count * block_size * 100 / total_size))
 
         pre_download.send(sender=self.__class__, url=source)
         try:
-            path = urlretrieve(source, reporthook=update_progress)[0]
+            path = Path(urlretrieve(source, reporthook=update_progress)[0])
         except HTTPError as e:
             raise RetrieveError('Can not download data archive at url `{0}`. Error occurred: "{1}"'.format(
                 source, str(e)

@@ -3,13 +3,14 @@ from __future__ import unicode_literals, absolute_import
 
 import os
 import sys
+from pathlib import Path
 
 from django.conf import settings
 from django.utils.translation import activate
 
 from fias.compat import BaseCommandCompatible, DJANGO_VERSION
 from fias.config import TABLES
-from fias.importer.commands import auto_update_data, load_complete_data
+from fias.importer.commands import auto_update_data, manual_update_data, load_complete_data
 from fias.importer.source import TableListLoadingError
 from fias.importer.version import fetch_version_info
 from fias.models import Status
@@ -18,10 +19,10 @@ from fias.models import Status
 class Command(BaseCommandCompatible):
     help = 'Fill or update FIAS database'
     usage_str = 'Usage: ./manage.py fias [--src <path|filename|url|AUTO> [--truncate]' \
-                ' [--i-know-what-i-do]]'\
-                ' [--update [--skip]]'\
-                ' [--format <xml|dbf>] [--limit=<N>] [--tables=<{0}>]'\
-                ' [--update-version-info <yes|no>]'\
+                ' [--i-know-what-i-do]]' \
+                ' [--update [--skip]]' \
+                ' [--format <xml|dbf>] [--limit=<N>] [--tables=<{0}>]' \
+                ' [--update-version-info <yes|no>]' \
                 ' [--keep-indexes]' \
                 ' [--tempdir <path>]' \
                 ''.format(','.join(TABLES))
@@ -126,15 +127,16 @@ class Command(BaseCommandCompatible):
 
         tempdir = options.pop('tempdir')
         if tempdir:
-            if not os.path.exists(tempdir):
-                self.error('Directory `{0}` does not exists.'.format(tempdir))
-            elif not os.path.isdir(tempdir):
-                self.error('Path `{0}` is not a directory.'.format(tempdir))
+            tempdir = Path(tempdir)
+            if not tempdir.exists():
+                self.error(f'Directory `{tempdir}` does not exists.')
+            elif not tempdir.is_dir():
+                self.error(f'Path `{tempdir}` is not a directory.')
             elif not os.access(tempdir, os.W_OK):
-                self.error('Directory `{0}` is not writeable'.format(tempdir))
+                self.error(f'Directory `{tempdir}` is not writeable')
 
         # TODO: какая-то нелогичная логика получилась. Надо бы поправить.
-        if (src or remote) and Status.objects.count() > 0 and not doit:
+        if (src or remote) and Status.objects.count() > 0 and not doit and not update:
             self.error('One of the tables contains data. Truncate all FIAS tables manually '
                        'or enter key --i-know-what-i-do, to clear the table by means of Django ORM')
 
@@ -158,7 +160,7 @@ class Command(BaseCommandCompatible):
             self.error('Tables `{0}` are not listed in the FIAS_TABLES and can not be processed'.format(diff))
         tables = tuple(x for x in TABLES if x in list(tables))
 
-        if src or remote:
+        if (src or remote) and not update:
 
             try:
                 load_complete_data(
@@ -170,12 +172,14 @@ class Command(BaseCommandCompatible):
                 self.error(str(e))
 
         if update:
-
             try:
-                auto_update_data(skip=skip, data_format=fmt, limit=limit, tables=tables, tempdir=tempdir)
+                if src:
+                    manual_update_data(path=Path(src), skip=skip, data_format=fmt, limit=limit, tables=tables,
+                                       tempdir=tempdir)
+                else:
+                    auto_update_data(skip=skip, data_format=fmt, limit=limit, tables=tables, tempdir=tempdir)
             except TableListLoadingError as e:
                 self.error(str(e))
-
 
     def error(self, message, code=1):
         print(message)

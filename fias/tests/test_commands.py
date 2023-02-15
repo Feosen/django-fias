@@ -9,11 +9,12 @@ from fias.config import TableName
 from fias.models import *
 
 
-class CommandsTestCase(TestCase):
+class CommandCreateTestCase(TestCase):
     databases = ['default', 'gar']
 
     def test_fias_create(self):
-        Version.objects.create(ver=20221124, dumpdate=date(2022, 11, 24), complete_xml_url='complete_xml_url')
+        Version.objects.create(ver=20221124, dumpdate=date(2022, 11, 24),
+                               complete_xml_url='complete_xml_url')
 
         BASE_DIR = Path(__file__).resolve().parent
         SRC = BASE_DIR / Path('data/fake/gar_99.rar')
@@ -128,6 +129,146 @@ class CommandsTestCase(TestCase):
 
         self.assertEqual(1, Version.objects.count())
         ver = Version.objects.get()
+
+        self.assertEqual(10, Status.objects.count())
+
+        ht_s = Status.objects.get(table=TableName.HOUSE_TYPE)
+        self.assertIsNone(ht_s.region)
+        self.assertEqual(ver, ht_s.ver)
+
+        h_s = Status.objects.get(table=TableName.HOUSE)
+        self.assertEqual('99', h_s.region)
+        self.assertEqual(ver, h_s.ver)
+
+
+class CommandUpdateTestCase(TestCase):
+    databases = ['default', 'gar']
+    fixtures = ["fias/tests/data/fixtures/gar_99.json"]
+
+    def test_fias_update(self):
+
+        BASE_DIR = Path(__file__).resolve().parent
+        SRC = BASE_DIR / Path('data/fake/deltas')
+        TEMPRID = BASE_DIR
+        args = []
+        opts = {
+            'src': str(SRC),
+            'tempdir': str(TEMPRID),
+            'update': True,
+            'update-version-info': False,
+        }
+        call_command('fias', *args, **opts)
+
+        self.assertEqual(14, HouseType.objects.count())
+        ht = HouseType.objects.get(id=7)
+        self.assertEqual('Строение', ht.name)
+        self.assertEqual('стр.', ht.shortname)
+        self.assertEqual('Строение', ht.desc)
+        self.assertEqual(date(1900, 1, 1), ht.updatedate)
+        self.assertEqual(date(1900, 1, 1), ht.startdate)
+        self.assertEqual(date(2079, 6, 6), ht.enddate)
+        self.assertTrue(ht.isactive)
+
+        self.assertEqual(4, AddHouseType.objects.count())
+        aht = AddHouseType.objects.get(id=1)
+        self.assertEqual('Корпус', aht.name)
+        self.assertEqual('к.', aht.shortname)
+        self.assertEqual('Корпус', aht.desc)
+        self.assertEqual(date(2015, 12, 25), aht.updatedate)
+        self.assertEqual(date(2015, 12, 25), aht.startdate)
+        self.assertEqual(date(2079, 6, 6), aht.enddate)
+        self.assertTrue(aht.isactive)
+
+        self.assertEqual(2, House.objects.count())
+        h = House.objects.get(objectid=157269039)
+        self.assertEqual('99', h.region)
+        self.assertTrue(h.isactive)
+        self.assertTrue(h.isactual)
+        self.assertEqual(UUID('d3beec37-2c9e-4e7e-987d-a8eb827d7084'), h.objectguid)
+        self.assertEqual('70а', h.housenum)
+        self.assertIsNone(h.addnum1)
+        self.assertIsNone(h.addnum2)
+        self.assertEqual(5, h.housetype)
+        self.assertIsNone(h.addtype1)
+        self.assertIsNone(h.addtype2)
+        self.assertEqual(date(2022, 11, 28), h.updatedate)
+        self.assertEqual(date(2022, 11, 28), h.startdate)
+        self.assertEqual(date(2079, 6, 6), h.enddate)
+
+        self.assertEqual(5, HouseParam.objects.count())
+        hp = HouseParam.objects.get(id=1346933308)
+        self.assertEqual('99', hp.region)
+        self.assertEqual(157269039, hp.objectid)
+        self.assertEqual(6, hp.typeid)
+        self.assertEqual('55000000000', hp.value)
+        self.assertEqual(date(2022, 11, 28), hp.updatedate)
+        self.assertEqual(date(2022, 11, 28), hp.startdate)
+        self.assertEqual(date(2079, 6, 6), hp.enddate)
+
+        self.assertEqual(421, AddrObjType.objects.count())
+        aot = AddrObjType.objects.get(id=423)
+        self.assertEqual('Город', aot.name)
+        self.assertEqual('г', aot.shortname)
+        self.assertEqual('Город', aot.desc)
+        self.assertEqual(date(2022, 10, 14), aot.updatedate)
+        self.assertEqual(date(2015, 11, 5), aot.startdate)
+        self.assertEqual(date(2022, 9, 30), aot.enddate)
+        self.assertEqual(2, aot.level)
+        self.assertTrue(aot.isactive)
+
+        self.assertEqual(4, AddrObj.objects.count())
+        ao = AddrObj.objects.get(objectid=157289164)
+        self.assertEqual('99', ao.region)
+        self.assertTrue(ao.isactive)
+        self.assertTrue(ao.isactual)
+        self.assertEqual(UUID('48ae0ae8-8235-4b9c-a535-4e271fce450b'), ao.objectguid)
+        self.assertEqual('№22 сад Юбилейный', ao.name)
+        self.assertEqual('тер.', ao.typename)
+        self.assertEqual(7, ao.level)
+        self.assertEqual(date(2022, 11, 28), ao.updatedate)
+        self.assertEqual(date(2022, 11, 28), ao.startdate)
+        self.assertEqual(date(2079, 6, 6), ao.enddate)
+
+        ao1 = AddrObj.objects.get(objectid=1456532)
+        self.assertEqual('Школьная-2', ao1.name)
+        self.assertEqual(date(2022, 11, 28), ao.updatedate)
+        self.assertEqual(date(2022, 11, 28), ao.startdate)
+        self.assertEqual(date(2079, 6, 6), ao.enddate)
+
+        # TODO: как исключать из загрузки параметры удалённых объектов?
+        #self.assertEqual(10, AddrObjParam.objects.count())
+        aop = AddrObjParam.objects.get(id=1362268938)
+        self.assertEqual('99', aop.region)
+        self.assertEqual(157289164, aop.objectid)
+        self.assertEqual(7, aop.typeid)
+        self.assertEqual('46737000611', aop.value)
+        self.assertEqual(date(2022, 11, 28), aop.updatedate)
+        self.assertEqual(date(2022, 11, 28), aop.startdate)
+        self.assertEqual(date(2079, 6, 6), aop.enddate)
+
+        self.assertEqual(5, AdmHierarchy.objects.count())
+        ah = AdmHierarchy.objects.get(id=84786087)
+        self.assertEqual('99', ah.region)
+        self.assertEqual(157289164, ah.objectid)
+        self.assertEqual(1460768, ah.parentobjid)
+        self.assertTrue(ah.isactive)
+        self.assertEqual(date(2022, 11, 28), ah.updatedate)
+        self.assertEqual(date(2022, 11, 28), ah.startdate)
+        self.assertEqual(date(2079, 6, 6), ah.enddate)
+
+        #self.assertEqual(5, MunHierarchy.objects.count())
+        mh = MunHierarchy.objects.get(id=84786087)
+        self.assertEqual('99', mh.region)
+        self.assertEqual(157289164, ah.objectid)
+        self.assertEqual(1460768, ah.parentobjid)
+        self.assertTrue(mh.isactive)
+        self.assertEqual(date(2022, 11, 28), ah.updatedate)
+        self.assertEqual(date(2022, 11, 28), ah.startdate)
+        self.assertEqual(date(2079, 6, 6), mh.enddate)
+
+        self.assertEqual(3, Version.objects.count())
+        # TODO: всё ещё сомнения по поводу поиска ближайшей версии
+        ver = Version.objects.get(ver=20221129)
 
         self.assertEqual(10, Status.objects.count())
 
