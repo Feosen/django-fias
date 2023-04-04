@@ -3,7 +3,7 @@ from __future__ import unicode_literals, absolute_import
 
 import sys
 
-
+# TODO: remove?
 class Log(object):
 
     DEBUG = 0

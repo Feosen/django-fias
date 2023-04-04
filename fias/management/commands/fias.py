@@ -1,3 +1,4 @@
+
 # coding: utf-8
 from __future__ import unicode_literals, absolute_import
 
@@ -8,12 +9,12 @@ from pathlib import Path
 from django.conf import settings
 from django.utils.translation import activate
 
-from fias.compat import BaseCommandCompatible, DJANGO_VERSION
 from fias.config import TABLES
 from fias.importer.commands import auto_update_data, manual_update_data, load_complete_data
 from fias.importer.source import TableListLoadingError
 from fias.importer.version import fetch_version_info
 from fias.models import Status
+from gar_loader.compat import BaseCommandCompatible
 
 
 class Command(BaseCommandCompatible):
@@ -62,7 +63,7 @@ class Command(BaseCommandCompatible):
         "--format": {
             "action": "store",
             "dest": "format",
-            "type": "choice" if DJANGO_VERSION == 'old' else str,
+            "type": str,
             "choices": ["xml", "dbf"],
             "default": "xml",
             "help": "Preferred source data format. Possible choices: xml|dbf"
@@ -70,7 +71,7 @@ class Command(BaseCommandCompatible):
         "--limit": {
             "action": "store",
             "dest": "limit",
-            "type": "int" if DJANGO_VERSION == 'old' else int,
+            "type": int,
             "default": 10000,
             "help": "Limit rows for bulk operations. Default value: 10000"
         },
@@ -83,7 +84,7 @@ class Command(BaseCommandCompatible):
         "--update-version-info": {
             "action": "store",
             "dest": "update-version-info",
-            "type": "choice" if DJANGO_VERSION == 'old' else str,
+            "type": str,
             "choices": ["yes", "no"],
             "default": "yes",
             "help": "Update list of available database versions from http://fias.nalog.ru"
@@ -101,10 +102,6 @@ class Command(BaseCommandCompatible):
             "help": "Path to the temporary files directory"
         }
     }
-
-    def add_arguments_for_django_1_10(self, parser):
-        for command, arguments in self.arguments_dictionary.items():
-            parser.add_argument(command, **arguments)
 
     def handle(self, *args, **options):
         from fias.importer.timer import Timer

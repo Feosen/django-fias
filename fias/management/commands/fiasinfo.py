@@ -7,7 +7,7 @@ from fias.config import TABLES
 from fias.models import Status, Version
 from fias.importer.version import fetch_version_info
 
-from fias.compat import BaseCommandCompatible, DJANGO_VERSION
+from gar_loader.compat import BaseCommandCompatible
 
 
 class Command(BaseCommandCompatible):
@@ -24,7 +24,7 @@ class Command(BaseCommandCompatible):
         "--update-version-info": {
             "action": "store",
             "dest": "update-version-info",
-            "type": 'choice' if DJANGO_VERSION == 'old' else str,
+            "type": str,
             "choices": ["yes", "no"],
             "default": "yes",
             "help": "Update list of available database versions from http://fias.nalog.ru"

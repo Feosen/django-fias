@@ -4,12 +4,13 @@ from __future__ import unicode_literals, absolute_import
 import tempfile
 import zipfile
 from pathlib import Path
+from urllib.error import HTTPError
+from urllib.request import urlretrieve
 
 import rarfile
 from django.conf import settings
 from progress.bar import Bar
 
-from fias.compat import urlretrieve, HTTPError
 from fias.importer.signals import (
     pre_download, post_download,
 )

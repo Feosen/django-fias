@@ -7,7 +7,6 @@ from django.db.models.fields.related import RelatedField
 from django.db.utils import ProgrammingError
 
 from fias.config import DATABASE_ALIAS
-from fias.compat import get_all_related_objects, get_all_related_many_to_many_objects
 
 
 def get_simple_field(field):
@@ -35,6 +34,14 @@ def get_simple_field(field):
     simple_field.model = field.model
 
     return simple_field
+
+
+def get_all_related_objects(opts):
+    return [r for r in opts.related_objects if not r.field.many_to_many]
+
+
+def get_all_related_many_to_many_objects(opts):
+    return [r for r in opts.related_objects if r.field.many_to_many]
 
 
 def get_indexed_fields(model):

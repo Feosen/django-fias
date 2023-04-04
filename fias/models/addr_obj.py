@@ -7,6 +7,8 @@ from fias.models.common import AbstractType, AbstractObj, AbstractParam
 
 __all__ = ['AddrObj', 'AddrObjParam', 'AddrObjType']
 
+from fias.models.fields import BigIntegerRefField
+
 
 class AddrObjType(AbstractType):
     """
@@ -40,6 +42,7 @@ class AddrObjParam(AbstractParam):
     """
     Параметры домов
     """
+    objectid = BigIntegerRefField([(AddrObj, 'objectid')], verbose_name='глобальный уникальный идентификатор объекта')
 
     class Meta(AbstractParam.Meta):
         abstract = False

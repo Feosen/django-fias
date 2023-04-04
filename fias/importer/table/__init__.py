@@ -2,8 +2,9 @@
 from __future__ import unicode_literals, absolute_import
 
 import re
+from typing import Union
 
-from .table import BadTableError
+from .table import BadTableError, Table
 from .xml import XMLTable
 
 table_xml_pattern = r'((?P<region>\d{2})/)?as_(?P<deleted>del_)?(?P<name>[a-z_]+)_(?P<date>\d+)_(?P<uuid>[a-z0-9-]{36}).xml'
@@ -17,7 +18,7 @@ class BadTableNameError(Exception):
 class TableFactory(object):
 
     @staticmethod
-    def parse(filename: str):
+    def parse(filename: str) -> Union[Table, None]:
         m = table_xml_re.match(filename)
         if m is not None:
             cls = XMLTable

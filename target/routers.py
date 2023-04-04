@@ -1,11 +1,11 @@
 # coding: utf-8
 from __future__ import unicode_literals, absolute_import
 
-from fias.config import DEFAULT_DB_ALIAS, DATABASE_ALIAS
+from target.config import DEFAULT_DB_ALIAS, DATABASE_ALIAS
 
 
-class FIASRouter(object):
-    app_labels = ('fias',)
+class TargetRouter(object):
+    app_labels = ('target',)
     ALLOWED_REL = ['AddrObj']
     
     def db_for_read(self, model, **hints):
@@ -22,6 +22,7 @@ class FIASRouter(object):
             Странный хак, но без него
             джанго не может правильно определить БД для записи\
             """
+            raise ValueError
             try:
                 if hints['instance']._meta.object_name == 'AddrObj':
                     return DEFAULT_DB_ALIAS

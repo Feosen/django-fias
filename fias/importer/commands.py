@@ -1,13 +1,12 @@
 # coding: utf-8
 from __future__ import unicode_literals, absolute_import
 
-import os
 from pathlib import Path
-from typing import Tuple, Union
+from typing import Tuple, Union, List, Type
 
 from django.core.exceptions import ValidationError
 from django.core.validators import URLValidator
-from django.db.models import Min
+from django.db.models import Min, Model
 
 from fias import config
 from fias.importer.indexes import remove_indexes_from_model, restore_indexes_for_model
@@ -54,11 +53,18 @@ def get_table_names(tables: Union[Tuple[str], None]):
     return tables if tables else config.TABLES
 
 
+def remove_orphans(models: List[Type[Model]]) -> None:
+    for model in models:
+        model.objects.delete_orphans()
+
+
 def load_complete_data(path: str = None, data_format: str = 'xml', truncate: bool = False, limit: int = 10000,
                        tables: Tuple[str] = None, keep_indexes: bool = False, tempdir: Path = None):
     tablelist = get_tablelist(path=path, data_format=data_format, tempdir=tempdir)
 
     pre_import.send(sender=object.__class__, version=tablelist.version)
+
+    processed_models = []
 
     for tbl in get_table_names(tables):
         # Пропускаем таблицы, которых нет в архиве
@@ -79,6 +85,7 @@ def load_complete_data(path: str = None, data_format: str = 'xml', truncate: boo
                 continue
         # Берём для работы любую таблицу с именем tbl
         first_table = tablelist.tables[tbl][0]
+        processed_models.append(first_table.model)
 
         # Очищаем таблицу перед импортом
         if truncate:
@@ -103,6 +110,8 @@ def load_complete_data(path: str = None, data_format: str = 'xml', truncate: boo
             restore_indexes_for_model(model=first_table.model)
             post_restore_indexes.send(sender=object.__class__, table=first_table)
 
+    remove_orphans(processed_models)
+
     post_import.send(sender=object.__class__, version=tablelist.version)
 
 
@@ -110,10 +119,13 @@ def update_data(path: Path = None, version: Version = None, skip: bool = False, 
                 limit: int = 1000, tables: Tuple[str] = None, tempdir: Path = None):
     tablelist = get_tablelist(path=path, version=version, data_format=data_format, tempdir=tempdir)
 
+    processed_models = []
     for tbl in get_table_names(tables):
         # Пропускаем таблицы, которых нет в архиве
         if tbl not in tablelist.tables:
             continue
+
+        processed_models.append(tablelist.tables[tbl][0].model)
 
         for table in tablelist.tables[tbl]:
             try:
@@ -134,6 +146,8 @@ def update_data(path: Path = None, version: Version = None, skip: bool = False, 
                     raise
             st.ver = tablelist.version
             st.save()
+
+    remove_orphans(processed_models)
 
 
 def manual_update_data(path: Path = None, skip: bool = False, data_format: str = 'xml', limit: int = 1000,

@@ -18,6 +18,7 @@ from fias.importer.table.table import AbstractTableList, Table
 from fias.importer.validators import validators
 
 
+# TODO: it does not show in terminal
 class LoadingBar(WritelnMixin):
     file = stderr
 
@@ -197,4 +198,5 @@ class TableUpdater(TableLoader):
             self.create(table, list(objects), bar=bar)
 
         bar.update(loaded=self.counter, updated=self.upd_counter, skipped=self.skip_counter)
+        # TODO: finish
         bar.finish()

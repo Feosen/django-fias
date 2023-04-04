@@ -3,13 +3,13 @@ from __future__ import unicode_literals, absolute_import
 
 import datetime
 from pathlib import Path
-from typing import List, Type, IO
+from typing import List, Type, IO, Dict
 
 from fias.importer.signals import pre_load, post_load
 from fias.importer.table import TableFactory
 from fias.models import Version
 from .wrapper import SourceWrapper
-from ..table.table import AbstractTableList
+from ..table.table import AbstractTableList, Table
 from ... import config
 
 
@@ -21,7 +21,7 @@ class TableList(AbstractTableList):
     wrapper_class: Type[SourceWrapper] = SourceWrapper
     wrapper: SourceWrapper = None
 
-    table_list: dict = None
+    table_list: Dict[str, List[Table]] = None
     date: datetime.date = None
     version_info: Version = None
 
@@ -46,7 +46,7 @@ class TableList(AbstractTableList):
         return self.wrapper.get_file_list()
 
     @property
-    def tables(self) -> dict:
+    def tables(self) -> Dict[str, List[Table]]:
         if self.table_list is None:
             self.table_list = {}
             for filename in self.get_table_list():

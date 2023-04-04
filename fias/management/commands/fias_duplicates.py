@@ -6,7 +6,7 @@ import sys
 from fias.config import TABLES
 from fias.importer.commands import get_tablelist
 
-from fias.compat import BaseCommandCompatible, DJANGO_VERSION
+from gar_loader.compat import BaseCommandCompatible
 
 
 class Command(BaseCommandCompatible):
@@ -27,7 +27,7 @@ class Command(BaseCommandCompatible):
         "--table": {
             "action": "store",
             "dest": "table",
-            "type": "choice" if DJANGO_VERSION == 'old' else str,
+            "type": str,
             "choices": list(TABLES),
             "help": "Table to search for duplicates"
         }

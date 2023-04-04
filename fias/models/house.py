@@ -7,6 +7,8 @@ from fias.models.common import AbstractType, AbstractObj, AbstractParam
 
 __all__ = ['House', 'HouseType', 'AddHouseType', 'HouseParam']
 
+from fias.models.fields import BigIntegerRefField
+
 
 class HouseType(AbstractType):
     """
@@ -56,6 +58,7 @@ class HouseParam(AbstractParam):
     """
     Параметры домов
     """
+    objectid = BigIntegerRefField([(House, 'objectid')], verbose_name='глобальный уникальный идентификатор объекта')
 
     class Meta(AbstractParam.Meta):
         abstract = False

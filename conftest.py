@@ -90,7 +90,7 @@ def pytest_configure():
         },
         SECRET_KEY='key',
         ROOT_URLCONF='tests.urls',
-        FIAS_DATABASE_ALIAS='fias',
+        GAR_TMP_DATABASE_ALIAS='fias',
         DATABASE_ROUTERS=['fias.routers.FIASRouter'],
         DEBUG=True,
         TEMPLATE_DEBUG=True,

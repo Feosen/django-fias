@@ -236,7 +236,7 @@ class CommandUpdateTestCase(TestCase):
         self.assertEqual(date(2079, 6, 6), ao.enddate)
 
         # TODO: как исключать из загрузки параметры удалённых объектов?
-        #self.assertEqual(10, AddrObjParam.objects.count())
+        self.assertEqual(8, AddrObjParam.objects.count())
         aop = AddrObjParam.objects.get(id=1362268938)
         self.assertEqual('99', aop.region)
         self.assertEqual(157289164, aop.objectid)
@@ -246,8 +246,8 @@ class CommandUpdateTestCase(TestCase):
         self.assertEqual(date(2022, 11, 28), aop.startdate)
         self.assertEqual(date(2079, 6, 6), aop.enddate)
 
-        self.assertEqual(5, AdmHierarchy.objects.count())
-        ah = AdmHierarchy.objects.get(id=84786087)
+        self.assertEqual(6, AdmHierarchy.objects.count())
+        ah = AdmHierarchy.objects.get(id=184786086)
         self.assertEqual('99', ah.region)
         self.assertEqual(157289164, ah.objectid)
         self.assertEqual(1460768, ah.parentobjid)
@@ -256,8 +256,8 @@ class CommandUpdateTestCase(TestCase):
         self.assertEqual(date(2022, 11, 28), ah.startdate)
         self.assertEqual(date(2079, 6, 6), ah.enddate)
 
-        #self.assertEqual(5, MunHierarchy.objects.count())
-        mh = MunHierarchy.objects.get(id=84786087)
+        self.assertEqual(6, MunHierarchy.objects.count())
+        mh = MunHierarchy.objects.get(id=184786086)
         self.assertEqual('99', mh.region)
         self.assertEqual(157289164, ah.objectid)
         self.assertEqual(1460768, ah.parentobjid)

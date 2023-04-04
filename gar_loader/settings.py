@@ -72,12 +72,14 @@ TEMPLATES = [
 WSGI_APPLICATION = "gar_loader.wsgi.application"
 
 FIAS_DATABASE_ALIAS = "gar"
+TARGET_DATABASE_ALIAS = FIAS_DATABASE_ALIAS
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASE_ROUTERS = [
     'fias.routers.FIASRouter',
+    'target.routers.TargetRouter',
 ]
 
 DATABASES = {
@@ -87,14 +89,13 @@ DATABASES = {
     },
     "gar": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "gar_test",
+        "NAME": "gar",
         "USER": "gar_test",
         "PASSWORD": "gar_test",
-        "HOST": "127.0.0.1",
+        #"HOST": "127.0.0.1",
         "PORT": "5433",
-    }
+    },
 }
-#FIAS_SUGGEST_BACKEND = 'fias.suggest.backends.sphinx'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

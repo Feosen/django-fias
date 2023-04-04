@@ -2,6 +2,8 @@
 
 # Intellij Idea
 .idea/*
+gar_data
+docs
 
 __pycache__
 

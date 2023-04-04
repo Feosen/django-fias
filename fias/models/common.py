@@ -1,15 +1,38 @@
 # coding: utf-8
 from __future__ import unicode_literals, absolute_import
 
+from typing import Tuple
+
 from django.db import models
 
 __all__ = ['AbstractModel', 'AbstractObj', 'AbstractParam', 'AbstractType', 'ParamType']
+
+from fias.models.fields import RefFieldMixin
+
+
+class Manager(models.Manager):
+
+    def delete_orphans(self) -> Tuple[int, dict]:
+        res_c = 0
+        res_d = {}
+        for field in self.model._meta.get_fields():
+            if isinstance(field, RefFieldMixin):
+                # TODO: profile it
+                qs = self
+                for cfg in field.to:
+                    qs = qs.exclude(**{f'{field.name}__in': cfg[0].objects.all()})
+                c, d = qs.delete()
+                res_c += c
+                res_d |= d
+        return res_c, res_d
 
 
 class AbstractModel(models.Model):
     updatedate = models.DateField(verbose_name='дата внесения (обновления) записи')
     startdate = models.DateField(verbose_name='начало действия записи')
     enddate = models.DateField(verbose_name='окончание действия записи')
+
+    objects = Manager()
 
     class Meta:
         abstract = True
@@ -43,7 +66,7 @@ class AbstractType(AbstractModel):
 
 class AbstractParam(AbstractModel):
     region = models.CharField(verbose_name='код региона', max_length=2)
-    objectid = models.BigIntegerField(verbose_name='глобальный уникальный идентификатор объекта')
+    #objectid = models.BigIntegerField(verbose_name='глобальный уникальный идентификатор объекта')
     typeid = models.SmallIntegerField(verbose_name='тип')
     value = models.CharField(verbose_name='значение', max_length=250)
 

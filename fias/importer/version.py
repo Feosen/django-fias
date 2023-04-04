@@ -5,6 +5,7 @@ import datetime
 import json
 import urllib.request
 
+import zeep.client
 from django.core.exceptions import ImproperlyConfigured
 from requests.exceptions import HTTPError
 from zeep.exceptions import XMLSyntaxError
@@ -55,30 +56,42 @@ def iter_version_info(result):
         for item in result:
             yield item
 
-try:
-    try:
-        from zeep.client import Client
-        from zeep import __version__ as zver
-        z_major, z_minor, z_sub = list(map(int, zver.split('.')))
 
-        if z_minor < 20:
-            parse_func = parse_item_as_object
-        elif z_minor > 20:
-            parse_func = parse_item_as_dict
+class ClientContainer:
+    _client: 'zeep.client.Client' = None
 
-        client = Client(wsdl=wsdl_source)
-    except ImportError:
-        try:
-            from suds.client import Client
+    def get_client(self):
+        if self._client is None:
+            try:
+                try:
+                    from zeep.client import Client
+                    from zeep import __version__ as zver
+                    z_major, z_minor, z_sub = list(map(int, zver.split('.')))
 
-            parse_func = parse_item_as_dict
-            client = Client(url=wsdl_source, proxy=PROXY or None)
+                    if z_minor < 20:
+                        parse_func = parse_item_as_object
+                    elif z_minor > 20:
+                        parse_func = parse_item_as_dict
 
-        except ImportError:
-            raise ImproperlyConfigured('Не найдено подходящей библиотеки для работы с WSDL.'
-                                       ' Пожалуйста установите zeep или suds!')
-except HTTPError:
-    print('Сайт не отвечает при запросе WSDL')
+                    self._client = Client(wsdl=wsdl_source)
+                except ImportError:
+                    try:
+                        from suds.client import Client
+
+                        parse_func = parse_item_as_dict
+                        _client = Client(url=wsdl_source, proxy=PROXY or None)
+
+                    except ImportError:
+                        raise ImproperlyConfigured('Не найдено подходящей библиотеки для работы с WSDL.'
+                                                   ' Пожалуйста установите zeep или suds!')
+            except HTTPError:
+                print('Сайт не отвечает при запросе WSDL')
+            except Exception as e:
+                print(e)
+        return self._client
+
+
+_cc = ClientContainer()
 
 
 def fetch_version_info(update_all=False):
@@ -86,7 +99,7 @@ def fetch_version_info(update_all=False):
     pre_fetch_version.send(object.__class__)
 
     try:
-        result = client.service.GetAllDownloadFileInfo()
+        result = _cc.get_client().service.GetAllDownloadFileInfo()
     except XMLSyntaxError:
         with urllib.request.urlopen(json_source) as url:
             result = json.loads(url.read().decode())

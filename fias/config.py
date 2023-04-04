@@ -4,13 +4,12 @@ from __future__ import unicode_literals, absolute_import
 import os
 import re
 from enum import StrEnum
+from importlib import import_module
 
 from django.apps import apps
-
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.db.utils import DEFAULT_DB_ALIAS
-from django.utils.module_loading import import_module
 
 from fias.enum import CEnumMeta
 
@@ -30,10 +29,6 @@ class TableName(StrEnum, metaclass=CEnumMeta):
     ADM_HIERARCHY = 'adm_hierarchy'
     MUN_HIERARCHY = 'mun_hierarchy'
 
-
-SEPARATE_REGIONS = {
-    TableName.HOUSE: ('78',)
-}
 
 TABLES_STATS = (
     TableName.HOUSE_TYPE,
@@ -58,12 +53,6 @@ TABLES += tuple(x.lower() for x in TABLES_DEFAULT if x.lower() in list(set(getat
 
 # Auto area
 re_region = re.compile(r'\d\d')
-
-for table, regions in SEPARATE_REGIONS.items():
-    isinstance(table, TableName)
-    model = apps.get_model('fias', table.replace('_', ''))
-    isinstance(regions, tuple)
-    assert all(map(lambda r: isinstance(r, str) and re_region.match(r), regions))
 
 for src, (dst, params) in PARAM_MAP.items():
     assert isinstance(src, TableName)
@@ -94,7 +83,7 @@ else:
 DATABASE_ALIAS = getattr(settings, 'FIAS_DATABASE_ALIAS', DEFAULT_DB_ALIAS)
 
 if DATABASE_ALIAS not in settings.DATABASES:
-    raise ImproperlyConfigured('FIAS: database alias `{0}` was not found in DATABASES'.format(DATABASE_ALIAS))
+    raise ImproperlyConfigured(f'FIAS: database alias `{DATABASE_ALIAS}` was not found in DATABASES')
 elif DATABASE_ALIAS != DEFAULT_DB_ALIAS and 'fias.routers.FIASRouter' not in settings.DATABASE_ROUTERS:
     raise ImproperlyConfigured('FIAS: for use external database add `fias.routers.FIASRouter`'
                                ' into `DATABASE_ROUTERS` list in your settings.py')
