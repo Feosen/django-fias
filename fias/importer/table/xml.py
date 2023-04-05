@@ -96,13 +96,13 @@ class XMLRowConvertor(RowConvertor):
     fields: set
     values: dict
 
-    def __init__(self, model: Type[Model], region: str, table_name: str):
+    def __init__(self, model: Type[Model], table_name: str, extra: dict = None):
         super(XMLRowConvertor, self).__init__()
         self.field_map = field_map.get(table_name, {})
         self.fields = set(f.name for f in model._meta.get_fields())
         self.values = {}
-        if region:
-            self.values['region'] = region
+        if extra is not None:
+            self.values.update(extra)
 
     def convert(self, row: dict) -> dict:
         for k, v in self.field_map.items():
@@ -137,6 +137,7 @@ class XMLTable(Table):
             pass
 
         try:
-            return self.iterator(xml, self.model, self.row_convertor(self.model, self.region, self.name))
+            return self.iterator(xml, self.model, self.row_convertor(self.model, self.name,
+                                                                     {'ver': self.ver, 'region': self.region}))
         except etree.XMLSyntaxError as e:
             raise BadTableError('Error occured during opening table `{0}`: {1}'.format(self.name, str(e)))

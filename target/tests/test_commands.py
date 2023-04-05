@@ -11,6 +11,8 @@ class CommandCreateTestCase(TestCase):
     fixtures = ["target/tests/data/fixtures/gar_99.json"]
 
     def test_target_create(self):
+        self.assertEqual(0, Status.objects.count())
+
         args = []
         opts = {}
         call_command('target', *args, **opts)
@@ -44,7 +46,10 @@ class CommandCreateTestCase(TestCase):
         self.assertEqual('55000000000', h.okato)
         self.assertEqual('55000000', h.oktmo)
 
-        self.assertEqual(3, AddrObj.objects.count())
+        self.assertEqual(4, AddrObj.objects.count())
+        self.assertListEqual([1456531, 1456532, 1456865, 1460768],
+                             list(AddrObj.objects.order_by('objectid').values_list('objectid', flat=True)))
+
         ao = AddrObj.objects.get(objectid=1456865)
         self.assertEqual('99', ao.region)
         self.assertEqual(1460768, ao.owner_adm)
@@ -56,24 +61,39 @@ class CommandCreateTestCase(TestCase):
         self.assertEqual('55000000000', ao.okato)
         self.assertEqual('55000000', ao.oktmo)
 
+        ao1 = AddrObj.objects.get(objectid=1456532)
+        self.assertEqual('99', ao1.region)
+        self.assertEqual(1460768, ao1.owner_adm)
+        self.assertEqual(1460768, ao1.owner_mun)
+        self.assertEqual(8, ao1.aolevel)
+        self.assertEqual(UUID('3d855628-80ed-4ca5-a9de-378a76876acf'), ao1.objectguid)
+        self.assertEqual('Школьная', ao1.name)
+        self.assertEqual('ул', ao1.typename)
+        self.assertEqual('55000000000', ao1.okato)
+        self.assertEqual('55000000', ao1.oktmo)
+
+        self.assertEqual(20221125, Status.objects.get().ver)
+
 
 class CommandUpdateTestCase(TestCase):
     databases = ['default', 'gar']
     fixtures = ["target/tests/data/fixtures/gar_99_u.json"]
 
     def test_target_create(self):
+        self.assertEqual(20221125, Status.objects.get().ver)
+
         args = []
         opts = {
             'update': True
         }
         call_command('target', *args, **opts)
 
-        self.assertEqual(14, HouseType.objects.count())
+        self.assertEqual(7, HouseType.objects.count())
         ht = HouseType.objects.get(id=7)
         self.assertEqual('Строение', ht.name)
         self.assertEqual('стр.', ht.shortname)
 
-        self.assertEqual(4, HouseAddType.objects.count())
+        self.assertEqual(3, HouseAddType.objects.count())
         aht = HouseAddType.objects.get(id=1)
         self.assertEqual('Корпус', aht.name)
         self.assertEqual('к.', aht.shortname)
@@ -97,7 +117,10 @@ class CommandUpdateTestCase(TestCase):
         self.assertEqual('55000000000', h.okato)
         self.assertEqual('55000000', h.oktmo)
 
-        self.assertEqual(3, AddrObj.objects.count())
+        self.assertEqual(4, AddrObj.objects.count())
+        self.assertListEqual([1456532, 1456865, 1460768, 157289164],
+                             list(AddrObj.objects.order_by('objectid').values_list('objectid', flat=True)))
+
         ao = AddrObj.objects.get(objectid=1456865)
         self.assertEqual('99', ao.region)
         self.assertEqual(1460768, ao.owner_adm)
@@ -108,3 +131,22 @@ class CommandUpdateTestCase(TestCase):
         self.assertEqual('мкр', ao.typename)
         self.assertEqual('55000000000', ao.okato)
         self.assertEqual('55000000', ao.oktmo)
+
+        ao1 = AddrObj.objects.get(objectid=157289164)
+        self.assertEqual('99', ao1.region)
+        self.assertEqual(UUID('48ae0ae8-8235-4b9c-a535-4e271fce450b'), ao.objectguid)
+        self.assertEqual('№22 сад Юбилейный', ao1.name)
+        self.assertEqual('тер.', ao1.typename)
+        self.assertEqual(7, ao1.aolevel)
+
+        ao2 = AddrObj.objects.get(objectid=1456532)
+        self.assertEqual('99', ao2.region)
+        self.assertEqual(1460768, ao2.owner_adm)
+        self.assertEqual(1460768, ao2.owner_mun)
+        self.assertEqual(8, ao2.aolevel)
+        self.assertEqual(UUID('3d855628-80ed-4ca5-a9de-378a76876acf'), ao2.objectguid)
+        self.assertEqual('Школьная-2', ao2.name)
+        self.assertEqual('ул', ao2.typename)
+        self.assertEqual('55000000000', ao2.okato)
+        self.assertEqual('55000000', ao12.oktmo)
+

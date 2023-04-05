@@ -3,6 +3,7 @@
     "model": "fias.paramtype",
     "pk": 1,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2018-06-15",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -16,6 +17,7 @@
     "model": "fias.paramtype",
     "pk": 2,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2018-06-15",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -29,6 +31,7 @@
     "model": "fias.paramtype",
     "pk": 3,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2018-06-15",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -42,6 +45,7 @@
     "model": "fias.paramtype",
     "pk": 4,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2018-06-15",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -55,6 +59,7 @@
     "model": "fias.paramtype",
     "pk": 5,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2018-06-15",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -68,6 +73,7 @@
     "model": "fias.paramtype",
     "pk": 6,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2018-06-19",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -81,6 +87,7 @@
     "model": "fias.paramtype",
     "pk": 7,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2018-06-19",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -94,6 +101,7 @@
     "model": "fias.paramtype",
     "pk": 8,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2018-06-19",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -107,6 +115,7 @@
     "model": "fias.paramtype",
     "pk": 10,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2018-06-21",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -120,6 +129,7 @@
     "model": "fias.paramtype",
     "pk": 11,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2018-06-21",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -133,6 +143,7 @@
     "model": "fias.paramtype",
     "pk": 12,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2018-06-21",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -146,6 +157,7 @@
     "model": "fias.paramtype",
     "pk": 13,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2018-11-12",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -159,6 +171,7 @@
     "model": "fias.paramtype",
     "pk": 14,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2018-12-14",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -172,6 +185,7 @@
     "model": "fias.paramtype",
     "pk": 15,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2018-12-14",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -185,6 +199,7 @@
     "model": "fias.paramtype",
     "pk": 16,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2019-12-04",
       "startdate": "2019-12-04",
       "enddate": "2079-06-06",
@@ -198,6 +213,7 @@
     "model": "fias.paramtype",
     "pk": 17,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2021-09-03",
       "startdate": "2021-09-03",
       "enddate": "2079-06-06",
@@ -211,6 +227,7 @@
     "model": "fias.paramtype",
     "pk": 18,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-03-25",
       "startdate": "2022-03-25",
       "enddate": "2079-06-06",
@@ -224,6 +241,7 @@
     "model": "fias.addrobjtype",
     "pk": 2,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -238,6 +256,7 @@
     "model": "fias.addrobjtype",
     "pk": 3,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -252,6 +271,7 @@
     "model": "fias.addrobjtype",
     "pk": 4,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -266,6 +286,7 @@
     "model": "fias.addrobjtype",
     "pk": 5,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -280,6 +301,7 @@
     "model": "fias.addrobjtype",
     "pk": 6,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -294,6 +316,7 @@
     "model": "fias.addrobjtype",
     "pk": 7,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -308,6 +331,7 @@
     "model": "fias.addrobjtype",
     "pk": 8,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -322,6 +346,7 @@
     "model": "fias.addrobjtype",
     "pk": 9,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -336,6 +361,7 @@
     "model": "fias.addrobjtype",
     "pk": 10,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -350,6 +376,7 @@
     "model": "fias.addrobjtype",
     "pk": 11,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -364,6 +391,7 @@
     "model": "fias.addrobjtype",
     "pk": 12,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -378,6 +406,7 @@
     "model": "fias.addrobjtype",
     "pk": 13,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -392,6 +421,7 @@
     "model": "fias.addrobjtype",
     "pk": 14,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -406,6 +436,7 @@
     "model": "fias.addrobjtype",
     "pk": 15,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -420,6 +451,7 @@
     "model": "fias.addrobjtype",
     "pk": 16,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -434,6 +466,7 @@
     "model": "fias.addrobjtype",
     "pk": 17,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -448,6 +481,7 @@
     "model": "fias.addrobjtype",
     "pk": 18,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2015-11-05",
@@ -462,6 +496,7 @@
     "model": "fias.addrobjtype",
     "pk": 19,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2015-11-05",
@@ -476,6 +511,7 @@
     "model": "fias.addrobjtype",
     "pk": 20,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2015-11-05",
@@ -490,6 +526,7 @@
     "model": "fias.addrobjtype",
     "pk": 21,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -504,6 +541,7 @@
     "model": "fias.addrobjtype",
     "pk": 22,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -518,6 +556,7 @@
     "model": "fias.addrobjtype",
     "pk": 23,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -532,6 +571,7 @@
     "model": "fias.addrobjtype",
     "pk": 24,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -546,6 +586,7 @@
     "model": "fias.addrobjtype",
     "pk": 25,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -560,6 +601,7 @@
     "model": "fias.addrobjtype",
     "pk": 26,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -574,6 +616,7 @@
     "model": "fias.addrobjtype",
     "pk": 27,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -588,6 +631,7 @@
     "model": "fias.addrobjtype",
     "pk": 28,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -602,6 +646,7 @@
     "model": "fias.addrobjtype",
     "pk": 29,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -616,6 +661,7 @@
     "model": "fias.addrobjtype",
     "pk": 30,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -630,6 +676,7 @@
     "model": "fias.addrobjtype",
     "pk": 31,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -644,6 +691,7 @@
     "model": "fias.addrobjtype",
     "pk": 32,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -658,6 +706,7 @@
     "model": "fias.addrobjtype",
     "pk": 33,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -672,6 +721,7 @@
     "model": "fias.addrobjtype",
     "pk": 34,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -686,6 +736,7 @@
     "model": "fias.addrobjtype",
     "pk": 35,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -700,6 +751,7 @@
     "model": "fias.addrobjtype",
     "pk": 36,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -714,6 +766,7 @@
     "model": "fias.addrobjtype",
     "pk": 37,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -728,6 +781,7 @@
     "model": "fias.addrobjtype",
     "pk": 38,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -742,6 +796,7 @@
     "model": "fias.addrobjtype",
     "pk": 39,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -756,6 +811,7 @@
     "model": "fias.addrobjtype",
     "pk": 40,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -770,6 +826,7 @@
     "model": "fias.addrobjtype",
     "pk": 41,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -784,6 +841,7 @@
     "model": "fias.addrobjtype",
     "pk": 42,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -798,6 +856,7 @@
     "model": "fias.addrobjtype",
     "pk": 43,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -812,6 +871,7 @@
     "model": "fias.addrobjtype",
     "pk": 44,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -826,6 +886,7 @@
     "model": "fias.addrobjtype",
     "pk": 45,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -840,6 +901,7 @@
     "model": "fias.addrobjtype",
     "pk": 46,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -854,6 +916,7 @@
     "model": "fias.addrobjtype",
     "pk": 47,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -868,6 +931,7 @@
     "model": "fias.addrobjtype",
     "pk": 48,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -882,6 +946,7 @@
     "model": "fias.addrobjtype",
     "pk": 49,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -896,6 +961,7 @@
     "model": "fias.addrobjtype",
     "pk": 50,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -910,6 +976,7 @@
     "model": "fias.addrobjtype",
     "pk": 51,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -924,6 +991,7 @@
     "model": "fias.addrobjtype",
     "pk": 52,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -938,6 +1006,7 @@
     "model": "fias.addrobjtype",
     "pk": 53,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -952,6 +1021,7 @@
     "model": "fias.addrobjtype",
     "pk": 54,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -966,6 +1036,7 @@
     "model": "fias.addrobjtype",
     "pk": 55,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -980,6 +1051,7 @@
     "model": "fias.addrobjtype",
     "pk": 56,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2019-02-14",
@@ -994,6 +1066,7 @@
     "model": "fias.addrobjtype",
     "pk": 57,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -1008,6 +1081,7 @@
     "model": "fias.addrobjtype",
     "pk": 58,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -1022,6 +1096,7 @@
     "model": "fias.addrobjtype",
     "pk": 59,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -1036,6 +1111,7 @@
     "model": "fias.addrobjtype",
     "pk": 60,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -1050,6 +1126,7 @@
     "model": "fias.addrobjtype",
     "pk": 61,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -1064,6 +1141,7 @@
     "model": "fias.addrobjtype",
     "pk": 62,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -1078,6 +1156,7 @@
     "model": "fias.addrobjtype",
     "pk": 63,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -1092,6 +1171,7 @@
     "model": "fias.addrobjtype",
     "pk": 64,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -1106,6 +1186,7 @@
     "model": "fias.addrobjtype",
     "pk": 65,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -1120,6 +1201,7 @@
     "model": "fias.addrobjtype",
     "pk": 66,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -1134,6 +1216,7 @@
     "model": "fias.addrobjtype",
     "pk": 67,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1148,6 +1231,7 @@
     "model": "fias.addrobjtype",
     "pk": 68,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2019-02-14",
@@ -1162,6 +1246,7 @@
     "model": "fias.addrobjtype",
     "pk": 69,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1176,6 +1261,7 @@
     "model": "fias.addrobjtype",
     "pk": 70,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1190,6 +1276,7 @@
     "model": "fias.addrobjtype",
     "pk": 71,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1204,6 +1291,7 @@
     "model": "fias.addrobjtype",
     "pk": 72,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1218,6 +1306,7 @@
     "model": "fias.addrobjtype",
     "pk": 73,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1232,6 +1321,7 @@
     "model": "fias.addrobjtype",
     "pk": 74,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1246,6 +1336,7 @@
     "model": "fias.addrobjtype",
     "pk": 75,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1260,6 +1351,7 @@
     "model": "fias.addrobjtype",
     "pk": 76,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1274,6 +1366,7 @@
     "model": "fias.addrobjtype",
     "pk": 77,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -1288,6 +1381,7 @@
     "model": "fias.addrobjtype",
     "pk": 78,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1302,6 +1396,7 @@
     "model": "fias.addrobjtype",
     "pk": 79,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2019-02-14",
@@ -1316,6 +1411,7 @@
     "model": "fias.addrobjtype",
     "pk": 80,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -1330,6 +1426,7 @@
     "model": "fias.addrobjtype",
     "pk": 81,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1344,6 +1441,7 @@
     "model": "fias.addrobjtype",
     "pk": 82,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1358,6 +1456,7 @@
     "model": "fias.addrobjtype",
     "pk": 83,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1372,6 +1471,7 @@
     "model": "fias.addrobjtype",
     "pk": 84,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1386,6 +1486,7 @@
     "model": "fias.addrobjtype",
     "pk": 85,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1400,6 +1501,7 @@
     "model": "fias.addrobjtype",
     "pk": 86,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2019-02-14",
@@ -1414,6 +1516,7 @@
     "model": "fias.addrobjtype",
     "pk": 87,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2019-02-14",
@@ -1428,6 +1531,7 @@
     "model": "fias.addrobjtype",
     "pk": 88,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -1442,6 +1546,7 @@
     "model": "fias.addrobjtype",
     "pk": 89,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1456,6 +1561,7 @@
     "model": "fias.addrobjtype",
     "pk": 90,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1470,6 +1576,7 @@
     "model": "fias.addrobjtype",
     "pk": 91,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -1484,6 +1591,7 @@
     "model": "fias.addrobjtype",
     "pk": 92,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1498,6 +1606,7 @@
     "model": "fias.addrobjtype",
     "pk": 93,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2020-08-11",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1510,22 +1619,9 @@
   },
   {
     "model": "fias.addrobjtype",
-    "pk": 94,
-    "fields": {
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2015-11-05",
-      "name": "Поселок и(при) станция(и)",
-      "shortname": "п/ст",
-      "desc": "Поселок и(при) станция(и)",
-      "isactive": false,
-      "level": 6
-    }
-  },
-  {
-    "model": "fias.addrobjtype",
     "pk": 95,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1540,6 +1636,7 @@
     "model": "fias.addrobjtype",
     "pk": 96,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -1554,6 +1651,7 @@
     "model": "fias.addrobjtype",
     "pk": 97,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1568,6 +1666,7 @@
     "model": "fias.addrobjtype",
     "pk": 98,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1582,6 +1681,7 @@
     "model": "fias.addrobjtype",
     "pk": 99,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1596,6 +1696,7 @@
     "model": "fias.addrobjtype",
     "pk": 100,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1610,6 +1711,7 @@
     "model": "fias.addrobjtype",
     "pk": 101,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1624,6 +1726,7 @@
     "model": "fias.addrobjtype",
     "pk": 102,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1638,6 +1741,7 @@
     "model": "fias.addrobjtype",
     "pk": 103,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1652,6 +1756,7 @@
     "model": "fias.addrobjtype",
     "pk": 104,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1666,6 +1771,7 @@
     "model": "fias.addrobjtype",
     "pk": 105,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2019-02-14",
@@ -1680,6 +1786,7 @@
     "model": "fias.addrobjtype",
     "pk": 106,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2019-07-22",
@@ -1694,6 +1801,7 @@
     "model": "fias.addrobjtype",
     "pk": 107,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2019-07-22",
       "startdate": "2019-07-22",
       "enddate": "2079-06-06",
@@ -1708,6 +1816,7 @@
     "model": "fias.addrobjtype",
     "pk": 108,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1722,6 +1831,7 @@
     "model": "fias.addrobjtype",
     "pk": 109,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -1736,6 +1846,7 @@
     "model": "fias.addrobjtype",
     "pk": 110,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1750,6 +1861,7 @@
     "model": "fias.addrobjtype",
     "pk": 111,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1764,6 +1876,7 @@
     "model": "fias.addrobjtype",
     "pk": 112,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1778,6 +1891,7 @@
     "model": "fias.addrobjtype",
     "pk": 113,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1792,6 +1906,7 @@
     "model": "fias.addrobjtype",
     "pk": 114,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -1806,6 +1921,7 @@
     "model": "fias.addrobjtype",
     "pk": 115,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1820,6 +1936,7 @@
     "model": "fias.addrobjtype",
     "pk": 116,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1834,6 +1951,7 @@
     "model": "fias.addrobjtype",
     "pk": 117,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1848,6 +1966,7 @@
     "model": "fias.addrobjtype",
     "pk": 118,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -1862,6 +1981,7 @@
     "model": "fias.addrobjtype",
     "pk": 119,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1876,6 +1996,7 @@
     "model": "fias.addrobjtype",
     "pk": 120,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1890,6 +2011,7 @@
     "model": "fias.addrobjtype",
     "pk": 121,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
@@ -1904,6 +2026,7 @@
     "model": "fias.addrobjtype",
     "pk": 122,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1918,6 +2041,7 @@
     "model": "fias.addrobjtype",
     "pk": 123,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1932,6 +2056,7 @@
     "model": "fias.addrobjtype",
     "pk": 124,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
@@ -1946,6 +2071,7 @@
     "model": "fias.addrobjtype",
     "pk": 125,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1960,6 +2086,7 @@
     "model": "fias.addrobjtype",
     "pk": 126,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1974,6 +2101,7 @@
     "model": "fias.addrobjtype",
     "pk": 127,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
@@ -1988,6 +2116,7 @@
     "model": "fias.addrobjtype",
     "pk": 128,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2002,6 +2131,7 @@
     "model": "fias.addrobjtype",
     "pk": 129,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2016,6 +2146,7 @@
     "model": "fias.addrobjtype",
     "pk": 130,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2030,6 +2161,7 @@
     "model": "fias.addrobjtype",
     "pk": 131,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2044,6 +2176,7 @@
     "model": "fias.addrobjtype",
     "pk": 132,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2058,6 +2191,7 @@
     "model": "fias.addrobjtype",
     "pk": 133,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2072,6 +2206,7 @@
     "model": "fias.addrobjtype",
     "pk": 134,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2086,6 +2221,7 @@
     "model": "fias.addrobjtype",
     "pk": 135,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2100,6 +2236,7 @@
     "model": "fias.addrobjtype",
     "pk": 136,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2114,6 +2251,7 @@
     "model": "fias.addrobjtype",
     "pk": 137,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
@@ -2128,6 +2266,7 @@
     "model": "fias.addrobjtype",
     "pk": 138,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2142,6 +2281,7 @@
     "model": "fias.addrobjtype",
     "pk": 139,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2156,6 +2296,7 @@
     "model": "fias.addrobjtype",
     "pk": 140,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
@@ -2170,6 +2311,7 @@
     "model": "fias.addrobjtype",
     "pk": 141,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -2184,6 +2326,7 @@
     "model": "fias.addrobjtype",
     "pk": 142,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2198,6 +2341,7 @@
     "model": "fias.addrobjtype",
     "pk": 143,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
@@ -2212,6 +2356,7 @@
     "model": "fias.addrobjtype",
     "pk": 144,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
@@ -2226,6 +2371,7 @@
     "model": "fias.addrobjtype",
     "pk": 145,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2240,6 +2386,7 @@
     "model": "fias.addrobjtype",
     "pk": 146,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
@@ -2254,6 +2401,7 @@
     "model": "fias.addrobjtype",
     "pk": 147,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2268,6 +2416,7 @@
     "model": "fias.addrobjtype",
     "pk": 148,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2282,6 +2431,7 @@
     "model": "fias.addrobjtype",
     "pk": 149,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -2296,6 +2446,7 @@
     "model": "fias.addrobjtype",
     "pk": 150,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2310,6 +2461,7 @@
     "model": "fias.addrobjtype",
     "pk": 151,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
@@ -2324,6 +2476,7 @@
     "model": "fias.addrobjtype",
     "pk": 152,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2338,6 +2491,7 @@
     "model": "fias.addrobjtype",
     "pk": 153,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2352,6 +2506,7 @@
     "model": "fias.addrobjtype",
     "pk": 154,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2366,6 +2521,7 @@
     "model": "fias.addrobjtype",
     "pk": 155,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
@@ -2380,6 +2536,7 @@
     "model": "fias.addrobjtype",
     "pk": 156,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2394,6 +2551,7 @@
     "model": "fias.addrobjtype",
     "pk": 157,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2408,6 +2566,7 @@
     "model": "fias.addrobjtype",
     "pk": 158,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-04-16",
@@ -2422,6 +2581,7 @@
     "model": "fias.addrobjtype",
     "pk": 159,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2436,6 +2596,7 @@
     "model": "fias.addrobjtype",
     "pk": 160,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2020-08-11",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2450,6 +2611,7 @@
     "model": "fias.addrobjtype",
     "pk": 161,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2464,6 +2626,7 @@
     "model": "fias.addrobjtype",
     "pk": 162,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2478,6 +2641,7 @@
     "model": "fias.addrobjtype",
     "pk": 163,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -2492,6 +2656,7 @@
     "model": "fias.addrobjtype",
     "pk": 164,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -2506,6 +2671,7 @@
     "model": "fias.addrobjtype",
     "pk": 165,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
@@ -2520,6 +2686,7 @@
     "model": "fias.addrobjtype",
     "pk": 166,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2534,6 +2701,7 @@
     "model": "fias.addrobjtype",
     "pk": 167,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -2548,6 +2716,7 @@
     "model": "fias.addrobjtype",
     "pk": 168,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2562,6 +2731,7 @@
     "model": "fias.addrobjtype",
     "pk": 169,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
@@ -2576,6 +2746,7 @@
     "model": "fias.addrobjtype",
     "pk": 170,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2590,6 +2761,7 @@
     "model": "fias.addrobjtype",
     "pk": 171,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -2604,6 +2776,7 @@
     "model": "fias.addrobjtype",
     "pk": 172,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
@@ -2618,6 +2791,7 @@
     "model": "fias.addrobjtype",
     "pk": 173,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
@@ -2632,6 +2806,7 @@
     "model": "fias.addrobjtype",
     "pk": 174,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -2646,6 +2821,7 @@
     "model": "fias.addrobjtype",
     "pk": 175,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
@@ -2660,6 +2836,7 @@
     "model": "fias.addrobjtype",
     "pk": 176,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-05-11",
@@ -2674,6 +2851,7 @@
     "model": "fias.addrobjtype",
     "pk": 177,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
@@ -2688,6 +2866,7 @@
     "model": "fias.addrobjtype",
     "pk": 178,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2702,6 +2881,7 @@
     "model": "fias.addrobjtype",
     "pk": 179,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2716,6 +2896,7 @@
     "model": "fias.addrobjtype",
     "pk": 180,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2730,6 +2911,7 @@
     "model": "fias.addrobjtype",
     "pk": 181,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -2744,6 +2926,7 @@
     "model": "fias.addrobjtype",
     "pk": 182,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2758,6 +2941,7 @@
     "model": "fias.addrobjtype",
     "pk": 183,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2772,6 +2956,7 @@
     "model": "fias.addrobjtype",
     "pk": 184,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -2786,6 +2971,7 @@
     "model": "fias.addrobjtype",
     "pk": 185,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
@@ -2800,6 +2986,7 @@
     "model": "fias.addrobjtype",
     "pk": 186,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2814,6 +3001,7 @@
     "model": "fias.addrobjtype",
     "pk": 187,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2828,6 +3016,7 @@
     "model": "fias.addrobjtype",
     "pk": 188,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-05-08",
@@ -2842,6 +3031,7 @@
     "model": "fias.addrobjtype",
     "pk": 189,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2856,6 +3046,7 @@
     "model": "fias.addrobjtype",
     "pk": 190,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
@@ -2870,6 +3061,7 @@
     "model": "fias.addrobjtype",
     "pk": 191,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -2884,6 +3076,7 @@
     "model": "fias.addrobjtype",
     "pk": 192,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2898,6 +3091,7 @@
     "model": "fias.addrobjtype",
     "pk": 193,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2912,6 +3106,7 @@
     "model": "fias.addrobjtype",
     "pk": 194,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
@@ -2926,6 +3121,7 @@
     "model": "fias.addrobjtype",
     "pk": 195,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2940,6 +3136,7 @@
     "model": "fias.addrobjtype",
     "pk": 196,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
@@ -2954,6 +3151,7 @@
     "model": "fias.addrobjtype",
     "pk": 197,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2968,6 +3166,7 @@
     "model": "fias.addrobjtype",
     "pk": 198,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2982,6 +3181,7 @@
     "model": "fias.addrobjtype",
     "pk": 199,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
@@ -2996,6 +3196,7 @@
     "model": "fias.addrobjtype",
     "pk": 200,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
@@ -3010,6 +3211,7 @@
     "model": "fias.addrobjtype",
     "pk": 201,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-05-08",
@@ -3024,6 +3226,7 @@
     "model": "fias.addrobjtype",
     "pk": 202,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -3038,6 +3241,7 @@
     "model": "fias.addrobjtype",
     "pk": 203,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -3052,6 +3256,7 @@
     "model": "fias.addrobjtype",
     "pk": 204,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -3066,6 +3271,7 @@
     "model": "fias.addrobjtype",
     "pk": 205,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -3080,6 +3286,7 @@
     "model": "fias.addrobjtype",
     "pk": 206,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -3094,6 +3301,7 @@
     "model": "fias.addrobjtype",
     "pk": 207,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -3108,6 +3316,7 @@
     "model": "fias.addrobjtype",
     "pk": 208,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -3122,6 +3331,7 @@
     "model": "fias.addrobjtype",
     "pk": 209,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -3136,6 +3346,7 @@
     "model": "fias.addrobjtype",
     "pk": 210,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -3150,6 +3361,7 @@
     "model": "fias.addrobjtype",
     "pk": 211,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -3164,6 +3376,7 @@
     "model": "fias.addrobjtype",
     "pk": 227,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -3178,6 +3391,7 @@
     "model": "fias.addrobjtype",
     "pk": 240,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3192,6 +3406,7 @@
     "model": "fias.addrobjtype",
     "pk": 241,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3206,6 +3421,7 @@
     "model": "fias.addrobjtype",
     "pk": 242,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3220,6 +3436,7 @@
     "model": "fias.addrobjtype",
     "pk": 243,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3234,6 +3451,7 @@
     "model": "fias.addrobjtype",
     "pk": 244,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3248,6 +3466,7 @@
     "model": "fias.addrobjtype",
     "pk": 245,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-12-14",
@@ -3262,6 +3481,7 @@
     "model": "fias.addrobjtype",
     "pk": 246,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3276,6 +3496,7 @@
     "model": "fias.addrobjtype",
     "pk": 247,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -3290,6 +3511,7 @@
     "model": "fias.addrobjtype",
     "pk": 248,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3304,6 +3526,7 @@
     "model": "fias.addrobjtype",
     "pk": 249,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3318,6 +3541,7 @@
     "model": "fias.addrobjtype",
     "pk": 250,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-14",
@@ -3332,6 +3556,7 @@
     "model": "fias.addrobjtype",
     "pk": 251,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3346,6 +3571,7 @@
     "model": "fias.addrobjtype",
     "pk": 252,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-14",
@@ -3360,6 +3586,7 @@
     "model": "fias.addrobjtype",
     "pk": 253,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3374,6 +3601,7 @@
     "model": "fias.addrobjtype",
     "pk": 254,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3388,6 +3616,7 @@
     "model": "fias.addrobjtype",
     "pk": 255,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3402,6 +3631,7 @@
     "model": "fias.addrobjtype",
     "pk": 256,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3416,6 +3646,7 @@
     "model": "fias.addrobjtype",
     "pk": 257,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3430,6 +3661,7 @@
     "model": "fias.addrobjtype",
     "pk": 258,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3444,6 +3676,7 @@
     "model": "fias.addrobjtype",
     "pk": 259,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-12-14",
@@ -3458,6 +3691,7 @@
     "model": "fias.addrobjtype",
     "pk": 260,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3472,6 +3706,7 @@
     "model": "fias.addrobjtype",
     "pk": 261,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -3486,6 +3721,7 @@
     "model": "fias.addrobjtype",
     "pk": 262,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -3500,6 +3736,7 @@
     "model": "fias.addrobjtype",
     "pk": 263,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3514,6 +3751,7 @@
     "model": "fias.addrobjtype",
     "pk": 264,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3528,6 +3766,7 @@
     "model": "fias.addrobjtype",
     "pk": 265,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3542,6 +3781,7 @@
     "model": "fias.addrobjtype",
     "pk": 266,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3556,6 +3796,7 @@
     "model": "fias.addrobjtype",
     "pk": 267,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-14",
@@ -3570,6 +3811,7 @@
     "model": "fias.addrobjtype",
     "pk": 268,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-12-14",
@@ -3584,6 +3826,7 @@
     "model": "fias.addrobjtype",
     "pk": 269,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3598,6 +3841,7 @@
     "model": "fias.addrobjtype",
     "pk": 270,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-15",
@@ -3612,6 +3856,7 @@
     "model": "fias.addrobjtype",
     "pk": 271,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -3626,6 +3871,7 @@
     "model": "fias.addrobjtype",
     "pk": 272,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -3640,6 +3886,7 @@
     "model": "fias.addrobjtype",
     "pk": 273,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-14",
@@ -3654,6 +3901,7 @@
     "model": "fias.addrobjtype",
     "pk": 274,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -3668,6 +3916,7 @@
     "model": "fias.addrobjtype",
     "pk": 275,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -3682,6 +3931,7 @@
     "model": "fias.addrobjtype",
     "pk": 276,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3696,6 +3946,7 @@
     "model": "fias.addrobjtype",
     "pk": 277,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-12-14",
@@ -3710,6 +3961,7 @@
     "model": "fias.addrobjtype",
     "pk": 278,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -3724,6 +3976,7 @@
     "model": "fias.addrobjtype",
     "pk": 279,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3738,6 +3991,7 @@
     "model": "fias.addrobjtype",
     "pk": 280,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3752,6 +4006,7 @@
     "model": "fias.addrobjtype",
     "pk": 281,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3766,6 +4021,7 @@
     "model": "fias.addrobjtype",
     "pk": 282,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3780,6 +4036,7 @@
     "model": "fias.addrobjtype",
     "pk": 283,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-12-14",
@@ -3794,6 +4051,7 @@
     "model": "fias.addrobjtype",
     "pk": 284,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3808,6 +4066,7 @@
     "model": "fias.addrobjtype",
     "pk": 285,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -3822,6 +4081,7 @@
     "model": "fias.addrobjtype",
     "pk": 286,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3836,6 +4096,7 @@
     "model": "fias.addrobjtype",
     "pk": 287,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3850,6 +4111,7 @@
     "model": "fias.addrobjtype",
     "pk": 288,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3864,6 +4126,7 @@
     "model": "fias.addrobjtype",
     "pk": 289,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3878,6 +4141,7 @@
     "model": "fias.addrobjtype",
     "pk": 290,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3892,6 +4156,7 @@
     "model": "fias.addrobjtype",
     "pk": 291,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-14",
@@ -3906,6 +4171,7 @@
     "model": "fias.addrobjtype",
     "pk": 292,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3920,6 +4186,7 @@
     "model": "fias.addrobjtype",
     "pk": 293,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3934,6 +4201,7 @@
     "model": "fias.addrobjtype",
     "pk": 294,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -3948,6 +4216,7 @@
     "model": "fias.addrobjtype",
     "pk": 295,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3962,6 +4231,7 @@
     "model": "fias.addrobjtype",
     "pk": 296,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -3976,6 +4246,7 @@
     "model": "fias.addrobjtype",
     "pk": 297,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3990,6 +4261,7 @@
     "model": "fias.addrobjtype",
     "pk": 298,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -4004,6 +4276,7 @@
     "model": "fias.addrobjtype",
     "pk": 299,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -4016,22 +4289,9 @@
   },
   {
     "model": "fias.addrobjtype",
-    "pk": 300,
-    "fields": {
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2017-02-14",
-      "name": "Садовое товарищество",
-      "shortname": "снт",
-      "desc": "Садовое товарищество",
-      "isactive": false,
-      "level": 7
-    }
-  },
-  {
-    "model": "fias.addrobjtype",
     "pk": 301,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -4046,6 +4306,7 @@
     "model": "fias.addrobjtype",
     "pk": 302,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -4060,6 +4321,7 @@
     "model": "fias.addrobjtype",
     "pk": 303,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -4074,6 +4336,7 @@
     "model": "fias.addrobjtype",
     "pk": 304,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-15",
@@ -4088,6 +4351,7 @@
     "model": "fias.addrobjtype",
     "pk": 305,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -4102,6 +4366,7 @@
     "model": "fias.addrobjtype",
     "pk": 306,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-12-14",
@@ -4116,6 +4381,7 @@
     "model": "fias.addrobjtype",
     "pk": 307,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
@@ -4130,6 +4396,7 @@
     "model": "fias.addrobjtype",
     "pk": 308,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
@@ -4144,6 +4411,7 @@
     "model": "fias.addrobjtype",
     "pk": 309,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
@@ -4158,6 +4426,7 @@
     "model": "fias.addrobjtype",
     "pk": 310,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
@@ -4172,6 +4441,7 @@
     "model": "fias.addrobjtype",
     "pk": 311,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
@@ -4186,6 +4456,7 @@
     "model": "fias.addrobjtype",
     "pk": 312,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
@@ -4200,6 +4471,7 @@
     "model": "fias.addrobjtype",
     "pk": 313,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -4214,6 +4486,7 @@
     "model": "fias.addrobjtype",
     "pk": 314,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
@@ -4228,6 +4501,7 @@
     "model": "fias.addrobjtype",
     "pk": 315,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -4242,6 +4516,7 @@
     "model": "fias.addrobjtype",
     "pk": 316,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
@@ -4256,6 +4531,7 @@
     "model": "fias.addrobjtype",
     "pk": 317,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
@@ -4270,6 +4546,7 @@
     "model": "fias.addrobjtype",
     "pk": 318,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -4284,6 +4561,7 @@
     "model": "fias.addrobjtype",
     "pk": 319,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
@@ -4298,6 +4576,7 @@
     "model": "fias.addrobjtype",
     "pk": 320,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -4312,6 +4591,7 @@
     "model": "fias.addrobjtype",
     "pk": 321,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -4326,6 +4606,7 @@
     "model": "fias.addrobjtype",
     "pk": 322,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2019-01-01",
       "startdate": "2019-01-01",
       "enddate": "2079-06-06",
@@ -4340,6 +4621,7 @@
     "model": "fias.addrobjtype",
     "pk": 323,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-12-14",
@@ -4354,6 +4636,7 @@
     "model": "fias.addrobjtype",
     "pk": 324,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -4368,6 +4651,7 @@
     "model": "fias.addrobjtype",
     "pk": 325,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -4382,6 +4666,7 @@
     "model": "fias.addrobjtype",
     "pk": 326,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -4396,6 +4681,7 @@
     "model": "fias.addrobjtype",
     "pk": 327,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-12-14",
@@ -4410,6 +4696,7 @@
     "model": "fias.addrobjtype",
     "pk": 328,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-14",
@@ -4424,6 +4711,7 @@
     "model": "fias.addrobjtype",
     "pk": 329,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -4438,6 +4726,7 @@
     "model": "fias.addrobjtype",
     "pk": 330,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -4452,6 +4741,7 @@
     "model": "fias.addrobjtype",
     "pk": 331,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -4466,6 +4756,7 @@
     "model": "fias.addrobjtype",
     "pk": 332,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -4480,6 +4771,7 @@
     "model": "fias.addrobjtype",
     "pk": 333,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-05-11",
@@ -4494,6 +4786,7 @@
     "model": "fias.addrobjtype",
     "pk": 334,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-05-11",
@@ -4508,6 +4801,7 @@
     "model": "fias.addrobjtype",
     "pk": 335,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4522,6 +4816,7 @@
     "model": "fias.addrobjtype",
     "pk": 336,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4536,6 +4831,7 @@
     "model": "fias.addrobjtype",
     "pk": 337,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4550,6 +4846,7 @@
     "model": "fias.addrobjtype",
     "pk": 338,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4564,6 +4861,7 @@
     "model": "fias.addrobjtype",
     "pk": 339,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4578,6 +4876,7 @@
     "model": "fias.addrobjtype",
     "pk": 340,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4592,6 +4891,7 @@
     "model": "fias.addrobjtype",
     "pk": 341,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4606,6 +4906,7 @@
     "model": "fias.addrobjtype",
     "pk": 342,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4620,6 +4921,7 @@
     "model": "fias.addrobjtype",
     "pk": 343,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -4634,6 +4936,7 @@
     "model": "fias.addrobjtype",
     "pk": 344,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4648,6 +4951,7 @@
     "model": "fias.addrobjtype",
     "pk": 345,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4662,6 +4966,7 @@
     "model": "fias.addrobjtype",
     "pk": 346,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4676,6 +4981,7 @@
     "model": "fias.addrobjtype",
     "pk": 347,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4690,6 +4996,7 @@
     "model": "fias.addrobjtype",
     "pk": 348,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4704,6 +5011,7 @@
     "model": "fias.addrobjtype",
     "pk": 349,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4718,6 +5026,7 @@
     "model": "fias.addrobjtype",
     "pk": 350,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4732,6 +5041,7 @@
     "model": "fias.addrobjtype",
     "pk": 351,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -4746,6 +5056,7 @@
     "model": "fias.addrobjtype",
     "pk": 352,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4760,6 +5071,7 @@
     "model": "fias.addrobjtype",
     "pk": 353,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4774,6 +5086,7 @@
     "model": "fias.addrobjtype",
     "pk": 354,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -4788,6 +5101,7 @@
     "model": "fias.addrobjtype",
     "pk": 355,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4802,6 +5116,7 @@
     "model": "fias.addrobjtype",
     "pk": 356,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4816,6 +5131,7 @@
     "model": "fias.addrobjtype",
     "pk": 357,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4830,6 +5146,7 @@
     "model": "fias.addrobjtype",
     "pk": 358,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -4844,6 +5161,7 @@
     "model": "fias.addrobjtype",
     "pk": 359,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -4858,6 +5176,7 @@
     "model": "fias.addrobjtype",
     "pk": 360,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4872,6 +5191,7 @@
     "model": "fias.addrobjtype",
     "pk": 361,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -4886,6 +5206,7 @@
     "model": "fias.addrobjtype",
     "pk": 362,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4900,6 +5221,7 @@
     "model": "fias.addrobjtype",
     "pk": 363,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4914,6 +5236,7 @@
     "model": "fias.addrobjtype",
     "pk": 364,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -4928,6 +5251,7 @@
     "model": "fias.addrobjtype",
     "pk": 365,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4942,6 +5266,7 @@
     "model": "fias.addrobjtype",
     "pk": 366,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4956,6 +5281,7 @@
     "model": "fias.addrobjtype",
     "pk": 367,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -4970,6 +5296,7 @@
     "model": "fias.addrobjtype",
     "pk": 368,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4984,6 +5311,7 @@
     "model": "fias.addrobjtype",
     "pk": 369,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4998,6 +5326,7 @@
     "model": "fias.addrobjtype",
     "pk": 370,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5012,6 +5341,7 @@
     "model": "fias.addrobjtype",
     "pk": 371,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5026,6 +5356,7 @@
     "model": "fias.addrobjtype",
     "pk": 372,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5040,6 +5371,7 @@
     "model": "fias.addrobjtype",
     "pk": 373,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5054,6 +5386,7 @@
     "model": "fias.addrobjtype",
     "pk": 374,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5068,6 +5401,7 @@
     "model": "fias.addrobjtype",
     "pk": 375,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -5082,6 +5416,7 @@
     "model": "fias.addrobjtype",
     "pk": 376,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-01-27",
@@ -5096,6 +5431,7 @@
     "model": "fias.addrobjtype",
     "pk": 377,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -5110,6 +5446,7 @@
     "model": "fias.addrobjtype",
     "pk": 378,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5124,6 +5461,7 @@
     "model": "fias.addrobjtype",
     "pk": 379,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5138,6 +5476,7 @@
     "model": "fias.addrobjtype",
     "pk": 380,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -5152,6 +5491,7 @@
     "model": "fias.addrobjtype",
     "pk": 381,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2020-08-11",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -5166,6 +5506,7 @@
     "model": "fias.addrobjtype",
     "pk": 382,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5180,6 +5521,7 @@
     "model": "fias.addrobjtype",
     "pk": 383,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5194,6 +5536,7 @@
     "model": "fias.addrobjtype",
     "pk": 384,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5208,6 +5551,7 @@
     "model": "fias.addrobjtype",
     "pk": 385,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5222,6 +5566,7 @@
     "model": "fias.addrobjtype",
     "pk": 386,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5236,6 +5581,7 @@
     "model": "fias.addrobjtype",
     "pk": 387,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5250,6 +5596,7 @@
     "model": "fias.addrobjtype",
     "pk": 388,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5264,6 +5611,7 @@
     "model": "fias.addrobjtype",
     "pk": 389,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5278,6 +5626,7 @@
     "model": "fias.addrobjtype",
     "pk": 390,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5292,6 +5641,7 @@
     "model": "fias.addrobjtype",
     "pk": 391,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5306,6 +5656,7 @@
     "model": "fias.addrobjtype",
     "pk": 392,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5320,6 +5671,7 @@
     "model": "fias.addrobjtype",
     "pk": 393,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5334,6 +5686,7 @@
     "model": "fias.addrobjtype",
     "pk": 394,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5348,6 +5701,7 @@
     "model": "fias.addrobjtype",
     "pk": 395,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5362,6 +5716,7 @@
     "model": "fias.addrobjtype",
     "pk": 396,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5376,6 +5731,7 @@
     "model": "fias.addrobjtype",
     "pk": 397,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5390,6 +5746,7 @@
     "model": "fias.addrobjtype",
     "pk": 398,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5404,6 +5761,7 @@
     "model": "fias.addrobjtype",
     "pk": 399,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5418,6 +5776,7 @@
     "model": "fias.addrobjtype",
     "pk": 400,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5432,6 +5791,7 @@
     "model": "fias.addrobjtype",
     "pk": 401,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5446,6 +5806,7 @@
     "model": "fias.addrobjtype",
     "pk": 402,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -5460,6 +5821,7 @@
     "model": "fias.addrobjtype",
     "pk": 403,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5474,6 +5836,7 @@
     "model": "fias.addrobjtype",
     "pk": 404,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5488,6 +5851,7 @@
     "model": "fias.addrobjtype",
     "pk": 405,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -5502,6 +5866,7 @@
     "model": "fias.addrobjtype",
     "pk": 406,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5516,6 +5881,7 @@
     "model": "fias.addrobjtype",
     "pk": 407,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5530,6 +5896,7 @@
     "model": "fias.addrobjtype",
     "pk": 408,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5544,6 +5911,7 @@
     "model": "fias.addrobjtype",
     "pk": 409,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5558,6 +5926,7 @@
     "model": "fias.addrobjtype",
     "pk": 410,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -5572,6 +5941,7 @@
     "model": "fias.addrobjtype",
     "pk": 411,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -5586,6 +5956,7 @@
     "model": "fias.addrobjtype",
     "pk": 412,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5600,6 +5971,7 @@
     "model": "fias.addrobjtype",
     "pk": 413,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5614,6 +5986,7 @@
     "model": "fias.addrobjtype",
     "pk": 414,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -5628,6 +6001,7 @@
     "model": "fias.addrobjtype",
     "pk": 416,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -5642,6 +6016,7 @@
     "model": "fias.addrobjtype",
     "pk": 417,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -5656,6 +6031,7 @@
     "model": "fias.addrobjtype",
     "pk": 418,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -5670,6 +6046,7 @@
     "model": "fias.addrobjtype",
     "pk": 419,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -5684,6 +6061,7 @@
     "model": "fias.addrobjtype",
     "pk": 420,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -5698,6 +6076,7 @@
     "model": "fias.addrobjtype",
     "pk": 421,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -5712,6 +6091,7 @@
     "model": "fias.addrobjtype",
     "pk": 422,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2019-05-01",
       "startdate": "2019-05-01",
       "enddate": "2079-06-06",
@@ -5726,6 +6106,7 @@
     "model": "fias.addrobjtype",
     "pk": 423,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2015-11-05",
       "enddate": "2022-09-30",
@@ -5740,6 +6121,7 @@
     "model": "fias.addrobjtype",
     "pk": 425,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2020-10-15",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -5754,6 +6136,7 @@
     "model": "fias.addrobjtype",
     "pk": 426,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2021-04-08",
       "enddate": "2022-09-30",
@@ -5768,6 +6151,7 @@
     "model": "fias.addrobjtype",
     "pk": 427,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2021-12-10",
       "startdate": "2021-12-10",
       "enddate": "2079-06-06",
@@ -5782,6 +6166,7 @@
     "model": "fias.addrobjtype",
     "pk": 428,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-14",
@@ -5796,6 +6181,7 @@
     "model": "fias.addrobjtype",
     "pk": 429,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5810,6 +6196,7 @@
     "model": "fias.addrobjtype",
     "pk": 430,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5824,6 +6211,7 @@
     "model": "fias.addrobjtype",
     "pk": 431,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5838,6 +6226,7 @@
     "model": "fias.addrobjtype",
     "pk": 432,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5852,6 +6241,7 @@
     "model": "fias.addrobjtype",
     "pk": 433,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5866,6 +6256,7 @@
     "model": "fias.addrobjtype",
     "pk": 434,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5880,6 +6271,7 @@
     "model": "fias.addrobjtype",
     "pk": 435,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5894,6 +6286,7 @@
     "model": "fias.addrobjtype",
     "pk": 436,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5908,6 +6301,7 @@
     "model": "fias.addrobjtype",
     "pk": 437,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5922,6 +6316,7 @@
     "model": "fias.addrobjtype",
     "pk": 438,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5936,6 +6331,7 @@
     "model": "fias.addrobjtype",
     "pk": 439,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5950,6 +6346,7 @@
     "model": "fias.addrobjtype",
     "pk": 440,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5964,6 +6361,7 @@
     "model": "fias.addrobjtype",
     "pk": 441,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5978,6 +6376,7 @@
     "model": "fias.addrobjtype",
     "pk": 442,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5992,6 +6391,7 @@
     "model": "fias.addrobjtype",
     "pk": 443,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -6006,6 +6406,7 @@
     "model": "fias.addrobjtype",
     "pk": 444,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -6020,6 +6421,7 @@
     "model": "fias.addrobjtype",
     "pk": 445,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -6034,6 +6436,7 @@
     "model": "fias.addrobjtype",
     "pk": 446,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -6048,6 +6451,7 @@
     "model": "fias.addrobjtype",
     "pk": 447,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -6062,6 +6466,7 @@
     "model": "fias.addrobjtype",
     "pk": 448,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -6076,6 +6481,7 @@
     "model": "fias.addrobjtype",
     "pk": 449,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -6090,6 +6496,7 @@
     "model": "fias.addrobjtype",
     "pk": 450,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -6104,6 +6511,7 @@
     "model": "fias.addrobjtype",
     "pk": 451,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -6118,6 +6526,7 @@
     "model": "fias.addrobj",
     "pk": 1456532,
     "fields": {
+      "ver": 20221129,
       "updatedate": "2022-11-28",
       "startdate": "2022-11-28",
       "enddate": "2079-06-06",
@@ -6134,6 +6543,7 @@
     "model": "fias.addrobj",
     "pk": 1456865,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-08-12",
       "startdate": "2022-08-12",
       "enddate": "2079-06-06",
@@ -6150,6 +6560,7 @@
     "model": "fias.addrobj",
     "pk": 1460768,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2011-09-13",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6166,6 +6577,7 @@
     "model": "fias.addrobj",
     "pk": 157289164,
     "fields": {
+      "ver": 20221129,
       "updatedate": "2022-11-28",
       "startdate": "2022-11-28",
       "enddate": "2079-06-06",
@@ -6182,6 +6594,7 @@
     "model": "fias.addrobjparam",
     "pk": 22504289,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2019-07-16",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6195,6 +6608,7 @@
     "model": "fias.addrobjparam",
     "pk": 22504295,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2019-07-16",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6208,6 +6622,7 @@
     "model": "fias.addrobjparam",
     "pk": 22510492,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2019-07-16",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6221,6 +6636,7 @@
     "model": "fias.addrobjparam",
     "pk": 22510497,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2019-07-16",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6234,6 +6650,7 @@
     "model": "fias.addrobjparam",
     "pk": 22584648,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2011-09-13",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6247,6 +6664,7 @@
     "model": "fias.addrobjparam",
     "pk": 648132340,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2011-09-13",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6260,6 +6678,7 @@
     "model": "fias.addrobjparam",
     "pk": 1362268938,
     "fields": {
+      "ver": 20221129,
       "updatedate": "2022-11-28",
       "startdate": "2022-11-28",
       "enddate": "2079-06-06",
@@ -6273,6 +6692,7 @@
     "model": "fias.addrobjparam",
     "pk": 1362268939,
     "fields": {
+      "ver": 20221129,
       "updatedate": "2022-11-28",
       "startdate": "2022-11-28",
       "enddate": "2079-06-06",
@@ -6284,21 +6704,9 @@
   },
   {
     "model": "fias.housetype",
-    "pk": 1,
-    "fields": {
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2015-11-05",
-      "name": "Владение",
-      "shortname": "влд.",
-      "desc": "Владение",
-      "isactive": false
-    }
-  },
-  {
-    "model": "fias.housetype",
     "pk": 2,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6310,21 +6718,9 @@
   },
   {
     "model": "fias.housetype",
-    "pk": 3,
-    "fields": {
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2015-11-05",
-      "name": "Домовладение",
-      "shortname": "двлд.",
-      "desc": "Домовладение",
-      "isactive": false
-    }
-  },
-  {
-    "model": "fias.housetype",
     "pk": 4,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6338,6 +6734,7 @@
     "model": "fias.housetype",
     "pk": 5,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6351,6 +6748,7 @@
     "model": "fias.housetype",
     "pk": 6,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6364,6 +6762,7 @@
     "model": "fias.housetype",
     "pk": 7,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6377,6 +6776,7 @@
     "model": "fias.housetype",
     "pk": 8,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6388,21 +6788,9 @@
   },
   {
     "model": "fias.housetype",
-    "pk": 9,
-    "fields": {
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2015-12-25",
-      "name": "Литера",
-      "shortname": "литера",
-      "desc": "Литера",
-      "isactive": false
-    }
-  },
-  {
-    "model": "fias.housetype",
     "pk": 10,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6413,61 +6801,10 @@
     }
   },
   {
-    "model": "fias.housetype",
-    "pk": 11,
-    "fields": {
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2015-11-05",
-      "name": "Подвал",
-      "shortname": "подв.",
-      "desc": "Подвал",
-      "isactive": false
-    }
-  },
-  {
-    "model": "fias.housetype",
-    "pk": 12,
-    "fields": {
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2015-11-05",
-      "name": "Котельная",
-      "shortname": "кот.",
-      "desc": "Котельная",
-      "isactive": false
-    }
-  },
-  {
-    "model": "fias.housetype",
-    "pk": 13,
-    "fields": {
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2015-11-05",
-      "name": "Погреб",
-      "shortname": "п-б",
-      "desc": "Погреб",
-      "isactive": false
-    }
-  },
-  {
-    "model": "fias.housetype",
-    "pk": 14,
-    "fields": {
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2015-11-05",
-      "name": "Объект незавершенного строительства",
-      "shortname": "ОНС",
-      "desc": "Объект незавершенного строительства",
-      "isactive": false
-    }
-  },
-  {
     "model": "fias.addhousetype",
     "pk": 1,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-12-25",
       "startdate": "2015-12-25",
       "enddate": "2079-06-06",
@@ -6481,6 +6818,7 @@
     "model": "fias.addhousetype",
     "pk": 2,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-12-25",
       "startdate": "2015-12-25",
       "enddate": "2079-06-06",
@@ -6494,6 +6832,7 @@
     "model": "fias.addhousetype",
     "pk": 3,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2015-12-25",
       "startdate": "2015-12-25",
       "enddate": "2079-06-06",
@@ -6504,22 +6843,10 @@
     }
   },
   {
-    "model": "fias.addhousetype",
-    "pk": 4,
-    "fields": {
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2015-12-25",
-      "name": "Литера",
-      "shortname": "литера",
-      "desc": "Литера",
-      "isactive": false
-    }
-  },
-  {
     "model": "fias.house",
     "pk": 19273112,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2019-07-16",
       "startdate": "2012-07-23",
       "enddate": "2079-06-06",
@@ -6539,6 +6866,7 @@
     "model": "fias.house",
     "pk": 157269039,
     "fields": {
+      "ver": 20221129,
       "updatedate": "2022-11-28",
       "startdate": "2022-11-28",
       "enddate": "2079-06-06",
@@ -6558,6 +6886,7 @@
     "model": "fias.houseparam",
     "pk": 119564345,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2019-07-16",
       "startdate": "2012-07-23",
       "enddate": "2079-06-06",
@@ -6571,6 +6900,7 @@
     "model": "fias.houseparam",
     "pk": 119564350,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2019-07-16",
       "startdate": "2012-07-23",
       "enddate": "2079-06-06",
@@ -6584,6 +6914,7 @@
     "model": "fias.houseparam",
     "pk": 668832883,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2020-08-15",
       "startdate": "2020-08-15",
       "enddate": "2079-06-06",
@@ -6597,6 +6928,7 @@
     "model": "fias.houseparam",
     "pk": 1346933307,
     "fields": {
+      "ver": 20221129,
       "updatedate": "2022-11-28",
       "startdate": "2022-11-28",
       "enddate": "2079-06-06",
@@ -6610,6 +6942,7 @@
     "model": "fias.houseparam",
     "pk": 1346933308,
     "fields": {
+      "ver": 20221129,
       "updatedate": "2022-11-28",
       "startdate": "2022-11-28",
       "enddate": "2079-06-06",
@@ -6623,6 +6956,7 @@
     "model": "fias.admhierarchy",
     "pk": 84785687,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6636,6 +6970,7 @@
     "model": "fias.admhierarchy",
     "pk": 84786087,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6649,6 +6984,7 @@
     "model": "fias.admhierarchy",
     "pk": 84786097,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2012-07-23",
       "startdate": "2012-07-23",
       "enddate": "2079-06-06",
@@ -6662,6 +6998,7 @@
     "model": "fias.admhierarchy",
     "pk": 123607639,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2022-08-12",
       "startdate": "2022-08-12",
       "enddate": "2079-06-06",
@@ -6675,6 +7012,7 @@
     "model": "fias.admhierarchy",
     "pk": 184786086,
     "fields": {
+      "ver": 20221129,
       "updatedate": "2022-11-28",
       "startdate": "2022-11-28",
       "enddate": "2079-06-06",
@@ -6688,6 +7026,7 @@
     "model": "fias.admhierarchy",
     "pk": 184786090,
     "fields": {
+      "ver": 20221129,
       "updatedate": "2022-11-28",
       "startdate": "2022-11-28",
       "enddate": "2079-06-06",
@@ -6701,6 +7040,7 @@
     "model": "fias.munhierarchy",
     "pk": 107886302,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6714,6 +7054,7 @@
     "model": "fias.munhierarchy",
     "pk": 107886328,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6727,6 +7068,7 @@
     "model": "fias.munhierarchy",
     "pk": 107886329,
     "fields": {
+      "ver": 20221125,
       "updatedate": "2012-07-23",
       "startdate": "2012-07-23",
       "enddate": "2079-06-06",
@@ -6740,6 +7082,7 @@
     "model": "fias.munhierarchy",
     "pk": 107886334,
     "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6753,6 +7096,7 @@
     "model": "fias.munhierarchy",
     "pk": 184786086,
     "fields": {
+      "ver": 20221129,
       "updatedate": "2022-11-28",
       "startdate": "2022-11-28",
       "enddate": "2079-06-06",
@@ -6766,6 +7110,7 @@
     "model": "fias.munhierarchy",
     "pk": 184786090,
     "fields": {
+      "ver": 20221129,
       "updatedate": "2022-11-28",
       "startdate": "2022-11-28",
       "enddate": "2079-06-06",
@@ -6896,8 +7241,31 @@
     }
   },
   {
+    "model": "target.status",
+    "pk": 1,
+    "fields": {
+      "ver": 20221125
+    }
+  },
+  {
     "model": "target.addrobj",
     "pk": 1,
+    "fields": {
+      "region": "99",
+      "owner_adm": 1460768,
+      "owner_mun": 1460768,
+      "aolevel": 8,
+      "objectid": 1456531,
+      "objectguid": "3d855628-80ed-4ca5-a9de-378a76876ace",
+      "name": "Студенческая",
+      "typename": "ул",
+      "okato": "55000000000",
+      "oktmo": "55000000"
+    }
+  },
+  {
+    "model": "target.addrobj",
+    "pk": 2,
     "fields": {
       "region": "99",
       "owner_adm": 1460768,
@@ -6913,7 +7281,7 @@
   },
   {
     "model": "target.addrobj",
-    "pk": 2,
+    "pk": 3,
     "fields": {
       "region": "99",
       "owner_adm": 1460768,
@@ -6929,7 +7297,7 @@
   },
   {
     "model": "target.addrobj",
-    "pk": 3,
+    "pk": 4,
     "fields": {
       "region": "99",
       "owner_adm": 0,
@@ -6965,26 +7333,10 @@
   },
   {
     "model": "target.housetype",
-    "pk": 1,
-    "fields": {
-      "name": "Владение",
-      "shortname": "влд."
-    }
-  },
-  {
-    "model": "target.housetype",
     "pk": 2,
     "fields": {
       "name": "Дом",
       "shortname": "д."
-    }
-  },
-  {
-    "model": "target.housetype",
-    "pk": 3,
-    "fields": {
-      "name": "Домовладение",
-      "shortname": "двлд."
     }
   },
   {
@@ -7029,50 +7381,10 @@
   },
   {
     "model": "target.housetype",
-    "pk": 9,
-    "fields": {
-      "name": "Литера",
-      "shortname": "литера"
-    }
-  },
-  {
-    "model": "target.housetype",
     "pk": 10,
     "fields": {
       "name": "Корпус",
       "shortname": "к."
-    }
-  },
-  {
-    "model": "target.housetype",
-    "pk": 11,
-    "fields": {
-      "name": "Подвал",
-      "shortname": "подв."
-    }
-  },
-  {
-    "model": "target.housetype",
-    "pk": 12,
-    "fields": {
-      "name": "Котельная",
-      "shortname": "кот."
-    }
-  },
-  {
-    "model": "target.housetype",
-    "pk": 13,
-    "fields": {
-      "name": "Погреб",
-      "shortname": "п-б"
-    }
-  },
-  {
-    "model": "target.housetype",
-    "pk": 14,
-    "fields": {
-      "name": "Объект незавершенного строительства",
-      "shortname": "ОНС"
     }
   },
   {
@@ -7097,14 +7409,6 @@
     "fields": {
       "name": "Сооружение",
       "shortname": "соор."
-    }
-  },
-  {
-    "model": "target.houseaddtype",
-    "pk": 4,
-    "fields": {
-      "name": "Литера",
-      "shortname": "литера"
     }
   }
 ]

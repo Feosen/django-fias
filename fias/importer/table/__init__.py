@@ -18,10 +18,10 @@ class BadTableNameError(Exception):
 class TableFactory(object):
 
     @staticmethod
-    def parse(filename: str) -> Union[Table, None]:
+    def parse(filename: str, extra: dict) -> Union[Table, None]:
         m = table_xml_re.match(filename)
         if m is not None:
             cls = XMLTable
-            return cls(filename=filename, **m.groupdict())
+            return cls(filename=filename, **m.groupdict(), **extra)
 
         return None

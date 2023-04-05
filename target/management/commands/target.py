@@ -66,7 +66,7 @@ class Command(BaseCommandCompatible):
 
         if update:
             try:
-                update_data(truncate=truncate, keep_indexes=keep_indexes)
+                update_data(keep_indexes=keep_indexes)
             except TableListLoadingError as e:
                 self.error(str(e))
 

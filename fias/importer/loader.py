@@ -7,10 +7,12 @@ from typing import List
 
 from django import db
 from django.conf import settings
+from django.core.exceptions import FieldDoesNotExist
 from django.db import IntegrityError
 from django.db.models import Model
 from progress.helpers import WritelnMixin
 
+from fias.config import REMOVE_NOT_ACTUAL
 from fias.importer.signals import (
     pre_import_table, post_import_table
 )
@@ -156,6 +158,13 @@ class TableLoader(object):
         if objects:
             self.create(table, list(objects), bar=bar)
 
+        if REMOVE_NOT_ACTUAL:
+            try:
+                _ = table.model._meta.get_field('isactive')
+                table.model.objects.filter(isactive=False).delete()
+            except FieldDoesNotExist:
+                pass
+
         bar.update(loaded=self.counter, skipped=self.skip_counter)
         bar.finish()
 
@@ -196,6 +205,13 @@ class TableUpdater(TableLoader):
 
         if objects:
             self.create(table, list(objects), bar=bar)
+
+        if REMOVE_NOT_ACTUAL:
+            try:
+                _ = model._meta.get_field('isactive')
+                model.objects.filter(isactive=False).delete()
+            except FieldDoesNotExist:
+                pass
 
         bar.update(loaded=self.counter, updated=self.upd_counter, skipped=self.skip_counter)
         # TODO: finish

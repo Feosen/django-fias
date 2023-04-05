@@ -28,6 +28,7 @@ class Manager(models.Manager):
 
 
 class AbstractModel(models.Model):
+    ver = models.IntegerField(verbose_name='версия')
     updatedate = models.DateField(verbose_name='дата внесения (обновления) записи')
     startdate = models.DateField(verbose_name='начало действия записи')
     enddate = models.DateField(verbose_name='окончание действия записи')
@@ -41,7 +42,7 @@ class AbstractModel(models.Model):
 class AbstractObj(AbstractModel):
     region = models.CharField(verbose_name='код региона', max_length=2)
     isactive = models.BooleanField(verbose_name='статус активности')
-    isactual = models.BooleanField(verbose_name='Статус актуальности')
+    isactual = models.BooleanField(verbose_name='статус актуальности')
     objectid = models.BigIntegerField(verbose_name='глобальный уникальный идентификатор объекта', primary_key=True)
     objectguid = models.UUIDField(verbose_name='глобальный уникальный идентификатор адресного объекта')
 

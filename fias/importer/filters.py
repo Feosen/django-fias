@@ -10,6 +10,11 @@ from fias.models.common import AbstractObj
 from fias.models.hierarchy import AbstractHierarchy
 
 
+def filter_hierarchy_is_isactual(item: AbstractObj) -> Union[AbstractObj, None]:
+    if item.isactual:
+        return item
+
+
 def filter_hierarchy_is_active(item: AbstractHierarchy) -> Union[AbstractHierarchy, None]:
     if item.isactive:
         return item

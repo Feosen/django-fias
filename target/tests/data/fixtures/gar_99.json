@@ -1,8 +1,9 @@
 [
-{
-   "model": "fias.paramtype",
-   "pk": 1,
-   "fields": {
+  {
+    "model": "fias.paramtype",
+    "pk": 1,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2018-06-15",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -10,12 +11,13 @@
       "shortname": null,
       "desc": "ИФНС ФЛ",
       "isactive": true
-   }
-},
-{
-   "model": "fias.paramtype",
-   "pk": 2,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.paramtype",
+    "pk": 2,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2018-06-15",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -23,12 +25,13 @@
       "shortname": null,
       "desc": "ИФНС ЮЛ",
       "isactive": true
-   }
-},
-{
-   "model": "fias.paramtype",
-   "pk": 3,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.paramtype",
+    "pk": 3,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2018-06-15",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -36,12 +39,13 @@
       "shortname": null,
       "desc": "Территориальный участок ИФНС ФЛ",
       "isactive": true
-   }
-},
-{
-   "model": "fias.paramtype",
-   "pk": 4,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.paramtype",
+    "pk": 4,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2018-06-15",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -49,12 +53,13 @@
       "shortname": null,
       "desc": "Территориальный участок ИФНС ЮЛ",
       "isactive": true
-   }
-},
-{
-   "model": "fias.paramtype",
-   "pk": 5,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.paramtype",
+    "pk": 5,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2018-06-15",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -62,12 +67,13 @@
       "shortname": null,
       "desc": "Информация о почтовом индексе",
       "isactive": true
-   }
-},
-{
-   "model": "fias.paramtype",
-   "pk": 6,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.paramtype",
+    "pk": 6,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2018-06-19",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -75,12 +81,13 @@
       "shortname": null,
       "desc": "ОКАТО",
       "isactive": true
-   }
-},
-{
-   "model": "fias.paramtype",
-   "pk": 7,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.paramtype",
+    "pk": 7,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2018-06-19",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -88,12 +95,13 @@
       "shortname": null,
       "desc": "OKTMO",
       "isactive": true
-   }
-},
-{
-   "model": "fias.paramtype",
-   "pk": 8,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.paramtype",
+    "pk": 8,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2018-06-19",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -101,12 +109,13 @@
       "shortname": null,
       "desc": "Кадастровый номер",
       "isactive": true
-   }
-},
-{
-   "model": "fias.paramtype",
-   "pk": 10,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.paramtype",
+    "pk": 10,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2018-06-21",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -114,12 +123,13 @@
       "shortname": null,
       "desc": "Код адресного объекта одной строкой с признаком актуальности",
       "isactive": true
-   }
-},
-{
-   "model": "fias.paramtype",
-   "pk": 11,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.paramtype",
+    "pk": 11,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2018-06-21",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -127,12 +137,13 @@
       "shortname": null,
       "desc": "Код адресного объекта одной строкой без признака актуальности",
       "isactive": true
-   }
-},
-{
-   "model": "fias.paramtype",
-   "pk": 12,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.paramtype",
+    "pk": 12,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2018-06-21",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -140,12 +151,13 @@
       "shortname": null,
       "desc": "Код региона",
       "isactive": true
-   }
-},
-{
-   "model": "fias.paramtype",
-   "pk": 13,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.paramtype",
+    "pk": 13,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2018-11-12",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -153,12 +165,13 @@
       "shortname": null,
       "desc": "Реестровый номер адресного объекта",
       "isactive": true
-   }
-},
-{
-   "model": "fias.paramtype",
-   "pk": 14,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.paramtype",
+    "pk": 14,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2018-12-14",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -166,12 +179,13 @@
       "shortname": null,
       "desc": "Признак в каком делении присвоен адрес, муниципальном/административном",
       "isactive": true
-   }
-},
-{
-   "model": "fias.paramtype",
-   "pk": 15,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.paramtype",
+    "pk": 15,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2018-12-14",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
@@ -179,12 +193,13 @@
       "shortname": null,
       "desc": "Порядковый номер обьекта в рамках родителя",
       "isactive": true
-   }
-},
-{
-   "model": "fias.paramtype",
-   "pk": 16,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.paramtype",
+    "pk": 16,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2019-12-04",
       "startdate": "2019-12-04",
       "enddate": "2079-06-06",
@@ -192,12 +207,13 @@
       "shortname": null,
       "desc": "Официальное наименование объекта(Региона)",
       "isactive": true
-   }
-},
-{
-   "model": "fias.paramtype",
-   "pk": 17,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.paramtype",
+    "pk": 17,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2021-09-03",
       "startdate": "2021-09-03",
       "enddate": "2079-06-06",
@@ -205,12 +221,13 @@
       "shortname": null,
       "desc": "Статус обслуживания Почтой России",
       "isactive": true
-   }
-},
-{
-   "model": "fias.paramtype",
-   "pk": 18,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.paramtype",
+    "pk": 18,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-03-25",
       "startdate": "2022-03-25",
       "enddate": "2079-06-06",
@@ -218,12 +235,13 @@
       "shortname": null,
       "desc": "Признак корректности объекта (не дубль)",
       "isactive": true
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 2,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 2,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -232,12 +250,13 @@
       "desc": "Автономная область",
       "isactive": true,
       "level": 1
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 3,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 3,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -246,12 +265,13 @@
       "desc": "Автономный округ",
       "isactive": true,
       "level": 1
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 4,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 4,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -260,12 +280,13 @@
       "desc": "Автономный округ",
       "isactive": true,
       "level": 1
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 5,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 5,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -274,12 +295,13 @@
       "desc": "Автономная область",
       "isactive": true,
       "level": 1
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 6,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 6,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -288,12 +310,13 @@
       "desc": "Город",
       "isactive": true,
       "level": 1
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 7,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 7,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -302,12 +325,13 @@
       "desc": "Город",
       "isactive": true,
       "level": 1
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 8,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 8,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -316,12 +340,13 @@
       "desc": "Город федерального значения",
       "isactive": true,
       "level": 1
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 9,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 9,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -330,12 +355,13 @@
       "desc": "Край",
       "isactive": true,
       "level": 1
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 10,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 10,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -344,12 +370,13 @@
       "desc": "Область",
       "isactive": true,
       "level": 1
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 11,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 11,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -358,12 +385,13 @@
       "desc": "Область",
       "isactive": true,
       "level": 1
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 12,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 12,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -372,12 +400,13 @@
       "desc": "Округ",
       "isactive": true,
       "level": 1
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 13,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 13,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -386,12 +415,13 @@
       "desc": "Республика",
       "isactive": true,
       "level": 1
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 14,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 14,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -400,12 +430,13 @@
       "desc": "Республика",
       "isactive": true,
       "level": 1
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 15,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 15,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -414,12 +445,13 @@
       "desc": "Чувашия",
       "isactive": true,
       "level": 1
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 16,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 16,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -428,12 +460,13 @@
       "desc": "Автономный округ",
       "isactive": true,
       "level": 13
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 17,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 17,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -442,12 +475,13 @@
       "desc": "Автономный округ",
       "isactive": true,
       "level": 2
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 18,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 18,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2015-11-05",
@@ -456,12 +490,13 @@
       "desc": "Внутригородская территория",
       "isactive": true,
       "level": 2
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 19,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 19,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2015-11-05",
@@ -470,12 +505,13 @@
       "desc": "Городской округ",
       "isactive": true,
       "level": 2
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 20,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 20,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2015-11-05",
@@ -484,12 +520,13 @@
       "desc": "Муниципальный район",
       "isactive": true,
       "level": 2
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 21,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 21,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -498,12 +535,13 @@
       "desc": "Поселение",
       "isactive": true,
       "level": 2
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 22,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 22,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -512,12 +550,13 @@
       "desc": "Поселение",
       "isactive": true,
       "level": 2
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 23,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 23,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -526,12 +565,13 @@
       "desc": "Район",
       "isactive": true,
       "level": 2
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 24,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 24,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -540,12 +580,13 @@
       "desc": "Территория",
       "isactive": true,
       "level": 2
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 25,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 25,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -554,12 +595,13 @@
       "desc": "Улус",
       "isactive": true,
       "level": 2
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 26,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 26,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -568,12 +610,13 @@
       "desc": "Улус",
       "isactive": true,
       "level": 2
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 27,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 27,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -582,12 +625,13 @@
       "desc": "Волость",
       "isactive": true,
       "level": 5
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 28,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 28,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -596,12 +640,13 @@
       "desc": "Город",
       "isactive": true,
       "level": 5
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 29,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 29,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -610,12 +655,13 @@
       "desc": "Город",
       "isactive": true,
       "level": 5
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 30,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 30,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -624,12 +670,13 @@
       "desc": "Дачный поселок",
       "isactive": true,
       "level": 5
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 31,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 31,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -638,12 +685,13 @@
       "desc": "Курортный поселок",
       "isactive": true,
       "level": 5
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 32,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 32,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -652,12 +700,13 @@
       "desc": "Массив",
       "isactive": true,
       "level": 5
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 33,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 33,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -666,12 +715,13 @@
       "desc": "Поселок",
       "isactive": true,
       "level": 5
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 34,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 34,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -680,12 +730,13 @@
       "desc": "Почтовое отделение",
       "isactive": true,
       "level": 5
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 35,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 35,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -694,12 +745,13 @@
       "desc": "Поселок городского типа",
       "isactive": true,
       "level": 5
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 36,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 36,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -708,12 +760,13 @@
       "desc": "Поселок городского типа",
       "isactive": true,
       "level": 5
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 37,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 37,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -722,12 +775,13 @@
       "desc": "Рабочий поселок",
       "isactive": true,
       "level": 5
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 38,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 38,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -736,12 +790,13 @@
       "desc": "Сельская администрация",
       "isactive": true,
       "level": 5
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 39,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 39,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -750,12 +805,13 @@
       "desc": "Сельское муниципальное образование",
       "isactive": true,
       "level": 5
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 40,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 40,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -764,12 +820,13 @@
       "desc": "Сельский округ",
       "isactive": true,
       "level": 5
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 41,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 41,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -778,12 +835,13 @@
       "desc": "Сельское поселение",
       "isactive": true,
       "level": 5
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 42,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 42,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -792,12 +850,13 @@
       "desc": "Сельсовет",
       "isactive": true,
       "level": 5
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 43,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 43,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -806,12 +865,13 @@
       "desc": "Территория",
       "isactive": true,
       "level": 5
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 44,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 44,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -820,12 +880,13 @@
       "desc": "Район",
       "isactive": true,
       "level": 14
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 45,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 45,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -834,12 +895,13 @@
       "desc": "Территория",
       "isactive": true,
       "level": 14
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 46,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 46,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -848,12 +910,13 @@
       "desc": "Аал",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 47,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 47,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -862,12 +925,13 @@
       "desc": "Автодорога",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 48,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 48,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -876,12 +940,13 @@
       "desc": "Арбан",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 49,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 49,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -890,12 +955,13 @@
       "desc": "Аул",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 50,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 50,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -904,12 +970,13 @@
       "desc": "Волость",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 51,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 51,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -918,12 +985,13 @@
       "desc": "Выселки(ок)",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 52,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 52,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -932,12 +1000,13 @@
       "desc": "Город",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 53,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 53,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -946,12 +1015,13 @@
       "desc": "Городок",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 54,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 54,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -960,12 +1030,13 @@
       "desc": "Городской поселок",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 55,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 55,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -974,12 +1045,13 @@
       "desc": "Деревня",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 56,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 56,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2019-02-14",
@@ -988,12 +1060,13 @@
       "desc": "Дачный поселок",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 57,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 57,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -1002,12 +1075,13 @@
       "desc": "Дачный поселок",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 58,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 58,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -1016,12 +1090,13 @@
       "desc": "Железнодорожная будка",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 59,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 59,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -1030,12 +1105,13 @@
       "desc": "Железнодорожный блокпост",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 60,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 60,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -1044,12 +1120,13 @@
       "desc": "Железнодорожная ветка",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 61,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 61,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -1058,12 +1135,13 @@
       "desc": "Железнодорожная казарма",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 62,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 62,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -1072,12 +1150,13 @@
       "desc": "Железнодорожный комбинат",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 63,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 63,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -1086,12 +1165,13 @@
       "desc": "Железнодорожный остановочный пункт",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 64,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 64,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -1100,12 +1180,13 @@
       "desc": "Железнодорожный путевой пост",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 65,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 65,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -1114,12 +1195,13 @@
       "desc": "Железнодорожная площадка",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 66,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 66,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -1128,12 +1210,13 @@
       "desc": "Железнодорожная платформа",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 67,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 67,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1142,12 +1225,13 @@
       "desc": "Железнодорожная будка",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 68,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 68,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2019-02-14",
@@ -1156,12 +1240,13 @@
       "desc": "Железнодорожная казарма",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 69,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 69,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1170,12 +1255,13 @@
       "desc": "ж/д остановочный (обгонный) пункт",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 70,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 70,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1184,12 +1270,13 @@
       "desc": "Железнодорожная платформа",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 71,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 71,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1198,12 +1285,13 @@
       "desc": "Железнодорожный пост",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 72,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 72,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1212,12 +1300,13 @@
       "desc": "Железнодорожный разъезд",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 73,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 73,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1226,12 +1315,13 @@
       "desc": "Железнодорожная станция",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 74,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 74,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1240,12 +1330,13 @@
       "desc": "Жилая зона",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 75,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 75,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1254,12 +1345,13 @@
       "desc": "Жилой район",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 76,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 76,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1268,12 +1360,13 @@
       "desc": "Заимка",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 77,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 77,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -1282,12 +1375,13 @@
       "desc": "Зимовье",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 78,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 78,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1296,12 +1390,13 @@
       "desc": "Казарма",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 79,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 79,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2019-02-14",
@@ -1310,12 +1405,13 @@
       "desc": "Квартал",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 80,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 80,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -1324,12 +1420,13 @@
       "desc": "Кишлак",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 81,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 81,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1338,12 +1435,13 @@
       "desc": "Кордон",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 82,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 82,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1352,12 +1450,13 @@
       "desc": "Курортный поселок",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 83,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 83,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1366,12 +1465,13 @@
       "desc": "Леспромхоз",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 84,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 84,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1380,12 +1480,13 @@
       "desc": "Местечко",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 85,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 85,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1394,12 +1495,13 @@
       "desc": "Массив",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 86,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 86,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2019-02-14",
@@ -1408,12 +1510,13 @@
       "desc": "Микрорайон",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 87,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 87,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2019-02-14",
@@ -1422,12 +1525,13 @@
       "desc": "Населенный пункт",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 88,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 88,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -1436,12 +1540,13 @@
       "desc": "Населенный пункт",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 89,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 89,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1450,12 +1555,13 @@
       "desc": "Остров",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 90,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 90,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1464,12 +1570,13 @@
       "desc": "Поселок",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 91,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 91,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -1478,12 +1585,13 @@
       "desc": "Поселок при железнодорожной станции",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 92,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 92,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1492,12 +1600,13 @@
       "desc": "Почтовое отделение",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 93,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 93,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2020-08-11",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1506,12 +1615,13 @@
       "desc": "Планировочный район",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 94,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 94,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1520,12 +1630,13 @@
       "desc": "Поселок и(при) станция(и)",
       "isactive": false,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 95,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 95,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1534,12 +1645,13 @@
       "desc": "Поселок городского типа",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 96,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 96,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -1548,12 +1660,13 @@
       "desc": "Поселок городского типа",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 97,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 97,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1562,12 +1675,13 @@
       "desc": "Погост",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 98,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 98,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1576,12 +1690,13 @@
       "desc": "Поселок разъезда",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 99,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 99,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1590,12 +1705,13 @@
       "desc": "Починок",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 100,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 100,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1604,12 +1720,13 @@
       "desc": "Промышленная зона",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 101,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 101,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1618,12 +1735,13 @@
       "desc": "Разъезд",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 102,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 102,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1632,12 +1750,13 @@
       "desc": "Рабочий поселок",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 103,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 103,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1646,12 +1765,13 @@
       "desc": "Село",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 104,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 104,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1660,12 +1780,13 @@
       "desc": "Слобода",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 105,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 105,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2019-02-14",
@@ -1674,12 +1795,13 @@
       "desc": "Садовое некоммерческое товарищество",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 106,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 106,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2019-07-22",
@@ -1688,12 +1810,13 @@
       "desc": "Сельский поселок",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 107,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 107,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2019-07-22",
       "startdate": "2019-07-22",
       "enddate": "2079-06-06",
@@ -1702,12 +1825,13 @@
       "desc": "Сельский поселок",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 108,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 108,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1716,12 +1840,13 @@
       "desc": "Станция",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 109,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 109,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -1730,12 +1855,13 @@
       "desc": "Станица",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 110,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 110,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1744,12 +1870,13 @@
       "desc": "Территория",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 111,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 111,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1758,12 +1885,13 @@
       "desc": "Улус",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 112,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 112,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -1772,12 +1900,13 @@
       "desc": "Хутор",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 113,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 113,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1786,12 +1915,13 @@
       "desc": "Абонентский ящик",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 114,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 114,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -1800,12 +1930,13 @@
       "desc": "Аллея",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 115,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 115,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1814,12 +1945,13 @@
       "desc": "Аллея",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 116,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 116,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1828,12 +1960,13 @@
       "desc": "Балка",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 117,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 117,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1842,12 +1975,13 @@
       "desc": "Берег",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 118,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 118,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -1856,12 +1990,13 @@
       "desc": "Бульвар",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 119,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 119,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1870,12 +2005,13 @@
       "desc": "Бугор",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 120,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 120,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1884,12 +2020,13 @@
       "desc": "Вал",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 121,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 121,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
@@ -1898,12 +2035,13 @@
       "desc": "Взвоз",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 122,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 122,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1912,12 +2050,13 @@
       "desc": "Въезд",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 123,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 123,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1926,12 +2065,13 @@
       "desc": "Городок",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 124,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 124,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
@@ -1940,12 +2080,13 @@
       "desc": "Гаражно-строительный кооператив",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 125,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 125,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1954,12 +2095,13 @@
       "desc": "Деревня",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 126,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 126,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1968,12 +2110,13 @@
       "desc": "Дачное некоммерческое партнерство",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 127,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 127,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
@@ -1982,12 +2125,13 @@
       "desc": "Дорога",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 128,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 128,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -1996,12 +2140,13 @@
       "desc": "Железнодорожная будка",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 129,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 129,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2010,12 +2155,13 @@
       "desc": "Железнодорожная казарма",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 130,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 130,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2024,12 +2170,13 @@
       "desc": "ж/д остановочный (обгонный) пункт",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 131,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 131,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2038,12 +2185,13 @@
       "desc": "Железнодорожная платформа",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 132,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 132,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2052,12 +2200,13 @@
       "desc": "Железнодорожный пост",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 133,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 133,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2066,12 +2215,13 @@
       "desc": "Железнодорожный разъезд",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 134,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 134,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2080,12 +2230,13 @@
       "desc": "Железнодорожная станция",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 135,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 135,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2094,12 +2245,13 @@
       "desc": "Животноводческая точка",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 136,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 136,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2108,12 +2260,13 @@
       "desc": "Заезд",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 137,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 137,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
@@ -2122,12 +2275,13 @@
       "desc": "Заезд",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 138,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 138,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2136,12 +2290,13 @@
       "desc": "Зона",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 139,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 139,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2150,12 +2305,13 @@
       "desc": "Казарма",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 140,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 140,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
@@ -2164,12 +2320,13 @@
       "desc": "Квартал",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 141,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 141,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -2178,12 +2335,13 @@
       "desc": "Километр",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 142,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 142,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2192,12 +2350,13 @@
       "desc": "Кольцо",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 143,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 143,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
@@ -2206,12 +2365,13 @@
       "desc": "Коса",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 144,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 144,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
@@ -2220,12 +2380,13 @@
       "desc": "Кольцо",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 145,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 145,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2234,12 +2395,13 @@
       "desc": "Линия",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 146,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 146,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
@@ -2248,12 +2410,13 @@
       "desc": "Линия",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 147,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 147,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2262,12 +2425,13 @@
       "desc": "Местечко",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 148,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 148,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2276,12 +2440,13 @@
       "desc": "Маяк",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 149,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 149,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -2290,12 +2455,13 @@
       "desc": "Магистраль",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 150,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 150,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2304,12 +2470,13 @@
       "desc": "Местность",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 151,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 151,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
@@ -2318,12 +2485,13 @@
       "desc": "Микрорайон",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 152,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 152,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2332,12 +2500,13 @@
       "desc": "Мост",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 153,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 153,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2346,12 +2515,13 @@
       "desc": "Некоммерческое партнерство",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 154,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 154,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2360,12 +2530,13 @@
       "desc": "Набережная",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 155,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 155,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
@@ -2374,12 +2545,13 @@
       "desc": "Набережная",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 156,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 156,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2388,12 +2560,13 @@
       "desc": "Населенный пункт",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 157,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 157,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2402,12 +2575,13 @@
       "desc": "Остров",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 158,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 158,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-04-16",
@@ -2416,12 +2590,13 @@
       "desc": "Поселок",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 159,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 159,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2430,12 +2605,13 @@
       "desc": "Почтовое отделение",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 160,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 160,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2020-08-11",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2444,12 +2620,13 @@
       "desc": "Планировочный район",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 161,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 161,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2458,12 +2635,13 @@
       "desc": "Поселок и(при) станция(и)",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 162,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 162,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2472,12 +2650,13 @@
       "desc": "Парк",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 163,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 163,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -2486,12 +2665,13 @@
       "desc": "Переулок",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 164,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 164,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -2500,12 +2680,13 @@
       "desc": "Переулок",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 165,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 165,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
@@ -2514,12 +2695,13 @@
       "desc": "Переезд",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 166,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 166,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2528,12 +2710,13 @@
       "desc": "Переезд",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 167,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 167,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -2542,12 +2725,13 @@
       "desc": "Площадь",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 168,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 168,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2556,12 +2740,13 @@
       "desc": "Платформа",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 169,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 169,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
@@ -2570,12 +2755,13 @@
       "desc": "Площадка",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 170,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 170,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2584,12 +2770,13 @@
       "desc": "Полустанок",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 171,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 171,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -2598,12 +2785,13 @@
       "desc": "Проезд",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 172,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 172,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
@@ -2612,12 +2800,13 @@
       "desc": "Просек",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 173,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 173,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
@@ -2626,12 +2815,13 @@
       "desc": "Просека",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 174,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 174,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -2640,12 +2830,13 @@
       "desc": "Проспект",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 175,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 175,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
@@ -2654,12 +2845,13 @@
       "desc": "Проселок",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 176,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 176,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-05-11",
@@ -2668,12 +2860,13 @@
       "desc": "Проезд",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 177,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 177,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
@@ -2682,12 +2875,13 @@
       "desc": "Промзона",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 178,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 178,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2696,12 +2890,13 @@
       "desc": "Просек",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 179,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 179,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2710,12 +2905,13 @@
       "desc": "Просека",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 180,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 180,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2724,12 +2920,13 @@
       "desc": "Проселок",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 181,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 181,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -2738,12 +2935,13 @@
       "desc": "Проулок",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 182,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 182,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2752,12 +2950,13 @@
       "desc": "Проулок",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 183,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 183,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2766,12 +2965,13 @@
       "desc": "Разъезд",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 184,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 184,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -2780,12 +2980,13 @@
       "desc": "Разъезд",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 185,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 185,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
@@ -2794,12 +2995,13 @@
       "desc": "Ряд(ы)",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 186,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 186,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2808,12 +3010,13 @@
       "desc": "Ряды",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 187,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 187,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2822,12 +3025,13 @@
       "desc": "Село",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 188,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 188,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-05-08",
@@ -2836,12 +3040,13 @@
       "desc": "Садовое товарищество",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 189,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 189,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2850,12 +3055,13 @@
       "desc": "Сад",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 190,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 190,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
@@ -2864,12 +3070,13 @@
       "desc": "Съезд",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 191,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 191,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -2878,12 +3085,13 @@
       "desc": "Спуск",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 192,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 192,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2892,12 +3100,13 @@
       "desc": "Сквер",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 193,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 193,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2906,12 +3115,13 @@
       "desc": "Слобода",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 194,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 194,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
@@ -2920,12 +3130,13 @@
       "desc": "Садовое некоммерческое товарищество",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 195,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 195,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2934,12 +3145,13 @@
       "desc": "Спуск",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 196,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 196,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
@@ -2948,12 +3160,13 @@
       "desc": "Сквер",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 197,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 197,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2962,12 +3175,13 @@
       "desc": "Станция",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 198,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 198,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -2976,12 +3190,13 @@
       "desc": "Строение",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 199,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 199,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
@@ -2990,12 +3205,13 @@
       "desc": "Территория",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 200,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 200,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
@@ -3004,12 +3220,13 @@
       "desc": "Территория ДНТ",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 201,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 201,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-05-08",
@@ -3018,12 +3235,13 @@
       "desc": "Территория СНТ",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 202,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 202,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -3032,12 +3250,13 @@
       "desc": "Тракт",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 203,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 203,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -3046,12 +3265,13 @@
       "desc": "Тупик",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 204,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 204,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -3060,12 +3280,13 @@
       "desc": "Улица",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 205,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 205,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -3074,12 +3295,13 @@
       "desc": "Улица",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 206,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 206,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -3088,12 +3310,13 @@
       "desc": "Участок",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 207,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 207,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -3102,12 +3325,13 @@
       "desc": "Фермерское хозяйство",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 208,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 208,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -3116,12 +3340,13 @@
       "desc": "Ферма",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 209,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 209,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -3130,12 +3355,13 @@
       "desc": "Хутор",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 210,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 210,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
@@ -3144,12 +3370,13 @@
       "desc": "Шоссе",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 211,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 211,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -3158,12 +3385,13 @@
       "desc": "Шоссе",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 227,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 227,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -3172,12 +3400,13 @@
       "desc": "Машино-место",
       "isactive": true,
       "level": 17
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 240,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 240,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3186,12 +3415,13 @@
       "desc": "Абонентский ящик",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 241,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 241,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3200,12 +3430,13 @@
       "desc": "Аал",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 242,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 242,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3214,12 +3445,13 @@
       "desc": "Аллея",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 243,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 243,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3228,12 +3460,13 @@
       "desc": "Арбан",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 244,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 244,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3242,12 +3475,13 @@
       "desc": "Аул",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 245,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 245,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-12-14",
@@ -3256,12 +3490,13 @@
       "desc": "Берег",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 246,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 246,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3270,12 +3505,13 @@
       "desc": "Бульвар",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 247,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 247,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -3284,12 +3520,13 @@
       "desc": "Вал",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 248,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 248,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3298,12 +3535,13 @@
       "desc": "Въезд",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 249,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 249,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3312,12 +3550,13 @@
       "desc": "Городок",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 250,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 250,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-14",
@@ -3326,12 +3565,13 @@
       "desc": "Гаражно-строительный кооператив",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 251,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 251,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3340,12 +3580,13 @@
       "desc": "Деревня",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 252,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 252,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-14",
@@ -3354,12 +3595,13 @@
       "desc": "Дачное некоммерческое партнерство",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 253,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 253,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3368,12 +3610,13 @@
       "desc": "Дорога",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 254,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 254,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3382,12 +3625,13 @@
       "desc": "Железнодорожная будка",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 255,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 255,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3396,12 +3640,13 @@
       "desc": "Железнодорожная казарма",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 256,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 256,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3410,12 +3655,13 @@
       "desc": "Железнодорожная платформа",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 257,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 257,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3424,12 +3670,13 @@
       "desc": "Железнодорожный разъезд",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 258,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 258,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3438,12 +3685,13 @@
       "desc": "Железнодорожная станция",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 259,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 259,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-12-14",
@@ -3452,12 +3700,13 @@
       "desc": "Жилой район",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 260,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 260,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3466,12 +3715,13 @@
       "desc": "Заезд",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 261,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 261,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -3480,12 +3730,13 @@
       "desc": "Зона (массив)",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 262,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 262,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -3494,12 +3745,13 @@
       "desc": "Квартал",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 263,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 263,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3508,12 +3760,13 @@
       "desc": "Километр",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 264,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 264,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3522,12 +3775,13 @@
       "desc": "Коса",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 265,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 265,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3536,12 +3790,13 @@
       "desc": "Кольцо",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 266,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 266,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3550,12 +3805,13 @@
       "desc": "Линия",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 267,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 267,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-14",
@@ -3564,12 +3820,13 @@
       "desc": "Местность",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 268,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 268,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-12-14",
@@ -3578,12 +3835,13 @@
       "desc": "Месторождение",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 269,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 269,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3592,12 +3850,13 @@
       "desc": "Местечко",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 270,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 270,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-15",
@@ -3606,12 +3865,13 @@
       "desc": "Микрорайон",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 271,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 271,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -3620,12 +3880,13 @@
       "desc": "Микрорайон",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 272,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 272,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -3634,12 +3895,13 @@
       "desc": "Месторождение",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 273,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 273,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-14",
@@ -3648,12 +3910,13 @@
       "desc": "Некоммерческое партнерство",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 274,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 274,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -3662,12 +3925,13 @@
       "desc": "Набережная",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 275,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 275,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -3676,12 +3940,13 @@
       "desc": "Остров",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 276,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 276,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3690,12 +3955,13 @@
       "desc": "Поселок",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 277,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 277,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-12-14",
@@ -3704,12 +3970,13 @@
       "desc": "Промышленный район",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 278,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 278,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -3718,12 +3985,13 @@
       "desc": "Парк",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 279,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 279,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3732,12 +4000,13 @@
       "desc": "Переулок",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 280,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 280,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3746,12 +4015,13 @@
       "desc": "Переезд",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 281,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 281,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3760,12 +4030,13 @@
       "desc": "Починок",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 282,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 282,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3774,12 +4045,13 @@
       "desc": "Площадь",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 283,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 283,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-12-14",
@@ -3788,12 +4060,13 @@
       "desc": "Платформа",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 284,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 284,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3802,12 +4075,13 @@
       "desc": "Площадка",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 285,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 285,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -3816,12 +4090,13 @@
       "desc": "Порт",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 286,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 286,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3830,12 +4105,13 @@
       "desc": "Проезд",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 287,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 287,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3844,12 +4120,13 @@
       "desc": "Просек",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 288,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 288,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3858,12 +4135,13 @@
       "desc": "Просека",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 289,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 289,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3872,12 +4150,13 @@
       "desc": "Проспект",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 290,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 290,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3886,12 +4165,13 @@
       "desc": "Проселок",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 291,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 291,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-14",
@@ -3900,12 +4180,13 @@
       "desc": "Промышленная зона",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 292,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 292,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3914,12 +4195,13 @@
       "desc": "Проулок",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 293,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 293,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3928,12 +4210,13 @@
       "desc": "Разъезд",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 294,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 294,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -3942,12 +4225,13 @@
       "desc": "Район",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 295,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 295,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3956,12 +4240,13 @@
       "desc": "Село",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 296,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 296,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -3970,12 +4255,13 @@
       "desc": "Сад",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 297,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 297,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -3984,12 +4270,13 @@
       "desc": "Спуск",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 298,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 298,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -3998,12 +4285,13 @@
       "desc": "Сквер",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 299,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 299,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -4012,12 +4300,13 @@
       "desc": "Слобода",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 300,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 300,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-14",
@@ -4026,12 +4315,13 @@
       "desc": "Садовое товарищество",
       "isactive": false,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 301,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 301,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -4040,12 +4330,13 @@
       "desc": "Сквер",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 302,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 302,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -4054,12 +4345,13 @@
       "desc": "Станция",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 303,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 303,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -4068,12 +4360,13 @@
       "desc": "Строение",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 304,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 304,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-15",
@@ -4082,12 +4375,13 @@
       "desc": "Территория",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 305,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 305,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -4096,12 +4390,13 @@
       "desc": "Территория",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 306,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 306,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-12-14",
@@ -4110,12 +4405,13 @@
       "desc": "Территория ГСК",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 307,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 307,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
@@ -4124,12 +4420,13 @@
       "desc": "Территория дачных некоммерческих объединений граждан",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 308,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 308,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
@@ -4138,12 +4435,13 @@
       "desc": "Территория дачных некоммерческих партнерств",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 309,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 309,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
@@ -4152,12 +4450,13 @@
       "desc": "Территория дачных некоммерческих товариществ",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 310,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 310,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
@@ -4166,12 +4465,13 @@
       "desc": "Территория дачных потребительских кооперативов",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 311,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 311,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
@@ -4180,12 +4480,13 @@
       "desc": "Территория огороднических некоммерческих объединений граждан",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 312,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 312,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
@@ -4194,12 +4495,13 @@
       "desc": "Территория огороднических некоммерческих партнерств",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 313,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 313,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -4208,12 +4510,13 @@
       "desc": "Территория огороднического некоммерческого товарищества",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 314,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 314,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
@@ -4222,12 +4525,13 @@
       "desc": "Территория огороднических потребительских кооперативов",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 315,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 315,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -4236,12 +4540,13 @@
       "desc": "Территория потребительского кооператива",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 316,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 316,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
@@ -4250,12 +4555,13 @@
       "desc": "Территория садоводческих некоммерческих объединений граждан",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 317,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 317,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
@@ -4264,12 +4570,13 @@
       "desc": "Территория садоводческих некоммерческих партнерств",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 318,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 318,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -4278,12 +4585,13 @@
       "desc": "Территория садоводческого некоммерческого товарищества",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 319,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 319,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
@@ -4292,12 +4600,13 @@
       "desc": "Территория садоводческих потребительских кооперативов",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 320,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 320,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
@@ -4306,12 +4615,13 @@
       "desc": "Территория товарищества собственников жилья",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 321,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 321,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -4320,12 +4630,13 @@
       "desc": "Территория товарищества собственников недвижимости",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 322,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 322,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2019-01-01",
       "startdate": "2019-01-01",
       "enddate": "2079-06-06",
@@ -4334,12 +4645,13 @@
       "desc": "Территория ведения гражданами садоводства или огородничества для собственных нужд",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 323,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 323,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-12-14",
@@ -4348,12 +4660,13 @@
       "desc": "Территория ФХ",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 324,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 324,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -4362,12 +4675,13 @@
       "desc": "Тракт",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 325,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 325,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -4376,12 +4690,13 @@
       "desc": "Тупик",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 326,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 326,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -4390,12 +4705,13 @@
       "desc": "Улица",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 327,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 327,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-12-14",
@@ -4404,12 +4720,13 @@
       "desc": "Усадьба",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 328,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 328,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-14",
@@ -4418,12 +4735,13 @@
       "desc": "Фермерское хозяйство",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 329,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 329,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -4432,12 +4750,13 @@
       "desc": "Хутор",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 330,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 330,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
@@ -4446,12 +4765,13 @@
       "desc": "Шоссе",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 331,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 331,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -4460,12 +4780,13 @@
       "desc": "Юрты",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 332,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 332,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -4474,12 +4795,13 @@
       "desc": "Земельный участок",
       "isactive": true,
       "level": 9
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 333,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 333,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-05-11",
@@ -4488,12 +4810,13 @@
       "desc": "Гаражно-строительный кооператив",
       "isactive": true,
       "level": 15
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 334,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 334,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-05-11",
@@ -4502,12 +4825,13 @@
       "desc": "Дачное некоммерческое партнерство",
       "isactive": true,
       "level": 15
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 335,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 335,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4516,12 +4840,13 @@
       "desc": "Местность",
       "isactive": true,
       "level": 15
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 336,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 336,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4530,12 +4855,13 @@
       "desc": "Микрорайон",
       "isactive": true,
       "level": 15
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 337,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 337,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4544,12 +4870,13 @@
       "desc": "Некоммерческое партнерство",
       "isactive": true,
       "level": 15
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 338,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 338,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4558,12 +4885,13 @@
       "desc": "Промышленная зона",
       "isactive": true,
       "level": 15
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 339,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 339,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4572,12 +4900,13 @@
       "desc": "Сад",
       "isactive": true,
       "level": 15
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 340,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 340,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4586,12 +4915,13 @@
       "desc": "Садовое товарищество",
       "isactive": true,
       "level": 15
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 341,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 341,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4600,12 +4930,13 @@
       "desc": "Территория",
       "isactive": true,
       "level": 15
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 342,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 342,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4614,12 +4945,13 @@
       "desc": "Фермерское хозяйство",
       "isactive": true,
       "level": 15
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 343,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 343,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -4628,12 +4960,13 @@
       "desc": "Абонентский ящик",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 344,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 344,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4642,12 +4975,13 @@
       "desc": "Аал",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 345,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 345,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4656,12 +4990,13 @@
       "desc": "Аллея",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 346,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 346,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4670,12 +5005,13 @@
       "desc": "Арбан",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 347,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 347,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4684,12 +5020,13 @@
       "desc": "Аул",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 348,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 348,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4698,12 +5035,13 @@
       "desc": "Берег",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 349,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 349,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4712,12 +5050,13 @@
       "desc": "Бульвар",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 350,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 350,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4726,12 +5065,13 @@
       "desc": "Вал",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 351,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 351,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -4740,12 +5080,13 @@
       "desc": "Въезд",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 352,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 352,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4754,12 +5095,13 @@
       "desc": "Выселки(ок)",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 353,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 353,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4768,12 +5110,13 @@
       "desc": "Городок",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 354,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 354,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -4782,12 +5125,13 @@
       "desc": "Гаражно-строительный кооператив",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 355,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 355,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4796,12 +5140,13 @@
       "desc": "Деревня",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 356,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 356,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4810,12 +5155,13 @@
       "desc": "Дорога",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 357,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 357,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4824,12 +5170,13 @@
       "desc": "Железнодорожная будка",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 358,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 358,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -4838,12 +5185,13 @@
       "desc": "Железнодорожная казарма",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 359,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 359,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -4852,12 +5200,13 @@
       "desc": "ж/д остановочный (обгонный) пункт",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 360,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 360,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4866,12 +5215,13 @@
       "desc": "Железнодорожная платформа",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 361,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 361,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -4880,12 +5230,13 @@
       "desc": "Железнодорожный пост",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 362,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 362,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4894,12 +5245,13 @@
       "desc": "Железнодорожный разъезд",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 363,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 363,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4908,12 +5260,13 @@
       "desc": "Железнодорожная станция",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 364,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 364,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -4922,12 +5275,13 @@
       "desc": "Животноводческая точка",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 365,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 365,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4936,12 +5290,13 @@
       "desc": "Заезд",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 366,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 366,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4950,12 +5305,13 @@
       "desc": "Зона",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 367,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 367,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -4964,12 +5320,13 @@
       "desc": "Казарма",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 368,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 368,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4978,12 +5335,13 @@
       "desc": "Квартал",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 369,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 369,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -4992,12 +5350,13 @@
       "desc": "Километр",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 370,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 370,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5006,12 +5365,13 @@
       "desc": "Кольцо",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 371,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 371,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5020,12 +5380,13 @@
       "desc": "Коса",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 372,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 372,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5034,12 +5395,13 @@
       "desc": "Линия",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 373,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 373,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5048,12 +5410,13 @@
       "desc": "Местечко",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 374,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 374,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5062,12 +5425,13 @@
       "desc": "Микрорайон",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 375,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 375,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -5076,12 +5440,13 @@
       "desc": "Мост",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 376,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 376,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-01-27",
@@ -5090,12 +5455,13 @@
       "desc": "Набережная",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 377,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 377,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -5104,12 +5470,13 @@
       "desc": "Населенный пункт",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 378,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 378,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5118,12 +5485,13 @@
       "desc": "Остров",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 379,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 379,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5132,12 +5500,13 @@
       "desc": "Поселок",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 380,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 380,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -5146,12 +5515,13 @@
       "desc": "Почтовое отделение",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 381,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 381,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2020-08-11",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -5160,12 +5530,13 @@
       "desc": "Планировочный район",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 382,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 382,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5174,12 +5545,13 @@
       "desc": "Поселок и(при) станция(и)",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 383,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 383,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5188,12 +5560,13 @@
       "desc": "Парк",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 384,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 384,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5202,12 +5575,13 @@
       "desc": "Переулок",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 385,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 385,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5216,12 +5590,13 @@
       "desc": "Переезд",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 386,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 386,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5230,12 +5605,13 @@
       "desc": "Площадь",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 387,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 387,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5244,12 +5620,13 @@
       "desc": "Платформа",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 388,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 388,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5258,12 +5635,13 @@
       "desc": "Площадка",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 389,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 389,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5272,12 +5650,13 @@
       "desc": "Починок",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 390,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 390,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5286,12 +5665,13 @@
       "desc": "Проспект",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 391,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 391,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5300,12 +5680,13 @@
       "desc": "Проезд",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 392,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 392,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5314,12 +5695,13 @@
       "desc": "Просек",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 393,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 393,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5328,12 +5710,13 @@
       "desc": "Просека",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 394,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 394,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5342,12 +5725,13 @@
       "desc": "Проселок",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 395,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 395,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5356,12 +5740,13 @@
       "desc": "Проулок",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 396,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 396,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5370,12 +5755,13 @@
       "desc": "Разъезд",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 397,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 397,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5384,12 +5770,13 @@
       "desc": "Ряды",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 398,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 398,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5398,12 +5785,13 @@
       "desc": "Село",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 399,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 399,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5412,12 +5800,13 @@
       "desc": "Сад",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 400,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 400,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5426,12 +5815,13 @@
       "desc": "Сквер",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 401,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 401,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5440,12 +5830,13 @@
       "desc": "Слобода",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 402,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 402,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -5454,12 +5845,13 @@
       "desc": "Садовое некоммерческое товарищество",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 403,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 403,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5468,12 +5860,13 @@
       "desc": "Спуск",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 404,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 404,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5482,12 +5875,13 @@
       "desc": "Станция",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 405,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 405,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -5496,12 +5890,13 @@
       "desc": "Строение",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 406,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 406,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5510,12 +5905,13 @@
       "desc": "Территория",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 407,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 407,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5524,12 +5920,13 @@
       "desc": "Тракт",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 408,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 408,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5538,12 +5935,13 @@
       "desc": "Тупик",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 409,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 409,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5552,12 +5950,13 @@
       "desc": "Улица",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 410,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 410,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -5566,12 +5965,13 @@
       "desc": "Участок",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 411,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 411,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
@@ -5580,12 +5980,13 @@
       "desc": "Ферма",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 412,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 412,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5594,12 +5995,13 @@
       "desc": "Хутор",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 413,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 413,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -5608,12 +6010,13 @@
       "desc": "Шоссе",
       "isactive": true,
       "level": 16
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 414,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 414,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -5622,12 +6025,13 @@
       "desc": "Городской округ",
       "isactive": true,
       "level": 3
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 416,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 416,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -5636,12 +6040,13 @@
       "desc": "Муниципальный район",
       "isactive": true,
       "level": 3
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 417,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 417,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -5650,12 +6055,13 @@
       "desc": "внутригородская территория (внутригородское муниципальное образование) города федерального значения",
       "isactive": true,
       "level": 3
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 418,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 418,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -5664,12 +6070,13 @@
       "desc": "сельское поселение",
       "isactive": true,
       "level": 4
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 419,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 419,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -5678,12 +6085,13 @@
       "desc": "городское поселение",
       "isactive": true,
       "level": 4
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 420,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 420,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -5692,12 +6100,13 @@
       "desc": "внутригородской район",
       "isactive": true,
       "level": 4
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 421,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 421,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -5706,12 +6115,13 @@
       "desc": "межселенная территория",
       "isactive": true,
       "level": 4
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 422,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 422,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2019-05-01",
       "startdate": "2019-05-01",
       "enddate": "2079-06-06",
@@ -5720,12 +6130,13 @@
       "desc": "Муниципальный округ",
       "isactive": true,
       "level": 3
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 423,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 423,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2015-11-05",
       "enddate": "2022-09-30",
@@ -5734,12 +6145,13 @@
       "desc": "Город",
       "isactive": true,
       "level": 2
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 425,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 425,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2020-10-15",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
@@ -5748,12 +6160,13 @@
       "desc": "Поселок при станции (поселок станции)",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 426,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 426,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2021-04-08",
       "enddate": "2022-09-30",
@@ -5762,12 +6175,13 @@
       "desc": "Село",
       "isactive": true,
       "level": 5
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 427,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 427,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2021-12-10",
       "startdate": "2021-12-10",
       "enddate": "2079-06-06",
@@ -5776,12 +6190,13 @@
       "desc": "Федеральная территория",
       "isactive": true,
       "level": 3
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 428,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 428,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-14",
@@ -5790,12 +6205,13 @@
       "desc": "Садовое товарищество",
       "isactive": true,
       "level": 7
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 429,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 429,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5804,12 +6220,13 @@
       "desc": "Город",
       "isactive": true,
       "level": 2
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 430,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 430,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5818,12 +6235,13 @@
       "desc": "Рабочий поселок",
       "isactive": true,
       "level": 5
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 431,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 431,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5832,12 +6250,13 @@
       "desc": "Село",
       "isactive": true,
       "level": 5
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 432,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 432,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5846,12 +6265,13 @@
       "desc": "Выселки",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 433,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 433,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5860,12 +6280,13 @@
       "desc": "Городской поселок",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 434,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 434,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5874,12 +6295,13 @@
       "desc": "Деревня",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 435,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 435,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5888,12 +6310,13 @@
       "desc": "Железнодорожная станция",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 436,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 436,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5902,12 +6325,13 @@
       "desc": "Железнодорожный разъезд",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 437,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 437,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5916,12 +6340,13 @@
       "desc": "Заимка",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 438,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 438,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5930,12 +6355,13 @@
       "desc": "Курортный поселок",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 439,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 439,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5944,12 +6370,13 @@
       "desc": "Местечко",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 440,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 440,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5958,12 +6385,13 @@
       "desc": "Поселок",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 441,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 441,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5972,12 +6400,13 @@
       "desc": "Поселок разъезда",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 442,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 442,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -5986,12 +6415,13 @@
       "desc": "Починок",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 443,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 443,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -6000,12 +6430,13 @@
       "desc": "Рабочий поселок",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 444,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 444,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -6014,12 +6445,13 @@
       "desc": "Разъезд",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 445,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 445,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -6028,12 +6460,13 @@
       "desc": "Село",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 446,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 446,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -6042,12 +6475,13 @@
       "desc": "Слобода",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 447,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 447,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -6056,12 +6490,13 @@
       "desc": "Станция",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 448,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 448,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -6070,12 +6505,13 @@
       "desc": "Улус",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 449,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 449,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -6084,12 +6520,13 @@
       "desc": "Хутор",
       "isactive": true,
       "level": 6
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 450,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 450,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -6098,12 +6535,13 @@
       "desc": "Площадь",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobjtype",
-   "pk": 451,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjtype",
+    "pk": 451,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
@@ -6112,12 +6550,30 @@
       "desc": "Тупик",
       "isactive": true,
       "level": 8
-   }
-},
-{
-   "model": "fias.addrobj",
-   "pk": 1456532,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobj",
+    "pk": 1456531,
+    "fields": {
+      "ver": 20221125,
+      "updatedate": "2019-07-16",
+      "startdate": "1900-01-01",
+      "enddate": "2079-06-06",
+      "region": "99",
+      "isactive": true,
+      "isactual": true,
+      "objectguid": "3d855628-80ed-4ca5-a9de-378a76876ace",
+      "name": "Студенческая",
+      "level": 8,
+      "typename": "ул"
+    }
+  },
+  {
+    "model": "fias.addrobj",
+    "pk": 1456532,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2019-07-16",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6128,12 +6584,13 @@
       "name": "Школьная",
       "level": 8,
       "typename": "ул"
-   }
-},
-{
-   "model": "fias.addrobj",
-   "pk": 1456865,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobj",
+    "pk": 1456865,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2022-08-12",
       "startdate": "2022-08-12",
       "enddate": "2079-06-06",
@@ -6144,12 +6601,13 @@
       "name": "5-й",
       "level": 7,
       "typename": "мкр"
-   }
-},
-{
-   "model": "fias.addrobj",
-   "pk": 1460768,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobj",
+    "pk": 1460768,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2011-09-13",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6160,194 +6618,125 @@
       "name": "Байконур",
       "level": 1,
       "typename": "г"
-   }
-},
-{
-   "model": "fias.addrobjparam",
-   "pk": 22504289,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addrobjparam",
+    "pk": 22503289,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2019-07-16",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
       "region": "99",
-      "objectid": 1456532,
       "typeid": 7,
-      "value": "55000000"
-   }
-},
-{
-   "model": "fias.addrobjparam",
-   "pk": 22504295,
-   "fields": {
+      "value": "55000000",
+      "objectid": 1456531
+    }
+  },
+  {
+    "model": "fias.addrobjparam",
+    "pk": 22503295,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2019-07-16",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
       "region": "99",
-      "objectid": 1456532,
       "typeid": 6,
-      "value": "55000000000"
-   }
-},
-{
-   "model": "fias.addrobjparam",
-   "pk": 22510492,
-   "fields": {
+      "value": "55000000000",
+      "objectid": 1456531
+    }
+  },
+  {
+    "model": "fias.addrobjparam",
+    "pk": 22504289,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2019-07-16",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
       "region": "99",
-      "objectid": 1456865,
       "typeid": 7,
-      "value": "55000000"
-   }
-},
-{
-   "model": "fias.addrobjparam",
-   "pk": 22510497,
-   "fields": {
+      "value": "55000000",
+      "objectid": 1456532
+    }
+  },
+  {
+    "model": "fias.addrobjparam",
+    "pk": 22504295,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2019-07-16",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
       "region": "99",
-      "objectid": 1456865,
       "typeid": 6,
-      "value": "55000000000"
-   }
-},
-{
-   "model": "fias.addrobjparam",
-   "pk": 22584648,
-   "fields": {
+      "value": "55000000000",
+      "objectid": 1456532
+    }
+  },
+  {
+    "model": "fias.addrobjparam",
+    "pk": 22510492,
+    "fields": {
+      "ver": 20221125,
+      "updatedate": "2019-07-16",
+      "startdate": "1900-01-01",
+      "enddate": "2079-06-06",
+      "region": "99",
+      "typeid": 7,
+      "value": "55000000",
+      "objectid": 1456865
+    }
+  },
+  {
+    "model": "fias.addrobjparam",
+    "pk": 22510497,
+    "fields": {
+      "ver": 20221125,
+      "updatedate": "2019-07-16",
+      "startdate": "1900-01-01",
+      "enddate": "2079-06-06",
+      "region": "99",
+      "typeid": 6,
+      "value": "55000000000",
+      "objectid": 1456865
+    }
+  },
+  {
+    "model": "fias.addrobjparam",
+    "pk": 22584648,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2011-09-13",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
       "region": "99",
-      "objectid": 1460768,
       "typeid": 6,
-      "value": "55000000000"
-   }
-},
-{
-   "model": "fias.addrobjparam",
-   "pk": 648132340,
-   "fields": {
+      "value": "55000000000",
+      "objectid": 1460768
+    }
+  },
+  {
+    "model": "fias.addrobjparam",
+    "pk": 648132340,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2011-09-13",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
       "region": "99",
-      "objectid": 1460768,
       "typeid": 7,
-      "value": "55000000"
-   }
-},
-{
-   "model": "fias.admhierarchy",
-   "pk": 84785687,
-   "fields": {
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2079-06-06",
-      "region": "99",
-      "isactive": true,
-      "objectid": 1460768,
-      "parentobjid": 0
-   }
-},
-{
-   "model": "fias.admhierarchy",
-   "pk": 84786087,
-   "fields": {
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2079-06-06",
-      "region": "99",
-      "isactive": true,
-      "objectid": 1456532,
-      "parentobjid": 1460768
-   }
-},
-{
-   "model": "fias.admhierarchy",
-   "pk": 84786097,
-   "fields": {
-      "updatedate": "2012-07-23",
-      "startdate": "2012-07-23",
-      "enddate": "2079-06-06",
-      "region": "99",
-      "isactive": true,
-      "objectid": 19273112,
-      "parentobjid": 1456532
-   }
-},
-{
-   "model": "fias.admhierarchy",
-   "pk": 123607639,
-   "fields": {
-      "updatedate": "2022-08-12",
-      "startdate": "2022-08-12",
-      "enddate": "2079-06-06",
-      "region": "99",
-      "isactive": true,
-      "objectid": 1456865,
-      "parentobjid": 1460768
-   }
-},
-{
-   "model": "fias.munhierarchy",
-   "pk": 107886302,
-   "fields": {
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2079-06-06",
-      "region": "99",
-      "isactive": true,
-      "objectid": 1460768,
-      "parentobjid": 0
-   }
-},
-{
-   "model": "fias.munhierarchy",
-   "pk": 107886328,
-   "fields": {
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2079-06-06",
-      "region": "99",
-      "isactive": true,
-      "objectid": 1456532,
-      "parentobjid": 1460768
-   }
-},
-{
-   "model": "fias.munhierarchy",
-   "pk": 107886329,
-   "fields": {
-      "updatedate": "2012-07-23",
-      "startdate": "2012-07-23",
-      "enddate": "2079-06-06",
-      "region": "99",
-      "isactive": true,
-      "objectid": 19273112,
-      "parentobjid": 1456532
-   }
-},
-{
-   "model": "fias.munhierarchy",
-   "pk": 107886334,
-   "fields": {
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2079-06-06",
-      "region": "99",
-      "isactive": true,
-      "objectid": 1456865,
-      "parentobjid": 1460768
-   }
-},
-{
-   "model": "fias.housetype",
-   "pk": 1,
-   "fields": {
+      "value": "55000000",
+      "objectid": 1460768
+    }
+  },
+  {
+    "model": "fias.housetype",
+    "pk": 1,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -6355,12 +6744,13 @@
       "shortname": "влд.",
       "desc": "Владение",
       "isactive": false
-   }
-},
-{
-   "model": "fias.housetype",
-   "pk": 2,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.housetype",
+    "pk": 2,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6368,12 +6758,13 @@
       "shortname": "д.",
       "desc": "Дом",
       "isactive": true
-   }
-},
-{
-   "model": "fias.housetype",
-   "pk": 3,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.housetype",
+    "pk": 3,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -6381,12 +6772,13 @@
       "shortname": "двлд.",
       "desc": "Домовладение",
       "isactive": false
-   }
-},
-{
-   "model": "fias.housetype",
-   "pk": 4,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.housetype",
+    "pk": 4,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6394,12 +6786,13 @@
       "shortname": "г-ж",
       "desc": "Гараж",
       "isactive": true
-   }
-},
-{
-   "model": "fias.housetype",
-   "pk": 5,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.housetype",
+    "pk": 5,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6407,12 +6800,13 @@
       "shortname": "зд.",
       "desc": "Здание",
       "isactive": true
-   }
-},
-{
-   "model": "fias.housetype",
-   "pk": 6,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.housetype",
+    "pk": 6,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6420,12 +6814,13 @@
       "shortname": "шахта",
       "desc": "Шахта",
       "isactive": true
-   }
-},
-{
-   "model": "fias.housetype",
-   "pk": 7,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.housetype",
+    "pk": 7,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6433,12 +6828,13 @@
       "shortname": "стр.",
       "desc": "Строение",
       "isactive": true
-   }
-},
-{
-   "model": "fias.housetype",
-   "pk": 8,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.housetype",
+    "pk": 8,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6446,12 +6842,13 @@
       "shortname": "соор.",
       "desc": "Сооружение",
       "isactive": true
-   }
-},
-{
-   "model": "fias.housetype",
-   "pk": 9,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.housetype",
+    "pk": 9,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-25",
@@ -6459,12 +6856,13 @@
       "shortname": "литера",
       "desc": "Литера",
       "isactive": false
-   }
-},
-{
-   "model": "fias.housetype",
-   "pk": 10,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.housetype",
+    "pk": 10,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
@@ -6472,12 +6870,13 @@
       "shortname": "к.",
       "desc": "Корпус",
       "isactive": true
-   }
-},
-{
-   "model": "fias.housetype",
-   "pk": 11,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.housetype",
+    "pk": 11,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -6485,12 +6884,13 @@
       "shortname": "подв.",
       "desc": "Подвал",
       "isactive": false
-   }
-},
-{
-   "model": "fias.housetype",
-   "pk": 12,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.housetype",
+    "pk": 12,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -6498,12 +6898,13 @@
       "shortname": "кот.",
       "desc": "Котельная",
       "isactive": false
-   }
-},
-{
-   "model": "fias.housetype",
-   "pk": 13,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.housetype",
+    "pk": 13,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -6511,12 +6912,13 @@
       "shortname": "п-б",
       "desc": "Погреб",
       "isactive": false
-   }
-},
-{
-   "model": "fias.housetype",
-   "pk": 14,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.housetype",
+    "pk": 14,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
@@ -6524,12 +6926,13 @@
       "shortname": "ОНС",
       "desc": "Объект незавершенного строительства",
       "isactive": false
-   }
-},
-{
-   "model": "fias.addhousetype",
-   "pk": 1,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addhousetype",
+    "pk": 1,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-12-25",
       "startdate": "2015-12-25",
       "enddate": "2079-06-06",
@@ -6537,12 +6940,13 @@
       "shortname": "к.",
       "desc": "Корпус",
       "isactive": true
-   }
-},
-{
-   "model": "fias.addhousetype",
-   "pk": 2,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addhousetype",
+    "pk": 2,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-12-25",
       "startdate": "2015-12-25",
       "enddate": "2079-06-06",
@@ -6550,12 +6954,13 @@
       "shortname": "стр.",
       "desc": "Строение",
       "isactive": true
-   }
-},
-{
-   "model": "fias.addhousetype",
-   "pk": 3,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addhousetype",
+    "pk": 3,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2015-12-25",
       "startdate": "2015-12-25",
       "enddate": "2079-06-06",
@@ -6563,12 +6968,13 @@
       "shortname": "соор.",
       "desc": "Сооружение",
       "isactive": true
-   }
-},
-{
-   "model": "fias.addhousetype",
-   "pk": 4,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.addhousetype",
+    "pk": 4,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-25",
@@ -6576,12 +6982,13 @@
       "shortname": "литера",
       "desc": "Литера",
       "isactive": false
-   }
-},
-{
-   "model": "fias.house",
-   "pk": 19273112,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.house",
+    "pk": 19273112,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2019-07-16",
       "startdate": "2012-07-23",
       "enddate": "2079-06-06",
@@ -6595,165 +7002,308 @@
       "housetype": 2,
       "addtype1": 1,
       "addtype2": null
-   }
-},
-{
-   "model": "fias.houseparam",
-   "pk": 119564345,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.houseparam",
+    "pk": 119564345,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2019-07-16",
       "startdate": "2012-07-23",
       "enddate": "2079-06-06",
       "region": "99",
-      "objectid": 19273112,
       "typeid": 7,
-      "value": "55000000"
-   }
-},
-{
-   "model": "fias.houseparam",
-   "pk": 119564350,
-   "fields": {
+      "value": "55000000",
+      "objectid": 19273112
+    }
+  },
+  {
+    "model": "fias.houseparam",
+    "pk": 119564350,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2019-07-16",
       "startdate": "2012-07-23",
       "enddate": "2079-06-06",
       "region": "99",
-      "objectid": 19273112,
       "typeid": 6,
-      "value": "55000000000"
-   }
-},
-{
-   "model": "fias.houseparam",
-   "pk": 668832883,
-   "fields": {
+      "value": "55000000000",
+      "objectid": 19273112
+    }
+  },
+  {
+    "model": "fias.houseparam",
+    "pk": 668832883,
+    "fields": {
+      "ver": 20221125,
       "updatedate": "2020-08-15",
       "startdate": "2020-08-15",
       "enddate": "2079-06-06",
       "region": "99",
-      "objectid": 19273112,
       "typeid": 5,
-      "value": "468321"
-   }
-},
-{
-   "model": "fias.version",
-   "pk": 20221122,
-   "fields": {
+      "value": "468321",
+      "objectid": 19273112
+    }
+  },
+  {
+    "model": "fias.admhierarchy",
+    "pk": 84785687,
+    "fields": {
+      "ver": 20221125,
+      "updatedate": "1900-01-01",
+      "startdate": "1900-01-01",
+      "enddate": "2079-06-06",
+      "region": "99",
+      "isactive": true,
+      "objectid": 1460768,
+      "parentobjid": 0
+    }
+  },
+  {
+    "model": "fias.admhierarchy",
+    "pk": 84786086,
+    "fields": {
+      "ver": 20221125,
+      "updatedate": "1900-01-01",
+      "startdate": "1900-01-01",
+      "enddate": "2079-06-06",
+      "region": "99",
+      "isactive": true,
+      "objectid": 1456531,
+      "parentobjid": 1460768
+    }
+  },
+  {
+    "model": "fias.admhierarchy",
+    "pk": 84786087,
+    "fields": {
+      "ver": 20221125,
+      "updatedate": "1900-01-01",
+      "startdate": "1900-01-01",
+      "enddate": "2079-06-06",
+      "region": "99",
+      "isactive": true,
+      "objectid": 1456532,
+      "parentobjid": 1460768
+    }
+  },
+  {
+    "model": "fias.admhierarchy",
+    "pk": 84786097,
+    "fields": {
+      "ver": 20221125,
+      "updatedate": "2012-07-23",
+      "startdate": "2012-07-23",
+      "enddate": "2079-06-06",
+      "region": "99",
+      "isactive": true,
+      "objectid": 19273112,
+      "parentobjid": 1456532
+    }
+  },
+  {
+    "model": "fias.admhierarchy",
+    "pk": 123607639,
+    "fields": {
+      "ver": 20221125,
+      "updatedate": "2022-08-12",
+      "startdate": "2022-08-12",
+      "enddate": "2079-06-06",
+      "region": "99",
+      "isactive": true,
+      "objectid": 1456865,
+      "parentobjid": 1460768
+    }
+  },
+  {
+    "model": "fias.munhierarchy",
+    "pk": 107886302,
+    "fields": {
+      "ver": 20221125,
+      "updatedate": "1900-01-01",
+      "startdate": "1900-01-01",
+      "enddate": "2079-06-06",
+      "region": "99",
+      "isactive": true,
+      "objectid": 1460768,
+      "parentobjid": 0
+    }
+  },
+  {
+    "model": "fias.munhierarchy",
+    "pk": 107886321,
+    "fields": {
+      "ver": 20221125,
+      "updatedate": "1900-01-01",
+      "startdate": "1900-01-01",
+      "enddate": "2079-06-06",
+      "region": "99",
+      "isactive": true,
+      "objectid": 1456531,
+      "parentobjid": 1460768
+    }
+  },
+  {
+    "model": "fias.munhierarchy",
+    "pk": 107886328,
+    "fields": {
+      "ver": 20221125,
+      "updatedate": "1900-01-01",
+      "startdate": "1900-01-01",
+      "enddate": "2079-06-06",
+      "region": "99",
+      "isactive": true,
+      "objectid": 1456532,
+      "parentobjid": 1460768
+    }
+  },
+  {
+    "model": "fias.munhierarchy",
+    "pk": 107886329,
+    "fields": {
+      "ver": 20221125,
+      "updatedate": "2012-07-23",
+      "startdate": "2012-07-23",
+      "enddate": "2079-06-06",
+      "region": "99",
+      "isactive": true,
+      "objectid": 19273112,
+      "parentobjid": 1456532
+    }
+  },
+  {
+    "model": "fias.munhierarchy",
+    "pk": 107886334,
+    "fields": {
+      "ver": 20221125,
+      "updatedate": "1900-01-01",
+      "startdate": "1900-01-01",
+      "enddate": "2079-06-06",
+      "region": "99",
+      "isactive": true,
+      "objectid": 1456865,
+      "parentobjid": 1460768
+    }
+  },
+  {
+    "model": "fias.version",
+    "pk": 20221122,
+    "fields": {
       "date": null,
       "dumpdate": "2022-11-22",
       "complete_xml_url": "https://fias-file.nalog.ru/downloads/2022.11.22/gar_xml.zip",
       "delta_xml_url": "https://fias-file.nalog.ru/downloads/2022.11.22/gar_delta_xml.zip"
-   }
-},
-{
-   "model": "fias.version",
-   "pk": 20221125,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.version",
+    "pk": 20221125,
+    "fields": {
       "date": null,
       "dumpdate": "2022-11-25",
       "complete_xml_url": "https://fias-file.nalog.ru/downloads/2022.11.25/gar_xml.zip",
       "delta_xml_url": "https://fias-file.nalog.ru/downloads/2022.11.25/gar_delta_xml.zip"
-   }
-},
-{
-   "model": "fias.version",
-   "pk": 20221129,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.version",
+    "pk": 20221129,
+    "fields": {
       "date": null,
       "dumpdate": "2022-11-29",
       "complete_xml_url": "https://fias-file.nalog.ru/downloads/2022.11.29/gar_xml.zip",
       "delta_xml_url": "https://fias-file.nalog.ru/downloads/2022.11.29/gar_delta_xml.zip"
-   }
-},
-{
-   "model": "fias.status",
-   "pk": 11,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.status",
+    "pk": 1,
+    "fields": {
       "region": null,
       "table": "house_type",
       "ver": 20221125
-   }
-},
-{
-   "model": "fias.status",
-   "pk": 12,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.status",
+    "pk": 2,
+    "fields": {
       "region": null,
       "table": "add_house_type",
       "ver": 20221125
-   }
-},
-{
-   "model": "fias.status",
-   "pk": 13,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.status",
+    "pk": 3,
+    "fields": {
       "region": null,
       "table": "addr_obj_type",
       "ver": 20221125
-   }
-},
-{
-   "model": "fias.status",
-   "pk": 14,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.status",
+    "pk": 4,
+    "fields": {
       "region": null,
       "table": "param_type",
       "ver": 20221125
-   }
-},
-{
-   "model": "fias.status",
-   "pk": 15,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.status",
+    "pk": 5,
+    "fields": {
       "region": "99",
       "table": "house",
       "ver": 20221125
-   }
-},
-{
-   "model": "fias.status",
-   "pk": 16,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.status",
+    "pk": 6,
+    "fields": {
       "region": "99",
       "table": "house_param",
       "ver": 20221125
-   }
-},
-{
-   "model": "fias.status",
-   "pk": 17,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.status",
+    "pk": 7,
+    "fields": {
       "region": "99",
       "table": "addr_obj",
       "ver": 20221125
-   }
-},
-{
-   "model": "fias.status",
-   "pk": 18,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.status",
+    "pk": 8,
+    "fields": {
       "region": "99",
       "table": "addr_obj_param",
       "ver": 20221125
-   }
-},
-{
-   "model": "fias.status",
-   "pk": 19,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.status",
+    "pk": 9,
+    "fields": {
       "region": "99",
       "table": "adm_hierarchy",
       "ver": 20221125
-   }
-},
-{
-   "model": "fias.status",
-   "pk": 20,
-   "fields": {
+    }
+  },
+  {
+    "model": "fias.status",
+    "pk": 10,
+    "fields": {
       "region": "99",
       "table": "mun_hierarchy",
       "ver": 20221125
-   }
-}
+    }
+  }
 ]

@@ -1,40 +1,19 @@
-from itertools import chain
+from django.db import models
 
-from django.db import models, connection, connections
-
-__all__ = ('AddrObj', 'House', 'House78', 'HouseType', 'HouseAddType')
-
-from target.config import DATABASE_ALIAS
+__all__ = ('AddrObj', 'House', 'House78', 'HouseType', 'HouseAddType', 'Status')
 
 
-class Manager(models.Manager):
+class Status(models.Model):
 
-    def import_from(self, model: models.Model, exclude: dict = None, include: dict = None) -> None:
-        dst_opts = self.model._meta
-        src_opts = model._meta
-        dst_fields = {f.name for f in dst_opts.get_fields()}
-        src_fields = {f.name for f in src_opts.get_fields()}
-        fields = list(dst_fields & src_fields)
-        with connections[DATABASE_ALIAS].cursor() as cursor:
-            q_str = f"INSERT INTO {dst_opts.db_table} ({', '.join(fields)}) SELECT {', '.join(fields)} FROM {src_opts.db_table}"
-            if exclude is not None:
-                e_str = [f'{k}!={v}' for k, v in exclude.items()]
-            else:
-                e_str = []
-            if include is not None:
-                i_str = [f'{k}={v}' for k, v in include.items()]
-            else:
-                i_str = []
-            if e_str or i_str:
-                where = f' WHERE {" AND ".join(chain(e_str, i_str))}'
-            else:
-                where = ''
-            cursor.execute(f'{q_str}{where}')
+    class Meta:
+        app_label = 'target'
+        verbose_name = 'версия'
+        verbose_name_plural = 'версии'
+
+    ver = models.IntegerField(verbose_name='версия')
 
 
 class AbstractModel(models.Model):
-
-    objects = Manager()
 
     class Meta:
         #managed = False

@@ -88,6 +88,7 @@ class ClientContainer:
                 print('Сайт не отвечает при запросе WSDL')
             except Exception as e:
                 print(e)
+                raise e
         return self._client
 
 

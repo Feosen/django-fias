@@ -27,7 +27,7 @@ class CommandCreateTestCase(TestCase):
         }
         call_command('fias', *args, **opts)
 
-        self.assertEqual(14, HouseType.objects.count())
+        self.assertEqual(7, HouseType.objects.count())
         ht = HouseType.objects.get(id=7)
         self.assertEqual('Строение', ht.name)
         self.assertEqual('стр.', ht.shortname)
@@ -36,8 +36,9 @@ class CommandCreateTestCase(TestCase):
         self.assertEqual(date(1900, 1, 1), ht.startdate)
         self.assertEqual(date(2079, 6, 6), ht.enddate)
         self.assertTrue(ht.isactive)
+        self.assertEqual(20221124, ht.ver)
 
-        self.assertEqual(4, AddHouseType.objects.count())
+        self.assertEqual(3, AddHouseType.objects.count())
         aht = AddHouseType.objects.get(id=1)
         self.assertEqual('Корпус', aht.name)
         self.assertEqual('к.', aht.shortname)
@@ -46,6 +47,7 @@ class CommandCreateTestCase(TestCase):
         self.assertEqual(date(2015, 12, 25), aht.startdate)
         self.assertEqual(date(2079, 6, 6), aht.enddate)
         self.assertTrue(aht.isactive)
+        self.assertEqual(20221124, aht.ver)
 
         self.assertEqual(1, House.objects.count())
         h = House.objects.get(objectid=19273112)
@@ -62,6 +64,7 @@ class CommandCreateTestCase(TestCase):
         self.assertEqual(date(2019, 7, 16), h.updatedate)
         self.assertEqual(date(2012, 7, 23), h.startdate)
         self.assertEqual(date(2079, 6, 6), h.enddate)
+        self.assertEqual(20221124, h.ver)
 
         self.assertEqual(3, HouseParam.objects.count())
         hp = HouseParam.objects.get(id=119564345)
@@ -72,8 +75,9 @@ class CommandCreateTestCase(TestCase):
         self.assertEqual(date(2019, 7, 16), hp.updatedate)
         self.assertEqual(date(2012, 7, 23), hp.startdate)
         self.assertEqual(date(2079, 6, 6), hp.enddate)
+        self.assertEqual(20221124, hp.ver)
 
-        self.assertEqual(421, AddrObjType.objects.count())
+        self.assertEqual(419, AddrObjType.objects.count())
         aot = AddrObjType.objects.get(id=423)
         self.assertEqual('Город', aot.name)
         self.assertEqual('г', aot.shortname)
@@ -83,8 +87,12 @@ class CommandCreateTestCase(TestCase):
         self.assertEqual(date(2022, 9, 30), aot.enddate)
         self.assertEqual(2, aot.level)
         self.assertTrue(aot.isactive)
+        self.assertEqual(20221124, aot.ver)
 
-        self.assertEqual(3, AddrObj.objects.count())
+        self.assertEqual(4, AddrObj.objects.count())
+        self.assertListEqual([1456531, 1456532, 1456865, 1460768],
+                             list(AddrObj.objects.order_by('objectid').values_list('objectid', flat=True)))
+
         ao = AddrObj.objects.get(objectid=1456865)
         self.assertEqual('99', ao.region)
         self.assertTrue(ao.isactive)
@@ -96,8 +104,9 @@ class CommandCreateTestCase(TestCase):
         self.assertEqual(date(2022, 8, 12), ao.updatedate)
         self.assertEqual(date(2022, 8, 12), ao.startdate)
         self.assertEqual(date(2079, 6, 6), ao.enddate)
+        self.assertEqual(20221124, ao.ver)
 
-        self.assertEqual(6, AddrObjParam.objects.count())
+        self.assertEqual(8, AddrObjParam.objects.count())
         aop = AddrObjParam.objects.get(id=22510497)
         self.assertEqual('99', aop.region)
         self.assertEqual(1456865, aop.objectid)
@@ -106,8 +115,9 @@ class CommandCreateTestCase(TestCase):
         self.assertEqual(date(2019, 7, 16), aop.updatedate)
         self.assertEqual(date(1900, 1, 1), aop.startdate)
         self.assertEqual(date(2079, 6, 6), aop.enddate)
+        self.assertEqual(20221124, aop.ver)
 
-        self.assertEqual(4, AdmHierarchy.objects.count())
+        self.assertEqual(5, AdmHierarchy.objects.count())
         ah = AdmHierarchy.objects.get(id=123607639)
         self.assertEqual('99', ah.region)
         self.assertEqual(1456865, ah.objectid)
@@ -116,8 +126,9 @@ class CommandCreateTestCase(TestCase):
         self.assertEqual(date(2022, 8, 12), ah.updatedate)
         self.assertEqual(date(2022, 8, 12), ah.startdate)
         self.assertEqual(date(2079, 6, 6), ah.enddate)
+        self.assertEqual(20221124, ah.ver)
 
-        self.assertEqual(4, MunHierarchy.objects.count())
+        self.assertEqual(5, MunHierarchy.objects.count())
         mh = MunHierarchy.objects.get(id=107886334)
         self.assertEqual('99', mh.region)
         self.assertEqual(1456865, mh.objectid)
@@ -126,6 +137,7 @@ class CommandCreateTestCase(TestCase):
         self.assertEqual(date(1900, 1, 1), mh.updatedate)
         self.assertEqual(date(1900, 1, 1), mh.startdate)
         self.assertEqual(date(2079, 6, 6), mh.enddate)
+        self.assertEqual(20221124, mh.ver)
 
         self.assertEqual(1, Version.objects.count())
         ver = Version.objects.get()
@@ -159,7 +171,7 @@ class CommandUpdateTestCase(TestCase):
         }
         call_command('fias', *args, **opts)
 
-        self.assertEqual(14, HouseType.objects.count())
+        self.assertEqual(7, HouseType.objects.count())
         ht = HouseType.objects.get(id=7)
         self.assertEqual('Строение', ht.name)
         self.assertEqual('стр.', ht.shortname)
@@ -168,8 +180,9 @@ class CommandUpdateTestCase(TestCase):
         self.assertEqual(date(1900, 1, 1), ht.startdate)
         self.assertEqual(date(2079, 6, 6), ht.enddate)
         self.assertTrue(ht.isactive)
+        self.assertEqual(20221125, ht.ver)
 
-        self.assertEqual(4, AddHouseType.objects.count())
+        self.assertEqual(3, AddHouseType.objects.count())
         aht = AddHouseType.objects.get(id=1)
         self.assertEqual('Корпус', aht.name)
         self.assertEqual('к.', aht.shortname)
@@ -178,6 +191,7 @@ class CommandUpdateTestCase(TestCase):
         self.assertEqual(date(2015, 12, 25), aht.startdate)
         self.assertEqual(date(2079, 6, 6), aht.enddate)
         self.assertTrue(aht.isactive)
+        self.assertEqual(20221125, aht.ver)
 
         self.assertEqual(2, House.objects.count())
         h = House.objects.get(objectid=157269039)
@@ -194,6 +208,7 @@ class CommandUpdateTestCase(TestCase):
         self.assertEqual(date(2022, 11, 28), h.updatedate)
         self.assertEqual(date(2022, 11, 28), h.startdate)
         self.assertEqual(date(2079, 6, 6), h.enddate)
+        self.assertEqual(20221129, h.ver)
 
         self.assertEqual(5, HouseParam.objects.count())
         hp = HouseParam.objects.get(id=1346933308)
@@ -204,8 +219,9 @@ class CommandUpdateTestCase(TestCase):
         self.assertEqual(date(2022, 11, 28), hp.updatedate)
         self.assertEqual(date(2022, 11, 28), hp.startdate)
         self.assertEqual(date(2079, 6, 6), hp.enddate)
+        self.assertEqual(20221129, hp.ver)
 
-        self.assertEqual(421, AddrObjType.objects.count())
+        self.assertEqual(419, AddrObjType.objects.count())
         aot = AddrObjType.objects.get(id=423)
         self.assertEqual('Город', aot.name)
         self.assertEqual('г', aot.shortname)
@@ -215,8 +231,12 @@ class CommandUpdateTestCase(TestCase):
         self.assertEqual(date(2022, 9, 30), aot.enddate)
         self.assertEqual(2, aot.level)
         self.assertTrue(aot.isactive)
+        self.assertEqual(20221125, aot.ver)
 
         self.assertEqual(4, AddrObj.objects.count())
+        self.assertListEqual([1456532, 1456865, 1460768, 157289164],
+                             list(AddrObj.objects.order_by('objectid').values_list('objectid', flat=True)))
+
         ao = AddrObj.objects.get(objectid=157289164)
         self.assertEqual('99', ao.region)
         self.assertTrue(ao.isactive)
@@ -228,12 +248,14 @@ class CommandUpdateTestCase(TestCase):
         self.assertEqual(date(2022, 11, 28), ao.updatedate)
         self.assertEqual(date(2022, 11, 28), ao.startdate)
         self.assertEqual(date(2079, 6, 6), ao.enddate)
+        self.assertEqual(20221129, ao.ver)
 
         ao1 = AddrObj.objects.get(objectid=1456532)
         self.assertEqual('Школьная-2', ao1.name)
-        self.assertEqual(date(2022, 11, 28), ao.updatedate)
-        self.assertEqual(date(2022, 11, 28), ao.startdate)
-        self.assertEqual(date(2079, 6, 6), ao.enddate)
+        self.assertEqual(date(2022, 11, 28), ao1.updatedate)
+        self.assertEqual(date(2022, 11, 28), ao1.startdate)
+        self.assertEqual(date(2079, 6, 6), ao1.enddate)
+        self.assertEqual(20221129, ao1.ver)
 
         # TODO: как исключать из загрузки параметры удалённых объектов?
         self.assertEqual(8, AddrObjParam.objects.count())
@@ -245,6 +267,7 @@ class CommandUpdateTestCase(TestCase):
         self.assertEqual(date(2022, 11, 28), aop.updatedate)
         self.assertEqual(date(2022, 11, 28), aop.startdate)
         self.assertEqual(date(2079, 6, 6), aop.enddate)
+        self.assertEqual(20221129, aop.ver)
 
         self.assertEqual(6, AdmHierarchy.objects.count())
         ah = AdmHierarchy.objects.get(id=184786086)
@@ -255,6 +278,7 @@ class CommandUpdateTestCase(TestCase):
         self.assertEqual(date(2022, 11, 28), ah.updatedate)
         self.assertEqual(date(2022, 11, 28), ah.startdate)
         self.assertEqual(date(2079, 6, 6), ah.enddate)
+        self.assertEqual(20221129, ah.ver)
 
         self.assertEqual(6, MunHierarchy.objects.count())
         mh = MunHierarchy.objects.get(id=184786086)
@@ -265,6 +289,7 @@ class CommandUpdateTestCase(TestCase):
         self.assertEqual(date(2022, 11, 28), ah.updatedate)
         self.assertEqual(date(2022, 11, 28), ah.startdate)
         self.assertEqual(date(2079, 6, 6), mh.enddate)
+        self.assertEqual(20221129, mh.ver)
 
         self.assertEqual(3, Version.objects.count())
         # TODO: всё ещё сомнения по поводу поиска ближайшей версии

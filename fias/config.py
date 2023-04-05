@@ -89,6 +89,8 @@ elif DATABASE_ALIAS != DEFAULT_DB_ALIAS and 'fias.routers.FIASRouter' not in set
                                ' into `DATABASE_ROUTERS` list in your settings.py')
 
 
+REMOVE_NOT_ACTUAL = getattr(settings, 'FIAS_REMOVE_NOT_ACTUAL', True)
+
 """
 см. fias.importer.filters
 указывается список путей к функциям-фильтрам
@@ -114,14 +116,14 @@ _DEFAULT_TABLE_ROW_FILTERS = {}
 
 if settings.FIAS_HOUSE_TYPES != ALL:
     _DEFAULT_TABLE_ROW_FILTERS[TableName.HOUSE] = [
-        'fias.importer.filters.filter_obj_is_actual_and_active',
+        'fias.importer.filters.filter_hierarchy_is_isactual',
         'fias.importer.filters.filter_house_type',
     ]
     _DEFAULT_TABLE_ROW_FILTERS[TableName.HOUSE_PARAM] = [
         'fias.importer.filters.filter_house_param',
     ]
     _DEFAULT_TABLE_ROW_FILTERS[TableName.ADDR_OBJ] = [
-        'fias.importer.filters.filter_obj_is_actual_and_active',
+        'fias.importer.filters.filter_hierarchy_is_isactual',
         'fias.importer.filters.replace_quotes_in_names',
     ]
     _DEFAULT_TABLE_ROW_FILTERS[TableName.ADDR_OBJ_PARAM] = [

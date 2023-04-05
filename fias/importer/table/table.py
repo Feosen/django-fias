@@ -125,6 +125,7 @@ class Table(object):
 
         self.deleted = bool(kwargs.get('deleted', False))
         self.region = kwargs.get('region', None)
+        self.ver = kwargs.get('ver', None)
 
     def _truncate(self, model: Type[Model]) -> None:
         db_table = model._meta.db_table

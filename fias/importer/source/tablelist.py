@@ -50,7 +50,7 @@ class TableList(AbstractTableList):
         if self.table_list is None:
             self.table_list = {}
             for filename in self.get_table_list():
-                table = TableFactory.parse(filename=filename)
+                table = TableFactory.parse(filename=filename, extra={'ver': self.version.ver})
                 if table is None or (config.ALL == config.REGIONS
                                      or table.region is not None and table.region not in config.REGIONS):
                     continue
