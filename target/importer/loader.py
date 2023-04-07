@@ -1,6 +1,7 @@
 # coding: utf-8
 from __future__ import unicode_literals, absolute_import
 
+import logging
 from dataclasses import dataclass
 from typing import Tuple, List, Union, Type, Dict, Any
 
@@ -14,6 +15,9 @@ from target.config import DATABASE_ALIAS
 from target.importer.signals import (
     pre_import_table, post_import_table
 )
+
+
+logger = logging.getLogger(__name__)
 
 
 @dataclass
@@ -142,77 +146,56 @@ class Cfg:
     hierarchy: Union[None, List[HierarchyCfg]]
 
 
-_map: List[Cfg] = [
-    Cfg(t_models.HouseType, 'id', s_models.HouseType, 'id', None, None, None, None),
-    Cfg(t_models.HouseAddType, 'id', s_models.AddHouseType, 'id', None, None, None, None),
-    Cfg(t_models.AddrObj, 'objectid', s_models.AddrObj, 'objectid', None, {'aolevel': 'level'},
-        ParamCfg(s_models.AddrObjParam, 'objectid', [('okato', 6), ('oktmo', 7)]),
-        [HierarchyCfg(s_models.MunHierarchy, 'objectid', 'parentobjid', 'owner_mun'),
-         HierarchyCfg(s_models.AdmHierarchy, 'objectid', 'parentobjid', 'owner_adm')]),
-    Cfg(t_models.House, 'objectid', s_models.House, 'objectid', [('region', '!=', '78')], None,
-        ParamCfg(s_models.HouseParam, 'objectid', [('postalcode', 5), ('okato', 6), ('oktmo', 7)]),
-        [HierarchyCfg(s_models.MunHierarchy, 'objectid', 'parentobjid', 'owner_mun'),
-         HierarchyCfg(s_models.AdmHierarchy, 'objectid', 'parentobjid', 'owner_adm')]),
-    Cfg(t_models.House78, 'objectid', s_models.House, 'objectid', [('region', '=', '78')], None,
-        ParamCfg(s_models.HouseParam, 'objectid', [('postalcode', 5), ('okato', 6), ('oktmo', 7)]),
-        [HierarchyCfg(s_models.MunHierarchy, 'objectid', 'parentobjid', 'owner_mun'),
-         HierarchyCfg(s_models.AdmHierarchy, 'objectid', 'parentobjid', 'owner_adm')]),
-]
-
-
-def truncate():
-    # TODO: optimization
-    for cfg in _map:
-        cfg.dst.objects.all().delete()
+def truncate(cfg: Cfg):
+    cfg.dst.objects.all().delete()
 
 
 class TableLoader(object):
-    def load(self, ver: int = None):
-        pre_import_table.send(sender=self.__class__, table=None)
-        self.do_load(ver)
-        post_import_table.send(sender=self.__class__, table=None)
+    def load(self, cfg: Cfg, ver: int = None):
+        logger.info(f'Table "{cfg.dst._meta.object_name}" is loading.')
+        pre_import_table.send(sender=self.__class__, cfg=cfg)
+        self.do_load(cfg, ver)
+        post_import_table.send(sender=self.__class__, cfg=cfg)
+        logger.info(f'Table "{cfg.dst._meta.object_name}" has been loaded.')
 
-    def do_load(self, ver: int):
+    def do_load(self, cfg: Cfg, ver: int):
         connection = connections[DATABASE_ALIAS]
-        with transaction.atomic():
-            for cfg in _map:
-                with connection.cursor() as cursor:
-                    if cfg.filters is not None:
-                        filters = list(map(lambda f_op_v: SqlBuilder.filter_value(cfg.src, *f_op_v), cfg.filters))
-                    else:
-                        filters = None
-                    raw_sql = SqlBuilder.create(connection, cfg.dst, cfg.dst_pk, cfg.src, cfg.src_pk, filters,
-                                                cfg.field_map, cfg.params, cfg.hierarchy)
-                    cursor.execute(raw_sql)
+        with connection.cursor() as cursor:
+            if cfg.filters is not None:
+                filters = list(map(lambda f_op_v: SqlBuilder.filter_value(cfg.src, *f_op_v), cfg.filters))
+            else:
+                filters = None
+            raw_sql = SqlBuilder.create(connection, cfg.dst, cfg.dst_pk, cfg.src, cfg.src_pk, filters,
+                                        cfg.field_map, cfg.params, cfg.hierarchy)
+            cursor.execute(raw_sql)
 
 
 class TableUpdater(TableLoader):
 
-    def do_load(self, ver: int):
+    def do_load(self, cfg: Cfg, ver: int):
         connection = connections[DATABASE_ALIAS]
         with transaction.atomic():
-            for cfg in _map:
-                # Delete rows
-                with connection.cursor() as cursor:
-                    query = SqlBuilder.delete_on_field(cfg.dst, cfg.dst_pk, cfg.src, cfg.src_pk)
-                    cursor.execute(query)
+            # Delete rows
+            with connection.cursor() as cursor:
+                query = SqlBuilder.delete_on_field(cfg.dst, cfg.dst_pk, cfg.src, cfg.src_pk)
+                cursor.execute(query)
 
-                current_obj_sql = SqlBuilder.select(connection, cfg.dst, cfg.dst, cfg.dst_pk, [cfg.dst_pk],
-                                                    None, None, None, None)
-                if cfg.filters is not None:
-                    base_filters = list(map(lambda f_op_v: SqlBuilder.filter_value(cfg.src, *f_op_v), cfg.filters))
-                else:
-                    base_filters = []
-                # Update rows
-                with connection.cursor() as cursor:
-                    filters = base_filters + [SqlBuilder.filter_value(cfg.src, 'ver', '>', ver)]
-                    query = SqlBuilder.update(connection, cfg.dst, cfg.dst_pk, cfg.src, cfg.src_pk, filters,
-                                              cfg.field_map, cfg.params, cfg.hierarchy)
-                    cursor.execute(query)
+            current_obj_sql = SqlBuilder.select(connection, cfg.dst, cfg.dst, cfg.dst_pk, [cfg.dst_pk],
+                                                None, None, None, None)
+            if cfg.filters is not None:
+                base_filters = list(map(lambda f_op_v: SqlBuilder.filter_value(cfg.src, *f_op_v), cfg.filters))
+            else:
+                base_filters = []
+            # Update rows
+            with connection.cursor() as cursor:
+                filters = base_filters + [SqlBuilder.filter_value(cfg.src, 'ver', '>', ver)]
+                query = SqlBuilder.update(connection, cfg.dst, cfg.dst_pk, cfg.src, cfg.src_pk, filters,
+                                          cfg.field_map, cfg.params, cfg.hierarchy)
+                cursor.execute(query)
 
-                # Create rows
-                with connection.cursor() as cursor:
-                    filters = base_filters + [SqlBuilder.filter_query(cfg.src, cfg.src_pk, False, current_obj_sql)]
-                    query = SqlBuilder.create(connection, cfg.dst, cfg.dst_pk, cfg.src, cfg.src_pk, filters,
-                                              cfg.field_map, cfg.params, cfg.hierarchy)
-                    cursor.execute(query)
+            # Create rows
+            with connection.cursor() as cursor:
+                filters = base_filters + [SqlBuilder.filter_query(cfg.src, cfg.src_pk, False, current_obj_sql)]
+                query = SqlBuilder.create(connection, cfg.dst, cfg.dst_pk, cfg.src, cfg.src_pk, filters,
+                                          cfg.field_map, cfg.params, cfg.hierarchy)
+                cursor.execute(query)

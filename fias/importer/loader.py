@@ -2,7 +2,8 @@
 from __future__ import unicode_literals, absolute_import
 
 import datetime
-from sys import stderr
+import logging
+from sys import stdout
 from typing import List
 
 from django import db
@@ -10,7 +11,7 @@ from django.conf import settings
 from django.core.exceptions import FieldDoesNotExist
 from django.db import IntegrityError
 from django.db.models import Model
-from progress.helpers import WritelnMixin
+from progress import Infinite
 
 from fias.config import REMOVE_NOT_ACTUAL
 from fias.importer.signals import (
@@ -20,9 +21,12 @@ from fias.importer.table.table import AbstractTableList, Table
 from fias.importer.validators import validators
 
 
-# TODO: it does not show in terminal
-class LoadingBar(WritelnMixin):
-    file = stderr
+logger = logging.getLogger(__name__)
+
+
+class LoadingBar(Infinite):
+    file = stdout
+    check_tty = False
 
     text = 'T: %(table)s.' \
            ' L: %(loaded)d | U: %(updated)d' \
@@ -130,9 +134,11 @@ class TableLoader(object):
             db.reset_queries()
 
     def load(self, tablelist: AbstractTableList, table: Table):
+        logger.info(f'Region {table.region} table "{table.name}" is loading.')
         pre_import_table.send(sender=self.__class__, table=table)
         self.do_load(tablelist=tablelist, table=table)
         post_import_table.send(sender=self.__class__, table=table)
+        logger.info(f'Region {table.region} table "{table.name}" has been loaded.')
 
     def do_load(self, tablelist: AbstractTableList, table: Table):
         bar = LoadingBar(table=table.name, filename=table.filename)
@@ -214,5 +220,4 @@ class TableUpdater(TableLoader):
                 pass
 
         bar.update(loaded=self.counter, updated=self.upd_counter, skipped=self.skip_counter)
-        # TODO: finish
         bar.finish()

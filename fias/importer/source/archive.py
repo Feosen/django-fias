@@ -1,6 +1,7 @@
 # coding: utf-8
 from __future__ import unicode_literals, absolute_import
 
+import logging
 import tempfile
 import zipfile
 from pathlib import Path
@@ -16,6 +17,9 @@ from fias.importer.signals import (
 )
 from .tablelist import TableList, TableListLoadingError
 from .wrapper import RarArchiveWrapper
+
+logger = logging.getLogger(__name__)
+
 
 # Задаем UNRAR_TOOL глобально
 rarfile.UNRAR_TOOL = getattr(settings, 'FIAS_UNRAR_TOOL', 'unrar')
@@ -70,6 +74,7 @@ class RemoteArchiveTableList(LocalArchiveTableList):
         def update_progress(count, block_size: int, total_size: int):
             progress.goto(int(count * block_size * 100 / total_size))
 
+        logger.info(f'Downloading from {source}.')
         pre_download.send(sender=self.__class__, url=source)
         try:
             path = Path(urlretrieve(source, reporthook=update_progress)[0])
@@ -79,5 +84,6 @@ class RemoteArchiveTableList(LocalArchiveTableList):
             ))
         progress.finish()
         post_download.send(sender=self.__class__, url=source, path=path)
+        logger.info(f'Downloaded from {source} into {path}.')
 
         return super(RemoteArchiveTableList, self).load_data(source=path)

@@ -2,22 +2,25 @@ from django.db import models
 
 __all__ = ('AddrObj', 'House', 'House78', 'HouseType', 'HouseAddType', 'Status')
 
-
-class Status(models.Model):
-
-    class Meta:
-        app_label = 'target'
-        verbose_name = 'версия'
-        verbose_name_plural = 'версии'
-
-    ver = models.IntegerField(verbose_name='версия')
+from target.config import MANAGE
 
 
 class AbstractModel(models.Model):
 
     class Meta:
-        #managed = False
+        managed = MANAGE
         abstract = True
+
+
+class Status(AbstractModel):
+
+    class Meta(AbstractModel.Meta):
+        abstract = False
+        app_label = 'target'
+        verbose_name = 'версия'
+        verbose_name_plural = 'версии'
+
+    ver = models.IntegerField(verbose_name='версия')
 
 
 class AddrObj(AbstractModel):

@@ -48,7 +48,8 @@ PARAM_MAP = {
 }
 
 TABLES = TABLES_STATS
-TABLES += tuple(x.lower() for x in TABLES_DEFAULT if x.lower() in list(set(getattr(settings, 'FIAS_TABLES', []))))
+DEFAULT_TABLES = ('house', 'house_param', 'addr_obj', 'addr_obj_param', 'adm_hierarchy', 'mun_hierarchy')
+TABLES += tuple(x.lower() for x in TABLES_DEFAULT if x.lower() in list(set(getattr(settings, 'FIAS_TABLES', DEFAULT_TABLES))))
 
 
 # Auto area

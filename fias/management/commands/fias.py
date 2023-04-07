@@ -104,9 +104,6 @@ class Command(BaseCommandCompatible):
     }
 
     def handle(self, *args, **options):
-        from fias.importer.timer import Timer
-        Timer.init()
-
         src = options.pop('src')
         remote = False
         if src and src.lower() == 'auto':

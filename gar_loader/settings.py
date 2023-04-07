@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-
+import sys
 from pathlib import Path
+
+TEST = len(sys.argv) > 1 and sys.argv[1] == 'test'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-4og8m00lqkpy4f^5_z3k6l(qb$ymoy(ri)huyo+i@^2yv^ild@"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -127,23 +129,72 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.1/howto/static-files/
-
 STATIC_URL = "static/"
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-FIAS_UNRAR_TOOL = Path(r"G:\Program Files\WinRAR\UnRAR.exe")
-FIAS_TABLES = ('house', 'house_param', 'addr_obj', 'addr_obj_param', 'adm_hierarchy', 'mun_hierarchy')
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'default': {
+            'format': '%(asctime)s:%(name)s:%(process)d:%(lineno)d ' '%(levelname)s %(message)s',
+            'datefmt': '%Y-%m-%d %H:%M:%S',
+        },
+    },
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        },
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'filters': ['require_debug_true'],
+            'formatter': 'default',
+            'class': 'logging.StreamHandler',
+            'stream': sys.stdout,
+        },
+        'console_err': {
+            'level': 'ERROR',
+            'formatter': 'default',
+            'class': 'logging.StreamHandler',
+            'stream': sys.stderr,
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler',
+            'include_html': True,
+        }
+    },
+    'loggers': {
+        'fias': {
+            'handlers': ['console', 'console_err'],
+            'level': 'DEBUG',
+        },
+        'target': {
+            'handlers': ['console', 'console_err'],
+            'level': 'DEBUG',
+        },
+        'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    }
+}
+
+FIAS_UNRAR_TOOL = Path(r"G:\Program Files\WinRAR\UnRAR.exe")
+
+FIAS_REGIONS = '__all__'
 #FIAS_REGIONS = ('99',)
-FIAS_REGIONS = ('99', '87')
+#FIAS_REGIONS = ('99', '87')
 #FIAS_REGIONS = ('50',)
 FIAS_HOUSE_TYPES = (2, 5, 7, 10)
 
-FIAS_TABLE_ROW_FILTERS = {}
+TARGET_MANAGE = True

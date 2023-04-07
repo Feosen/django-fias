@@ -40,12 +40,15 @@ class Command(BaseCommandCompatible):
             "default": False,
             "help": "Update database"
         },
+        "--keep-indexes": {
+            "action": "store_true",
+            "dest": "keep_indexes",
+            "default": False,
+            "help": "Do not disable indexes before data import"
+        },
     }
 
     def handle(self, *args, **options):
-        from fias.importer.timer import Timer
-        Timer.init()
-
         truncate = options.pop('truncate')
         doit = options.pop('doit')
 
@@ -60,13 +63,11 @@ class Command(BaseCommandCompatible):
         if settings.USE_I18N:
             activate('ru')
 
-        # TODO: keep it?
-        # keep_indexes = options.pop('keep_indexes')
-        keep_indexes = True
+        keep_indexes = options.pop('keep_indexes')
 
         if update:
             try:
-                update_data(keep_indexes=keep_indexes)
+                update_data()
             except TableListLoadingError as e:
                 self.error(str(e))
 

@@ -3,6 +3,7 @@ from __future__ import unicode_literals, absolute_import
 
 import datetime
 import json
+import logging
 import urllib.request
 
 import zeep.client
@@ -13,6 +14,8 @@ from zeep.exceptions import XMLSyntaxError
 from fias.config import PROXY
 from fias.importer.signals import pre_fetch_version, post_fetch_version
 from fias.models import Version
+
+logger = logging.getLogger(__name__)
 
 
 wsdl_source = "http://fias.nalog.ru/WebServices/Public/DownloadService.asmx?WSDL"
@@ -96,9 +99,8 @@ _cc = ClientContainer()
 
 
 def fetch_version_info(update_all=False):
-
+    logger.info('Version info updating.')
     pre_fetch_version.send(object.__class__)
-
     try:
         result = _cc.get_client().service.GetAllDownloadFileInfo()
     except XMLSyntaxError:
@@ -109,3 +111,4 @@ def fetch_version_info(update_all=False):
         parse_func(item=item, update_all=update_all)
 
     post_fetch_version.send(object.__class__)
+    logger.info('Version info updated.')

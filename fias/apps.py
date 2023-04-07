@@ -8,4 +8,3 @@ class DevicesConfig(AppConfig):
     # noinspection PyUnresolvedReferences
     def ready(self):
         import fias.importer.table_validator
-        import fias.importer.timer

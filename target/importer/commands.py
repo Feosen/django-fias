@@ -1,78 +1,91 @@
 # coding: utf-8
 from __future__ import unicode_literals, absolute_import
 
+import logging
+from typing import List
+
 from fias import models as s_models
-from fias.importer.indexes import remove_indexes_from_model, restore_indexes_for_model
+from gar_loader.indexes import remove_indexes_from_model, restore_indexes_for_model
 from target import models as t_models
-from target.importer.loader import TableLoader, TableUpdater, truncate as table_truncate
+from target.importer.loader import TableLoader, TableUpdater, truncate as table_truncate, Cfg, ParamCfg, HierarchyCfg
 from target.importer.signals import (
     pre_drop_indexes, post_drop_indexes,
     pre_restore_indexes, post_restore_indexes,
     pre_update, post_update, pre_import, post_import
 )
-from target.models import Status
+
+
+logger = logging.getLogger(__name__)
+
+
+_table_cfg: List[Cfg] = [
+    Cfg(t_models.HouseType, 'id', s_models.HouseType, 'id', None, None, None, None),
+    Cfg(t_models.HouseAddType, 'id', s_models.AddHouseType, 'id', None, None, None, None),
+    Cfg(t_models.AddrObj, 'objectid', s_models.AddrObj, 'objectid', None, {'aolevel': 'level'},
+        ParamCfg(s_models.AddrObjParam, 'objectid', [('okato', 6), ('oktmo', 7)]),
+        [HierarchyCfg(s_models.MunHierarchy, 'objectid', 'parentobjid', 'owner_mun'),
+         HierarchyCfg(s_models.AdmHierarchy, 'objectid', 'parentobjid', 'owner_adm')]),
+    Cfg(t_models.House, 'objectid', s_models.House, 'objectid', [('region', '!=', '78')], None,
+        ParamCfg(s_models.HouseParam, 'objectid', [('postalcode', 5), ('okato', 6), ('oktmo', 7)]),
+        [HierarchyCfg(s_models.MunHierarchy, 'objectid', 'parentobjid', 'owner_mun'),
+         HierarchyCfg(s_models.AdmHierarchy, 'objectid', 'parentobjid', 'owner_adm')]),
+    Cfg(t_models.House78, 'objectid', s_models.House, 'objectid', [('region', '=', '78')], None,
+        ParamCfg(s_models.HouseParam, 'objectid', [('postalcode', 5), ('okato', 6), ('oktmo', 7)]),
+        [HierarchyCfg(s_models.MunHierarchy, 'objectid', 'parentobjid', 'owner_mun'),
+         HierarchyCfg(s_models.AdmHierarchy, 'objectid', 'parentobjid', 'owner_adm')]),
+]
 
 
 def load_complete_data(truncate: bool = False, keep_indexes: bool = False):
 
-    pre_import.send(sender=object.__class__, version=Status.objects.get().ver)
+    ver = s_models.Status.objects.order_by('ver').first().ver_id
+    logger.info(f'Loading data v.{ver}.')
+    pre_import.send(sender=object.__class__, version=ver)
 
-    # Очищаем таблицу перед импортом
-    if truncate:
-        table_truncate()
+    for cfg in _table_cfg:
+        # Очищаем таблицу перед импортом
+        if truncate:
+            table_truncate(cfg)
 
-    # Удаляем индексы из модели перед импортом
-    if not keep_indexes:
-        # TODO: finish it
-        pre_drop_indexes.send(sender=object.__class__)
-        remove_indexes_from_model(model=first_table.model)
-        post_drop_indexes.send(sender=object.__class__)
+        # Удаляем индексы из модели перед импортом
+        if not keep_indexes:
+            pre_drop_indexes.send(sender=object.__class__, cfg=cfg)
+            remove_indexes_from_model(model=cfg.dst)
+            post_drop_indexes.send(sender=object.__class__, cfg=cfg)
 
-    # Импортируем все таблицы модели
-    loader = TableLoader()
-    loader.load()
-    s_status = s_models.Status.objects.order_by('ver').first()
-    status, created = t_models.Status.objects.get_or_create(id=1, defaults={'ver': s_status.ver_id})
-    if not created:
-        status.ver = s_status.ver_id
-        status.full_clean()
-        status.save()
+        # Импортируем все таблицы модели
+        loader = TableLoader()
+        loader.load(cfg)
+        status, created = t_models.Status.objects.get_or_create(id=1, defaults={'ver': ver})
+        if not created:
+            status.ver = ver
+            status.full_clean()
+            status.save()
 
-    # Восстанавливаем удалённые индексы
-    # TODO: finish it
-    if not keep_indexes:
-        pre_restore_indexes.send(sender=object.__class__, table=first_table)
-        restore_indexes_for_model(model=first_table.model)
-        post_restore_indexes.send(sender=object.__class__, table=first_table)
+        # Восстанавливаем удалённые индексы
+        if not keep_indexes:
+            pre_restore_indexes.send(sender=object.__class__, cfg=cfg)
+            restore_indexes_for_model(model=cfg.dst)
+            post_restore_indexes.send(sender=object.__class__, cfg=cfg)
 
-    post_import.send(sender=object.__class__, version=Status.objects.get().ver)
+    post_import.send(sender=object.__class__, version=ver)
+    logger.info(f'Data v.{ver} loaded.')
 
 
-def update_data(keep_indexes: bool = False):
-    pre_update.send(sender=object.__class__, version=Status.objects.get().ver)
-
-    # Удаляем индексы из модели перед импортом
-    if not keep_indexes:
-        # TODO: finish it
-        pre_drop_indexes.send(sender=object.__class__)
-        remove_indexes_from_model(model=first_table.model)
-        post_drop_indexes.send(sender=object.__class__)
+def update_data():
+    ver = s_models.Status.objects.order_by('ver').first().ver_id
+    logger.info(f'Updating from v.{ver}.')
+    pre_update.send(sender=object.__class__, version=ver)
 
     t_status = t_models.Status.objects.get()
 
-    loader = TableUpdater()
-    loader.load(t_status.ver)
-    s_status = s_models.Status.objects.order_by('ver').first()
+    for cfg in _table_cfg:
+        loader = TableUpdater()
+        loader.load(cfg, t_status.ver)
 
-    t_status.ver = s_status.ver_id
+    t_status.ver = ver
     t_status.full_clean()
     t_status.save()
 
-    # Восстанавливаем удалённые индексы
-    # TODO: finish it
-    if not keep_indexes:
-        pre_restore_indexes.send(sender=object.__class__, table=first_table)
-        restore_indexes_for_model(model=first_table.model)
-        post_restore_indexes.send(sender=object.__class__, table=first_table)
-
-    post_update.send(sender=object.__class__, version=Status.objects.get().ver)
+    post_update.send(sender=object.__class__, version=ver)
+    logger.info(f'Data v.{ver} is updated.')
