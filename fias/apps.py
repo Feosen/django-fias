@@ -1,7 +1,7 @@
 ﻿from django.apps import AppConfig
 
 
-class DevicesConfig(AppConfig):
+class FiasConfig(AppConfig):
     name = 'fias'
 
     # Signal receivers registration
