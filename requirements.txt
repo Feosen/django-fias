@@ -1,9 +1,0 @@
-django>=4
-rarfile
-six
-lxml
-unrar
-zeep>=0.17.0
-dbfread>=2.0.0
-progress
-psycopg2

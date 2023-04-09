@@ -1,5 +1,0 @@
-pytest
-pytest_django>=2.9.0
-pytest-xdist
-pytest_cov
-mock

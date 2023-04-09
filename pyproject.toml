@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "gar-loader"
+version = "0.1.0"
+description = ""
+authors = ["Feosen <iva588@yandex.ru>"]
+readme = "README.md"
+packages = [{include = "gar_loader"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.2"
+rarfile = "^4.0"
+six = "^1.16.0"
+zeep = "^4.2.1"
+progress = "^1.6"
+psycopg2 = "^2.9.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
