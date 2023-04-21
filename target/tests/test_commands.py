@@ -1,3 +1,4 @@
+from typing import Any, Dict, List
 from uuid import UUID
 
 from django.core.management import call_command
@@ -7,15 +8,13 @@ from target.models import *
 
 
 class CommandCreateTestCase(TestCase):
-    databases = ['default', 'gar']
+    databases = {'default', 'gar'}
     fixtures = ["target/tests/data/fixtures/gar_99.json"]
 
-    def test_target_create(self):
+    def test_target_create(self) -> None:
         self.assertEqual(0, Status.objects.count())
 
-        args = []
-        opts = {}
-        call_command('target', *args, **opts)
+        call_command('target')
 
         self.assertEqual(14, HouseType.objects.count())
         ht = HouseType.objects.get(id=7)
@@ -76,14 +75,14 @@ class CommandCreateTestCase(TestCase):
 
 
 class CommandUpdateTestCase(TestCase):
-    databases = ['default', 'gar']
+    databases = {'default', 'gar'}
     fixtures = ["target/tests/data/fixtures/gar_99_u.json"]
 
-    def test_target_create(self):
+    def test_target_create(self) -> None:
         self.assertEqual(20221125, Status.objects.get().ver)
 
-        args = []
-        opts = {
+        args: List[Any] = []
+        opts: Dict[str, Any] = {
             'update': True
         }
         call_command('target', *args, **opts)

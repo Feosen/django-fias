@@ -1,19 +1,23 @@
 # coding: utf-8
 from __future__ import unicode_literals, absolute_import
 
+from typing import Type, Union, Dict, Any
+
+from django.db.models import Model
+
 from target.config import DEFAULT_DB_ALIAS, DATABASE_ALIAS
 
 
 class TargetRouter(object):
     app_labels = ('target',)
     ALLOWED_REL = ['AddrObj']
-    
-    def db_for_read(self, model, **hints):
+
+    def db_for_read(self, model: Type[Model], **hints: Dict[str, Any]) -> Union[str, None]:
         if model._meta.app_label in self.app_labels:
             return DATABASE_ALIAS
         return None
 
-    def db_for_write(self, model, **hints):
+    def db_for_write(self, model: Type[Model], **hints: Dict[str, Any]) -> Union[str, None]:
         if model._meta.app_label in self.app_labels:
             return DATABASE_ALIAS
         else:
@@ -30,7 +34,8 @@ class TargetRouter(object):
                 pass
         return None
 
-    def allow_relation(self, obj1, obj2, **hints):
+    def allow_relation(self, obj1: Union[Model, Type[Model]], obj2: Union[Model, Type[Model]],
+                       **hints: Dict[str, Any]) -> Union[bool, None]:
         """\
         Разрешить связи из других бд к таблицам ФИАС
         но запретить ссылаться из бд ФИАС в другие БД
@@ -42,11 +47,12 @@ class TargetRouter(object):
             return True
         return None
 
-    def allow_migrate(self, db, app_label, model=None, **hints):
+    def allow_migrate(self, db: str, app_label: str, model: Type[Model] | None = None, **hints: Dict[str, Any]) -> \
+    Union[bool, None]:
         """Разрешить синхронизацию моделей в базе ФИАС"""
         if app_label in self.app_labels:
             return db == DATABASE_ALIAS
-        #elif db == DATABASE_ALIAS:
+        # elif db == DATABASE_ALIAS:
         #    return False
 
         return None

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import sys
 from pathlib import Path
+from typing import Union, Tuple
 
 TEST = len(sys.argv) > 1 and sys.argv[1] == 'test'
 
@@ -25,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-4og8m00lqkpy4f^5_z3k6l(qb$ymoy(ri)huyo+i@^2yv^ild@"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -43,7 +44,7 @@ INSTALLED_APPS = [
     "target",
 ]
 
-MIDDLEWARE = [
+#MIDDLEWARE = [
     #"django.middleware.security.SecurityMiddleware",
     #"django.contrib.sessions.middleware.SessionMiddleware",
     #"django.middleware.common.CommonMiddleware",
@@ -51,7 +52,7 @@ MIDDLEWARE = [
     #"django.contrib.auth.middleware.AuthenticationMiddleware",
     #"django.contrib.messages.middleware.MessageMiddleware",
     #"django.middleware.clickjacking.XFrameOptionsMiddleware",
-]
+#]
 
 ROOT_URLCONF = "gar_loader.urls"
 
@@ -191,10 +192,13 @@ LOGGING = {
 
 FIAS_UNRAR_TOOL = Path(r"G:\Program Files\WinRAR\UnRAR.exe")
 
-FIAS_REGIONS = '__all__'
-#FIAS_REGIONS = ('99',)
-#FIAS_REGIONS = ('99', '87')
-#FIAS_REGIONS = ('50',)
-FIAS_HOUSE_TYPES = (2, 5, 7, 10)
+_FRT = Union[Tuple[str, ...], str]
+FIAS_REGIONS: _FRT = '__all__'
+#FIAS_REGIONS: _FRT = ('99',)
+#FIAS_REGIONS: _FRT = ('99', '87')
+#FIAS_REGIONS: _FRT = ('50',)
 
-TARGET_MANAGE = True
+_FHT = Union[Tuple[int, ...], str]
+FIAS_HOUSE_TYPES: _FHT = (2, 5, 7, 10)
+
+TARGET_MANAGE: bool = True

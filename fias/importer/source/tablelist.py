@@ -3,7 +3,9 @@ from __future__ import unicode_literals, absolute_import
 
 import datetime
 from pathlib import Path
-from typing import List, Type, IO, Dict
+from typing import List, Type, IO, Dict, Union, Any
+
+from django.utils.functional import cached_property
 
 from fias.importer.signals import pre_load, post_load
 from fias.importer.table import TableFactory
@@ -19,15 +21,13 @@ class TableListLoadingError(Exception):
 
 class TableList(AbstractTableList):
     wrapper_class: Type[SourceWrapper] = SourceWrapper
-    wrapper: SourceWrapper = None
+    wrapper: SourceWrapper
 
-    table_list: Dict[str, List[Table]] = None
-    date: datetime.date = None
-    version_info: Version = None
+    date: Union[datetime.date, None] = None
+    version_info: Union[Version, None] = None
 
-    def __init__(self, src, version: Version = None, tempdir: Path = None):
-        self.info_version = version
-        self.src = src
+    def __init__(self, src: Any, version: Union[Version, None] = None, tempdir: Union[Path, None] = None):
+        self.version_info = version
         self.tempdir = tempdir
 
         if version is not None:
@@ -39,24 +39,23 @@ class TableList(AbstractTableList):
         self.wrapper = self.load_data(src)
         post_load.send(sender=self.__class__, wrapper=self.wrapper)
 
-    def load_data(self, source: str) -> SourceWrapper:
+    def load_data(self, source: Any) -> SourceWrapper:
         return self.wrapper_class(source=source)
 
     def get_table_list(self) -> List[str]:
         return self.wrapper.get_file_list()
 
-    @property
+    @cached_property
     def tables(self) -> Dict[str, List[Table]]:
-        if self.table_list is None:
-            self.table_list = {}
-            for filename in self.get_table_list():
-                table = TableFactory.parse(filename=filename, extra={'ver': self.version.ver})
-                if table is None or (config.ALL != config.REGIONS
-                                     and table.region is not None and table.region not in config.REGIONS):
-                    continue
-                self.table_list.setdefault(table.name, []).append(table)
+        table_list: Dict[str, List[Table]] = {}
+        for filename in self.get_table_list():
+            table = TableFactory.parse(filename=filename, extra={'ver': self.version.ver})
+            if table is None or (config.ALL != config.REGIONS
+                                 and table.region is not None and table.region not in config.REGIONS):
+                continue
+            table_list.setdefault(table.name, []).append(table)
 
-        return self.table_list
+        return table_list
 
     def get_date_info(self, name: str) -> datetime.date:
         return self.wrapper.get_date_info(filename=name)
@@ -68,7 +67,7 @@ class TableList(AbstractTableList):
 
         return self.date
 
-    def open(self, filename: str) -> IO:
+    def open(self, filename: str) -> IO[bytes]:
         return self.wrapper.open(filename=filename)
 
     @property

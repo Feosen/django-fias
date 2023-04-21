@@ -3,6 +3,7 @@
 from __future__ import unicode_literals, absolute_import
 
 import sys
+from typing import Any, Dict
 
 from django.conf import settings
 from django.utils.translation import activate
@@ -48,12 +49,7 @@ class Command(BaseCommandCompatible):
         },
     }
 
-    def handle(self, *args, **options):
-        truncate = options.pop('truncate')
-        doit = options.pop('doit')
-
-        update = options.pop('update')
-
+    def handle(self, truncate: bool, doit: bool, update: bool, keep_indexes: bool, **options: Any) -> None:
         has_data = all(map(lambda x: x.objects.exists(), (House, House78, AddrObj, HouseType, HouseAddType)))
         if has_data and not doit and not update:
             self.error('One of the tables contains data. Truncate all target tables manually '
@@ -62,8 +58,6 @@ class Command(BaseCommandCompatible):
         # Force Russian language for internationalized projects
         if settings.USE_I18N:
             activate('ru')
-
-        keep_indexes = options.pop('keep_indexes')
 
         if update:
             try:
@@ -77,6 +71,6 @@ class Command(BaseCommandCompatible):
             except TableListLoadingError as e:
                 self.error(str(e))
 
-    def error(self, message, code=1):
+    def error(self, message: str, code: int = 1) -> None:
         print(message)
         sys.exit(code)

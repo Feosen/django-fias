@@ -2,18 +2,18 @@
 from __future__ import unicode_literals, absolute_import
 
 import datetime
-from typing import Type, Iterable
+from typing import Type, Dict, Any, Set, Union
 
 from django.db import models
-from django.db.models import Model
 from lxml import etree
 
 from .table import BadTableError, Table, TableIterator, AbstractTableList, RowConvertor
+from ...models import AbstractModel
 
 _bom_header = b'\xef\xbb\xbf'
 
 
-field_map = {
+field_map: Dict[str, Dict[str, str]] = {
     #'house': {
     #    'id': 'recordid',
     #}
@@ -22,11 +22,11 @@ field_map = {
 
 class XMLIterator(TableIterator):
 
-    def __init__(self, fd, model: Type[Model], row_convertor: RowConvertor):
+    def __init__(self, fd: Any, model: Type[AbstractModel], row_convertor: RowConvertor):
         super(XMLIterator, self).__init__(fd=fd, model=model, row_convertor=row_convertor)
 
         self.related_fields = dict({
-            (f.name, f.remote_field.model) for f in self.model._meta.get_fields()
+            (f.name, f.remote_field.model) for f in self.model._meta.get_fields()  # type: ignore
             if f.one_to_one or f.many_to_one
         })
 
@@ -52,36 +52,38 @@ class XMLIterator(TableIterator):
 
         self._context = etree.iterparse(self._fd)
 
-    def format_row(self, row):
+    def format_row(self, row: Dict[str, Any]) -> Dict[str, Any]:
+        res = {}
         for key, value in row.items():
             key = key.lower()
             if key in self.uuid_fields:
-                yield (key, value or None)
+                res[key] = value or None
             elif key in self.date_fields:
                 if value == '' or value is None:
-                    yield (key, None)
+                    res[key] = None
                 else:
                     try:
                         _date = datetime.datetime.strptime(value, "%Y-%m-%d").date()
                     except ValueError:
                         _date = datetime.datetime.strptime(value, "%d.%m.%y %H:%M:%S").date()
-                    yield (key, _date)
+                    res[key] = _date
             elif key in self.related_fields:
                 if value == '':
                     value = None
-                yield ('{0}_id'.format(key), value)
+                res[f'{key}_id'] = value
             elif key in self.int_fields:
                 if value == '':
                     value = None
                 else:
                     value = int(value)
-                yield (key, value)
+                res[key] = value
             elif key in self.boolean_fields:
-                yield (key, value in ('1', 'y', 'yes', 't', 'true', 'on', '+'))
+                res[key] = value in ('1', 'y', 'yes', 't', 'true', 'on', '+')
             else:
-                yield (key, value)
+                res[key] = value
+        return res
 
-    def get_next(self):
+    def get_next(self) -> Union[AbstractModel, None]:
         event, row = next(self._context)
         item = self.process_row(row)
         row.clear()
@@ -92,11 +94,11 @@ class XMLIterator(TableIterator):
 
 
 class XMLRowConvertor(RowConvertor):
-    field_map: dict
-    fields: set
-    values: dict
+    field_map: Dict[str, str]
+    fields: Set[str]
+    values: Dict[str, Any]
 
-    def __init__(self, model: Type[Model], table_name: str, extra: dict = None):
+    def __init__(self, model: Type[AbstractModel], table_name: str, extra: Union[Dict[str, Any], None] = None):
         super(XMLRowConvertor, self).__init__()
         self.field_map = field_map.get(table_name, {})
         self.fields = set(f.name for f in model._meta.get_fields())
@@ -104,27 +106,28 @@ class XMLRowConvertor(RowConvertor):
         if extra is not None:
             self.values.update(extra)
 
-    def convert(self, row: dict) -> dict:
+    def convert(self, row: Dict[str, Any]) -> Dict[str, Any]:
         for k, v in self.field_map.items():
             row[v] = row.pop(k)
         return self.values | row
 
-    def clear(self, row: dict) -> dict:
+    def clear(self, row: Dict[str, Any]) -> Dict[str, Any]:
         for k in set(row.keys()) - self.fields:
             del row[k]
         return row
 
 
 class XMLTable(Table):
-    iterator = XMLIterator
-    row_convertor = XMLRowConvertor
+    iterator_class: Type[TableIterator] = XMLIterator
+    row_convertor_class: Type[RowConvertor] = XMLRowConvertor
 
-    def __init__(self, filename: str, **kwargs):
-        super(XMLTable, self).__init__(filename=filename, **kwargs)
+    def __init__(self, filename: str, name: str, ver: int, deleted: Union[bool, None] = None,
+                 region: Union[str, None] = None, **kwargs: Any):
+        super(XMLTable, self).__init__(filename, name, ver, deleted, region, **kwargs)
 
-    def rows(self, tablelist: AbstractTableList) -> Iterable:
+    def rows(self, tablelist: AbstractTableList) -> TableIterator:
         if self.deleted:
-            return []
+            raise StopIteration
 
         xml = self.open(tablelist=tablelist)
 
@@ -137,7 +140,7 @@ class XMLTable(Table):
             pass
 
         try:
-            return self.iterator(xml, self.model, self.row_convertor(self.model, self.name,
-                                                                     {'ver': self.ver, 'region': self.region}))
+            row_convertor = self.row_convertor_class(self.model, self.name, {'ver': self.ver, 'region': self.region})
+            return self.iterator_class(xml, self.model, row_convertor)
         except etree.XMLSyntaxError as e:
             raise BadTableError('Error occured during opening table `{0}`: {1}'.format(self.name, str(e)))

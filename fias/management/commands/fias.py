@@ -1,10 +1,10 @@
-
 # coding: utf-8
 from __future__ import unicode_literals, absolute_import
 
 import os
 import sys
 from pathlib import Path
+from typing import Dict, Any, List, Union, Tuple
 
 from django.conf import settings
 from django.utils.translation import activate
@@ -62,7 +62,7 @@ class Command(BaseCommandCompatible):
         },
         "--format": {
             "action": "store",
-            "dest": "format",
+            "dest": "fmt",
             "type": str,
             "choices": ["xml", "dbf"],
             "default": "xml",
@@ -83,7 +83,7 @@ class Command(BaseCommandCompatible):
         },
         "--update-version-info": {
             "action": "store",
-            "dest": "update-version-info",
+            "dest": "update_version_info",
             "type": str,
             "choices": ["yes", "no"],
             "default": "yes",
@@ -103,78 +103,72 @@ class Command(BaseCommandCompatible):
         }
     }
 
-    def handle(self, *args, **options):
-        src = options.pop('src')
+    def handle(self, src: str, truncate: bool, doit: bool, update: bool, skip: bool, fmt: str, limit: int, tables: str,
+               update_version_info: str, keep_indexes: bool, tempdir: str, **options: Any) -> None:
         remote = False
+        src_path: Union[str, None]
         if src and src.lower() == 'auto':
-            src = None
+            src_path = None
             remote = True
+        else:
+            src_path = src
 
-        truncate = options.pop('truncate')
-        doit = options.pop('doit')
-
-        update = options.pop('update')
-        skip = options.pop('skip')
-
-        if not any([src, remote, update]):
+        if not any([src_path, remote, update]):
             self.error(self.usage_str)
 
-        tempdir = options.pop('tempdir')
+        tempdir_path: Union[Path, None]
+
         if tempdir:
-            tempdir = Path(tempdir)
-            if not tempdir.exists():
-                self.error(f'Directory `{tempdir}` does not exists.')
-            elif not tempdir.is_dir():
-                self.error(f'Path `{tempdir}` is not a directory.')
-            elif not os.access(tempdir, os.W_OK):
-                self.error(f'Directory `{tempdir}` is not writeable')
+            tempdir_path = Path(tempdir)
+            if not tempdir_path.exists():
+                self.error(f'Directory `{tempdir_path}` does not exists.')
+            elif not tempdir_path.is_dir():
+                self.error(f'Path `{tempdir_path}` is not a directory.')
+            elif not os.access(tempdir_path, os.W_OK):
+                self.error(f'Directory `{tempdir_path}` is not writeable')
+        else:
+            tempdir_path = None
 
         # TODO: какая-то нелогичная логика получилась. Надо бы поправить.
-        if (src or remote) and Status.objects.count() > 0 and not doit and not update:
+        if (src_path or remote) and Status.objects.count() > 0 and not doit and not update:
             self.error('One of the tables contains data. Truncate all FIAS tables manually '
                        'or enter key --i-know-what-i-do, to clear the table by means of Django ORM')
 
-        fetch = options.pop('update-version-info')
-        if fetch == 'yes':
+        if update_version_info == 'yes':
             fetch_version_info(update_all=True)
 
         # Force Russian language for internationalized projects
         if settings.USE_I18N:
             activate('ru')
 
-        fmt = options.pop('format')
-        limit = int(options.pop('limit'))
-        tables = options.pop('tables')
-        tables = set(tables.split(',')) if tables else set()
+        tables_set = set(tables.split(',')) if tables else set()
 
-        keep_indexes = options.pop('keep_indexes')
-
-        if not tables.issubset(set(TABLES)):
-            diff = ', '.join(tables.difference(TABLES))
+        if not tables_set.issubset(set(TABLES)):
+            diff = ', '.join(tables_set.difference(set(TABLES)))
             self.error('Tables `{0}` are not listed in the FIAS_TABLES and can not be processed'.format(diff))
-        tables = tuple(x for x in TABLES if x in list(tables))
+        tables_tuple: Tuple[str, ...] = tuple(str(x) for x in TABLES if x in tables_set)
 
-        if (src or remote) and not update:
+        if (src_path or remote) and not update:
 
             try:
                 load_complete_data(
-                    path=src, data_format=fmt, truncate=truncate,
-                    limit=limit, tables=tables, keep_indexes=keep_indexes,
-                    tempdir=tempdir,
+                    path=src_path, data_format=fmt, truncate=truncate,
+                    limit=limit, tables=tables_tuple, keep_indexes=keep_indexes,
+                    tempdir=tempdir_path,
                 )
             except TableListLoadingError as e:
                 self.error(str(e))
 
         if update:
             try:
-                if src:
-                    manual_update_data(path=Path(src), skip=skip, data_format=fmt, limit=limit, tables=tables,
-                                       tempdir=tempdir)
+                if src_path:
+                    manual_update_data(path=Path(src_path), skip=skip, data_format=fmt, limit=limit, tables=tables_tuple,
+                                       tempdir=tempdir_path)
                 else:
-                    auto_update_data(skip=skip, data_format=fmt, limit=limit, tables=tables, tempdir=tempdir)
+                    auto_update_data(skip=skip, data_format=fmt, limit=limit, tables=tables_tuple, tempdir=tempdir_path)
             except TableListLoadingError as e:
                 self.error(str(e))
 
-    def error(self, message, code=1):
+    def error(self, message: str, code: int | None = 1) -> None:
         print(message)
         sys.exit(code)

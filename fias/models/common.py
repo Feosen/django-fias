@@ -1,24 +1,26 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import unicode_literals, absolute_import, annotations
 
-from typing import Tuple
+from typing import Tuple, TypeVar
 
 from django.db import models
 
-__all__ = ['AbstractModel', 'AbstractObj', 'AbstractParam', 'AbstractType', 'ParamType']
-
 from fias.models.fields import RefFieldMixin
 
+__all__ = ['AbstractModel', 'AbstractIsActiveModel', 'AbstractObj', 'AbstractParam', 'AbstractType', 'ParamType']
 
-class Manager(models.Manager):
+_M = TypeVar("_M", bound='AbstractModel', covariant=True)
 
-    def delete_orphans(self) -> Tuple[int, dict]:
-        res_c = 0
-        res_d = {}
+
+class Manager(models.Manager[_M]):
+
+    def delete_orphans(self) -> Tuple[int, dict[str, int]]:
+        res_c: int = 0
+        res_d: dict[str, int] = {}
         for field in self.model._meta.get_fields():
             if isinstance(field, RefFieldMixin):
                 # TODO: profile it
-                qs = self
+                qs = self.get_queryset()
                 for cfg in field.to:
                     qs = qs.exclude(**{f'{field.name}__in': cfg[0].objects.all()})
                 c, d = qs.delete()
@@ -33,41 +35,46 @@ class AbstractModel(models.Model):
     startdate = models.DateField(verbose_name='начало действия записи')
     enddate = models.DateField(verbose_name='окончание действия записи')
 
-    objects = Manager()
+    objects: Manager[AbstractModel] = Manager()
 
     class Meta:
         abstract = True
+        app_label = 'fias'
 
 
-class AbstractObj(AbstractModel):
-    region = models.CharField(verbose_name='код региона', max_length=2)
+class AbstractIsActiveModel(AbstractModel):
     isactive = models.BooleanField(verbose_name='статус активности')
+
+    class Meta(AbstractModel.Meta):
+        abstract = True
+
+
+class AbstractObj(AbstractIsActiveModel):
+    region = models.CharField(verbose_name='код региона', max_length=2)
     isactual = models.BooleanField(verbose_name='статус актуальности')
     objectid = models.BigIntegerField(verbose_name='глобальный уникальный идентификатор объекта', primary_key=True)
     objectguid = models.UUIDField(verbose_name='глобальный уникальный идентификатор адресного объекта')
 
-    class Meta:
+    class Meta(AbstractIsActiveModel.Meta):
         abstract = True
         indexes = [models.Index(fields=['objectguid'])]
 
 
-class AbstractType(AbstractModel):
+class AbstractType(AbstractIsActiveModel):
     id = models.SmallAutoField(verbose_name='id', primary_key=True)
     name = models.CharField(verbose_name='наименование', max_length=255)
     shortname = models.CharField(verbose_name='краткое наименование', max_length=255, blank=True, null=True)
     desc = models.CharField(verbose_name='описание', max_length=255, blank=True, null=True)
-    isactive = models.BooleanField(verbose_name='статус активности')
 
-    def __str__(self):
-        return self.name
-
-    class Meta:
+    class Meta(AbstractIsActiveModel.Meta):
         abstract = True
+
+    def __str__(self) -> str:
+        return self.name
 
 
 class AbstractParam(AbstractModel):
     region = models.CharField(verbose_name='код региона', max_length=2)
-    #objectid = models.BigIntegerField(verbose_name='глобальный уникальный идентификатор объекта')
     typeid = models.SmallIntegerField(verbose_name='тип')
     value = models.CharField(verbose_name='значение', max_length=250)
 
@@ -80,6 +87,5 @@ class ParamType(AbstractType):
 
     class Meta(AbstractType.Meta):
         abstract = False
-        app_label = 'fias'
         verbose_name = 'тип параметра'
         verbose_name_plural = 'типы параметров'

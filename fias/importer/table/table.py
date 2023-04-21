@@ -1,16 +1,15 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import unicode_literals, absolute_import, annotations
 
-from typing import Union, Type, Iterable, Any, IO, Callable, Tuple
+from typing import Union, Type, Any, IO, Callable, Dict, Iterable
 
 from django.db import connections, router
-from django.db.models import Model
 
 from fias.config import TABLE_ROW_FILTERS, TableName
 from fias.models import (AddrObjType, AddrObj, AddrObjParam, House, AddHouseType, HouseType, HouseParam, ParamType,
-                         AdmHierarchy, MunHierarchy)
+                         AdmHierarchy, MunHierarchy, AbstractModel)
 
-table_names = {
+table_names: Dict[TableName, Type[AbstractModel]] = {
     TableName.HOUSE: House,
     TableName.HOUSE_TYPE: HouseType,
     TableName.ADD_HOUSE_TYPE: AddHouseType,
@@ -23,7 +22,9 @@ table_names = {
     TableName.MUN_HIERARCHY: MunHierarchy,
 }
 
-name_trans = {
+assert len(table_names) == len(TableName)
+
+name_trans: Dict[str, str] = {
     'houses': TableName.HOUSE,
     'house_types': TableName.HOUSE_TYPE,
     'addhouse_types': TableName.ADD_HOUSE_TYPE,
@@ -32,6 +33,10 @@ name_trans = {
     'houses_params': TableName.HOUSE_PARAM,
     'addr_obj_params': TableName.ADDR_OBJ_PARAM,
 }
+
+
+class UnregisteredTable(Exception):
+    pass
 
 
 class BadTableError(Exception):
@@ -44,43 +49,40 @@ class ParentLookupException(Exception):
 
 class RowConvertor(object):
 
-    def convert(self, row: dict) -> dict:
+    def __init__(self, *args: Any, **kwargs: Any):
+        pass
+
+    def convert(self, row: Dict[str, Any]) -> Dict[str, Any]:
         raise NotImplementedError()
 
-    def clear(self, row: dict) -> dict:
+    def clear(self, row: Dict[str, Any]) -> Dict[str, Any]:
         raise NotImplementedError()
 
 
-class TableIterator(object):
+class TableIterator:
     _fd: Any
-    model: Type[Model]
+    model: Type[AbstractModel]
     row_convertor: RowConvertor
-    _filters: Tuple[Callable[[Model], Union[None, Model]]]
+    _filters: Union[Iterable[Callable[[AbstractModel], Union[None, AbstractModel]]], None]
 
     _reverse_table_names = {v._meta.object_name: k for k, v in table_names.items()}
 
-    def __init__(self, fd: Any, model: Type[Model], row_convertor: RowConvertor):
+    def __init__(self, fd: Any, model: Type[AbstractModel], row_convertor: RowConvertor):
         self._fd = fd
         self.model = model
         self.row_convertor = row_convertor
-        self._filters = TABLE_ROW_FILTERS.get(self._reverse_table_names[self.model._meta.object_name], tuple())
+        self._filters = TABLE_ROW_FILTERS.get(self._reverse_table_names[self.model._meta.object_name], None)
 
-    def __iter__(self):
-        if self.model is None:
-            return []
-
+    def __iter__(self) -> Union[TableIterator]:
         return self
 
-    def get_context(self):
+    def get_next(self) -> Union[AbstractModel, None]:
         raise NotImplementedError()
 
-    def get_next(self):
+    def format_row(self, row: Dict[str, Any]) -> Dict[str, Any]:
         raise NotImplementedError()
 
-    def format_row(self, row):
-        raise NotImplementedError()
-
-    def process_row(self, row: dict) -> Union[Model, None]:
+    def process_row(self, row: Dict[str, Any]) -> Union[AbstractModel, None]:
         try:
             row = dict(self.format_row(row))
         except ParentLookupException as e:
@@ -89,45 +91,51 @@ class TableIterator(object):
         row = self.row_convertor.convert(row)
         row = self.row_convertor.clear(row)
 
-        item = self.model(**row)
-        for filter_func in self._filters:
-            item = filter_func(item)
-            if item is None:
-                return None
+        item: AbstractModel = self.model(**row)
+        if self._filters is not None:
+            for filter_func in self._filters:
+                filtered_item = filter_func(item)
+                if filtered_item is None:
+                    return None
+                item = filtered_item
 
         return item
 
-    def __next__(self):
+    def __next__(self) -> Union[AbstractModel, None]:
         return self.get_next()
 
     next = __next__
 
 
 class AbstractTableList:
-    def open(self, filename: str) -> IO:
+    def open(self, filename: str) -> IO[bytes]:
         raise NotImplementedError()
 
 
 class Table(object):
-    name: str = None
-    model: Type[Model] = None
-    deleted: bool = False
-    region: Union[str, None] = None
-    iterator: TableIterator = TableIterator
+    name: TableName
+    model: Type[AbstractModel]
+    deleted: bool
+    region: Union[str, None]
+    ver: int
+    iterator_class: Type[TableIterator] = TableIterator
 
-    def __init__(self, filename: str, **kwargs):
+    def __init__(self, filename: str, name: str, ver: int, deleted: bool | None = None, region: str | None = None,
+                 **kwargs: Any):
         self.filename = filename
 
-        name = kwargs['name'].lower()
+        name_lower = name.lower()
+        try:
+            self.name = TableName(name_trans.get(name_lower, name_lower))
+        except ValueError:
+            raise UnregisteredTable(name)
 
-        self.name = name_trans.get(name, name)
-        self.model = table_names.get(self.name)
+        self.model = table_names[self.name]
+        self.deleted = bool(deleted)
+        self.region = region
+        self.ver = ver
 
-        self.deleted = bool(kwargs.get('deleted', False))
-        self.region = kwargs.get('region', None)
-        self.ver = kwargs.get('ver', None)
-
-    def _truncate(self, model: Type[Model]) -> None:
+    def _truncate(self, model: Type[AbstractModel]) -> None:
         db_table = model._meta.db_table
         connection = connections[router.db_for_write(model)]
         cursor = connection.cursor()
@@ -142,8 +150,8 @@ class Table(object):
     def truncate(self) -> None:
         self._truncate(self.model)
 
-    def open(self, tablelist: AbstractTableList) -> IO:
+    def open(self, tablelist: AbstractTableList) -> IO[bytes]:
         return tablelist.open(self.filename)
 
-    def rows(self, tablelist: AbstractTableList) -> Iterable:
+    def rows(self, tablelist: AbstractTableList) -> TableIterator:
         raise NotImplementedError()

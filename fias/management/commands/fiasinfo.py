@@ -2,6 +2,7 @@
 from __future__ import unicode_literals, absolute_import
 
 import sys
+from typing import Any
 
 from fias.config import TABLES
 from fias.models import Status, Version
@@ -17,13 +18,13 @@ class Command(BaseCommandCompatible):
     arguments_dictionary = {
         "--db-version": {
             "action": "store_true",
-            "dest": "version",
+            "dest": "show_ver",
             "default": False,
             "help": "Show version info"
         },
         "--update-version-info": {
             "action": "store",
-            "dest": "update-version-info",
+            "dest": "fetch",
             "type": str,
             "choices": ["yes", "no"],
             "default": "yes",
@@ -31,14 +32,11 @@ class Command(BaseCommandCompatible):
         }
     }
 
-    def handle(self, *args, **options):
-        ver = options.pop('version')
-        print(args)
-        fetch = options.pop('update-version-info')
+    def handle(self, show_ver: bool, fetch: str, **options: Any) -> None:
         if fetch == 'yes':
             fetch_version_info(update_all=True)
 
-        if ver:
+        if show_ver:
             latest_version = Version.objects.all().latest('dumpdate')
             print('Latest version: {0}'.format(latest_version))
             statuses = dict((s.table, s) for s in Status.objects.select_related('ver').all())
@@ -50,6 +48,6 @@ class Command(BaseCommandCompatible):
                     'No' if ver < latest_version.ver else 'Yes'
                 ))
 
-    def error(self, message, code=1):
+    def error(self, message: str, code: int = 1) -> None:
         print(message)
         sys.exit(code)

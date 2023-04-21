@@ -19,29 +19,29 @@ tomorrow = today + diff
 
 class TestCommonValidator(TestCase):
 
-    def test_startdate_tomorrow(self):
+    def test_startdate_tomorrow(self) -> None:
         m = AddrObj(startdate=tomorrow, enddate=tomorrow)
         self.assertFalse(common_validator(m, today=today))
 
-    def test_enddate_yesterday(self):
+    def test_enddate_yesterday(self) -> None:
         m = AddrObj(startdate=yesterday, enddate=yesterday)
         self.assertFalse(common_validator(m, today=today))
 
-    def test_both_today(self):
+    def test_both_today(self) -> None:
         m = AddrObj(startdate=today, enddate=today)
         self.assertFalse(common_validator(m, today=today))
 
-    def test_valid_model(self):
+    def test_valid_model(self) -> None:
         m = AddrObj(startdate=yesterday, enddate=tomorrow)
         self.assertTrue(common_validator(m, today=today))
 
 
 class TestAddrObjValidator(TestCase):
 
-    def test_nextid(self):
-        m = AddrObj(startdate=yesterday, enddate=tomorrow, nextid=uuid.uuid4())
+    def test_nextid(self) -> None:
+        m = AddrObj(startdate=yesterday, enddate=tomorrow)
         self.assertFalse(chained_validator(m, today=today))
 
-    def test_valid(self):
+    def test_valid(self) -> None:
         m = AddrObj(startdate=yesterday, enddate=tomorrow, isactual=True)
         self.assertTrue(chained_validator(m, today=today))

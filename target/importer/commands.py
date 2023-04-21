@@ -36,11 +36,13 @@ _table_cfg: List[Cfg] = [
 ]
 
 
-def load_complete_data(truncate: bool = False, keep_indexes: bool = False):
+def load_complete_data(truncate: bool = False, keep_indexes: bool = False) -> None:
 
-    ver = s_models.Status.objects.order_by('ver').first().ver_id
-    logger.info(f'Loading data v.{ver}.')
-    pre_import.send(sender=object.__class__, version=ver)
+    ver = s_models.Status.objects.order_by('ver').first()
+    if ver is None:
+        raise ValueError
+    logger.info(f'Loading data v.{ver.ver_id}.')
+    pre_import.send(sender=object.__class__, version=ver.ver_id)
 
     for cfg in _table_cfg:
         # Очищаем таблицу перед импортом
@@ -56,9 +58,9 @@ def load_complete_data(truncate: bool = False, keep_indexes: bool = False):
         # Импортируем все таблицы модели
         loader = TableLoader()
         loader.load(cfg)
-        status, created = t_models.Status.objects.get_or_create(id=1, defaults={'ver': ver})
+        status, created = t_models.Status.objects.get_or_create(id=1, defaults={'ver': ver.ver_id})
         if not created:
-            status.ver = ver
+            status.ver = ver.ver_id
             status.full_clean()
             status.save()
 
@@ -68,14 +70,17 @@ def load_complete_data(truncate: bool = False, keep_indexes: bool = False):
             restore_indexes_for_model(model=cfg.dst)
             post_restore_indexes.send(sender=object.__class__, cfg=cfg)
 
-    post_import.send(sender=object.__class__, version=ver)
-    logger.info(f'Data v.{ver} loaded.')
+    post_import.send(sender=object.__class__, version=ver.ver_id)
+    logger.info(f'Data v.{ver.ver_id} loaded.')
 
 
-def update_data():
-    ver = s_models.Status.objects.order_by('ver').first().ver_id
-    logger.info(f'Updating from v.{ver}.')
-    pre_update.send(sender=object.__class__, version=ver)
+def update_data() -> None:
+    ver = s_models.Status.objects.order_by('ver').first()
+    if ver is None:
+        raise ValueError
+
+    logger.info(f'Updating from v.{ver.ver_id}.')
+    pre_update.send(sender=object.__class__, version=ver.ver_id)
 
     t_status = t_models.Status.objects.get()
 
@@ -83,9 +88,9 @@ def update_data():
         loader = TableUpdater()
         loader.load(cfg, t_status.ver)
 
-    t_status.ver = ver
+    t_status.ver = ver.ver_id
     t_status.full_clean()
     t_status.save()
 
-    post_update.send(sender=object.__class__, version=ver)
-    logger.info(f'Data v.{ver} is updated.')
+    post_update.send(sender=object.__class__, version=ver.ver_id)
+    logger.info(f'Data v.{ver.ver_id} is updated.')

@@ -18,29 +18,29 @@ from fias.importer.signals import (
 )
 from fias.importer.source import *
 from fias.importer.table import BadTableError
-from fias.models import Status, Version
-from fias.typing import Url
+from fias.models import Status, Version, AbstractModel
 from gar_loader.indexes import remove_indexes_from_model, restore_indexes_for_model
-
 
 logger = logging.getLogger(__name__)
 
 
-def get_tablelist(path: Union[Path, Url, None], version: Version = None, data_format: str = 'xml',
-                  tempdir: Path = None):
-    assert data_format in ['xml', 'dbf'], \
-        'Unsupported data format: `{0}`. Available choices: {1}'.format(data_format, ', '.join(['xml', 'dbf']))
+def get_tablelist(path: Union[Path, str, None] = None, version: Union[Version, None] = None, data_format: str = 'xml',
+                  tempdir: Union[Path, None] = None) -> TableList:
+    supported_formats = ('xml',)
+    assert data_format in supported_formats, f'Unsupported data format: `{data_format}`. Available choices: {", ".join(supported_formats)}'
 
+    tablelist: Union[TableList]
     if path is None:
         latest_version = Version.objects.latest('dumpdate')
-        url = getattr(latest_version, 'complete_{0}_url'.format(data_format))
+        url = getattr(latest_version, f'complete_{data_format}_url')
 
         tablelist = RemoteArchiveTableList(src=url, version=latest_version, tempdir=tempdir)
 
     else:
         try:
-            URLValidator()(path)
-            tablelist = RemoteArchiveTableList(src=path, version=version, tempdir=tempdir)
+            url = str(path)
+            URLValidator()(url)
+            tablelist = RemoteArchiveTableList(src=url, version=version, tempdir=tempdir)
         except ValidationError:
             path = Path(path)
             if path.is_file():
@@ -53,17 +53,18 @@ def get_tablelist(path: Union[Path, Url, None], version: Version = None, data_fo
     return tablelist
 
 
-def get_table_names(tables: Union[Tuple[str], None]):
+def get_table_names(tables: Union[Tuple[str, ...], None]) -> Tuple[str, ...]:
     return tables if tables else config.TABLES
 
 
-def remove_orphans(models: List[Type[Model]]) -> None:
+def remove_orphans(models: List[Type[AbstractModel]]) -> None:
     for model in models:
         model.objects.delete_orphans()
 
 
-def load_complete_data(path: str = None, data_format: str = 'xml', truncate: bool = False, limit: int = 10000,
-                       tables: Tuple[str] = None, keep_indexes: bool = False, tempdir: Path = None):
+def load_complete_data(path: str | None = None, data_format: str = 'xml', truncate: bool = False, limit: int = 10000,
+                       tables: Union[Tuple[str, ...], None] = None, keep_indexes: bool = False,
+                       tempdir: Union[Path, None] = None) -> None:
     tablelist = get_tablelist(path=path, data_format=data_format, tempdir=tempdir)
 
     logger.info(f'Loading data v.{tablelist.version}.')
@@ -121,8 +122,9 @@ def load_complete_data(path: str = None, data_format: str = 'xml', truncate: boo
     logger.info(f'Data v.{tablelist.version} loaded.')
 
 
-def update_data(path: Path = None, version: Version = None, skip: bool = False, data_format: str = 'xml',
-                limit: int = 1000, tables: Tuple[str] = None, tempdir: Path = None):
+def update_data(path: Union[Path, None] = None, version: Union[Version, None] = None, skip: bool = False,
+                data_format: str = 'xml', limit: int = 10000, tables: Union[Tuple[str, ...], None] = None,
+                tempdir: Union[Path, None] = None) -> None:
     tablelist = get_tablelist(path=path, version=version, data_format=data_format, tempdir=tempdir)
 
     processed_models = []
@@ -158,8 +160,8 @@ def update_data(path: Path = None, version: Version = None, skip: bool = False, 
     remove_orphans(processed_models)
 
 
-def manual_update_data(path: Path = None, skip: bool = False, data_format: str = 'xml', limit: int = 1000,
-                       tables: Tuple[str] = None, tempdir: Path = None):
+def manual_update_data(path: Path, skip: bool = False, data_format: str = 'xml', limit: int = 1000,
+                       tables: Union[Tuple[str, ...], None] = None, tempdir: Union[Path, None] = None) -> None:
     min_version = Status.objects.filter(table__in=get_table_names(None)).aggregate(Min('ver'))['ver__min']
 
     version_map = {}
@@ -193,8 +195,8 @@ def manual_update_data(path: Path = None, skip: bool = False, data_format: str =
         raise TableListLoadingError('Not available. Please import the data before updating')
 
 
-def auto_update_data(skip: bool = False, data_format: str = 'xml', limit: int = 1000, tables: Tuple[str] = None,
-                     tempdir: Path = None):
+def auto_update_data(skip: bool, data_format: str = 'xml', limit: int = 10000,
+                     tables: Union[Tuple[str, ...] | None] = None, tempdir: Union[Path, None] = None) -> None:
     min_version = Status.objects.filter(table__in=get_table_names(None)).aggregate(Min('ver'))['ver__min']
 
     if min_version is not None:

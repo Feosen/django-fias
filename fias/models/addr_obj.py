@@ -1,13 +1,12 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import unicode_literals, absolute_import, annotations
 
 from django.db import models
 
 from fias.models.common import AbstractType, AbstractObj, AbstractParam
+from .fields import BigIntegerRefField
 
 __all__ = ['AddrObj', 'AddrObjParam', 'AddrObjType']
-
-from fias.models.fields import BigIntegerRefField
 
 
 class AddrObjType(AbstractType):
@@ -18,7 +17,6 @@ class AddrObjType(AbstractType):
 
     class Meta(AbstractType.Meta):
         abstract = False
-        app_label = 'fias'
         verbose_name = 'тип дома'
         verbose_name_plural = 'типы домов'
 
@@ -27,15 +25,14 @@ class AddrObj(AbstractObj):
     """
     Классификатор адресообразующих элементов
     """
-    class Meta(AbstractObj.Meta):
-        abstract = False
-        app_label = 'fias'
-        verbose_name = 'адресообразующий элемент'
-        verbose_name_plural = 'адресообразующие элементы'
-
     name = models.TextField(verbose_name='наименование')
     level = models.PositiveIntegerField(verbose_name='Уровень адресного объект')
     typename = models.TextField(verbose_name='Краткое наименование типа объекта')
+
+    class Meta(AbstractObj.Meta):
+        abstract = False
+        verbose_name = 'адресообразующий элемент'
+        verbose_name_plural = 'адресообразующие элементы'
 
 
 class AddrObjParam(AbstractParam):
@@ -46,6 +43,5 @@ class AddrObjParam(AbstractParam):
 
     class Meta(AbstractParam.Meta):
         abstract = False
-        app_label = 'fias'
         verbose_name = 'параметр адресообразующего элемента'
         verbose_name_plural = 'параметры адресообразующих элементов'

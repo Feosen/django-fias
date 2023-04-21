@@ -5,6 +5,7 @@ import os
 import re
 from enum import StrEnum
 from importlib import import_module
+from typing import Dict, Callable, List, Union, Iterable, Tuple, Final
 
 from django.apps import apps
 from django.conf import settings
@@ -12,8 +13,13 @@ from django.core.exceptions import ImproperlyConfigured
 from django.db.utils import DEFAULT_DB_ALIAS
 
 from fias.enum import CEnumMeta
+from fias.models import AbstractModel
 
-ALL = '__all__'
+
+__all__ = ['DEFAULT_DB_ALIAS', 'DATABASE_ALIAS', 'PROXY', 'REMOVE_NOT_ACTUAL', 'TableName']
+
+
+ALL: Final = '__all__'
 
 
 # Table internal names
@@ -30,26 +36,29 @@ class TableName(StrEnum, metaclass=CEnumMeta):
     MUN_HIERARCHY = 'mun_hierarchy'
 
 
-TABLES_STATS = (
+TABLES_STATS: Tuple[TableName, ...] = (
     TableName.HOUSE_TYPE,
     TableName.ADD_HOUSE_TYPE,
     TableName.ADDR_OBJ_TYPE,
     TableName.PARAM_TYPE,
 )
-TABLES_DEFAULT = (
+
+TABLES_DEFAULT: Tuple[TableName, ...] = (
     TableName.HOUSE, TableName.HOUSE_PARAM, TableName.ADDR_OBJ, TableName.ADDR_OBJ_PARAM, TableName.ADM_HIERARCHY,
     TableName.MUN_HIERARCHY
 )
 
 # from_table: (to_table, ((param_type_id, field_name), (param_type_id, field_name),)
-PARAM_MAP = {
+PARAM_MAP: Dict[TableName, Tuple[TableName, Tuple[Tuple[int, str], ...]]] = {
     TableName.HOUSE_PARAM: (TableName.HOUSE, ((5, 'postalcode'), (6, 'okato'), (7, 'oktmo'),)),
     TableName.ADDR_OBJ_PARAM: (TableName.ADDR_OBJ, ((6, 'okato'), (7, 'oktmo'),)),
 }
 
 TABLES = TABLES_STATS
-DEFAULT_TABLES = ('house', 'house_param', 'addr_obj', 'addr_obj_param', 'adm_hierarchy', 'mun_hierarchy')
-TABLES += tuple(x.lower() for x in TABLES_DEFAULT if x.lower() in list(set(getattr(settings, 'FIAS_TABLES', DEFAULT_TABLES))))
+if hasattr(settings, 'FIAS_TABLES'):
+    TABLES += tuple(x for x in TABLES_DEFAULT if x.lower() in list(set(getattr(settings, 'FIAS_TABLES'))))
+else:
+    TABLES += TABLES_DEFAULT
 
 
 # Auto area
@@ -63,6 +72,7 @@ for src, (dst, params) in PARAM_MAP.items():
         pass  # TODO: finish it
         # assert dst_model._meta.get_field(field_name) is not None
 
+REGIONS: Union[Iterable[str], str]
 if hasattr(settings, 'FIAS_REGIONS'):
     if not (isinstance(settings.FIAS_REGIONS, tuple)
             and all(map(lambda r: isinstance(r, str) and re_region.match(r), settings.FIAS_REGIONS))
@@ -72,6 +82,7 @@ if hasattr(settings, 'FIAS_REGIONS'):
 else:
     REGIONS = ALL
 
+HOUSE_TYPES: Union[Iterable[int], str]
 if hasattr(settings, 'FIAS_HOUSE_TYPES'):
     if not (isinstance(settings.FIAS_HOUSE_TYPES, tuple)
             and all(map(lambda x: isinstance(x, int), settings.FIAS_HOUSE_TYPES))
@@ -111,31 +122,32 @@ FIAS_TABLE_ROW_FILTERS = {
     ),
 }
 """
-row_filters = getattr(settings, 'FIAS_TABLE_ROW_FILTERS', {})
-TABLE_ROW_FILTERS = {}
-_DEFAULT_TABLE_ROW_FILTERS = {}
-
-if settings.FIAS_HOUSE_TYPES != ALL:
-    _DEFAULT_TABLE_ROW_FILTERS[TableName.HOUSE] = [
+row_filters: Dict[TableName, List[str]] = getattr(settings, 'FIAS_TABLE_ROW_FILTERS', {})
+TABLE_ROW_FILTERS: Dict[TableName, List[Callable[[AbstractModel], Union[AbstractModel, None]]]] = {}
+_DEFAULT_TABLE_ROW_FILTERS: Dict[TableName, List[str]] = {
+    TableName.HOUSE: [
         'fias.importer.filters.filter_hierarchy_is_isactual',
-        'fias.importer.filters.filter_house_type',
-    ]
-    _DEFAULT_TABLE_ROW_FILTERS[TableName.HOUSE_PARAM] = [
+    ],
+    TableName.HOUSE_PARAM: [
         'fias.importer.filters.filter_house_param',
-    ]
-    _DEFAULT_TABLE_ROW_FILTERS[TableName.ADDR_OBJ] = [
+    ],
+    TableName.ADDR_OBJ: [
         'fias.importer.filters.filter_hierarchy_is_isactual',
         'fias.importer.filters.replace_quotes_in_names',
-    ]
-    _DEFAULT_TABLE_ROW_FILTERS[TableName.ADDR_OBJ_PARAM] = [
+    ],
+    TableName.ADDR_OBJ_PARAM: [
         'fias.importer.filters.filter_addr_obj_param',
-    ]
-    _DEFAULT_TABLE_ROW_FILTERS[TableName.ADM_HIERARCHY] = [
+    ],
+    TableName.ADM_HIERARCHY: [
         'fias.importer.filters.filter_hierarchy_is_active',
-    ]
-    _DEFAULT_TABLE_ROW_FILTERS[TableName.MUN_HIERARCHY] = [
+    ],
+    TableName.MUN_HIERARCHY: [
         'fias.importer.filters.filter_hierarchy_is_active',
-    ]
+    ],
+}
+
+if settings.FIAS_HOUSE_TYPES != ALL:
+    _DEFAULT_TABLE_ROW_FILTERS[TableName.HOUSE].append('fias.importer.filters.filter_house_type')
 
 for cfg in _DEFAULT_TABLE_ROW_FILTERS, row_filters:
     for flt_table, flt_list in cfg.items():
@@ -144,7 +156,7 @@ for cfg in _DEFAULT_TABLE_ROW_FILTERS, row_filters:
         if flt_table in TABLES:
             for flt_path in flt_list:
                 try:
-                    module_name, _, func_name = flt_path.rpartition('.')
+                    module_name, unused, func_name = flt_path.rpartition('.')
                     flt_module = import_module(module_name)
                     flt_func = getattr(flt_module, func_name)
                 except (ImportError, AttributeError):

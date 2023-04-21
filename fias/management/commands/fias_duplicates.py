@@ -2,6 +2,7 @@
 from __future__ import unicode_literals, absolute_import
 
 import sys
+from typing import Any, Dict
 
 from fias.config import TABLES
 from fias.importer.commands import get_tablelist
@@ -33,10 +34,7 @@ class Command(BaseCommandCompatible):
         }
     }
 
-    def handle(self, *args, **options):
-        key = options.pop('pk')
-        src = options.pop('src')
-        table = options.pop('table')
+    def handle(self, key: str, src: str, table: str, **options: Any) -> None:
 
         if not any([key, src, table]):
             self.error(self.usage_str)
@@ -45,10 +43,10 @@ class Command(BaseCommandCompatible):
         for tbl in tablelist.tables[table]:
 
             for item in tbl.rows(tablelist=tablelist):
-                if item.pk == key:
+                if item is not None and item.pk == key:
                     print(item)
                     print(item.__dict__)
 
-    def error(self, message, code=1):
+    def error(self, message: str, code: int = 1) -> None:
         print(message)
         sys.exit(code)

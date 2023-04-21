@@ -5,6 +5,7 @@ import logging
 import tempfile
 import zipfile
 from pathlib import Path
+from typing import AnyStr
 from urllib.error import HTTPError
 from urllib.request import urlretrieve
 
@@ -16,7 +17,7 @@ from fias.importer.signals import (
     pre_download, post_download,
 )
 from .tablelist import TableList, TableListLoadingError
-from .wrapper import RarArchiveWrapper
+from .wrapper import RarArchiveWrapper, SourceWrapper
 
 logger = logging.getLogger(__name__)
 
@@ -37,29 +38,29 @@ class LocalArchiveTableList(TableList):
     wrapper_class = RarArchiveWrapper
 
     @staticmethod
-    def unpack(archive: rarfile.RarFile, tempdir=None):
+    def unpack(archive: rarfile.RarFile, tempdir: Path | None = None) -> str:
         path = tempfile.mkdtemp(dir=tempdir)
         archive.extractall(path)
         return path
 
-    def load_data(self, source: Path):
+    def load_data(self, source: str) -> SourceWrapper:
+        source_path = Path(source)
         try:
-            archive = rarfile.RarFile(source)
+            archive = rarfile.RarFile(source_path)
         # except (rarfile.NotRarFile, rarfile.BadRarFile) as e:
         except Exception as e1:
             try:
-                archive = zipfile.ZipFile(source)
+                archive = zipfile.ZipFile(source_path)
             except Exception as e2:
-                raise BadArchiveError('Archive: `{}` corrupted or is not rar,zip-archive; {}; {}'.format(
-                    source, e1, e2))
+                raise BadArchiveError(f'Archive: `{source_path}` corrupted or is not rar,zip-archive; {e1}; {e2}')
 
         if not archive.namelist():
-            raise BadArchiveError('Archive: `{}`, is empty'.format(source))
+            raise BadArchiveError(f'Archive: `{source_path}`, is empty')
 
         return self.wrapper_class(source=archive)
 
 
-class DlProgressBar(Bar):
+class DlProgressBar(Bar):  # type: ignore
     message = 'Downloading: '
     suffix = '%(index)d/%(max)d. ETA: %(elapsed)s'
     hide_cursor = False
@@ -68,16 +69,16 @@ class DlProgressBar(Bar):
 class RemoteArchiveTableList(LocalArchiveTableList):
     download_progress_class = DlProgressBar
 
-    def load_data(self, source: str):
+    def load_data(self, source: str) -> SourceWrapper:
         progress = self.download_progress_class()
 
-        def update_progress(count, block_size: int, total_size: int):
+        def update_progress(count: int, block_size: int, total_size: int) -> None:
             progress.goto(int(count * block_size * 100 / total_size))
 
         logger.info(f'Downloading from {source}.')
         pre_download.send(sender=self.__class__, url=source)
         try:
-            path = Path(urlretrieve(source, reporthook=update_progress)[0])
+            path = urlretrieve(source, reporthook=update_progress)[0]
         except HTTPError as e:
             raise RetrieveError('Can not download data archive at url `{0}`. Error occurred: "{1}"'.format(
                 source, str(e)

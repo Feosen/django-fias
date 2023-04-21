@@ -2,10 +2,11 @@
 from __future__ import unicode_literals, absolute_import
 
 import os
+from pathlib import Path
 
-DATA_PATH = os.path.realpath(os.path.join(os.path.dirname(__file__), 'data'))
+DATA_PATH = Path(__file__).parent / 'data'
 
-FAKE_SOURCE_PATH = os.path.join(DATA_PATH, 'fake')
-FAKE_DIR_PATH = os.path.join(FAKE_SOURCE_PATH, 'directory')
-FAKE_ARCHIVE_PATH = os.path.join(FAKE_SOURCE_PATH, 'archive.rar')
-FAKE_FILES = ('file0', 'file1', 'file2')
+FAKE_SOURCE_PATH = DATA_PATH / 'fake'
+FAKE_DIR_PATH = FAKE_SOURCE_PATH / 'directory'
+FAKE_ARCHIVE_PATH = FAKE_SOURCE_PATH / 'archive.rar'
+FAKE_FILES = ['file0', 'file1', 'file2']

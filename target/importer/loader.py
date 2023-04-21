@@ -3,21 +3,23 @@ from __future__ import unicode_literals, absolute_import
 
 import logging
 from dataclasses import dataclass
-from typing import Tuple, List, Union, Type, Dict, Any
+from typing import Tuple, List, Union, Type, Dict, Any, cast, TYPE_CHECKING
 
 from django.db import connections, transaction
+from django.db.backends.base.base import BaseDatabaseWrapper
 from django.db.models import Model
-from django.db.models.fields import AutoFieldMixin
+from django.db.models.fields import AutoFieldMixin, Field
 
-from fias import models as s_models
-from target import models as t_models
 from target.config import DATABASE_ALIAS
-from target.importer.signals import (
-    pre_import_table, post_import_table
-)
-
+from target.importer.signals import pre_import_table, post_import_table
 
 logger = logging.getLogger(__name__)
+
+
+if TYPE_CHECKING:
+    _Field = Field[Any, Any]
+else:
+    _Field = Field
 
 
 @dataclass
@@ -59,7 +61,7 @@ class SqlBuilder:
         return f"INSERT INTO {dst._meta.db_table} ({', '.join(fields)}) {values or query}"
 
     @classmethod
-    def create(cls, connection, dst: Type[Model], dst_pk: str, src: Type[Model], src_pk: str,
+    def create(cls, connection: BaseDatabaseWrapper, dst: Type[Model], dst_pk: str, src: Type[Model], src_pk: str,
                filters: Union[None, List[str]], field_map: Union[None, Dict[str, str]], params: Union[None, ParamCfg],
                hierarchy: Union[None, List[HierarchyCfg]]) -> str:
 
@@ -68,7 +70,7 @@ class SqlBuilder:
         return f"INSERT INTO {dst._meta.db_table} ({', '.join(dst_fields)}) {select}"
 
     @classmethod
-    def update(cls, connection, dst: Type[Model], dst_pk: str, src: Type[Model], src_pk: str,
+    def update(cls, connection: BaseDatabaseWrapper, dst: Type[Model], dst_pk: str, src: Type[Model], src_pk: str,
                filters: Union[None, List[str]], field_map: Union[None, Dict[str, str]], params: Union[None, ParamCfg],
                hierarchy: Union[None, List[HierarchyCfg]]) -> str:
 
@@ -82,7 +84,7 @@ class SqlBuilder:
                 f" WHERE {dst._meta.db_table}.{dst_pk} = {tmp_select_table}.{src_pk}")
 
     @classmethod
-    def select(cls, connection, dst: Type[Model], src: Type[Model], src_pk: str, fields: List[str],
+    def select(cls, connection: BaseDatabaseWrapper, dst: Type[Model], src: Type[Model], src_pk: str, fields: List[str],
                filters: Union[None, List[str]], field_map: Union[None, Dict[str, str]], params: Union[None, ParamCfg],
                hierarchy: Union[None, List[HierarchyCfg]]) -> str:
 
@@ -111,7 +113,10 @@ class SqlBuilder:
         if params is not None:
             param_type_ids_s = ', '.join(map(lambda i: f'({i})', (i for _, i in params.type_map)))
             ct_field_names = [src_pk] + [n for n, _ in params.type_map]
-            ct_s = ', '.join(map(lambda f: f'{f} {dst._meta.get_field(f).db_type(connection)}', ct_field_names))
+            ct_fields = [dst._meta.get_field(f) for f in ct_field_names]
+            if not all(map(lambda f: isinstance(f, Field), ct_fields)):
+                raise ValueError
+            ct_s = ', '.join(map(lambda f: f'{f.name} {f.db_type(connection)}', cast(List[_Field], ct_fields)))
             params_s = f"""
             LEFT JOIN crosstab(
                 'SELECT {params.pk}, typeid, value FROM {params.model._meta.db_table} ORDER BY {params.pk}, typeid',
@@ -146,19 +151,19 @@ class Cfg:
     hierarchy: Union[None, List[HierarchyCfg]]
 
 
-def truncate(cfg: Cfg):
+def truncate(cfg: Cfg) -> None:
     cfg.dst.objects.all().delete()
 
 
 class TableLoader(object):
-    def load(self, cfg: Cfg, ver: int = None):
+    def load(self, cfg: Cfg, ver: int = 0) -> None:
         logger.info(f'Table "{cfg.dst._meta.object_name}" is loading.')
         pre_import_table.send(sender=self.__class__, cfg=cfg)
         self.do_load(cfg, ver)
         post_import_table.send(sender=self.__class__, cfg=cfg)
         logger.info(f'Table "{cfg.dst._meta.object_name}" has been loaded.')
 
-    def do_load(self, cfg: Cfg, ver: int):
+    def do_load(self, cfg: Cfg, ver: int) -> None:
         connection = connections[DATABASE_ALIAS]
         with connection.cursor() as cursor:
             if cfg.filters is not None:
@@ -172,7 +177,7 @@ class TableLoader(object):
 
 class TableUpdater(TableLoader):
 
-    def do_load(self, cfg: Cfg, ver: int):
+    def do_load(self, cfg: Cfg, ver: int) -> None:
         connection = connections[DATABASE_ALIAS]
         with transaction.atomic():
             # Delete rows

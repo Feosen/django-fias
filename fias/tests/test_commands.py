@@ -1,5 +1,6 @@
 from datetime import date
 from pathlib import Path
+from typing import Any, List, Dict
 from uuid import UUID
 
 from django.core.management import call_command
@@ -10,20 +11,20 @@ from fias.models import *
 
 
 class CommandCreateTestCase(TestCase):
-    databases = ['default', 'gar']
+    databases = {'default', 'gar'}
 
-    def test_fias_create(self):
+    def test_fias_create(self) -> None:
         Version.objects.create(ver=20221124, dumpdate=date(2022, 11, 24),
                                complete_xml_url='complete_xml_url')
 
         BASE_DIR = Path(__file__).resolve().parent
         SRC = BASE_DIR / Path('data/fake/gar_99.rar')
         TEMPRID = BASE_DIR
-        args = []
-        opts = {
+        args: List[Any] = []
+        opts: Dict[str, Any] = {
             'src': str(SRC),
             'tempdir': str(TEMPRID),
-            'update-version-info': False,
+            'update_version_info': False,
         }
         call_command('fias', *args, **opts)
 
@@ -154,20 +155,20 @@ class CommandCreateTestCase(TestCase):
 
 
 class CommandUpdateTestCase(TestCase):
-    databases = ['default', 'gar']
+    databases = {'default', 'gar'}
     fixtures = ["fias/tests/data/fixtures/gar_99.json"]
 
-    def test_fias_update(self):
+    def test_fias_update(self) -> None:
 
         BASE_DIR = Path(__file__).resolve().parent
         SRC = BASE_DIR / Path('data/fake/deltas')
         TEMPRID = BASE_DIR
-        args = []
-        opts = {
+        args: List[Any] = []
+        opts: Dict[str, Any] = {
             'src': str(SRC),
             'tempdir': str(TEMPRID),
             'update': True,
-            'update-version-info': False,
+            'update_version_info': False,
         }
         call_command('fias', *args, **opts)
 

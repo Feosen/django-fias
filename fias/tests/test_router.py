@@ -16,26 +16,26 @@ fias_models = ['AddrObjType', 'AddrObj', 'AddrObjParam', 'House', 'HouseType', '
 
 class TestRouter(TestCase):
 
-    def setUp(self):
+    def setUp(self) -> None:
         self.router = FIASRouter()
         self.models = (getattr(fias.models, attr) for attr in fias_models)
         self.rels = (getattr(fias.models, attr) for attr in FIASRouter.ALLOWED_REL)
 
-    def test_read_db(self):
+    def test_read_db(self) -> None:
         for model in self.models:
             if issubclass(model, models.Model):
                 self.assertEquals(DATABASE_ALIAS, self.router.db_for_read(model))
 
         self.assertIsNone(self.router.db_for_read(FakeModel))
 
-    def test_write_db(self):
+    def test_write_db(self) -> None:
         for model in self.models:
             if issubclass(model, models.Model):
                 self.assertEquals(DATABASE_ALIAS, self.router.db_for_write(model))
 
         self.assertIsNone(self.router.db_for_write(FakeModel))
 
-    def test_relation(self):
+    def test_relation(self) -> None:
         for m1 in self.models:
             for m2 in self.models:
                 self.assertTrue(self.router.allow_relation(m1, m2))
@@ -47,7 +47,7 @@ class TestRouter(TestCase):
         self.assertIsNone(self.router.allow_relation(FakeModel, FakeModel2))
         self.assertIsNone(self.router.allow_relation(FakeModel2, FakeModel))
 
-    def test_migrate(self):
+    def test_migrate(self) -> None:
         method = self.router.allow_migrate
 
         for model in self.models:

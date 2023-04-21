@@ -1,18 +1,21 @@
 # coding: utf-8
 from __future__ import unicode_literals, absolute_import
 
+from datetime import date
+
 from django.db import models
 
 __all__ = ['Version', 'Status']
 
 
-class VersionManager(models.Manager):
+class VersionManager(models.Manager['Version']):
 
-    def nearest_by_date(self, date):
+    def nearest_by_date(self, date_: date) -> 'Version':
         try:
-            return self.get_queryset().filter(dumpdate=date).latest('dumpdate')
+            ver = self.get_queryset().filter(dumpdate=date_).latest('dumpdate')
         except Version.DoesNotExist:
-            return self.get_queryset().filter(dumpdate__gte=date).earliest('dumpdate')
+            ver = self.get_queryset().filter(dumpdate__gte=date_).earliest('dumpdate')
+        return ver
 
 
 class Version(models.Model):
@@ -29,8 +32,8 @@ class Version(models.Model):
     complete_xml_url = models.CharField(max_length=255)
     delta_xml_url = models.CharField(max_length=255, blank=True, null=True)
 
-    def __str__(self):
-        return '{0} from {1}'.format(self.ver, self.dumpdate)
+    def __str__(self) -> str:
+        return f'{self.ver} from {self.dumpdate}'
 
 
 class Status(models.Model):
