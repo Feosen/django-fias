@@ -2,13 +2,11 @@ from django.db import models
 
 __all__ = ('AddrObj', 'House', 'House78', 'HouseType', 'HouseAddType', 'Status')
 
-from target.config import MANAGE
-
 
 class AbstractModel(models.Model):
 
     class Meta:
-        managed = MANAGE
+        managed = True
         abstract = True
 
 
