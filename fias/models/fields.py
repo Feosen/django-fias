@@ -20,8 +20,8 @@ class RefFieldMixin(BaseFieldMixin):
         self.to = to
         for model, field_name in self.to:
             field = model._meta.get_field(field_name)
-            if not (hasattr(field, 'primary_key') and field.primary_key):
-                raise ImproperlyConfigured(f'{model}.{field_name} must be primary key.')
+            if not (hasattr(field, "primary_key") and field.primary_key):
+                raise ImproperlyConfigured(f"{model}.{field_name} must be primary key.")
         super().__init__(verbose_name, *args, **kwargs)
 
     def deconstruct(self) -> Tuple[str, str, List[Any], Mapping[str, Any]]:

@@ -18,7 +18,6 @@ tomorrow = today + diff
 
 
 class TestCommonValidator(TestCase):
-
     def test_startdate_tomorrow(self) -> None:
         m = AddrObj(startdate=tomorrow, enddate=tomorrow)
         self.assertFalse(common_validator(m, today=today))
@@ -37,7 +36,6 @@ class TestCommonValidator(TestCase):
 
 
 class TestAddrObjValidator(TestCase):
-
     def test_nextid(self) -> None:
         m = AddrObj(startdate=yesterday, enddate=tomorrow)
         self.assertFalse(chained_validator(m, today=today))

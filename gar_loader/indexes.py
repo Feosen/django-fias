@@ -25,24 +25,28 @@ else:
 
 def get_simple_field(field: _Field) -> _Field:
     params: Dict[str, Any] = {
-        'db_index': False,
-        'primary_key': False,
-        'unique': field.unique,
-        'blank': field.blank,
-        'null': field.null,
+        "db_index": False,
+        "primary_key": False,
+        "unique": field.unique,
+        "blank": field.blank,
+        "null": field.null,
     }
 
     if isinstance(field, models.ForeignKey):
-        params.update({
-            'to': field.remote_field.model,
-            'on_delete': field.remote_field.on_delete,
-        })
+        params.update(
+            {
+                "to": field.remote_field.model,
+                "on_delete": field.remote_field.on_delete,
+            }
+        )
     elif isinstance(field, models.CharField):
-        params.update({
-            'max_length': field.max_length,
-        })
+        params.update(
+            {
+                "max_length": field.max_length,
+            }
+        )
     elif isinstance(field, RelatedField):
-        raise NotImplementedError('Only ForeignKey and OneToOne related fields supported')
+        raise NotImplementedError("Only ForeignKey and OneToOne related fields supported")
     simple_field = field.__class__(**params)
     simple_field.column = field.column
     simple_field.model = field.model
@@ -64,7 +68,7 @@ def get_indexed_fields(model: Type[models.Model]) -> Iterable[Tuple[_Field, _Fie
         # Не удаляем индекс у первичных ключей и полей,
         # на которые есть ссылки из других моделей
         if field.primary_key and any(
-                [rel for rel in get_all_related_objects(model._meta) if rel.field_name == field.name]
+            [rel for rel in get_all_related_objects(model._meta) if rel.field_name == field.name]
         ):
             continue
 

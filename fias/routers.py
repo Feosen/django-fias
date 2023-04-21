@@ -9,8 +9,8 @@ from fias.config import DEFAULT_DB_ALIAS, DATABASE_ALIAS
 
 
 class FIASRouter(object):
-    app_labels = ('fias',)
-    ALLOWED_REL = ['AddrObj']
+    app_labels = ("fias",)
+    ALLOWED_REL = ["AddrObj"]
 
     def db_for_read(self, model: Type[Model], **hints: Any) -> Union[str, None]:
         if model._meta.app_label in self.app_labels:
@@ -27,14 +27,15 @@ class FIASRouter(object):
             джанго не может правильно определить БД для записи\
             """
             try:
-                if hints['instance']._meta.object_name == 'AddrObj':
+                if hints["instance"]._meta.object_name == "AddrObj":
                     return DEFAULT_DB_ALIAS
             except KeyError:
                 pass
         return None
 
-    def allow_relation(self, obj1: Union[Model, Type[Model]], obj2: Union[Model, Type[Model]], **hints: Any) -> Union[
-        bool, None]:
+    def allow_relation(
+        self, obj1: Union[Model, Type[Model]], obj2: Union[Model, Type[Model]], **hints: Any
+    ) -> Union[bool, None]:
         """\
         Разрешить связи из других бд к таблицам ФИАС
         но запретить ссылаться из бд ФИАС в другие БД
@@ -46,8 +47,9 @@ class FIASRouter(object):
             return True
         return None
 
-    def allow_migrate(self, db: str, app_label: str, model: Type[Model] | None = None, **hints: Any) -> Union[
-        bool, None]:
+    def allow_migrate(
+        self, db: str, app_label: str, model: Type[Model] | None = None, **hints: Any
+    ) -> Union[bool, None]:
         """Разрешить синхронизацию моделей в базе ФИАС"""
         if app_label in self.app_labels:
             return db == DATABASE_ALIAS

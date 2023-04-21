@@ -6,7 +6,7 @@ from django.db import models
 from .common import AbstractType, AbstractObj, AbstractParam
 from .fields import BigIntegerRefField
 
-__all__ = ['House', 'HouseType', 'AddHouseType', 'HouseParam']
+__all__ = ["House", "HouseType", "AddHouseType", "HouseParam"]
 
 
 class HouseType(AbstractType):
@@ -16,8 +16,8 @@ class HouseType(AbstractType):
 
     class Meta(AbstractType.Meta):
         abstract = False
-        verbose_name = 'тип дома'
-        verbose_name_plural = 'типы домов'
+        verbose_name = "тип дома"
+        verbose_name_plural = "типы домов"
 
 
 class AddHouseType(AbstractType):
@@ -27,8 +27,8 @@ class AddHouseType(AbstractType):
 
     class Meta(AbstractType.Meta):
         abstract = False
-        verbose_name = 'дополнительный тип дома'
-        verbose_name_plural = 'дополнительные типы домов'
+        verbose_name = "дополнительный тип дома"
+        verbose_name_plural = "дополнительные типы домов"
 
 
 class House(AbstractObj):
@@ -36,27 +36,28 @@ class House(AbstractObj):
     Сведения по номерам домов улиц городов и населенных пунктов
     """
 
-    housenum = models.CharField(verbose_name='номер дома', max_length=20, blank=True, null=True)
-    addnum1 = models.CharField(verbose_name='дополнительный номер дома 1', max_length=20, blank=True, null=True)
-    addnum2 = models.CharField(verbose_name='дополнительный номер дома 2', max_length=20, blank=True, null=True)
-    housetype = models.IntegerField(verbose_name='основной тип дома')
-    addtype1 = models.IntegerField(verbose_name='дополнительный тип номера дома 1', blank=True, null=True)
-    addtype2 = models.IntegerField(verbose_name='дополнительный тип номера дома 2', blank=True, null=True)
+    housenum = models.CharField(verbose_name="номер дома", max_length=20, blank=True, null=True)
+    addnum1 = models.CharField(verbose_name="дополнительный номер дома 1", max_length=20, blank=True, null=True)
+    addnum2 = models.CharField(verbose_name="дополнительный номер дома 2", max_length=20, blank=True, null=True)
+    housetype = models.IntegerField(verbose_name="основной тип дома")
+    addtype1 = models.IntegerField(verbose_name="дополнительный тип номера дома 1", blank=True, null=True)
+    addtype2 = models.IntegerField(verbose_name="дополнительный тип номера дома 2", blank=True, null=True)
 
     class Meta(AbstractObj.Meta):
         abstract = False
-        verbose_name = 'номер дома'
-        verbose_name_plural = 'номера домов'
-        indexes = [models.Index(fields=['objectid'])]
+        verbose_name = "номер дома"
+        verbose_name_plural = "номера домов"
+        indexes = [models.Index(fields=["objectid"])]
 
 
 class HouseParam(AbstractParam):
     """
     Параметры домов
     """
-    objectid = BigIntegerRefField([(House, 'objectid')], verbose_name='глобальный уникальный идентификатор объекта')
+
+    objectid = BigIntegerRefField([(House, "objectid")], verbose_name="глобальный уникальный идентификатор объекта")
 
     class Meta(AbstractParam.Meta):
         abstract = False
-        verbose_name = 'параметр дома'
-        verbose_name_plural = 'параметры домов'
+        verbose_name = "параметр дома"
+        verbose_name_plural = "параметры домов"

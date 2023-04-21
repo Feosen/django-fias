@@ -42,7 +42,6 @@ class VersionInfo:
 
 
 class Parser:
-
     @staticmethod
     def parse(item: Any) -> VersionInfo:
         raise NotImplemented
@@ -57,8 +56,9 @@ class WsdlParser(Parser):
 class JsonParser(Parser):
     @staticmethod
     def parse(item: Dict[str, Any]) -> VersionInfo:
-        return VersionInfo(item['VersionId'], item['TextVersion'], item.get('GarXMLFullURL', None),
-                           item.get('GarXMLDeltaURL', None))
+        return VersionInfo(
+            item["VersionId"], item["TextVersion"], item.get("GarXMLFullURL", None), item.get("GarXMLDeltaURL", None)
+        )
 
 
 class Client:
@@ -96,7 +96,6 @@ class WsdlClient(Client):
 
 
 class JsonClient(Client):
-
     def version_info(self) -> Iterable[VersionInfo]:
         with urllib.request.urlopen(JSON_SOURCE) as url:
             info = json.loads(url.read().decode())
@@ -113,7 +112,8 @@ def wsdl_client_factory() -> Client:
         try:
             from zeep.client import Client as ZeepClient
             from zeep import __version__ as zver
-            z_major, z_minor, z_sub = list(map(int, zver.split('.')))
+
+            z_major, z_minor, z_sub = list(map(int, zver.split(".")))
 
             zeep_client = ZeepClient(wsdl=WSDL_SOURCE)  # type: ignore
             if z_minor < 20:
@@ -129,10 +129,11 @@ def wsdl_client_factory() -> Client:
             return WsdlClient(WsdlParser(), SudsClient(url=WSDL_SOURCE, proxy=PROXY or None))
 
         except ImportError:
-            raise ImproperlyConfigured('Не найдено подходящей библиотеки для работы с WSDL.'
-                                       ' Пожалуйста установите zeep или suds!')
+            raise ImproperlyConfigured(
+                "Не найдено подходящей библиотеки для работы с WSDL." " Пожалуйста установите zeep или suds!"
+            )
     except HTTPError as e:
-        print('Сайт не отвечает при запросе WSDL')
+        print("Сайт не отвечает при запросе WSDL")
         raise e
     except Exception as e:
         print(e)
@@ -151,7 +152,7 @@ def update_or_create_version(item: VersionInfo, update_all: bool) -> None:
 
 
 def fetch_version_info(update_all: bool = False) -> None:
-    logger.info('Version info updating.')
+    logger.info("Version info updating.")
     pre_fetch_version.send(object.__class__)
     try:
         for item in wsdl_client_factory().version_info():
@@ -160,4 +161,4 @@ def fetch_version_info(update_all: bool = False) -> None:
         for item in json_client_factory().version_info():
             update_or_create_version(item, update_all)
     post_fetch_version.send(object.__class__)
-    logger.info('Version info updated.')
+    logger.info("Version info updated.")

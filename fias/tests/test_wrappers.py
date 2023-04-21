@@ -19,7 +19,6 @@ from .info import FAKE_DIR_PATH, FAKE_ARCHIVE_PATH, FAKE_FILES
 
 
 class TestSourceWrapper(TestCase):
-
     def setUp(self) -> None:
         self.wrapper = SourceWrapper(None)
 
@@ -57,11 +56,10 @@ class TestDirectoryWrapper(TestCase):
 
         data = fd.read()
 
-        self.assertEqual(data.decode('utf-8'), filename)
+        self.assertEqual(data.decode("utf-8"), filename)
 
 
 class TestTemporaryDirectoryWrapper(TestCase):
-
     def setUp(self) -> None:
         tmp = tempfile.mktemp()
         shutil.copytree(FAKE_DIR_PATH, tmp)
@@ -78,7 +76,5 @@ class TestTemporaryDirectoryWrapper(TestCase):
 
 
 class TestArchiveWrapper(TestDirectoryWrapper):
-
     def setUp(self) -> None:
         self.wrapper = RarArchiveWrapper(rarfile.RarFile(FAKE_ARCHIVE_PATH))
-

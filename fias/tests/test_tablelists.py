@@ -28,7 +28,7 @@ class TestTableList(TestCase):
         TableList.wrapper_class = self.original_wrapper
 
     def test_version_type(self) -> None:
-        self.assertRaises(AssertionError, TableList, src=None, version=type('NotAVersion'))
+        self.assertRaises(AssertionError, TableList, src=None, version=type("NotAVersion"))
 
         ver = Version(ver=0, dumpdate=datetime.datetime.today())
 
@@ -42,7 +42,7 @@ class TestTableList(TestCase):
     def test_get_date_info(self) -> None:
         tl = TableList(src=None)
         for f in FAKE_FILES:
-            self.assertEqual(datetime.date(2000, 1, int(f[-1])+1), tl.get_date_info(f))
+            self.assertEqual(datetime.date(2000, 1, int(f[-1]) + 1), tl.get_date_info(f))
 
     def test_open(self) -> None:
         tl = TableList(src=None)

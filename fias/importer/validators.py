@@ -8,7 +8,7 @@ from fias.config import TableName
 from fias.models import AbstractModel
 from fias.models.common import AbstractObj
 
-__all__ = ['validate']
+__all__ = ["validate"]
 
 assert issubclass(AbstractObj, AbstractModel)
 
@@ -20,8 +20,8 @@ def common_validator(item: AbstractModel, today: date, **kwargs: Any) -> bool:
 def chained_validator(item: AbstractObj, today: date, **kwargs: Any) -> bool:
     return (
         # not item.nextid and  # TODO: Does it required?
-        item.isactual and
-        common_validator(item, today=today, **kwargs)
+        item.isactual
+        and common_validator(item, today=today, **kwargs)
     )
 
 

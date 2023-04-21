@@ -7,13 +7,12 @@ from django.db import models
 
 from fias.models.fields import RefFieldMixin
 
-__all__ = ['AbstractModel', 'AbstractIsActiveModel', 'AbstractObj', 'AbstractParam', 'AbstractType', 'ParamType']
+__all__ = ["AbstractModel", "AbstractIsActiveModel", "AbstractObj", "AbstractParam", "AbstractType", "ParamType"]
 
-_M = TypeVar("_M", bound='AbstractModel', covariant=True)
+_M = TypeVar("_M", bound="AbstractModel", covariant=True)
 
 
 class Manager(models.Manager[_M]):
-
     def delete_orphans(self) -> Tuple[int, dict[str, int]]:
         res_c: int = 0
         res_d: dict[str, int] = {}
@@ -22,7 +21,7 @@ class Manager(models.Manager[_M]):
                 # TODO: profile it
                 qs = self.get_queryset()
                 for cfg in field.to:
-                    qs = qs.exclude(**{f'{field.name}__in': cfg[0].objects.all()})
+                    qs = qs.exclude(**{f"{field.name}__in": cfg[0].objects.all()})
                 c, d = qs.delete()
                 res_c += c
                 res_d |= d
@@ -30,41 +29,41 @@ class Manager(models.Manager[_M]):
 
 
 class AbstractModel(models.Model):
-    ver = models.IntegerField(verbose_name='версия')
-    updatedate = models.DateField(verbose_name='дата внесения (обновления) записи')
-    startdate = models.DateField(verbose_name='начало действия записи')
-    enddate = models.DateField(verbose_name='окончание действия записи')
+    ver = models.IntegerField(verbose_name="версия")
+    updatedate = models.DateField(verbose_name="дата внесения (обновления) записи")
+    startdate = models.DateField(verbose_name="начало действия записи")
+    enddate = models.DateField(verbose_name="окончание действия записи")
 
     objects: Manager[AbstractModel] = Manager()
 
     class Meta:
         abstract = True
-        app_label = 'fias'
+        app_label = "fias"
 
 
 class AbstractIsActiveModel(AbstractModel):
-    isactive = models.BooleanField(verbose_name='статус активности')
+    isactive = models.BooleanField(verbose_name="статус активности")
 
     class Meta(AbstractModel.Meta):
         abstract = True
 
 
 class AbstractObj(AbstractIsActiveModel):
-    region = models.CharField(verbose_name='код региона', max_length=2)
-    isactual = models.BooleanField(verbose_name='статус актуальности')
-    objectid = models.BigIntegerField(verbose_name='глобальный уникальный идентификатор объекта', primary_key=True)
-    objectguid = models.UUIDField(verbose_name='глобальный уникальный идентификатор адресного объекта')
+    region = models.CharField(verbose_name="код региона", max_length=2)
+    isactual = models.BooleanField(verbose_name="статус актуальности")
+    objectid = models.BigIntegerField(verbose_name="глобальный уникальный идентификатор объекта", primary_key=True)
+    objectguid = models.UUIDField(verbose_name="глобальный уникальный идентификатор адресного объекта")
 
     class Meta(AbstractIsActiveModel.Meta):
         abstract = True
-        indexes = [models.Index(fields=['objectguid'])]
+        indexes = [models.Index(fields=["objectguid"])]
 
 
 class AbstractType(AbstractIsActiveModel):
-    id = models.SmallAutoField(verbose_name='id', primary_key=True)
-    name = models.CharField(verbose_name='наименование', max_length=255)
-    shortname = models.CharField(verbose_name='краткое наименование', max_length=255, blank=True, null=True)
-    desc = models.CharField(verbose_name='описание', max_length=255, blank=True, null=True)
+    id = models.SmallAutoField(verbose_name="id", primary_key=True)
+    name = models.CharField(verbose_name="наименование", max_length=255)
+    shortname = models.CharField(verbose_name="краткое наименование", max_length=255, blank=True, null=True)
+    desc = models.CharField(verbose_name="описание", max_length=255, blank=True, null=True)
 
     class Meta(AbstractIsActiveModel.Meta):
         abstract = True
@@ -74,18 +73,17 @@ class AbstractType(AbstractIsActiveModel):
 
 
 class AbstractParam(AbstractModel):
-    region = models.CharField(verbose_name='код региона', max_length=2)
-    typeid = models.SmallIntegerField(verbose_name='тип')
-    value = models.CharField(verbose_name='значение', max_length=250)
+    region = models.CharField(verbose_name="код региона", max_length=2)
+    typeid = models.SmallIntegerField(verbose_name="тип")
+    value = models.CharField(verbose_name="значение", max_length=250)
 
     class Meta:
         abstract = True
-        indexes = [models.Index(fields=['objectid']), models.Index(fields=['typeid'])]
+        indexes = [models.Index(fields=["objectid"]), models.Index(fields=["typeid"])]
 
 
 class ParamType(AbstractType):
-
     class Meta(AbstractType.Meta):
         abstract = False
-        verbose_name = 'тип параметра'
-        verbose_name_plural = 'типы параметров'
+        verbose_name = "тип параметра"
+        verbose_name_plural = "типы параметров"

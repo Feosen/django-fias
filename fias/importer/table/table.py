@@ -6,8 +6,19 @@ from typing import Union, Type, Any, IO, Callable, Dict, Iterable
 from django.db import connections, router
 
 from fias.config import TABLE_ROW_FILTERS, TableName
-from fias.models import (AddrObjType, AddrObj, AddrObjParam, House, AddHouseType, HouseType, HouseParam, ParamType,
-                         AdmHierarchy, MunHierarchy, AbstractModel)
+from fias.models import (
+    AddrObjType,
+    AddrObj,
+    AddrObjParam,
+    House,
+    AddHouseType,
+    HouseType,
+    HouseParam,
+    ParamType,
+    AdmHierarchy,
+    MunHierarchy,
+    AbstractModel,
+)
 
 table_names: Dict[TableName, Type[AbstractModel]] = {
     TableName.HOUSE: House,
@@ -25,13 +36,13 @@ table_names: Dict[TableName, Type[AbstractModel]] = {
 assert len(table_names) == len(TableName)
 
 name_trans: Dict[str, str] = {
-    'houses': TableName.HOUSE,
-    'house_types': TableName.HOUSE_TYPE,
-    'addhouse_types': TableName.ADD_HOUSE_TYPE,
-    'addr_obj_types': TableName.ADDR_OBJ_TYPE,
-    'param_types': TableName.PARAM_TYPE,
-    'houses_params': TableName.HOUSE_PARAM,
-    'addr_obj_params': TableName.ADDR_OBJ_PARAM,
+    "houses": TableName.HOUSE,
+    "house_types": TableName.HOUSE_TYPE,
+    "addhouse_types": TableName.ADD_HOUSE_TYPE,
+    "addr_obj_types": TableName.ADDR_OBJ_TYPE,
+    "param_types": TableName.PARAM_TYPE,
+    "houses_params": TableName.HOUSE_PARAM,
+    "addr_obj_params": TableName.ADDR_OBJ_PARAM,
 }
 
 
@@ -48,7 +59,6 @@ class ParentLookupException(Exception):
 
 
 class RowConvertor(object):
-
     def __init__(self, *args: Any, **kwargs: Any):
         pass
 
@@ -120,8 +130,9 @@ class Table(object):
     ver: int
     iterator_class: Type[TableIterator] = TableIterator
 
-    def __init__(self, filename: str, name: str, ver: int, deleted: bool | None = None, region: str | None = None,
-                 **kwargs: Any):
+    def __init__(
+        self, filename: str, name: str, ver: int, deleted: bool | None = None, region: str | None = None, **kwargs: Any
+    ):
         self.filename = filename
 
         name_lower = name.lower()
@@ -140,12 +151,12 @@ class Table(object):
         connection = connections[router.db_for_write(model)]
         cursor = connection.cursor()
 
-        if connection.vendor == 'postgresql':
-            cursor.execute('TRUNCATE TABLE {0} RESTART IDENTITY CASCADE'.format(db_table))
-        elif connection.vendor == 'mysql':
-            cursor.execute('TRUNCATE TABLE `{0}`'.format(db_table))
+        if connection.vendor == "postgresql":
+            cursor.execute("TRUNCATE TABLE {0} RESTART IDENTITY CASCADE".format(db_table))
+        elif connection.vendor == "mysql":
+            cursor.execute("TRUNCATE TABLE `{0}`".format(db_table))
         else:
-            cursor.execute('DELETE FROM {0}'.format(db_table))
+            cursor.execute("DELETE FROM {0}".format(db_table))
 
     def truncate(self) -> None:
         self._truncate(self.model)

@@ -10,45 +10,39 @@ from lxml import etree
 from .table import BadTableError, Table, TableIterator, AbstractTableList, RowConvertor
 from ...models import AbstractModel
 
-_bom_header = b'\xef\xbb\xbf'
+_bom_header = b"\xef\xbb\xbf"
 
 
 field_map: Dict[str, Dict[str, str]] = {
     #'house': {
     #    'id': 'recordid',
-    #}
+    # }
 }
 
 
 class XMLIterator(TableIterator):
-
     def __init__(self, fd: Any, model: Type[AbstractModel], row_convertor: RowConvertor):
         super(XMLIterator, self).__init__(fd=fd, model=model, row_convertor=row_convertor)
 
-        self.related_fields = dict({
-            (f.name, f.remote_field.model) for f in self.model._meta.get_fields()  # type: ignore
-            if f.one_to_one or f.many_to_one
-        })
+        self.related_fields = dict(
+            {
+                (f.name, f.remote_field.model)
+                for f in self.model._meta.get_fields()  # type: ignore
+                if f.one_to_one or f.many_to_one
+            }
+        )
 
-        self.uuid_fields = dict({
-            (f.name, f) for f in self.model._meta.get_fields()
-            if isinstance(f, models.UUIDField)
-        })
+        self.uuid_fields = dict({(f.name, f) for f in self.model._meta.get_fields() if isinstance(f, models.UUIDField)})
 
-        self.date_fields = dict({
-            (f.name, f) for f in self.model._meta.get_fields()
-            if isinstance(f, models.DateField)
-        })
+        self.date_fields = dict({(f.name, f) for f in self.model._meta.get_fields() if isinstance(f, models.DateField)})
 
-        self.int_fields = dict({
-            (f.name, f) for f in self.model._meta.get_fields()
-            if isinstance(f, models.IntegerField)
-        })
+        self.int_fields = dict(
+            {(f.name, f) for f in self.model._meta.get_fields() if isinstance(f, models.IntegerField)}
+        )
 
-        self.boolean_fields = dict({
-            (f.name, f) for f in self.model._meta.get_fields()
-            if isinstance(f, models.BooleanField)
-        })
+        self.boolean_fields = dict(
+            {(f.name, f) for f in self.model._meta.get_fields() if isinstance(f, models.BooleanField)}
+        )
 
         self._context = etree.iterparse(self._fd)
 
@@ -59,7 +53,7 @@ class XMLIterator(TableIterator):
             if key in self.uuid_fields:
                 res[key] = value or None
             elif key in self.date_fields:
-                if value == '' or value is None:
+                if value == "" or value is None:
                     res[key] = None
                 else:
                     try:
@@ -68,17 +62,17 @@ class XMLIterator(TableIterator):
                         _date = datetime.datetime.strptime(value, "%d.%m.%y %H:%M:%S").date()
                     res[key] = _date
             elif key in self.related_fields:
-                if value == '':
+                if value == "":
                     value = None
-                res[f'{key}_id'] = value
+                res[f"{key}_id"] = value
             elif key in self.int_fields:
-                if value == '':
+                if value == "":
                     value = None
                 else:
                     value = int(value)
                 res[key] = value
             elif key in self.boolean_fields:
-                res[key] = value in ('1', 'y', 'yes', 't', 'true', 'on', '+')
+                res[key] = value in ("1", "y", "yes", "t", "true", "on", "+")
             else:
                 res[key] = value
         return res
@@ -121,8 +115,15 @@ class XMLTable(Table):
     iterator_class: Type[TableIterator] = XMLIterator
     row_convertor_class: Type[RowConvertor] = XMLRowConvertor
 
-    def __init__(self, filename: str, name: str, ver: int, deleted: Union[bool, None] = None,
-                 region: Union[str, None] = None, **kwargs: Any):
+    def __init__(
+        self,
+        filename: str,
+        name: str,
+        ver: int,
+        deleted: Union[bool, None] = None,
+        region: Union[str, None] = None,
+        **kwargs: Any,
+    ):
         super(XMLTable, self).__init__(filename, name, ver, deleted, region, **kwargs)
 
     def rows(self, tablelist: AbstractTableList) -> TableIterator:
@@ -136,11 +137,11 @@ class XMLTable(Table):
         if bom != _bom_header:
             xml = self.open(tablelist=tablelist)
         else:
-            #log.info('Fixed wrong BOM header')
+            # log.info('Fixed wrong BOM header')
             pass
 
         try:
-            row_convertor = self.row_convertor_class(self.model, self.name, {'ver': self.ver, 'region': self.region})
+            row_convertor = self.row_convertor_class(self.model, self.name, {"ver": self.ver, "region": self.region})
             return self.iterator_class(xml, self.model, row_convertor)
         except etree.XMLSyntaxError as e:
-            raise BadTableError('Error occured during opening table `{0}`: {1}'.format(self.name, str(e)))
+            raise BadTableError("Error occured during opening table `{0}`: {1}".format(self.name, str(e)))

@@ -8,7 +8,6 @@ import fias.models.house
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
     dependencies = []
@@ -27,9 +26,7 @@ class Migration(migrations.Migration):
                 ("enddate", models.DateField(verbose_name="окончание действия записи")),
                 (
                     "id",
-                    models.SmallAutoField(
-                        primary_key=True, serialize=False, verbose_name="id"
-                    ),
+                    models.SmallAutoField(primary_key=True, serialize=False, verbose_name="id"),
                 ),
                 ("name", models.CharField(max_length=255, verbose_name="наименование")),
                 (
@@ -43,9 +40,7 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "desc",
-                    models.CharField(
-                        blank=True, max_length=255, null=True, verbose_name="описание"
-                    ),
+                    models.CharField(blank=True, max_length=255, null=True, verbose_name="описание"),
                 ),
                 ("isactive", models.BooleanField(verbose_name="статус активности")),
             ],
@@ -78,16 +73,12 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "objectguid",
-                    models.UUIDField(
-                        verbose_name="глобальный уникальный идентификатор адресного объекта"
-                    ),
+                    models.UUIDField(verbose_name="глобальный уникальный идентификатор адресного объекта"),
                 ),
                 ("name", models.TextField(verbose_name="наименование")),
                 (
                     "level",
-                    models.PositiveIntegerField(
-                        verbose_name="Уровень адресного объект"
-                    ),
+                    models.PositiveIntegerField(verbose_name="Уровень адресного объект"),
                 ),
                 (
                     "typename",
@@ -148,9 +139,7 @@ class Migration(migrations.Migration):
                 ("enddate", models.DateField(verbose_name="окончание действия записи")),
                 (
                     "id",
-                    models.SmallAutoField(
-                        primary_key=True, serialize=False, verbose_name="id"
-                    ),
+                    models.SmallAutoField(primary_key=True, serialize=False, verbose_name="id"),
                 ),
                 ("name", models.CharField(max_length=255, verbose_name="наименование")),
                 (
@@ -164,9 +153,7 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "desc",
-                    models.CharField(
-                        blank=True, max_length=255, null=True, verbose_name="описание"
-                    ),
+                    models.CharField(blank=True, max_length=255, null=True, verbose_name="описание"),
                 ),
                 ("isactive", models.BooleanField(verbose_name="статус активности")),
                 (
@@ -213,9 +200,7 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "parentobjid",
-                    models.BigIntegerField(
-                        verbose_name="идентификатор родительского объекта"
-                    ),
+                    models.BigIntegerField(verbose_name="идентификатор родительского объекта"),
                 ),
             ],
             options={
@@ -246,15 +231,11 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "objectguid",
-                    models.UUIDField(
-                        verbose_name="глобальный уникальный идентификатор адресного объекта"
-                    ),
+                    models.UUIDField(verbose_name="глобальный уникальный идентификатор адресного объекта"),
                 ),
                 (
                     "housenum",
-                    models.CharField(
-                        blank=True, max_length=20, null=True, verbose_name="номер дома"
-                    ),
+                    models.CharField(blank=True, max_length=20, null=True, verbose_name="номер дома"),
                 ),
                 (
                     "addnum1",
@@ -346,9 +327,7 @@ class Migration(migrations.Migration):
                 ("enddate", models.DateField(verbose_name="окончание действия записи")),
                 (
                     "id",
-                    models.SmallAutoField(
-                        primary_key=True, serialize=False, verbose_name="id"
-                    ),
+                    models.SmallAutoField(primary_key=True, serialize=False, verbose_name="id"),
                 ),
                 ("name", models.CharField(max_length=255, verbose_name="наименование")),
                 (
@@ -362,9 +341,7 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "desc",
-                    models.CharField(
-                        blank=True, max_length=255, null=True, verbose_name="описание"
-                    ),
+                    models.CharField(blank=True, max_length=255, null=True, verbose_name="описание"),
                 ),
                 ("isactive", models.BooleanField(verbose_name="статус активности")),
             ],
@@ -407,9 +384,7 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "parentobjid",
-                    models.BigIntegerField(
-                        verbose_name="идентификатор родительского объекта"
-                    ),
+                    models.BigIntegerField(verbose_name="идентификатор родительского объекта"),
                 ),
             ],
             options={
@@ -429,9 +404,7 @@ class Migration(migrations.Migration):
                 ("enddate", models.DateField(verbose_name="окончание действия записи")),
                 (
                     "id",
-                    models.SmallAutoField(
-                        primary_key=True, serialize=False, verbose_name="id"
-                    ),
+                    models.SmallAutoField(primary_key=True, serialize=False, verbose_name="id"),
                 ),
                 ("name", models.CharField(max_length=255, verbose_name="наименование")),
                 (
@@ -445,9 +418,7 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "desc",
-                    models.CharField(
-                        blank=True, max_length=255, null=True, verbose_name="описание"
-                    ),
+                    models.CharField(blank=True, max_length=255, null=True, verbose_name="описание"),
                 ),
                 ("isactive", models.BooleanField(verbose_name="статус активности")),
             ],
@@ -484,9 +455,7 @@ class Migration(migrations.Migration):
                 ),
                 (
                     "region",
-                    models.CharField(
-                        blank=True, max_length=2, null=True, verbose_name="регион"
-                    ),
+                    models.CharField(blank=True, max_length=2, null=True, verbose_name="регион"),
                 ),
                 ("table", models.CharField(max_length=15, verbose_name="таблица")),
                 (
@@ -508,9 +477,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddIndex(
             model_name="houseparam",
-            index=models.Index(
-                fields=["objectid"], name="fias_housep_objecti_a40536_idx"
-            ),
+            index=models.Index(fields=["objectid"], name="fias_housep_objecti_a40536_idx"),
         ),
         migrations.AddIndex(
             model_name="houseparam",
@@ -518,9 +485,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddIndex(
             model_name="house",
-            index=models.Index(
-                fields=["objectid"], name="fias_house_objecti_134e2e_idx"
-            ),
+            index=models.Index(fields=["objectid"], name="fias_house_objecti_134e2e_idx"),
         ),
         migrations.AddIndex(
             model_name="admhierarchy",
@@ -531,9 +496,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AddIndex(
             model_name="addrobjparam",
-            index=models.Index(
-                fields=["objectid"], name="fias_addrob_objecti_ca4091_idx"
-            ),
+            index=models.Index(fields=["objectid"], name="fias_addrob_objecti_ca4091_idx"),
         ),
         migrations.AddIndex(
             model_name="addrobjparam",
@@ -541,14 +504,10 @@ class Migration(migrations.Migration):
         ),
         migrations.AddIndex(
             model_name="addrobj",
-            index=models.Index(
-                fields=["objectguid"], name="fias_addrob_objectg_27e2a3_idx"
-            ),
+            index=models.Index(fields=["objectguid"], name="fias_addrob_objectg_27e2a3_idx"),
         ),
         migrations.AddConstraint(
             model_name="status",
-            constraint=models.UniqueConstraint(
-                fields=("region", "table"), name="unique_region_table"
-            ),
+            constraint=models.UniqueConstraint(fields=("region", "table"), name="unique_region_table"),
         ),
     ]

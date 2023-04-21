@@ -31,7 +31,7 @@ class TableList(AbstractTableList):
         self.tempdir = tempdir
 
         if version is not None:
-            assert isinstance(version, Version), 'version must be an instance of Version model'
+            assert isinstance(version, Version), "version must be an instance of Version model"
 
             self.date = version.dumpdate
 
@@ -49,9 +49,10 @@ class TableList(AbstractTableList):
     def tables(self) -> Dict[str, List[Table]]:
         table_list: Dict[str, List[Table]] = {}
         for filename in self.get_table_list():
-            table = TableFactory.parse(filename=filename, extra={'ver': self.version.ver})
-            if table is None or (config.ALL != config.REGIONS
-                                 and table.region is not None and table.region not in config.REGIONS):
+            table = TableFactory.parse(filename=filename, extra={"ver": self.version.ver})
+            if table is None or (
+                config.ALL != config.REGIONS and table.region is not None and table.region not in config.REGIONS
+            ):
                 continue
             table_list.setdefault(table.name, []).append(table)
 

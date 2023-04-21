@@ -2,7 +2,7 @@
 
 
 class FiasConfig(AppConfig):
-    name = 'fias'
+    name = "fias"
 
     # Signal receivers registration
     # noinspection PyUnresolvedReferences

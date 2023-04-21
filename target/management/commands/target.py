@@ -1,4 +1,3 @@
-
 # coding: utf-8
 from __future__ import unicode_literals, absolute_import
 
@@ -15,49 +14,43 @@ from target.models import House, House78, AddrObj, HouseType, HouseAddType
 
 
 class Command(BaseCommandCompatible):
-    help = 'Fill or update target database'
-    usage_str = 'Usage: ./manage.py target' \
-                ' [--truncate]' \
-                ' [--i-know-what-i-do]]' \
-                ' [--update [--skip]]'
+    help = "Fill or update target database"
+    usage_str = "Usage: ./manage.py target" " [--truncate]" " [--i-know-what-i-do]]" " [--update [--skip]]"
 
     arguments_dictionary = {
         "--truncate": {
             "action": "store_true",
             "dest": "truncate",
             "default": False,
-            "help": "Truncate tables before loading data"
+            "help": "Truncate tables before loading data",
         },
         "--i-know-what-i-do": {
             "action": "store_true",
             "dest": "doit",
             "default": False,
             "help": "If data exist in any table, you should confirm their removal and replacement"
-                    ", as this may result in the removal of related data from other tables!"
+            ", as this may result in the removal of related data from other tables!",
         },
-        "--update": {
-            "action": "store_true",
-            "dest": "update",
-            "default": False,
-            "help": "Update database"
-        },
+        "--update": {"action": "store_true", "dest": "update", "default": False, "help": "Update database"},
         "--keep-indexes": {
             "action": "store_true",
             "dest": "keep_indexes",
             "default": False,
-            "help": "Do not disable indexes before data import"
+            "help": "Do not disable indexes before data import",
         },
     }
 
     def handle(self, truncate: bool, doit: bool, update: bool, keep_indexes: bool, **options: Any) -> None:
         has_data = all(map(lambda x: x.objects.exists(), (House, House78, AddrObj, HouseType, HouseAddType)))
         if has_data and not doit and not update:
-            self.error('One of the tables contains data. Truncate all target tables manually '
-                       'or enter key --i-know-what-i-do, to clear the table by means of Django ORM')
+            self.error(
+                "One of the tables contains data. Truncate all target tables manually "
+                "or enter key --i-know-what-i-do, to clear the table by means of Django ORM"
+            )
 
         # Force Russian language for internationalized projects
         if settings.USE_I18N:
-            activate('ru')
+            activate("ru")
 
         if update:
             try:

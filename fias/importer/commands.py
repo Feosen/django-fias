@@ -12,9 +12,14 @@ from django.db.models import Min, Model
 from fias import config
 from fias.importer.loader import TableLoader, TableUpdater
 from fias.importer.signals import (
-    pre_drop_indexes, post_drop_indexes,
-    pre_restore_indexes, post_restore_indexes,
-    pre_import, post_import, pre_update, post_update
+    pre_drop_indexes,
+    post_drop_indexes,
+    pre_restore_indexes,
+    post_restore_indexes,
+    pre_import,
+    post_import,
+    pre_update,
+    post_update,
 )
 from fias.importer.source import *
 from fias.importer.table import BadTableError
@@ -24,15 +29,21 @@ from gar_loader.indexes import remove_indexes_from_model, restore_indexes_for_mo
 logger = logging.getLogger(__name__)
 
 
-def get_tablelist(path: Union[Path, str, None] = None, version: Union[Version, None] = None, data_format: str = 'xml',
-                  tempdir: Union[Path, None] = None) -> TableList:
-    supported_formats = ('xml',)
-    assert data_format in supported_formats, f'Unsupported data format: `{data_format}`. Available choices: {", ".join(supported_formats)}'
+def get_tablelist(
+    path: Union[Path, str, None] = None,
+    version: Union[Version, None] = None,
+    data_format: str = "xml",
+    tempdir: Union[Path, None] = None,
+) -> TableList:
+    supported_formats = ("xml",)
+    assert (
+        data_format in supported_formats
+    ), f'Unsupported data format: `{data_format}`. Available choices: {", ".join(supported_formats)}'
 
     tablelist: Union[TableList]
     if path is None:
-        latest_version = Version.objects.latest('dumpdate')
-        url = getattr(latest_version, f'complete_{data_format}_url')
+        latest_version = Version.objects.latest("dumpdate")
+        url = getattr(latest_version, f"complete_{data_format}_url")
 
         tablelist = RemoteArchiveTableList(src=url, version=latest_version, tempdir=tempdir)
 
@@ -48,7 +59,7 @@ def get_tablelist(path: Union[Path, str, None] = None, version: Union[Version, N
             elif path.is_dir():
                 tablelist = DirectoryTableList(src=path, version=version, tempdir=tempdir)
             else:
-                raise TableListLoadingError(f'Path `{path}` is not valid table list source')
+                raise TableListLoadingError(f"Path `{path}` is not valid table list source")
 
     return tablelist
 
@@ -62,12 +73,18 @@ def remove_orphans(models: List[Type[AbstractModel]]) -> None:
         model.objects.delete_orphans()
 
 
-def load_complete_data(path: str | None = None, data_format: str = 'xml', truncate: bool = False, limit: int = 10000,
-                       tables: Union[Tuple[str, ...], None] = None, keep_indexes: bool = False,
-                       tempdir: Union[Path, None] = None) -> None:
+def load_complete_data(
+    path: str | None = None,
+    data_format: str = "xml",
+    truncate: bool = False,
+    limit: int = 10000,
+    tables: Union[Tuple[str, ...], None] = None,
+    keep_indexes: bool = False,
+    tempdir: Union[Path, None] = None,
+) -> None:
     tablelist = get_tablelist(path=path, data_format=data_format, tempdir=tempdir)
 
-    logger.info(f'Loading data v.{tablelist.version}.')
+    logger.info(f"Loading data v.{tablelist.version}.")
     pre_import.send(sender=object.__class__, version=tablelist.version)
 
     processed_models = []
@@ -85,9 +102,11 @@ def load_complete_data(path: str | None = None, data_format: str = 'xml', trunca
                 st_qs.delete()
             else:
                 st = st_qs[0]
-                logger.warning(f'Table `{st.table}` has version `{st.ver}`. '
-                               'Please use --truncate for replace '
-                               'all table contents. Skipping...')
+                logger.warning(
+                    f"Table `{st.table}` has version `{st.ver}`. "
+                    "Please use --truncate for replace "
+                    "all table contents. Skipping..."
+                )
                 continue
         # Берём для работы любую таблицу с именем tbl
         first_table = tablelist.tables[tbl][0]
@@ -119,12 +138,18 @@ def load_complete_data(path: str | None = None, data_format: str = 'xml', trunca
     remove_orphans(processed_models)
 
     post_import.send(sender=object.__class__, version=tablelist.version)
-    logger.info(f'Data v.{tablelist.version} loaded.')
+    logger.info(f"Data v.{tablelist.version} loaded.")
 
 
-def update_data(path: Union[Path, None] = None, version: Union[Version, None] = None, skip: bool = False,
-                data_format: str = 'xml', limit: int = 10000, tables: Union[Tuple[str, ...], None] = None,
-                tempdir: Union[Path, None] = None) -> None:
+def update_data(
+    path: Union[Path, None] = None,
+    version: Union[Version, None] = None,
+    skip: bool = False,
+    data_format: str = "xml",
+    limit: int = 10000,
+    tables: Union[Tuple[str, ...], None] = None,
+    tempdir: Union[Path, None] = None,
+) -> None:
     tablelist = get_tablelist(path=path, version=version, data_format=data_format, tempdir=tempdir)
 
     processed_models = []
@@ -140,11 +165,13 @@ def update_data(path: Union[Path, None] = None, version: Union[Version, None] = 
                 st = Status.objects.get(table=table.name, region=table.region)
             except Status.DoesNotExist:
                 logger.info(
-                    f'Can not update table `{table.name}`, region `{table.region}`: no data in database. Skipping…')
+                    f"Can not update table `{table.name}`, region `{table.region}`: no data in database. Skipping…"
+                )
                 continue
             if st.ver.ver >= tablelist.version.ver:
                 logger.info(
-                    f'Update of the table `{table.name}` is not needed [{st.ver.ver} <= {tablelist.version.ver}]. Skipping…')
+                    f"Update of the table `{table.name}` is not needed [{st.ver.ver} <= {tablelist.version.ver}]. Skipping…"
+                )
                 continue
             loader = TableUpdater(limit=limit)
             try:
@@ -160,9 +187,15 @@ def update_data(path: Union[Path, None] = None, version: Union[Version, None] = 
     remove_orphans(processed_models)
 
 
-def manual_update_data(path: Path, skip: bool = False, data_format: str = 'xml', limit: int = 1000,
-                       tables: Union[Tuple[str, ...], None] = None, tempdir: Union[Path, None] = None) -> None:
-    min_version = Status.objects.filter(table__in=get_table_names(None)).aggregate(Min('ver'))['ver__min']
+def manual_update_data(
+    path: Path,
+    skip: bool = False,
+    data_format: str = "xml",
+    limit: int = 1000,
+    tables: Union[Tuple[str, ...], None] = None,
+    tempdir: Union[Path, None] = None,
+) -> None:
+    min_version = Status.objects.filter(table__in=get_table_names(None)).aggregate(Min("ver"))["ver__min"]
 
     version_map = {}
 
@@ -173,47 +206,60 @@ def manual_update_data(path: Path, skip: bool = False, data_format: str = 'xml',
     if min_version is not None:
         min_ver = Version.objects.get(ver=min_version)
 
-        for version in Version.objects.filter(ver__gt=min_version).order_by('ver'):
+        for version in Version.objects.filter(ver__gt=min_version).order_by("ver"):
             try:
                 src = version_map[version]
             except KeyError:
-                raise TableListLoadingError(f'No file for version {version}.')
+                raise TableListLoadingError(f"No file for version {version}.")
 
-            logger.info(f'Updating from v.{min_ver} to v.{version}.')
+            logger.info(f"Updating from v.{min_ver} to v.{version}.")
             pre_update.send(sender=object.__class__, before=min_ver, after=version)
 
             update_data(
-                path=src, version=version, skip=skip,
-                data_format=data_format, limit=limit,
-                tables=tables, tempdir=tempdir,
+                path=src,
+                version=version,
+                skip=skip,
+                data_format=data_format,
+                limit=limit,
+                tables=tables,
+                tempdir=tempdir,
             )
 
             post_update.send(sender=object.__class__, before=min_ver, after=version)
-            logger.info(f'Data v.{min_ver} is updated to v.{version}.')
+            logger.info(f"Data v.{min_ver} is updated to v.{version}.")
             min_ver = version
     else:
-        raise TableListLoadingError('Not available. Please import the data before updating')
+        raise TableListLoadingError("Not available. Please import the data before updating")
 
 
-def auto_update_data(skip: bool, data_format: str = 'xml', limit: int = 10000,
-                     tables: Union[Tuple[str, ...] | None] = None, tempdir: Union[Path, None] = None) -> None:
-    min_version = Status.objects.filter(table__in=get_table_names(None)).aggregate(Min('ver'))['ver__min']
+def auto_update_data(
+    skip: bool,
+    data_format: str = "xml",
+    limit: int = 10000,
+    tables: Union[Tuple[str, ...] | None] = None,
+    tempdir: Union[Path, None] = None,
+) -> None:
+    min_version = Status.objects.filter(table__in=get_table_names(None)).aggregate(Min("ver"))["ver__min"]
 
     if min_version is not None:
         min_ver = Version.objects.get(ver=min_version)
 
-        for version in Version.objects.filter(ver__gt=min_version).order_by('ver'):
+        for version in Version.objects.filter(ver__gt=min_version).order_by("ver"):
             pre_update.send(sender=object.__class__, before=min_ver, after=version)
 
-            url = getattr(version, 'delta_{0}_url'.format(data_format))
+            url = getattr(version, "delta_{0}_url".format(data_format))
             update_data(
-                path=url, version=version, skip=skip,
-                data_format=data_format, limit=limit,
-                tables=tables, tempdir=tempdir,
+                path=url,
+                version=version,
+                skip=skip,
+                data_format=data_format,
+                limit=limit,
+                tables=tables,
+                tempdir=tempdir,
             )
 
             post_update.send(sender=object.__class__, before=min_ver, after=version)
-            logger.info(f'Data v.{min_ver} is updated to v.{version}.')
+            logger.info(f"Data v.{min_ver} is updated to v.{version}.")
             min_ver = version
     else:
-        raise TableListLoadingError('Not available. Please import the data before updating')
+        raise TableListLoadingError("Not available. Please import the data before updating")

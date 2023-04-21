@@ -5,5 +5,10 @@ from .archive import LocalArchiveTableList, RemoteArchiveTableList
 from .directory import DirectoryTableList
 from .tablelist import TableList, TableListLoadingError
 
-__all__ = ['TableList', 'TableListLoadingError', 'LocalArchiveTableList', 'RemoteArchiveTableList',
-           'DirectoryTableList']
+__all__ = [
+    "TableList",
+    "TableListLoadingError",
+    "LocalArchiveTableList",
+    "RemoteArchiveTableList",
+    "DirectoryTableList",
+]

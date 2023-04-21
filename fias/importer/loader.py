@@ -24,11 +24,13 @@ class LoadingBar(Infinite):  # type: ignore
     file = stdout
     check_tty: bool = False
 
-    text: str = 'T: %(table)s.' \
-                ' L: %(loaded)d | U: %(updated)d' \
-                ' | S: %(skipped)d[E:%(errors)d]' \
-                ' | R: %(depth)d[%(stack_str)s]' \
-                ' \tFN: %(filename)s'
+    text: str = (
+        "T: %(table)s."
+        " L: %(loaded)d | U: %(updated)d"
+        " | S: %(skipped)d[E:%(errors)d]"
+        " | R: %(depth)d[%(stack_str)s]"
+        " \tFN: %(filename)s"
+    )
 
     loaded: int = 0
     updated: int = 0
@@ -39,19 +41,27 @@ class LoadingBar(Infinite):  # type: ignore
     stack_str: str = "0"
     hide_cursor: bool = False
 
-    def __init__(self, message: str | None = None, table: str = 'unknown', filename: str = 'unknown', **kwargs: Any):
+    def __init__(self, message: str | None = None, table: str = "unknown", filename: str = "unknown", **kwargs: Any):
         self.table = table
         self.filename = filename
         self.stack = []
         super(LoadingBar, self).__init__(message=message, **kwargs)
 
     def __getitem__(self, key: str) -> Any:
-        if key.startswith('_'):
+        if key.startswith("_"):
             return None
         return getattr(self, key, None)
 
-    def update(self, loaded: int = 0, updated: int = 0, skipped: int = 0, errors: int = 0, regress_depth: int = 0,
-               regress_len: int = 0, regress_iteration: int = 0) -> None:
+    def update(
+        self,
+        loaded: int = 0,
+        updated: int = 0,
+        skipped: int = 0,
+        errors: int = 0,
+        regress_depth: int = 0,
+        regress_len: int = 0,
+        regress_iteration: int = 0,
+    ) -> None:
         if loaded:
             self.loaded = loaded
         if updated:
@@ -65,24 +75,23 @@ class LoadingBar(Infinite):  # type: ignore
         if not self.depth:
             self.stack_str = "0"
         else:
-            regress_len_s = f'{regress_iteration}:{regress_len}'
+            regress_len_s = f"{regress_iteration}:{regress_len}"
             stack_len = len(self.stack)
             if stack_len == self.depth:
                 self.stack[self.depth - 1] = regress_len_s
             elif stack_len < self.depth:
                 self.stack.append(regress_len_s)
             else:
-                self.stack = self.stack[0:self.depth]
+                self.stack = self.stack[0 : self.depth]
                 self.stack[self.depth - 1] = regress_len_s
 
-            self.stack_str = '/'.join(self.stack)
+            self.stack_str = "/".join(self.stack)
 
         ln = self.text % self
         self.writeln(ln)
 
 
 class TableLoader(object):
-
     def __init__(self, limit: int = 10000):
         self.limit = int(limit)
         self.counter = 0
@@ -109,7 +118,7 @@ class TableLoader(object):
             batch_count += 1
 
         for i in range(0, batch_count):
-            batch = objects[i * batch_len:(i + 1) * batch_len]
+            batch = objects[i * batch_len : (i + 1) * batch_len]
             bar.update(regress_depth=depth, regress_len=batch_len, regress_iteration=i + 1)
             try:
                 table.model.objects.bulk_create(batch)
@@ -173,7 +182,6 @@ class TableLoader(object):
 
 
 class TableUpdater(TableLoader):
-
     def __init__(self, limit: int = 10000):
         self.upd_limit = 100
         super(TableUpdater, self).__init__(limit=limit)

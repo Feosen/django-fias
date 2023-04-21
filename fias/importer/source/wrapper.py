@@ -13,7 +13,7 @@ from rarfile import RarFile
 
 class SourceWrapper(object):
     source: Any = None
-    _re_date = re.compile(r'[/\w]+_(\d{8})_.+')
+    _re_date = re.compile(r"[/\w]+_(\d{8})_.+")
 
     def __init__(self, source: Any, **kwargs: Any):
         pass
@@ -27,7 +27,7 @@ class SourceWrapper(object):
             match = self._re_date.match(file_name)
             if match is not None:
                 dates_s.add(match.group(1))
-        return sorted(map(lambda x: datetime.datetime.strptime(x, '%Y%m%d'), dates_s))[-1]
+        return sorted(map(lambda x: datetime.datetime.strptime(x, "%Y%m%d"), dates_s))[-1]
 
     def get_file_list(self) -> List[str]:
         raise NotImplementedError()
@@ -53,16 +53,13 @@ class DirectoryWrapper(SourceWrapper):
         return datetime.datetime.fromtimestamp(st.st_mtime)
 
     def get_file_list(self) -> List[str]:
-        return [f.name for f in self.source.iterdir() if (
-                not f.name.startswith('.') and
-                (self.source / f).is_file()
-        )]
+        return [f.name for f in self.source.iterdir() if (not f.name.startswith(".") and (self.source / f).is_file())]
 
     def get_full_path(self, filename: str) -> Path:
         return self.source / filename
 
     def open(self, filename: str) -> IO[bytes]:
-        return open(self.get_full_path(filename), 'rb')
+        return open(self.get_full_path(filename), "rb")
 
     def __del__(self) -> None:
         if self.is_temporary:

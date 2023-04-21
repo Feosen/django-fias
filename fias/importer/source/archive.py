@@ -14,7 +14,8 @@ from django.conf import settings
 from progress.bar import Bar
 
 from fias.importer.signals import (
-    pre_download, post_download,
+    pre_download,
+    post_download,
 )
 from .tablelist import TableList, TableListLoadingError
 from .wrapper import RarArchiveWrapper, SourceWrapper
@@ -23,7 +24,7 @@ logger = logging.getLogger(__name__)
 
 
 # Задаем UNRAR_TOOL глобально
-rarfile.UNRAR_TOOL = getattr(settings, 'FIAS_UNRAR_TOOL', 'unrar')
+rarfile.UNRAR_TOOL = getattr(settings, "FIAS_UNRAR_TOOL", "unrar")
 
 
 class BadArchiveError(TableListLoadingError):
@@ -52,17 +53,17 @@ class LocalArchiveTableList(TableList):
             try:
                 archive = zipfile.ZipFile(source_path)
             except Exception as e2:
-                raise BadArchiveError(f'Archive: `{source_path}` corrupted or is not rar,zip-archive; {e1}; {e2}')
+                raise BadArchiveError(f"Archive: `{source_path}` corrupted or is not rar,zip-archive; {e1}; {e2}")
 
         if not archive.namelist():
-            raise BadArchiveError(f'Archive: `{source_path}`, is empty')
+            raise BadArchiveError(f"Archive: `{source_path}`, is empty")
 
         return self.wrapper_class(source=archive)
 
 
 class DlProgressBar(Bar):  # type: ignore
-    message = 'Downloading: '
-    suffix = '%(index)d/%(max)d. ETA: %(elapsed)s'
+    message = "Downloading: "
+    suffix = "%(index)d/%(max)d. ETA: %(elapsed)s"
     hide_cursor = False
 
 
@@ -75,16 +76,16 @@ class RemoteArchiveTableList(LocalArchiveTableList):
         def update_progress(count: int, block_size: int, total_size: int) -> None:
             progress.goto(int(count * block_size * 100 / total_size))
 
-        logger.info(f'Downloading from {source}.')
+        logger.info(f"Downloading from {source}.")
         pre_download.send(sender=self.__class__, url=source)
         try:
             path = urlretrieve(source, reporthook=update_progress)[0]
         except HTTPError as e:
-            raise RetrieveError('Can not download data archive at url `{0}`. Error occurred: "{1}"'.format(
-                source, str(e)
-            ))
+            raise RetrieveError(
+                'Can not download data archive at url `{0}`. Error occurred: "{1}"'.format(source, str(e))
+            )
         progress.finish()
         post_download.send(sender=self.__class__, url=source, path=path)
-        logger.info(f'Downloaded from {source} into {path}.')
+        logger.info(f"Downloaded from {source} into {path}.")
 
         return super(RemoteArchiveTableList, self).load_data(source=path)

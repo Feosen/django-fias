@@ -53,5 +53,5 @@ def filter_addr_obj_param(item: AddrObjParam) -> Union[AddrObjParam, None]:
 
 
 def replace_quotes_in_names(item: AddrObj) -> AddrObj:
-    item.name = item.name.replace('&quot;', '"')
+    item.name = item.name.replace("&quot;", '"')
     return item

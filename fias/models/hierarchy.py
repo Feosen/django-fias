@@ -8,14 +8,15 @@ from .addr_obj import AddrObj
 from .common import AbstractIsActiveModel
 from .house import House
 
-__all__ = ['AbstractHierarchy', 'AdmHierarchy', 'MunHierarchy']
+__all__ = ["AbstractHierarchy", "AdmHierarchy", "MunHierarchy"]
 
 
 class AbstractHierarchy(AbstractIsActiveModel):
-    region = models.CharField(verbose_name='код региона', max_length=2)
-    objectid = BigIntegerRefField(to=[(AddrObj, 'objectid'), (House, 'objectid')],
-                                  verbose_name='глобальный уникальный идентификатор объекта')
-    parentobjid = models.BigIntegerField(verbose_name='идентификатор родительского объекта')
+    region = models.CharField(verbose_name="код региона", max_length=2)
+    objectid = BigIntegerRefField(
+        to=[(AddrObj, "objectid"), (House, "objectid")], verbose_name="глобальный уникальный идентификатор объекта"
+    )
+    parentobjid = models.BigIntegerField(verbose_name="идентификатор родительского объекта")
 
     class Meta(AbstractIsActiveModel.Meta):
         abstract = True
@@ -28,9 +29,9 @@ class AdmHierarchy(AbstractHierarchy):
 
     class Meta(AbstractHierarchy.Meta):
         abstract = False
-        verbose_name = 'сведения по иерархии в административном делении'
-        verbose_name_plural = 'сведения по иерархии в административном делении'
-        indexes = [models.Index(fields=['objectid', 'parentobjid'])]
+        verbose_name = "сведения по иерархии в административном делении"
+        verbose_name_plural = "сведения по иерархии в административном делении"
+        indexes = [models.Index(fields=["objectid", "parentobjid"])]
 
 
 class MunHierarchy(AbstractHierarchy):
@@ -40,6 +41,6 @@ class MunHierarchy(AbstractHierarchy):
 
     class Meta(AbstractHierarchy.Meta):
         abstract = False
-        verbose_name = 'сведения по иерархии в муниципальном делении'
-        verbose_name_plural = 'сведения по иерархии в муниципальном делении'
-        indexes = [models.Index(fields=['objectid', 'parentobjid'])]
+        verbose_name = "сведения по иерархии в муниципальном делении"
+        verbose_name_plural = "сведения по иерархии в муниципальном делении"
+        indexes = [models.Index(fields=["objectid", "parentobjid"])]

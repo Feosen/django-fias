@@ -9,9 +9,14 @@ from gar_loader.indexes import remove_indexes_from_model, restore_indexes_for_mo
 from target import models as t_models
 from target.importer.loader import TableLoader, TableUpdater, truncate as table_truncate, Cfg, ParamCfg, HierarchyCfg
 from target.importer.signals import (
-    pre_drop_indexes, post_drop_indexes,
-    pre_restore_indexes, post_restore_indexes,
-    pre_update, post_update, pre_import, post_import
+    pre_drop_indexes,
+    post_drop_indexes,
+    pre_restore_indexes,
+    post_restore_indexes,
+    pre_update,
+    post_update,
+    pre_import,
+    post_import,
 )
 
 
@@ -19,29 +24,55 @@ logger = logging.getLogger(__name__)
 
 
 _table_cfg: List[Cfg] = [
-    Cfg(t_models.HouseType, 'id', s_models.HouseType, 'id', None, None, None, None),
-    Cfg(t_models.HouseAddType, 'id', s_models.AddHouseType, 'id', None, None, None, None),
-    Cfg(t_models.AddrObj, 'objectid', s_models.AddrObj, 'objectid', None, {'aolevel': 'level'},
-        ParamCfg(s_models.AddrObjParam, 'objectid', [('okato', 6), ('oktmo', 7)]),
-        [HierarchyCfg(s_models.MunHierarchy, 'objectid', 'parentobjid', 'owner_mun'),
-         HierarchyCfg(s_models.AdmHierarchy, 'objectid', 'parentobjid', 'owner_adm')]),
-    Cfg(t_models.House, 'objectid', s_models.House, 'objectid', [('region', '!=', '78')], None,
-        ParamCfg(s_models.HouseParam, 'objectid', [('postalcode', 5), ('okato', 6), ('oktmo', 7)]),
-        [HierarchyCfg(s_models.MunHierarchy, 'objectid', 'parentobjid', 'owner_mun'),
-         HierarchyCfg(s_models.AdmHierarchy, 'objectid', 'parentobjid', 'owner_adm')]),
-    Cfg(t_models.House78, 'objectid', s_models.House, 'objectid', [('region', '=', '78')], None,
-        ParamCfg(s_models.HouseParam, 'objectid', [('postalcode', 5), ('okato', 6), ('oktmo', 7)]),
-        [HierarchyCfg(s_models.MunHierarchy, 'objectid', 'parentobjid', 'owner_mun'),
-         HierarchyCfg(s_models.AdmHierarchy, 'objectid', 'parentobjid', 'owner_adm')]),
+    Cfg(t_models.HouseType, "id", s_models.HouseType, "id", None, None, None, None),
+    Cfg(t_models.HouseAddType, "id", s_models.AddHouseType, "id", None, None, None, None),
+    Cfg(
+        t_models.AddrObj,
+        "objectid",
+        s_models.AddrObj,
+        "objectid",
+        None,
+        {"aolevel": "level"},
+        ParamCfg(s_models.AddrObjParam, "objectid", [("okato", 6), ("oktmo", 7)]),
+        [
+            HierarchyCfg(s_models.MunHierarchy, "objectid", "parentobjid", "owner_mun"),
+            HierarchyCfg(s_models.AdmHierarchy, "objectid", "parentobjid", "owner_adm"),
+        ],
+    ),
+    Cfg(
+        t_models.House,
+        "objectid",
+        s_models.House,
+        "objectid",
+        [("region", "!=", "78")],
+        None,
+        ParamCfg(s_models.HouseParam, "objectid", [("postalcode", 5), ("okato", 6), ("oktmo", 7)]),
+        [
+            HierarchyCfg(s_models.MunHierarchy, "objectid", "parentobjid", "owner_mun"),
+            HierarchyCfg(s_models.AdmHierarchy, "objectid", "parentobjid", "owner_adm"),
+        ],
+    ),
+    Cfg(
+        t_models.House78,
+        "objectid",
+        s_models.House,
+        "objectid",
+        [("region", "=", "78")],
+        None,
+        ParamCfg(s_models.HouseParam, "objectid", [("postalcode", 5), ("okato", 6), ("oktmo", 7)]),
+        [
+            HierarchyCfg(s_models.MunHierarchy, "objectid", "parentobjid", "owner_mun"),
+            HierarchyCfg(s_models.AdmHierarchy, "objectid", "parentobjid", "owner_adm"),
+        ],
+    ),
 ]
 
 
 def load_complete_data(truncate: bool = False, keep_indexes: bool = False) -> None:
-
-    ver = s_models.Status.objects.order_by('ver').first()
+    ver = s_models.Status.objects.order_by("ver").first()
     if ver is None:
         raise ValueError
-    logger.info(f'Loading data v.{ver.ver_id}.')
+    logger.info(f"Loading data v.{ver.ver_id}.")
     pre_import.send(sender=object.__class__, version=ver.ver_id)
 
     for cfg in _table_cfg:
@@ -58,7 +89,7 @@ def load_complete_data(truncate: bool = False, keep_indexes: bool = False) -> No
         # Импортируем все таблицы модели
         loader = TableLoader()
         loader.load(cfg)
-        status, created = t_models.Status.objects.get_or_create(id=1, defaults={'ver': ver.ver_id})
+        status, created = t_models.Status.objects.get_or_create(id=1, defaults={"ver": ver.ver_id})
         if not created:
             status.ver = ver.ver_id
             status.full_clean()
@@ -71,15 +102,15 @@ def load_complete_data(truncate: bool = False, keep_indexes: bool = False) -> No
             post_restore_indexes.send(sender=object.__class__, cfg=cfg)
 
     post_import.send(sender=object.__class__, version=ver.ver_id)
-    logger.info(f'Data v.{ver.ver_id} loaded.')
+    logger.info(f"Data v.{ver.ver_id} loaded.")
 
 
 def update_data() -> None:
-    ver = s_models.Status.objects.order_by('ver').first()
+    ver = s_models.Status.objects.order_by("ver").first()
     if ver is None:
         raise ValueError
 
-    logger.info(f'Updating from v.{ver.ver_id}.')
+    logger.info(f"Updating from v.{ver.ver_id}.")
     pre_update.send(sender=object.__class__, version=ver.ver_id)
 
     t_status = t_models.Status.objects.get()
@@ -93,4 +124,4 @@ def update_data() -> None:
     t_status.save()
 
     post_update.send(sender=object.__class__, version=ver.ver_id)
-    logger.info(f'Data v.{ver.ver_id} is updated.')
+    logger.info(f"Data v.{ver.ver_id} is updated.")

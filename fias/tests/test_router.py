@@ -9,13 +9,23 @@ from fias.config import DEFAULT_DB_ALIAS, DATABASE_ALIAS
 
 from .mock.models import FakeModel, FakeModel2
 
-fias = __import__('fias.models')
-fias_models = ['AddrObjType', 'AddrObj', 'AddrObjParam', 'House', 'HouseType', 'HouseParam', 'ParamType',
-               'AdmHierarchy', 'MunHierarchy', 'Version', 'Status']
+fias = __import__("fias.models")
+fias_models = [
+    "AddrObjType",
+    "AddrObj",
+    "AddrObjParam",
+    "House",
+    "HouseType",
+    "HouseParam",
+    "ParamType",
+    "AdmHierarchy",
+    "MunHierarchy",
+    "Version",
+    "Status",
+]
 
 
 class TestRouter(TestCase):
-
     def setUp(self) -> None:
         self.router = FIASRouter()
         self.models = (getattr(fias.models, attr) for attr in fias_models)

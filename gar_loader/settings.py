@@ -13,7 +13,7 @@ import sys
 from pathlib import Path
 from typing import Union, Tuple
 
-TEST = len(sys.argv) > 1 and sys.argv[1] == 'test'
+TEST = len(sys.argv) > 1 and sys.argv[1] == "test"
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -34,32 +34,32 @@ DEBUG = True
 # Application definition
 
 INSTALLED_APPS = [
-    #"django.contrib.admin",
-    #"django.contrib.auth",
-    #"django.contrib.contenttypes",
-    #"django.contrib.sessions",
-    #"django.contrib.messages",
-    #"django.contrib.staticfiles",
+    # "django.contrib.admin",
+    # "django.contrib.auth",
+    # "django.contrib.contenttypes",
+    # "django.contrib.sessions",
+    # "django.contrib.messages",
+    # "django.contrib.staticfiles",
     "fias",
     "target",
 ]
 
-#MIDDLEWARE = [
-    #"django.middleware.security.SecurityMiddleware",
-    #"django.contrib.sessions.middleware.SessionMiddleware",
-    #"django.middleware.common.CommonMiddleware",
-    #"django.middleware.csrf.CsrfViewMiddleware",
-    #"django.contrib.auth.middleware.AuthenticationMiddleware",
-    #"django.contrib.messages.middleware.MessageMiddleware",
-    #"django.middleware.clickjacking.XFrameOptionsMiddleware",
-#]
+# MIDDLEWARE = [
+# "django.middleware.security.SecurityMiddleware",
+# "django.contrib.sessions.middleware.SessionMiddleware",
+# "django.middleware.common.CommonMiddleware",
+# "django.middleware.csrf.CsrfViewMiddleware",
+# "django.contrib.auth.middleware.AuthenticationMiddleware",
+# "django.contrib.messages.middleware.MessageMiddleware",
+# "django.middleware.clickjacking.XFrameOptionsMiddleware",
+# ]
 
 ROOT_URLCONF = "gar_loader.urls"
 
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / 'templates'],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -81,8 +81,8 @@ TARGET_DATABASE_ALIAS = FIAS_DATABASE_ALIAS
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASE_ROUTERS = [
-    'fias.routers.FIASRouter',
-    'target.routers.TargetRouter',
+    "fias.routers.FIASRouter",
+    "target.routers.TargetRouter",
 ]
 
 DATABASES = {
@@ -95,7 +95,7 @@ DATABASES = {
         "NAME": "gar",
         "USER": "gar_test",
         "PASSWORD": "gar_test",
-        #"HOST": "127.0.0.1",
+        # "HOST": "127.0.0.1",
         "PORT": "5433",
     },
 }
@@ -136,67 +136,65 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'default': {
-            'format': '%(asctime)s:%(name)s:%(process)d:%(lineno)d ' '%(levelname)s %(message)s',
-            'datefmt': '%Y-%m-%d %H:%M:%S',
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "default": {
+            "format": "%(asctime)s:%(name)s:%(process)d:%(lineno)d " "%(levelname)s %(message)s",
+            "datefmt": "%Y-%m-%d %H:%M:%S",
         },
     },
-    'filters': {
-        'require_debug_false': {
-            '()': 'django.utils.log.RequireDebugFalse'
-        },
-        'require_debug_true': {
-            '()': 'django.utils.log.RequireDebugTrue',
+    "filters": {
+        "require_debug_false": {"()": "django.utils.log.RequireDebugFalse"},
+        "require_debug_true": {
+            "()": "django.utils.log.RequireDebugTrue",
         },
     },
-    'handlers': {
-        'console': {
-            'level': 'DEBUG',
-            'filters': ['require_debug_true'],
-            'formatter': 'default',
-            'class': 'logging.StreamHandler',
-            'stream': sys.stdout,
+    "handlers": {
+        "console": {
+            "level": "DEBUG",
+            "filters": ["require_debug_true"],
+            "formatter": "default",
+            "class": "logging.StreamHandler",
+            "stream": sys.stdout,
         },
-        'console_err': {
-            'level': 'ERROR',
-            'formatter': 'default',
-            'class': 'logging.StreamHandler',
-            'stream': sys.stderr,
+        "console_err": {
+            "level": "ERROR",
+            "formatter": "default",
+            "class": "logging.StreamHandler",
+            "stream": sys.stderr,
         },
-        'mail_admins': {
-            'level': 'ERROR',
-            'filters': ['require_debug_false'],
-            'class': 'django.utils.log.AdminEmailHandler',
-            'include_html': True,
-        }
+        "mail_admins": {
+            "level": "ERROR",
+            "filters": ["require_debug_false"],
+            "class": "django.utils.log.AdminEmailHandler",
+            "include_html": True,
+        },
     },
-    'loggers': {
-        'fias': {
-            'handlers': ['console', 'console_err'],
-            'level': 'DEBUG',
+    "loggers": {
+        "fias": {
+            "handlers": ["console", "console_err"],
+            "level": "DEBUG",
         },
-        'target': {
-            'handlers': ['console', 'console_err'],
-            'level': 'DEBUG',
+        "target": {
+            "handlers": ["console", "console_err"],
+            "level": "DEBUG",
         },
-        'django.request': {
-            'handlers': ['mail_admins'],
-            'level': 'ERROR',
-            'propagate': True,
+        "django.request": {
+            "handlers": ["mail_admins"],
+            "level": "ERROR",
+            "propagate": True,
         },
-    }
+    },
 }
 
 FIAS_UNRAR_TOOL = Path(r"G:\Program Files\WinRAR\UnRAR.exe")
 
 _FRT = Union[Tuple[str, ...], str]
-FIAS_REGIONS: _FRT = '__all__'
-#FIAS_REGIONS: _FRT = ('99',)
-#FIAS_REGIONS: _FRT = ('99', '87')
-#FIAS_REGIONS: _FRT = ('50',)
+FIAS_REGIONS: _FRT = "__all__"
+# FIAS_REGIONS: _FRT = ('99',)
+# FIAS_REGIONS: _FRT = ('99', '87')
+# FIAS_REGIONS: _FRT = ('50',)
 
 _FHT = Union[Tuple[int, ...], str]
 FIAS_HOUSE_TYPES: _FHT = (2, 5, 7, 10)
