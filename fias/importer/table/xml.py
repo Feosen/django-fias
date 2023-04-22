@@ -1,14 +1,14 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
 import datetime
-from typing import Type, Dict, Any, Set, Union
+from typing import Any, Dict, Set, Type, Union
 
 from django.db import models
 from lxml import etree
 
-from .table import BadTableError, Table, TableIterator, AbstractTableList, RowConvertor
 from ...models import AbstractModel
+from .table import AbstractTableList, BadTableError, RowConvertor, Table, TableIterator
 
 _bom_header = b"\xef\xbb\xbf"
 

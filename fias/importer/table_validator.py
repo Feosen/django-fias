@@ -1,10 +1,10 @@
-from typing import Any, Type, cast, Set
+from typing import Any, Set, Type, cast
 
 from django.core.exceptions import ImproperlyConfigured
 from django.dispatch import receiver
 
 from fias import config
-from fias.config import PARAM_MAP, TableName, ALL
+from fias.config import ALL, PARAM_MAP, TableName
 from fias.importer.signals import post_import_table
 from fias.importer.table.table import Table
 from fias.models import HouseType, ParamType

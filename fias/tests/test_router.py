@@ -1,11 +1,11 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
 from django.db import models
 from django.test import TestCase
 
+from fias.config import DATABASE_ALIAS, DEFAULT_DB_ALIAS
 from fias.routers import FIASRouter
-from fias.config import DEFAULT_DB_ALIAS, DATABASE_ALIAS
 
 from .mock.models import FakeModel, FakeModel2
 

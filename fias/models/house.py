@@ -1,9 +1,9 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import, annotations
+from __future__ import absolute_import, annotations, unicode_literals
 
 from django.db import models
 
-from .common import AbstractType, AbstractObj, AbstractParam
+from .common import AbstractObj, AbstractParam, AbstractType
 from .fields import BigIntegerRefField
 
 __all__ = ["House", "HouseType", "AddHouseType", "HouseParam"]

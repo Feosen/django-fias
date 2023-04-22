@@ -1,9 +1,10 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import, annotations
+from __future__ import absolute_import, annotations, unicode_literals
 
 from django.db import models
 
-from fias.models.common import AbstractType, AbstractObj, AbstractParam
+from fias.models.common import AbstractObj, AbstractParam, AbstractType
+
 from .fields import BigIntegerRefField
 
 __all__ = ["AddrObj", "AddrObjParam", "AddrObjType"]

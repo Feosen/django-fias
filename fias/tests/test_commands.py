@@ -1,14 +1,25 @@
 from datetime import date
 from pathlib import Path
-from typing import Any, List, Dict
+from typing import Any, Dict, List
 from uuid import UUID
 
 from django.core.management import call_command
 from django.test import TestCase
 
 from fias.config import TableName
-from fias.models import Version, HouseType, AddHouseType, House, HouseParam, AddrObjType, AddrObj, AddrObjParam, \
-    AdmHierarchy, MunHierarchy, Status
+from fias.models import (
+    AddHouseType,
+    AddrObj,
+    AddrObjParam,
+    AddrObjType,
+    AdmHierarchy,
+    House,
+    HouseParam,
+    HouseType,
+    MunHierarchy,
+    Status,
+    Version,
+)
 
 
 class CommandCreateTestCase(TestCase):

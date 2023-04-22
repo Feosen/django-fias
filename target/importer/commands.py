@@ -1,5 +1,5 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
 import logging
 from typing import List
@@ -7,18 +7,24 @@ from typing import List
 from fias import models as s_models
 from gar_loader.indexes import remove_indexes_from_model, restore_indexes_for_model
 from target import models as t_models
-from target.importer.loader import TableLoader, TableUpdater, truncate as table_truncate, Cfg, ParamCfg, HierarchyCfg
-from target.importer.signals import (
-    pre_drop_indexes,
-    post_drop_indexes,
-    pre_restore_indexes,
-    post_restore_indexes,
-    pre_update,
-    post_update,
-    pre_import,
-    post_import,
+from target.importer.loader import (
+    Cfg,
+    HierarchyCfg,
+    ParamCfg,
+    TableLoader,
+    TableUpdater,
 )
-
+from target.importer.loader import truncate as table_truncate
+from target.importer.signals import (
+    post_drop_indexes,
+    post_import,
+    post_restore_indexes,
+    post_update,
+    pre_drop_indexes,
+    pre_import,
+    pre_restore_indexes,
+    pre_update,
+)
 
 logger = logging.getLogger(__name__)
 

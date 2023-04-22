@@ -1,10 +1,10 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
 from .addr_obj import AddrObj, AddrObjParam, AddrObjType
-from .common import AbstractModel, AbstractIsActiveModel, ParamType
+from .common import AbstractIsActiveModel, AbstractModel, ParamType
 from .hierarchy import AdmHierarchy, MunHierarchy
-from .house import House, HouseParam, AddHouseType, HouseType
+from .house import AddHouseType, House, HouseParam, HouseType
 from .version import Status, Version
 
 __all__ = [

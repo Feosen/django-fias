@@ -1,18 +1,19 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
 import datetime
 from pathlib import Path
-from typing import List, Type, IO, Dict, Union, Any
+from typing import IO, Any, Dict, List, Type, Union
 
 from django.utils.functional import cached_property
 
-from fias.importer.signals import pre_load, post_load
+from fias.importer.signals import post_load, pre_load
 from fias.importer.table import TableFactory
 from fias.models import Version
-from .wrapper import SourceWrapper
-from ..table.table import AbstractTableList, Table
+
 from ... import config
+from ..table.table import AbstractTableList, Table
+from .wrapper import SourceWrapper
 
 
 class TableListLoadingError(Exception):

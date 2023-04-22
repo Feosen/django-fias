@@ -1,10 +1,10 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
 import datetime
 import logging
 from sys import stdout
-from typing import List, Any
+from typing import Any, List
 
 from django import db
 from django.conf import settings
@@ -12,10 +12,10 @@ from django.db import IntegrityError
 from progress import Infinite
 
 from fias.config import REMOVE_NOT_ACTUAL, TableName
-from fias.importer.signals import pre_import_table, post_import_table
+from fias.importer.signals import post_import_table, pre_import_table
 from fias.importer.table.table import AbstractTableList, Table
 from fias.importer.validators import validate
-from fias.models import AbstractModel, AbstractIsActiveModel
+from fias.models import AbstractIsActiveModel, AbstractModel
 
 logger = logging.getLogger(__name__)
 

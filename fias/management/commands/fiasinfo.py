@@ -1,13 +1,12 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
 import sys
 from typing import Any
 
 from fias.config import TABLES
-from fias.models import Status, Version
 from fias.importer.version import fetch_version_info
-
+from fias.models import Status, Version
 from gar_loader.compat import BaseCommandCompatible
 
 

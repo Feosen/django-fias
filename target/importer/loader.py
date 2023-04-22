@@ -1,9 +1,9 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
 import logging
 from dataclasses import dataclass
-from typing import Tuple, List, Union, Type, Dict, Any, cast, TYPE_CHECKING
+from typing import TYPE_CHECKING, Any, Dict, List, Tuple, Type, Union, cast
 
 from django.db import connections, transaction
 from django.db.backends.base.base import BaseDatabaseWrapper
@@ -11,7 +11,7 @@ from django.db.models import Model
 from django.db.models.fields import AutoFieldMixin, Field
 
 from target.config import DATABASE_ALIAS
-from target.importer.signals import pre_import_table, post_import_table
+from target.importer.signals import post_import_table, pre_import_table
 
 logger = logging.getLogger(__name__)
 

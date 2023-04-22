@@ -6,7 +6,6 @@ from django.db.migrations.operations.base import Operation
 
 from target.config import MANAGE
 
-
 state_operations: List[Operation] = [
     migrations.CreateModel(
         name="AddrObj",

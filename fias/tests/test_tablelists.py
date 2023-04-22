@@ -1,5 +1,5 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
 import datetime
 from pathlib import Path
@@ -8,10 +8,11 @@ from typing import Type
 from django.test import TestCase
 
 from fias.models import Version
-from .info import FAKE_FILES
-from .mock.wrapper import Wrapper
+
 from ..importer.source import TableList
 from ..importer.source.wrapper import SourceWrapper
+from .info import FAKE_FILES
+from .mock.wrapper import Wrapper
 
 
 class TestTableList(TestCase):

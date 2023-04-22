@@ -1,11 +1,11 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
 import os
 import re
 from enum import StrEnum
 from importlib import import_module
-from typing import Dict, Callable, List, Union, Iterable, Tuple, Final
+from typing import Callable, Dict, Final, Iterable, List, Tuple, Union
 
 from django.apps import apps
 from django.conf import settings
@@ -15,8 +15,7 @@ from django.db.utils import DEFAULT_DB_ALIAS
 from fias.enum import CEnumMeta
 from fias.models import AbstractModel
 
-
-__all__ = ["DEFAULT_DB_ALIAS", "DATABASE_ALIAS", "PROXY", "REMOVE_NOT_ACTUAL", "TableName"]
+__all__ = ["DEFAULT_DB_ALIAS", "DATABASE_ALIAS", "PARAM_MAP", "PROXY", "REMOVE_NOT_ACTUAL", "TableName"]
 
 
 ALL: Final = "__all__"

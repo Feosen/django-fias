@@ -1,5 +1,5 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
 import sys
 from typing import Any
@@ -10,7 +10,7 @@ from django.utils.translation import activate
 from fias.importer.source import TableListLoadingError
 from gar_loader.compat import BaseCommandCompatible
 from target.importer.commands import load_complete_data, update_data
-from target.models import House, House78, AddrObj, HouseType, HouseAddType
+from target.models import AddrObj, House, House78, HouseAddType, HouseType
 
 
 class Command(BaseCommandCompatible):

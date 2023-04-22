@@ -1,10 +1,9 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
 from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.db.utils import DEFAULT_DB_ALIAS
-
 
 __all__ = ["MANAGE", "DEFAULT_DB_ALIAS", "DATABASE_ALIAS"]
 

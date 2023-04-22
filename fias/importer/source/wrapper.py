@@ -1,11 +1,11 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
 import datetime
 import re
 import shutil
 from pathlib import Path
-from typing import List, IO, Any, Union
+from typing import IO, Any, List, Union
 from zipfile import ZipFile
 
 from rarfile import RarFile

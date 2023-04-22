@@ -1,9 +1,10 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import, annotations
+from __future__ import absolute_import, annotations, unicode_literals
 
 from django.db import models
 
 from fias.models.fields import BigIntegerRefField
+
 from .addr_obj import AddrObj
 from .common import AbstractIsActiveModel
 from .house import House

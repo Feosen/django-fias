@@ -1,19 +1,19 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
 import datetime
 import json
 import logging
 import urllib.request
 from dataclasses import dataclass
-from typing import List, Dict, Any, Iterable, Protocol
+from typing import Any, Dict, Iterable, List, Protocol
 
 from django.core.exceptions import ImproperlyConfigured
 from requests.exceptions import HTTPError
 from zeep.exceptions import XMLSyntaxError
 
 from fias.config import PROXY
-from fias.importer.signals import pre_fetch_version, post_fetch_version
+from fias.importer.signals import post_fetch_version, pre_fetch_version
 from fias.models import Version
 
 logger = logging.getLogger(__name__)
@@ -110,8 +110,8 @@ def json_client_factory() -> Client:
 def wsdl_client_factory() -> Client:
     try:
         try:
-            from zeep.client import Client as ZeepClient
             from zeep import __version__ as zver
+            from zeep.client import Client as ZeepClient
 
             z_major, z_minor, z_sub = list(map(int, zver.split(".")))
 

@@ -1,5 +1,5 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
 import logging
 import tempfile
@@ -12,10 +12,8 @@ import rarfile
 from django.conf import settings
 from progress.bar import Bar
 
-from fias.importer.signals import (
-    pre_download,
-    post_download,
-)
+from fias.importer.signals import post_download, pre_download
+
 from .tablelist import TableList, TableListLoadingError
 from .wrapper import RarArchiveWrapper, SourceWrapper
 

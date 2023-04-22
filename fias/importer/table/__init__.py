@@ -1,8 +1,8 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
 import re
-from typing import Union, Any
+from typing import Any, Union
 
 from .table import BadTableError, Table, UnregisteredTable
 from .xml import XMLTable

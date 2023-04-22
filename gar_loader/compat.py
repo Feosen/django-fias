@@ -1,8 +1,8 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
 from argparse import ArgumentParser
-from typing import Dict, Any
+from typing import Any, Dict
 
 from django.core.management.base import BaseCommand
 

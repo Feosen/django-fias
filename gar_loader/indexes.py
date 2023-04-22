@@ -1,10 +1,9 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
-from typing import Type, Dict, Any, TYPE_CHECKING, Iterable, Tuple
+from typing import TYPE_CHECKING, Any, Dict, Iterable, Tuple, Type
 
-from django.db import connections
-from django.db import models
+from django.db import connections, models
 from django.db.models import ForeignObjectRel
 from django.db.models.fields.related import RelatedField
 from django.db.models.options import Options

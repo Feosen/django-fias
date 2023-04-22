@@ -1,16 +1,20 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
 import os
 import sys
 from pathlib import Path
-from typing import Any, Union, Tuple
+from typing import Any, Tuple, Union
 
 from django.conf import settings
 from django.utils.translation import activate
 
 from fias.config import TABLES
-from fias.importer.commands import auto_update_data, manual_update_data, load_complete_data
+from fias.importer.commands import (
+    auto_update_data,
+    load_complete_data,
+    manual_update_data,
+)
 from fias.importer.source import TableListLoadingError
 from fias.importer.version import fetch_version_info
 from fias.models import Status

@@ -1,11 +1,12 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
 from datetime import date
-from typing import Any, List, IO
+from typing import IO, Any, List
 
 from fias.importer.source.wrapper import SourceWrapper
-from ..info import FAKE_FILES, FAKE_DIR_PATH
+
+from ..info import FAKE_DIR_PATH, FAKE_FILES
 
 
 class Wrapper(SourceWrapper):

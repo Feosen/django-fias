@@ -1,4 +1,4 @@
-from typing import Type, List, Tuple, Any, Mapping, TYPE_CHECKING
+from typing import TYPE_CHECKING, Any, List, Mapping, Tuple, Type
 
 from django.core.exceptions import ImproperlyConfigured
 from django.db import models

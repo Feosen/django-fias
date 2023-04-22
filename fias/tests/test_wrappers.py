@@ -1,5 +1,5 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
 import datetime
 import shutil
@@ -10,11 +10,12 @@ import rarfile
 from django.test import TestCase
 
 from fias.importer.source.wrapper import (
-    SourceWrapper,
     DirectoryWrapper,
     RarArchiveWrapper,
+    SourceWrapper,
 )
-from .info import FAKE_DIR_PATH, FAKE_ARCHIVE_PATH, FAKE_FILES
+
+from .info import FAKE_ARCHIVE_PATH, FAKE_DIR_PATH, FAKE_FILES
 
 
 class TestSourceWrapper(TestCase):

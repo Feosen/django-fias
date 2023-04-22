@@ -4,7 +4,7 @@ from uuid import UUID
 from django.core.management import call_command
 from django.test import TestCase
 
-from target.models import Status, HouseType, HouseAddType, House78, House, AddrObj
+from target.models import AddrObj, House, House78, HouseAddType, HouseType, Status
 
 
 class CommandCreateTestCase(TestCase):

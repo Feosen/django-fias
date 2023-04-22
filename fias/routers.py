@@ -1,11 +1,11 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
-from typing import Any, Union, Type
+from typing import Any, Type, Union
 
 from django.db.models import Model
 
-from fias.config import DEFAULT_DB_ALIAS, DATABASE_ALIAS
+from fias.config import DATABASE_ALIAS, DEFAULT_DB_ALIAS
 
 
 class FIASRouter(object):

@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import sys
 from pathlib import Path
-from typing import Union, Tuple
+from typing import Tuple, Union
 
 TEST = len(sys.argv) > 1 and sys.argv[1] == "test"
 

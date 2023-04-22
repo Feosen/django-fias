@@ -1,14 +1,11 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
 import datetime
 
 from django.test import TestCase
 
-from fias.importer.validators import (
-    common_validator,
-    chained_validator,
-)
+from fias.importer.validators import chained_validator, common_validator
 from fias.models import AddrObj
 
 today = datetime.date.today()

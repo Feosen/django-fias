@@ -1,11 +1,11 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
 from typing import Union
 
 from fias import config
-from fias.config import TableName, PARAM_MAP
-from fias.models import AddrObjParam, House, HouseParam, AddrObj
+from fias.config import PARAM_MAP, TableName
+from fias.models import AddrObj, AddrObjParam, House, HouseParam
 from fias.models.common import AbstractObj
 from fias.models.hierarchy import AbstractHierarchy
 

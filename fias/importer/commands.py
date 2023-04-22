@@ -1,9 +1,9 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import
+from __future__ import absolute_import, unicode_literals
 
 import logging
 from pathlib import Path
-from typing import Tuple, Union, List, Type
+from typing import List, Tuple, Type, Union
 
 from django.core.exceptions import ValidationError
 from django.core.validators import URLValidator
@@ -12,19 +12,24 @@ from django.db.models import Min
 from fias import config
 from fias.importer.loader import TableLoader, TableUpdater
 from fias.importer.signals import (
-    pre_drop_indexes,
     post_drop_indexes,
-    pre_restore_indexes,
-    post_restore_indexes,
-    pre_import,
     post_import,
-    pre_update,
+    post_restore_indexes,
     post_update,
+    pre_drop_indexes,
+    pre_import,
+    pre_restore_indexes,
+    pre_update,
 )
-from fias.importer.source import TableList, RemoteArchiveTableList, LocalArchiveTableList, DirectoryTableList, \
-    TableListLoadingError
+from fias.importer.source import (
+    DirectoryTableList,
+    LocalArchiveTableList,
+    RemoteArchiveTableList,
+    TableList,
+    TableListLoadingError,
+)
 from fias.importer.table import BadTableError
-from fias.models import Status, Version, AbstractModel
+from fias.models import AbstractModel, Status, Version
 from gar_loader.indexes import remove_indexes_from_model, restore_indexes_for_model
 
 logger = logging.getLogger(__name__)

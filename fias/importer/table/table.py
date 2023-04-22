@@ -1,23 +1,23 @@
 # coding: utf-8
-from __future__ import unicode_literals, absolute_import, annotations
+from __future__ import absolute_import, annotations, unicode_literals
 
-from typing import Union, Type, Any, IO, Callable, Dict, Iterable
+from typing import IO, Any, Callable, Dict, Iterable, Type, Union
 
 from django.db import connections, router
 
 from fias.config import TABLE_ROW_FILTERS, TableName
 from fias.models import (
-    AddrObjType,
+    AbstractModel,
+    AddHouseType,
     AddrObj,
     AddrObjParam,
-    House,
-    AddHouseType,
-    HouseType,
-    HouseParam,
-    ParamType,
+    AddrObjType,
     AdmHierarchy,
+    House,
+    HouseParam,
+    HouseType,
     MunHierarchy,
-    AbstractModel,
+    ParamType,
 )
 
 table_names: Dict[TableName, Type[AbstractModel]] = {
