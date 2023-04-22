@@ -2,14 +2,14 @@
 from __future__ import unicode_literals, absolute_import
 
 import datetime
-import uuid
+
 from django.test import TestCase
 
 from fias.importer.validators import (
     common_validator,
     chained_validator,
 )
-from fias.models import *
+from fias.models import AddrObj
 
 today = datetime.date.today()
 diff = datetime.timedelta(1)

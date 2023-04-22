@@ -1,12 +1,11 @@
 # coding: utf-8
 from __future__ import unicode_literals, absolute_import
 
-from dataclasses import dataclass
-from typing import Type, Dict, Any, TYPE_CHECKING, Iterable, Union, Protocol, Generator, Tuple
+from typing import Type, Dict, Any, TYPE_CHECKING, Iterable, Tuple
 
 from django.db import connections
 from django.db import models
-from django.db.models import ManyToOneRel, OneToOneRel, ManyToManyRel, ForeignObjectRel, ForeignKey, ManyToManyField
+from django.db.models import ForeignObjectRel
 from django.db.models.fields.related import RelatedField
 from django.db.models.options import Options
 from django.db.utils import ProgrammingError

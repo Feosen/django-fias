@@ -7,7 +7,7 @@ from typing import Tuple, Union, List, Type
 
 from django.core.exceptions import ValidationError
 from django.core.validators import URLValidator
-from django.db.models import Min, Model
+from django.db.models import Min
 
 from fias import config
 from fias.importer.loader import TableLoader, TableUpdater
@@ -21,7 +21,8 @@ from fias.importer.signals import (
     pre_update,
     post_update,
 )
-from fias.importer.source import *
+from fias.importer.source import TableList, RemoteArchiveTableList, LocalArchiveTableList, DirectoryTableList, \
+    TableListLoadingError
 from fias.importer.table import BadTableError
 from fias.models import Status, Version, AbstractModel
 from gar_loader.indexes import remove_indexes_from_model, restore_indexes_for_model
@@ -170,7 +171,8 @@ def update_data(
                 continue
             if st.ver.ver >= tablelist.version.ver:
                 logger.info(
-                    f"Update of the table `{table.name}` is not needed [{st.ver.ver} <= {tablelist.version.ver}]. Skipping…"
+                    (f"Update of the table `{table.name}` is not needed"
+                     f" [{st.ver.ver} <= {tablelist.version.ver}]. Skipping…")
                 )
                 continue
             loader = TableUpdater(limit=limit)

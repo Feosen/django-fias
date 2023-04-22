@@ -1,4 +1,4 @@
-from typing import Dict, Any, Type, cast, Set
+from typing import Any, Type, cast, Set
 
 from django.core.exceptions import ImproperlyConfigured
 from django.dispatch import receiver

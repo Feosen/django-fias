@@ -4,7 +4,7 @@ from __future__ import unicode_literals, absolute_import
 import os
 import sys
 from pathlib import Path
-from typing import Dict, Any, List, Union, Tuple
+from typing import Any, Union, Tuple
 
 from django.conf import settings
 from django.utils.translation import activate
@@ -48,7 +48,7 @@ class Command(BaseCommandCompatible):
             "dest": "doit",
             "default": False,
             "help": "If data exist in any table, you should confirm their removal and replacement"
-            ", as this may result in the removal of related data from other tables!",
+                    ", as this may result in the removal of related data from other tables!",
         },
         "--update": {
             "action": "store_true",
@@ -106,19 +106,19 @@ class Command(BaseCommandCompatible):
     }
 
     def handle(
-        self,
-        src: str,
-        truncate: bool,
-        doit: bool,
-        update: bool,
-        skip: bool,
-        fmt: str,
-        limit: int,
-        tables: str,
-        update_version_info: str,
-        keep_indexes: bool,
-        tempdir: str,
-        **options: Any,
+            self,
+            src: str,
+            truncate: bool,
+            doit: bool,
+            update: bool,
+            skip: bool,
+            fmt: str,
+            limit: int,
+            tables: str,
+            update_version_info: str,
+            keep_indexes: bool,
+            tempdir: str,
+            **options: Any,
     ) -> None:
         remote = False
         src_path: Union[str, None]

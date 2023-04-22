@@ -44,7 +44,7 @@ class VersionInfo:
 class Parser:
     @staticmethod
     def parse(item: Any) -> VersionInfo:
-        raise NotImplemented
+        raise NotImplementedError
 
 
 class WsdlParser(Parser):
@@ -68,18 +68,18 @@ class Client:
         self.parser = parser
 
     def version_info(self) -> Iterable[VersionInfo]:
-        raise NotImplemented
+        raise NotImplementedError
 
 
 class ServiceProtocol(Protocol):
     def GetAllDownloadFileInfo(self) -> ObjResponse:
-        raise NotImplemented
+        raise NotImplementedError
 
 
 class WsdlClientProtocol(Protocol):
     @property
     def service(self) -> ServiceProtocol:
-        raise NotImplemented
+        raise NotImplementedError
 
 
 class WsdlClient(Client):

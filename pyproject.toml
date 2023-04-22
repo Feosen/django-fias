@@ -23,6 +23,8 @@ mypy = "<1.2"
 django-stubs = {extras = ["compatible-mypy"], version = "^1.16.0"}
 types-requests = "^2.28.11.17"
 black = "^23.3.0"
+flake8 = "^6.0.0"
+flake8-pyproject = "^1.2.3"
 
 [build-system]
 requires = ["poetry-core"]
@@ -30,6 +32,15 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.black]
 line-length = 120
+
+[tool.flake8]
+ignore = ['W503']
+max-line-length = 120
+exclude = [
+    '.git',
+    '.mypy_cache',
+    '.venv',
+]
 
 [tool.mypy]
 strict = true

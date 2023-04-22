@@ -5,7 +5,7 @@ import datetime
 import re
 import shutil
 from pathlib import Path
-from typing import List, IO, Any, Union, Dict
+from typing import List, IO, Any, Union
 from zipfile import ZipFile
 
 from rarfile import RarFile

@@ -2,7 +2,7 @@
 from __future__ import unicode_literals, absolute_import
 
 import sys
-from typing import Any, Dict
+from typing import Any
 
 from django.conf import settings
 from django.utils.translation import activate

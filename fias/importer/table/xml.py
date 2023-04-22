@@ -14,7 +14,7 @@ _bom_header = b"\xef\xbb\xbf"
 
 
 field_map: Dict[str, Dict[str, str]] = {
-    #'house': {
+    # 'house': {
     #    'id': 'recordid',
     # }
 }

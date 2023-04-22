@@ -1,7 +1,6 @@
 # coding: utf-8
 from __future__ import unicode_literals, absolute_import
 
-import os
 from pathlib import Path
 
 DATA_PATH = Path(__file__).parent / "data"

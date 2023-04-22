@@ -2,11 +2,10 @@
 from __future__ import unicode_literals, absolute_import
 
 import sys
-from typing import Any, Dict
+from typing import Any
 
 from fias.config import TABLES
 from fias.importer.commands import get_tablelist
-
 from gar_loader.compat import BaseCommandCompatible
 
 

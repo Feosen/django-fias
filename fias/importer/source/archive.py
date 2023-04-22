@@ -5,7 +5,6 @@ import logging
 import tempfile
 import zipfile
 from pathlib import Path
-from typing import AnyStr
 from urllib.error import HTTPError
 from urllib.request import urlretrieve
 

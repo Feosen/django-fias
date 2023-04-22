@@ -2,18 +2,15 @@
 from __future__ import unicode_literals, absolute_import
 
 import datetime
-import os
 from pathlib import Path
 from typing import Type
 
 from django.test import TestCase
 
-from fias.importer.source.tablelist import TableList
-from fias.importer.source import *
 from fias.models import Version
-
 from .info import FAKE_FILES
 from .mock.wrapper import Wrapper
+from ..importer.source import TableList
 from ..importer.source.wrapper import SourceWrapper
 
 

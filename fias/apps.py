@@ -7,4 +7,4 @@ class FiasConfig(AppConfig):
     # Signal receivers registration
     # noinspection PyUnresolvedReferences
     def ready(self) -> None:
-        import fias.importer.table_validator
+        import fias.importer.table_validator  # noqa

@@ -95,7 +95,7 @@ class TableIterator:
     def process_row(self, row: Dict[str, Any]) -> Union[AbstractModel, None]:
         try:
             row = dict(self.format_row(row))
-        except ParentLookupException as e:
+        except ParentLookupException:
             return None
 
         row = self.row_convertor.convert(row)

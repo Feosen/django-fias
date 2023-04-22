@@ -2,7 +2,6 @@
 from __future__ import unicode_literals, absolute_import
 
 import datetime
-import os
 import shutil
 import tempfile
 from pathlib import Path

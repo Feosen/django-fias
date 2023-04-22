@@ -82,7 +82,7 @@ class LoadingBar(Infinite):  # type: ignore
             elif stack_len < self.depth:
                 self.stack.append(regress_len_s)
             else:
-                self.stack = self.stack[0 : self.depth]
+                self.stack = self.stack[0: self.depth]
                 self.stack[self.depth - 1] = regress_len_s
 
             self.stack_str = "/".join(self.stack)
@@ -118,11 +118,11 @@ class TableLoader(object):
             batch_count += 1
 
         for i in range(0, batch_count):
-            batch = objects[i * batch_len : (i + 1) * batch_len]
+            batch = objects[i * batch_len: (i + 1) * batch_len]
             bar.update(regress_depth=depth, regress_len=batch_len, regress_iteration=i + 1)
             try:
                 table.model.objects.bulk_create(batch)
-            except (IntegrityError, ValueError) as e:
+            except (IntegrityError, ValueError):
                 if batch_len <= 1:
                     self.counter -= 1
                     self.skip_counter += 1

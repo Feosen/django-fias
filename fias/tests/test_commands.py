@@ -7,7 +7,8 @@ from django.core.management import call_command
 from django.test import TestCase
 
 from fias.config import TableName
-from fias.models import *
+from fias.models import Version, HouseType, AddHouseType, House, HouseParam, AddrObjType, AddrObj, AddrObjParam, \
+    AdmHierarchy, MunHierarchy, Status
 
 
 class CommandCreateTestCase(TestCase):
