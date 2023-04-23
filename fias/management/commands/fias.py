@@ -96,9 +96,10 @@ class Command(BaseCommandCompatible):
             "help": "Update list of available database versions from http://fias.nalog.ru",
         },
         "--keep-indexes": {
-            "action": "store_true",
-            "dest": "keep_indexes",
-            "default": False,
+            "action": "store",
+            "type": str,
+            "choices": ["yes", "pk", "no"],
+            "default": "yes",
             "help": "Do not drop indexes",
         },
         "--tempdir": {
@@ -120,7 +121,7 @@ class Command(BaseCommandCompatible):
             limit: int,
             tables: str,
             update_version_info: str,
-            keep_indexes: bool,
+            keep_indexes: str,
             tempdir: str,
             **options: Any,
     ) -> None:
@@ -169,6 +170,9 @@ class Command(BaseCommandCompatible):
             self.error("Tables `{0}` are not listed in the FIAS_TABLES and can not be processed".format(diff))
         tables_tuple: Tuple[str, ...] = tuple(str(x) for x in TABLES if x in tables_set)
 
+        keep_regular_indexes = keep_indexes == "yes"
+        keep_pk_indexes = keep_indexes != "no"
+
         if (src_path or remote) and not update:
             try:
                 load_complete_data(
@@ -177,7 +181,8 @@ class Command(BaseCommandCompatible):
                     truncate=truncate,
                     limit=limit,
                     tables=tables_tuple,
-                    keep_indexes=keep_indexes,
+                    keep_indexes=keep_regular_indexes,
+                    keep_pk=keep_pk_indexes,
                     tempdir=tempdir_path,
                 )
             except TableListLoadingError as e:

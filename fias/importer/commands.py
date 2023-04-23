@@ -86,6 +86,7 @@ def load_complete_data(
     limit: int = 10000,
     tables: Union[Tuple[str, ...], None] = None,
     keep_indexes: bool = False,
+    keep_pk: bool = True,
     tempdir: Union[Path, None] = None,
 ) -> None:
     tablelist = get_tablelist(path=path, data_format=data_format, tempdir=tempdir)
@@ -122,10 +123,12 @@ def load_complete_data(
         if truncate:
             first_table.truncate()
 
+        process_pk = not keep_pk
+
         # Удаляем индексы из модели перед импортом
         if not keep_indexes:
             pre_drop_indexes.send(sender=object.__class__, table=first_table)
-            remove_indexes_from_model(model=first_table.model)
+            remove_indexes_from_model(model=first_table.model, pk=process_pk)
             post_drop_indexes.send(sender=object.__class__, table=first_table)
 
         # Импортируем все таблицы модели
@@ -138,7 +141,7 @@ def load_complete_data(
         # Восстанавливаем удалённые индексы
         if not keep_indexes:
             pre_restore_indexes.send(sender=object.__class__, table=first_table)
-            restore_indexes_for_model(model=first_table.model)
+            restore_indexes_for_model(model=first_table.model, pk=process_pk)
             post_restore_indexes.send(sender=object.__class__, table=first_table)
 
     remove_orphans(processed_models)

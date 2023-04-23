@@ -60,12 +60,11 @@ def get_all_related_many_to_many_objects(opts: _Options) -> Iterable[ForeignObje
     return [r for r in opts.related_objects if r.field.many_to_many]  # type: ignore
 
 
-def get_indexed_fields(model: Type[models.Model]) -> Iterable[Tuple[_Field, _Field]]:
+def get_indexed_fields(model: Type[models.Model], pk: bool) -> Iterable[Tuple[_Field, _Field]]:
     for field in model._meta.fields:
-        # TODO: PK
         # Не удаляем индекс у первичных ключей и полей,
         # на которые есть ссылки из других моделей
-        if field.primary_key and any(
+        if not pk and field.primary_key and any(
             [rel for rel in get_all_related_objects(model._meta) if rel.field_name == field.name]
         ):
             continue
@@ -85,11 +84,11 @@ def change_indexes_for_model(model: Type[models.Model], field_from: _Field, fiel
         print(str(e))
 
 
-def remove_indexes_from_model(model: Type[models.Model]) -> None:
-    for field, simple_field in get_indexed_fields(model=model):
+def remove_indexes_from_model(model: Type[models.Model], pk: bool) -> None:
+    for field, simple_field in get_indexed_fields(model=model, pk=pk):
         change_indexes_for_model(model=model, field_from=field, field_to=simple_field)
 
 
-def restore_indexes_for_model(model: Type[models.Model]) -> None:
-    for field, simple_field in get_indexed_fields(model=model):
+def restore_indexes_for_model(model: Type[models.Model], pk: bool) -> None:
+    for field, simple_field in get_indexed_fields(model=model, pk=pk):
         change_indexes_for_model(model=model, field_from=simple_field, field_to=field)

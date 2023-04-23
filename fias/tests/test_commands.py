@@ -36,6 +36,7 @@ class CommandCreateTestCase(TestCase):
             "src": str(SRC),
             "tempdir": str(TEMPRID),
             "update_version_info": False,
+            "keep_indexes": "no",
         }
         call_command("fias", *args, **opts)
 

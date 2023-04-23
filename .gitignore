@@ -2,7 +2,9 @@
 
 # Intellij Idea
 .idea/*
-gar_data
+.mypy_cache
+.tox
+.venv
 docs
 
 __pycache__

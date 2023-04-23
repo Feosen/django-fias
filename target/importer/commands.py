@@ -74,7 +74,7 @@ _table_cfg: List[Cfg] = [
 ]
 
 
-def load_complete_data(truncate: bool = False, keep_indexes: bool = False) -> None:
+def load_complete_data(truncate: bool = False, keep_indexes: bool = False, keep_pk: bool = True) -> None:
     ver = s_models.Status.objects.order_by("ver").first()
     if ver is None:
         raise ValueError
@@ -89,7 +89,7 @@ def load_complete_data(truncate: bool = False, keep_indexes: bool = False) -> No
         # Удаляем индексы из модели перед импортом
         if not keep_indexes:
             pre_drop_indexes.send(sender=object.__class__, cfg=cfg)
-            remove_indexes_from_model(model=cfg.dst)
+            remove_indexes_from_model(model=cfg.dst, pk=True)
             post_drop_indexes.send(sender=object.__class__, cfg=cfg)
 
         # Импортируем все таблицы модели
@@ -104,7 +104,7 @@ def load_complete_data(truncate: bool = False, keep_indexes: bool = False) -> No
         # Восстанавливаем удалённые индексы
         if not keep_indexes:
             pre_restore_indexes.send(sender=object.__class__, cfg=cfg)
-            restore_indexes_for_model(model=cfg.dst)
+            restore_indexes_for_model(model=cfg.dst, pk=True)
             post_restore_indexes.send(sender=object.__class__, cfg=cfg)
 
     post_import.send(sender=object.__class__, version=ver.ver_id)
