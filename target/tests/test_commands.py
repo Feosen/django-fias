@@ -16,12 +16,12 @@ class CommandCreateTestCase(TestCase):
 
         call_command("target")
 
-        self.assertEqual(14, HouseType.objects.count())
+        self.assertEqual(7, HouseType.objects.count())
         ht = HouseType.objects.get(id=7)
         self.assertEqual("Строение", ht.name)
         self.assertEqual("стр.", ht.shortname)
 
-        self.assertEqual(4, HouseAddType.objects.count())
+        self.assertEqual(3, HouseAddType.objects.count())
         aht = HouseAddType.objects.get(id=1)
         self.assertEqual("Корпус", aht.name)
         self.assertEqual("к.", aht.shortname)
@@ -54,7 +54,7 @@ class CommandCreateTestCase(TestCase):
         ao = AddrObj.objects.get(objectid=1456865)
         self.assertEqual("99", ao.region)
         self.assertEqual(1460768, ao.owner_adm)
-        self.assertEqual(1460768, ao.owner_mun)
+        self.assertEqual(0, ao.owner_mun)
         self.assertEqual(7, ao.aolevel)
         self.assertEqual(UUID("b35f8e9f-35a5-4f5d-a216-f363f41aa585"), ao.objectguid)
         self.assertEqual("5-й", ao.name)
@@ -82,6 +82,9 @@ class CommandUpdateTestCase(TestCase):
 
     def test_target_create(self) -> None:
         self.assertEqual(20221125, Status.objects.get().ver)
+        ao = AddrObj.objects.get(objectid=1456865)
+        self.assertEqual(1460768, ao.owner_adm)
+        self.assertEqual(0, ao.owner_mun)
 
         args: List[Any] = []
         opts: Dict[str, Any] = {"update": True}
@@ -123,7 +126,7 @@ class CommandUpdateTestCase(TestCase):
 
         ao = AddrObj.objects.get(objectid=1456865)
         self.assertEqual("99", ao.region)
-        self.assertEqual(1460768, ao.owner_adm)
+        self.assertEqual(0, ao.owner_adm)
         self.assertEqual(1460768, ao.owner_mun)
         self.assertEqual(7, ao.aolevel)
         self.assertEqual(UUID("b35f8e9f-35a5-4f5d-a216-f363f41aa585"), ao.objectguid)

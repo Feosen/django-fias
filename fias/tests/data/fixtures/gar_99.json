@@ -7,10 +7,10 @@
       "updatedate": "2018-06-15",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "ИФНС ФЛ",
       "shortname": null,
-      "desc": "ИФНС ФЛ",
-      "isactive": true
+      "desc": "ИФНС ФЛ"
     }
   },
   {
@@ -21,10 +21,10 @@
       "updatedate": "2018-06-15",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "ИФНС ЮЛ",
       "shortname": null,
-      "desc": "ИФНС ЮЛ",
-      "isactive": true
+      "desc": "ИФНС ЮЛ"
     }
   },
   {
@@ -35,10 +35,10 @@
       "updatedate": "2018-06-15",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "ИФНС ФЛ ТЕР УЧ",
       "shortname": null,
-      "desc": "Территориальный участок ИФНС ФЛ",
-      "isactive": true
+      "desc": "Территориальный участок ИФНС ФЛ"
     }
   },
   {
@@ -49,10 +49,10 @@
       "updatedate": "2018-06-15",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "ИФНС ЮЛ ТЕР УЧ",
       "shortname": null,
-      "desc": "Территориальный участок ИФНС ЮЛ",
-      "isactive": true
+      "desc": "Территориальный участок ИФНС ЮЛ"
     }
   },
   {
@@ -63,10 +63,10 @@
       "updatedate": "2018-06-15",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Почтовый индекс",
       "shortname": null,
-      "desc": "Информация о почтовом индексе",
-      "isactive": true
+      "desc": "Информация о почтовом индексе"
     }
   },
   {
@@ -77,10 +77,10 @@
       "updatedate": "2018-06-19",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "ОКАТО",
       "shortname": null,
-      "desc": "ОКАТО",
-      "isactive": true
+      "desc": "ОКАТО"
     }
   },
   {
@@ -91,10 +91,10 @@
       "updatedate": "2018-06-19",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "OKTMO",
       "shortname": null,
-      "desc": "OKTMO",
-      "isactive": true
+      "desc": "OKTMO"
     }
   },
   {
@@ -105,10 +105,10 @@
       "updatedate": "2018-06-19",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Кадастровый номер",
       "shortname": null,
-      "desc": "Кадастровый номер",
-      "isactive": true
+      "desc": "Кадастровый номер"
     }
   },
   {
@@ -119,10 +119,10 @@
       "updatedate": "2018-06-21",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Код КЛАДР",
       "shortname": null,
-      "desc": "Код адресного объекта одной строкой с признаком актуальности",
-      "isactive": true
+      "desc": "Код адресного объекта одной строкой с признаком актуальности"
     }
   },
   {
@@ -133,10 +133,10 @@
       "updatedate": "2018-06-21",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Код КЛАДР без признака актуальности",
       "shortname": null,
-      "desc": "Код адресного объекта одной строкой без признака актуальности",
-      "isactive": true
+      "desc": "Код адресного объекта одной строкой без признака актуальности"
     }
   },
   {
@@ -147,10 +147,10 @@
       "updatedate": "2018-06-21",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Код региона",
       "shortname": null,
-      "desc": "Код региона",
-      "isactive": true
+      "desc": "Код региона"
     }
   },
   {
@@ -161,10 +161,10 @@
       "updatedate": "2018-11-12",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Реестровый номер",
       "shortname": null,
-      "desc": "Реестровый номер адресного объекта",
-      "isactive": true
+      "desc": "Реестровый номер адресного объекта"
     }
   },
   {
@@ -175,10 +175,10 @@
       "updatedate": "2018-12-14",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Признак присвоения адреса",
       "shortname": null,
-      "desc": "Признак в каком делении присвоен адрес, муниципальном/административном",
-      "isactive": true
+      "desc": "Признак в каком делении присвоен адрес, муниципальном/административном"
     }
   },
   {
@@ -189,10 +189,10 @@
       "updatedate": "2018-12-14",
       "startdate": "2011-11-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Порядковый номер",
       "shortname": null,
-      "desc": "Порядковый номер обьекта в рамках родителя",
-      "isactive": true
+      "desc": "Порядковый номер обьекта в рамках родителя"
     }
   },
   {
@@ -203,10 +203,10 @@
       "updatedate": "2019-12-04",
       "startdate": "2019-12-04",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Официальное наименование",
       "shortname": null,
-      "desc": "Официальное наименование объекта(Региона)",
-      "isactive": true
+      "desc": "Официальное наименование объекта(Региона)"
     }
   },
   {
@@ -217,10 +217,10 @@
       "updatedate": "2021-09-03",
       "startdate": "2021-09-03",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Статус обслуживания Почтой России",
       "shortname": null,
-      "desc": "Статус обслуживания Почтой России",
-      "isactive": true
+      "desc": "Статус обслуживания Почтой России"
     }
   },
   {
@@ -231,10 +231,10 @@
       "updatedate": "2022-03-25",
       "startdate": "2022-03-25",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Признак корректности объекта (не дубль)",
       "shortname": null,
-      "desc": "Признак корректности объекта (не дубль)",
-      "isactive": true
+      "desc": "Признак корректности объекта (не дубль)"
     }
   },
   {
@@ -245,10 +245,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Автономная область",
       "shortname": "а.обл.",
       "desc": "Автономная область",
-      "isactive": true,
       "level": 1
     }
   },
@@ -260,10 +260,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Автономный округ",
       "shortname": "а.окр.",
       "desc": "Автономный округ",
-      "isactive": true,
       "level": 1
     }
   },
@@ -275,10 +275,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Автономный округ",
       "shortname": "АО",
       "desc": "Автономный округ",
-      "isactive": true,
       "level": 1
     }
   },
@@ -290,10 +290,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Автономная область",
       "shortname": "Аобл",
       "desc": "Автономная область",
-      "isactive": true,
       "level": 1
     }
   },
@@ -305,10 +305,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Город",
       "shortname": "г",
       "desc": "Город",
-      "isactive": true,
       "level": 1
     }
   },
@@ -320,10 +320,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Город",
       "shortname": "г.",
       "desc": "Город",
-      "isactive": true,
       "level": 1
     }
   },
@@ -335,10 +335,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Город федерального значения",
       "shortname": "г.ф.з.",
       "desc": "Город федерального значения",
-      "isactive": true,
       "level": 1
     }
   },
@@ -350,10 +350,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Край",
       "shortname": "край",
       "desc": "Край",
-      "isactive": true,
       "level": 1
     }
   },
@@ -365,10 +365,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Область",
       "shortname": "обл",
       "desc": "Область",
-      "isactive": true,
       "level": 1
     }
   },
@@ -380,10 +380,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Область",
       "shortname": "обл.",
       "desc": "Область",
-      "isactive": true,
       "level": 1
     }
   },
@@ -395,10 +395,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Округ",
       "shortname": "округ",
       "desc": "Округ",
-      "isactive": true,
       "level": 1
     }
   },
@@ -410,10 +410,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Республика",
       "shortname": "Респ",
       "desc": "Республика",
-      "isactive": true,
       "level": 1
     }
   },
@@ -425,10 +425,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Республика",
       "shortname": "респ.",
       "desc": "Республика",
-      "isactive": true,
       "level": 1
     }
   },
@@ -440,10 +440,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Чувашия",
       "shortname": "Чувашия",
       "desc": "Чувашия",
-      "isactive": true,
       "level": 1
     }
   },
@@ -455,10 +455,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Автономный округ",
       "shortname": "АО",
       "desc": "Автономный округ",
-      "isactive": true,
       "level": 13
     }
   },
@@ -470,10 +470,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Автономный округ",
       "shortname": "АО",
       "desc": "Автономный округ",
-      "isactive": true,
       "level": 2
     }
   },
@@ -485,10 +485,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Внутригородская территория",
       "shortname": "вн.тер. г.",
       "desc": "Внутригородская территория",
-      "isactive": true,
       "level": 2
     }
   },
@@ -500,10 +500,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Городской округ",
       "shortname": "г.о.",
       "desc": "Городской округ",
-      "isactive": true,
       "level": 2
     }
   },
@@ -515,10 +515,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Муниципальный район",
       "shortname": "м.р-н",
       "desc": "Муниципальный район",
-      "isactive": true,
       "level": 2
     }
   },
@@ -530,10 +530,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Поселение",
       "shortname": "п",
       "desc": "Поселение",
-      "isactive": true,
       "level": 2
     }
   },
@@ -545,10 +545,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Поселение",
       "shortname": "пос.",
       "desc": "Поселение",
-      "isactive": true,
       "level": 2
     }
   },
@@ -560,10 +560,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Район",
       "shortname": "р-н",
       "desc": "Район",
-      "isactive": true,
       "level": 2
     }
   },
@@ -575,10 +575,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Территория",
       "shortname": "тер",
       "desc": "Территория",
-      "isactive": true,
       "level": 2
     }
   },
@@ -590,10 +590,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Улус",
       "shortname": "у",
       "desc": "Улус",
-      "isactive": true,
       "level": 2
     }
   },
@@ -605,10 +605,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Улус",
       "shortname": "у.",
       "desc": "Улус",
-      "isactive": true,
       "level": 2
     }
   },
@@ -620,10 +620,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Волость",
       "shortname": "волость",
       "desc": "Волость",
-      "isactive": true,
       "level": 5
     }
   },
@@ -635,10 +635,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Город",
       "shortname": "г",
       "desc": "Город",
-      "isactive": true,
       "level": 5
     }
   },
@@ -650,10 +650,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Город",
       "shortname": "г.",
       "desc": "Город",
-      "isactive": true,
       "level": 5
     }
   },
@@ -665,10 +665,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Дачный поселок",
       "shortname": "дп",
       "desc": "Дачный поселок",
-      "isactive": true,
       "level": 5
     }
   },
@@ -680,10 +680,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Курортный поселок",
       "shortname": "кп",
       "desc": "Курортный поселок",
-      "isactive": true,
       "level": 5
     }
   },
@@ -695,10 +695,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Массив",
       "shortname": "массив",
       "desc": "Массив",
-      "isactive": true,
       "level": 5
     }
   },
@@ -710,10 +710,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Поселок",
       "shortname": "п",
       "desc": "Поселок",
-      "isactive": true,
       "level": 5
     }
   },
@@ -725,10 +725,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Почтовое отделение",
       "shortname": "п/о",
       "desc": "Почтовое отделение",
-      "isactive": true,
       "level": 5
     }
   },
@@ -740,10 +740,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Поселок городского типа",
       "shortname": "пгт",
       "desc": "Поселок городского типа",
-      "isactive": true,
       "level": 5
     }
   },
@@ -755,10 +755,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Поселок городского типа",
       "shortname": "пгт.",
       "desc": "Поселок городского типа",
-      "isactive": true,
       "level": 5
     }
   },
@@ -770,10 +770,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Рабочий поселок",
       "shortname": "рп",
       "desc": "Рабочий поселок",
-      "isactive": true,
       "level": 5
     }
   },
@@ -785,10 +785,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Сельская администрация",
       "shortname": "с/а",
       "desc": "Сельская администрация",
-      "isactive": true,
       "level": 5
     }
   },
@@ -800,10 +800,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Сельское муницип.образование",
       "shortname": "с/мо",
       "desc": "Сельское муниципальное образование",
-      "isactive": true,
       "level": 5
     }
   },
@@ -815,10 +815,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Сельский округ",
       "shortname": "с/о",
       "desc": "Сельский округ",
-      "isactive": true,
       "level": 5
     }
   },
@@ -830,10 +830,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Сельское поселение",
       "shortname": "с/п",
       "desc": "Сельское поселение",
-      "isactive": true,
       "level": 5
     }
   },
@@ -845,10 +845,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Сельсовет",
       "shortname": "с/с",
       "desc": "Сельсовет",
-      "isactive": true,
       "level": 5
     }
   },
@@ -860,10 +860,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Территория",
       "shortname": "тер",
       "desc": "Территория",
-      "isactive": true,
       "level": 5
     }
   },
@@ -875,10 +875,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Район",
       "shortname": "р-н",
       "desc": "Район",
-      "isactive": true,
       "level": 14
     }
   },
@@ -890,10 +890,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Территория",
       "shortname": "тер",
       "desc": "Территория",
-      "isactive": true,
       "level": 14
     }
   },
@@ -905,10 +905,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Аал",
       "shortname": "аал",
       "desc": "Аал",
-      "isactive": true,
       "level": 6
     }
   },
@@ -920,10 +920,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
+      "isactive": true,
       "name": "Автодорога",
       "shortname": "автодорога",
       "desc": "Автодорога",
-      "isactive": true,
       "level": 6
     }
   },
@@ -935,10 +935,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Арбан",
       "shortname": "арбан",
       "desc": "Арбан",
-      "isactive": true,
       "level": 6
     }
   },
@@ -950,10 +950,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Аул",
       "shortname": "аул",
       "desc": "Аул",
-      "isactive": true,
       "level": 6
     }
   },
@@ -965,10 +965,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Волость",
       "shortname": "волость",
       "desc": "Волость",
-      "isactive": true,
       "level": 6
     }
   },
@@ -980,10 +980,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Выселки(ок)",
       "shortname": "высел",
       "desc": "Выселки(ок)",
-      "isactive": true,
       "level": 6
     }
   },
@@ -995,10 +995,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Город",
       "shortname": "г",
       "desc": "Город",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1010,10 +1010,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Городок",
       "shortname": "г-к",
       "desc": "Городок",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1025,10 +1025,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Городской поселок",
       "shortname": "гп",
       "desc": "Городской поселок",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1040,10 +1040,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Деревня",
       "shortname": "д",
       "desc": "Деревня",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1055,10 +1055,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2019-02-14",
+      "isactive": true,
       "name": "Дачный поселок",
       "shortname": "дп",
       "desc": "Дачный поселок",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1070,10 +1070,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Дачный поселок",
       "shortname": "дп.",
       "desc": "Дачный поселок",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1085,10 +1085,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Железнодорожная будка",
       "shortname": "ж/д б-ка",
       "desc": "Железнодорожная будка",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1100,10 +1100,10 @@
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Железнодорожный блокпост",
       "shortname": "ж/д бл-ст",
       "desc": "Железнодорожный блокпост",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1115,10 +1115,10 @@
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Железнодорожная ветка",
       "shortname": "ж/д в-ка",
       "desc": "Железнодорожная ветка",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1130,10 +1130,10 @@
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Железнодорожная казарма",
       "shortname": "ж/д к-ма",
       "desc": "Железнодорожная казарма",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1145,10 +1145,10 @@
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Железнодорожный комбинат",
       "shortname": "ж/д к-т",
       "desc": "Железнодорожный комбинат",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1160,10 +1160,10 @@
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Железнодорожный остановочный пункт",
       "shortname": "ж/д о.п.",
       "desc": "Железнодорожный остановочный пункт",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1175,10 +1175,10 @@
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Железнодорожный путевой пост",
       "shortname": "ж/д п.п.",
       "desc": "Железнодорожный путевой пост",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1190,10 +1190,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Железнодорожная площадка",
       "shortname": "ж/д пл-ка",
       "desc": "Железнодорожная площадка",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1205,10 +1205,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Железнодорожная платформа",
       "shortname": "ж/д пл-ма",
       "desc": "Железнодорожная платформа",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1220,10 +1220,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Железнодорожная будка",
       "shortname": "ж/д_будка",
       "desc": "Железнодорожная будка",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1235,10 +1235,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2019-02-14",
+      "isactive": true,
       "name": "Железнодорожная казарма",
       "shortname": "ж/д_казарм",
       "desc": "Железнодорожная казарма",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1250,10 +1250,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "ж/д останов. (обгонный) пункт",
       "shortname": "ж/д_оп",
       "desc": "ж/д остановочный (обгонный) пункт",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1265,10 +1265,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Железнодорожная платформа",
       "shortname": "ж/д_платф",
       "desc": "Железнодорожная платформа",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1280,10 +1280,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Железнодорожный пост",
       "shortname": "ж/д_пост",
       "desc": "Железнодорожный пост",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1295,10 +1295,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Железнодорожный разъезд",
       "shortname": "ж/д_рзд",
       "desc": "Железнодорожный разъезд",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1310,10 +1310,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Железнодорожная станция",
       "shortname": "ж/д_ст",
       "desc": "Железнодорожная станция",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1325,10 +1325,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Жилая зона",
       "shortname": "жилзона",
       "desc": "Жилая зона",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1340,10 +1340,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Жилой район",
       "shortname": "жилрайон",
       "desc": "Жилой район",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1355,10 +1355,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Заимка",
       "shortname": "заимка",
       "desc": "Заимка",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1370,10 +1370,10 @@
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Зимовье",
       "shortname": "зим.",
       "desc": "Зимовье",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1385,10 +1385,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Казарма",
       "shortname": "казарма",
       "desc": "Казарма",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1400,10 +1400,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2019-02-14",
+      "isactive": true,
       "name": "Квартал",
       "shortname": "кв-л",
       "desc": "Квартал",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1415,10 +1415,10 @@
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Кишлак",
       "shortname": "киш.",
       "desc": "Кишлак",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1430,10 +1430,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Кордон",
       "shortname": "кордон",
       "desc": "Кордон",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1445,10 +1445,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Курортный поселок",
       "shortname": "кп",
       "desc": "Курортный поселок",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1460,10 +1460,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Леспромхоз",
       "shortname": "лпх",
       "desc": "Леспромхоз",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1475,10 +1475,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Местечко",
       "shortname": "м",
       "desc": "Местечко",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1490,10 +1490,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Массив",
       "shortname": "массив",
       "desc": "Массив",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1505,10 +1505,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2019-02-14",
+      "isactive": true,
       "name": "Микрорайон",
       "shortname": "мкр",
       "desc": "Микрорайон",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1520,10 +1520,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2019-02-14",
+      "isactive": true,
       "name": "Населенный пункт",
       "shortname": "нп",
       "desc": "Населенный пункт",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1535,10 +1535,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Населенный пункт",
       "shortname": "нп.",
       "desc": "Населенный пункт",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1550,10 +1550,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Остров",
       "shortname": "остров",
       "desc": "Остров",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1565,10 +1565,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Поселок",
       "shortname": "п",
       "desc": "Поселок",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1580,10 +1580,10 @@
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Поселок при железнодорожной станции",
       "shortname": "п. ж/д ст.",
       "desc": "Поселок при железнодорожной станции",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1595,10 +1595,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Почтовое отделение",
       "shortname": "п/о",
       "desc": "Почтовое отделение",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1610,25 +1610,10 @@
       "updatedate": "2020-08-11",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Планировочный район",
       "shortname": "пл.р-н",
       "desc": "Планировочный район",
-      "isactive": true,
-      "level": 6
-    }
-  },
-  {
-    "model": "fias.addrobjtype",
-    "pk": 94,
-    "fields": {
-      "ver": 20221125,
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2015-11-05",
-      "name": "Поселок и(при) станция(и)",
-      "shortname": "п/ст",
-      "desc": "Поселок и(при) станция(и)",
-      "isactive": false,
       "level": 6
     }
   },
@@ -1640,10 +1625,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Поселок городского типа",
       "shortname": "пгт",
       "desc": "Поселок городского типа",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1655,10 +1640,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Поселок городского типа",
       "shortname": "пгт.",
       "desc": "Поселок городского типа",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1670,10 +1655,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Погост",
       "shortname": "погост",
       "desc": "Погост",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1685,10 +1670,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Поселок разъезда",
       "shortname": "пос.рзд",
       "desc": "Поселок разъезда",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1700,10 +1685,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Починок",
       "shortname": "починок",
       "desc": "Починок",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1715,10 +1700,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Промышленная зона",
       "shortname": "промзона",
       "desc": "Промышленная зона",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1730,10 +1715,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Разъезд",
       "shortname": "рзд",
       "desc": "Разъезд",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1745,10 +1730,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Рабочий поселок",
       "shortname": "рп",
       "desc": "Рабочий поселок",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1760,10 +1745,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Село",
       "shortname": "с",
       "desc": "Село",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1775,10 +1760,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Слобода",
       "shortname": "сл",
       "desc": "Слобода",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1790,10 +1775,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2019-02-14",
+      "isactive": true,
       "name": "Садовое неком-е товарищество",
       "shortname": "снт",
       "desc": "Садовое некоммерческое товарищество",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1805,10 +1790,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2019-07-22",
+      "isactive": true,
       "name": "Сельский поселок",
       "shortname": "сп",
       "desc": "Сельский поселок",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1820,10 +1805,10 @@
       "updatedate": "2019-07-22",
       "startdate": "2019-07-22",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Сельский поселок",
       "shortname": "сп.",
       "desc": "Сельский поселок",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1835,10 +1820,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Станция",
       "shortname": "ст",
       "desc": "Станция",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1850,10 +1835,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Станица",
       "shortname": "ст-ца",
       "desc": "Станица",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1865,10 +1850,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Территория",
       "shortname": "тер",
       "desc": "Территория",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1880,10 +1865,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Улус",
       "shortname": "у",
       "desc": "Улус",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1895,10 +1880,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Хутор",
       "shortname": "х",
       "desc": "Хутор",
-      "isactive": true,
       "level": 6
     }
   },
@@ -1910,10 +1895,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Абонентский ящик",
       "shortname": "а/я",
       "desc": "Абонентский ящик",
-      "isactive": true,
       "level": 8
     }
   },
@@ -1925,10 +1910,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Аллея",
       "shortname": "ал.",
       "desc": "Аллея",
-      "isactive": true,
       "level": 8
     }
   },
@@ -1940,10 +1925,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Аллея",
       "shortname": "аллея",
       "desc": "Аллея",
-      "isactive": true,
       "level": 8
     }
   },
@@ -1955,10 +1940,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Балка",
       "shortname": "балка",
       "desc": "Балка",
-      "isactive": true,
       "level": 8
     }
   },
@@ -1970,10 +1955,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Берег",
       "shortname": "берег",
       "desc": "Берег",
-      "isactive": true,
       "level": 8
     }
   },
@@ -1985,10 +1970,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Бульвар",
       "shortname": "б-р",
       "desc": "Бульвар",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2000,10 +1985,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Бугор",
       "shortname": "бугор",
       "desc": "Бугор",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2015,10 +2000,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Вал",
       "shortname": "вал",
       "desc": "Вал",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2030,10 +2015,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
+      "isactive": true,
       "name": "Взвоз",
       "shortname": "взв.",
       "desc": "Взвоз",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2045,10 +2030,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Въезд",
       "shortname": "въезд",
       "desc": "Въезд",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2060,10 +2045,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Городок",
       "shortname": "г-к",
       "desc": "Городок",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2075,10 +2060,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
+      "isactive": true,
       "name": "Гаражно-строительный кооп.",
       "shortname": "гск",
       "desc": "Гаражно-строительный кооператив",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2090,10 +2075,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Деревня",
       "shortname": "д",
       "desc": "Деревня",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2105,10 +2090,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Дачное неком-е партнерство",
       "shortname": "днп",
       "desc": "Дачное некоммерческое партнерство",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2120,10 +2105,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
+      "isactive": true,
       "name": "Дорога",
       "shortname": "дор",
       "desc": "Дорога",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2135,10 +2120,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Железнодорожная будка",
       "shortname": "ж/д_будка",
       "desc": "Железнодорожная будка",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2150,10 +2135,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Железнодорожная казарма",
       "shortname": "ж/д_казарм",
       "desc": "Железнодорожная казарма",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2165,10 +2150,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "ж/д останов. (обгонный) пункт",
       "shortname": "ж/д_оп",
       "desc": "ж/д остановочный (обгонный) пункт",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2180,10 +2165,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Железнодорожная платформа",
       "shortname": "ж/д_платф",
       "desc": "Железнодорожная платформа",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2195,10 +2180,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Железнодорожный пост",
       "shortname": "ж/д_пост",
       "desc": "Железнодорожный пост",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2210,10 +2195,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Железнодорожный разъезд",
       "shortname": "ж/д_рзд",
       "desc": "Железнодорожный разъезд",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2225,10 +2210,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Железнодорожная станция",
       "shortname": "ж/д_ст",
       "desc": "Железнодорожная станция",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2240,10 +2225,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Животноводческая точка",
       "shortname": "жт",
       "desc": "Животноводческая точка",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2255,10 +2240,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Заезд",
       "shortname": "заезд",
       "desc": "Заезд",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2270,10 +2255,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
+      "isactive": true,
       "name": "Заезд",
       "shortname": "ззд.",
       "desc": "Заезд",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2285,10 +2270,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Зона",
       "shortname": "зона",
       "desc": "Зона",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2300,10 +2285,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Казарма",
       "shortname": "казарма",
       "desc": "Казарма",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2315,10 +2300,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
+      "isactive": true,
       "name": "Квартал",
       "shortname": "кв-л",
       "desc": "Квартал",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2330,10 +2315,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Километр",
       "shortname": "км",
       "desc": "Километр",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2345,10 +2330,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Кольцо",
       "shortname": "кольцо",
       "desc": "Кольцо",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2360,10 +2345,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
+      "isactive": true,
       "name": "Коса",
       "shortname": "коса",
       "desc": "Коса",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2375,10 +2360,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
+      "isactive": true,
       "name": "Кольцо",
       "shortname": "к-цо",
       "desc": "Кольцо",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2390,10 +2375,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Линия",
       "shortname": "линия",
       "desc": "Линия",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2405,10 +2390,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
+      "isactive": true,
       "name": "Линия",
       "shortname": "лн.",
       "desc": "Линия",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2420,10 +2405,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Местечко",
       "shortname": "м",
       "desc": "Местечко",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2435,10 +2420,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Маяк",
       "shortname": "маяк",
       "desc": "Маяк",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2450,10 +2435,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Магистраль",
       "shortname": "мгстр.",
       "desc": "Магистраль",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2465,10 +2450,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Местность",
       "shortname": "местность",
       "desc": "Местность",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2480,10 +2465,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
+      "isactive": true,
       "name": "Микрорайон",
       "shortname": "мкр",
       "desc": "Микрорайон",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2495,10 +2480,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Мост",
       "shortname": "мост",
       "desc": "Мост",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2510,10 +2495,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Некоммерческое партнерство",
       "shortname": "н/п",
       "desc": "Некоммерческое партнерство",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2525,10 +2510,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Набережная",
       "shortname": "наб",
       "desc": "Набережная",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2540,10 +2525,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
+      "isactive": true,
       "name": "Набережная",
       "shortname": "наб.",
       "desc": "Набережная",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2555,10 +2540,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Населенный пункт",
       "shortname": "нп",
       "desc": "Населенный пункт",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2570,10 +2555,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Остров",
       "shortname": "остров",
       "desc": "Остров",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2585,10 +2570,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-04-16",
+      "isactive": true,
       "name": "Поселок",
       "shortname": "п",
       "desc": "Поселок",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2600,10 +2585,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Почтовое отделение",
       "shortname": "п/о",
       "desc": "Почтовое отделение",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2615,10 +2600,10 @@
       "updatedate": "2020-08-11",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Планировочный район",
       "shortname": "пл.р-н",
       "desc": "Планировочный район",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2630,10 +2615,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Поселок и(при) станция(и)",
       "shortname": "п/ст",
       "desc": "Поселок и(при) станция(и)",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2645,10 +2630,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Парк",
       "shortname": "парк",
       "desc": "Парк",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2660,10 +2645,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Переулок",
       "shortname": "пер",
       "desc": "Переулок",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2675,10 +2660,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Переулок",
       "shortname": "пер.",
       "desc": "Переулок",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2690,10 +2675,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
+      "isactive": true,
       "name": "Переезд",
       "shortname": "пер-д",
       "desc": "Переезд",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2705,10 +2690,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Переезд",
       "shortname": "переезд",
       "desc": "Переезд",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2720,10 +2705,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Площадь",
       "shortname": "пл",
       "desc": "Площадь",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2735,10 +2720,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Платформа",
       "shortname": "платф",
       "desc": "Платформа",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2750,10 +2735,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
+      "isactive": true,
       "name": "Площадка",
       "shortname": "пл-ка",
       "desc": "Площадка",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2765,10 +2750,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Полустанок",
       "shortname": "полустанок",
       "desc": "Полустанок",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2780,10 +2765,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Проезд",
       "shortname": "пр-д",
       "desc": "Проезд",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2795,10 +2780,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
+      "isactive": true,
       "name": "Просек",
       "shortname": "пр-к",
       "desc": "Просек",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2810,10 +2795,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
+      "isactive": true,
       "name": "Просека",
       "shortname": "пр-ка",
       "desc": "Просека",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2825,10 +2810,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Проспект",
       "shortname": "пр-кт",
       "desc": "Проспект",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2840,10 +2825,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
+      "isactive": true,
       "name": "Проселок",
       "shortname": "пр-лок",
       "desc": "Проселок",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2855,10 +2840,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-05-11",
+      "isactive": true,
       "name": "Проезд",
       "shortname": "проезд",
       "desc": "Проезд",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2870,10 +2855,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
+      "isactive": true,
       "name": "Промзона",
       "shortname": "промзона",
       "desc": "Промзона",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2885,10 +2870,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Просек",
       "shortname": "просек",
       "desc": "Просек",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2900,10 +2885,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Просека",
       "shortname": "просека",
       "desc": "Просека",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2915,10 +2900,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Проселок",
       "shortname": "проселок",
       "desc": "Проселок",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2930,10 +2915,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Проулок",
       "shortname": "проул.",
       "desc": "Проулок",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2945,10 +2930,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Проулок",
       "shortname": "проулок",
       "desc": "Проулок",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2960,10 +2945,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Разъезд",
       "shortname": "рзд",
       "desc": "Разъезд",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2975,10 +2960,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Разъезд",
       "shortname": "рзд.",
       "desc": "Разъезд",
-      "isactive": true,
       "level": 8
     }
   },
@@ -2990,10 +2975,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
+      "isactive": true,
       "name": "Ряд(ы)",
       "shortname": "ряд",
       "desc": "Ряд(ы)",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3005,10 +2990,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Ряды",
       "shortname": "ряды",
       "desc": "Ряды",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3020,10 +3005,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Село",
       "shortname": "с",
       "desc": "Село",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3035,10 +3020,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-05-08",
+      "isactive": true,
       "name": "Садовое товарищество",
       "shortname": "с/т",
       "desc": "Садовое товарищество",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3050,10 +3035,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Сад",
       "shortname": "сад",
       "desc": "Сад",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3065,10 +3050,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
+      "isactive": true,
       "name": "Съезд",
       "shortname": "сзд.",
       "desc": "Съезд",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3080,10 +3065,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Спуск",
       "shortname": "с-к",
       "desc": "Спуск",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3095,10 +3080,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Сквер",
       "shortname": "сквер",
       "desc": "Сквер",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3110,10 +3095,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Слобода",
       "shortname": "сл",
       "desc": "Слобода",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3125,10 +3110,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
+      "isactive": true,
       "name": "Садовое неком-е товарищество",
       "shortname": "снт",
       "desc": "Садовое некоммерческое товарищество",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3140,10 +3125,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Спуск",
       "shortname": "спуск",
       "desc": "Спуск",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3155,10 +3140,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-11-09",
+      "isactive": true,
       "name": "Сквер",
       "shortname": "с-р",
       "desc": "Сквер",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3170,10 +3155,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Станция",
       "shortname": "ст",
       "desc": "Станция",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3185,10 +3170,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Строение",
       "shortname": "стр",
       "desc": "Строение",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3200,10 +3185,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-11-09",
+      "isactive": true,
       "name": "Территория",
       "shortname": "тер",
       "desc": "Территория",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3215,10 +3200,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
+      "isactive": true,
       "name": "Территория ДНТ",
       "shortname": "тер. ДНТ",
       "desc": "Территория ДНТ",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3230,10 +3215,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-05-08",
+      "isactive": true,
       "name": "Территория СНТ",
       "shortname": "тер. СНТ",
       "desc": "Территория СНТ",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3245,10 +3230,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Тракт",
       "shortname": "тракт",
       "desc": "Тракт",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3260,10 +3245,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Тупик",
       "shortname": "туп",
       "desc": "Тупик",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3275,10 +3260,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Улица",
       "shortname": "ул",
       "desc": "Улица",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3290,10 +3275,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Улица",
       "shortname": "ул.",
       "desc": "Улица",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3305,10 +3290,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Участок",
       "shortname": "уч-к",
       "desc": "Участок",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3320,10 +3305,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Фермерское хозяйство",
       "shortname": "ф/х",
       "desc": "Фермерское хозяйство",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3335,10 +3320,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Ферма",
       "shortname": "ферма",
       "desc": "Ферма",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3350,10 +3335,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Хутор",
       "shortname": "х",
       "desc": "Хутор",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3365,10 +3350,10 @@
       "updatedate": "2022-10-14",
       "startdate": "1900-01-01",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Шоссе",
       "shortname": "ш",
       "desc": "Шоссе",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3380,10 +3365,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Шоссе",
       "shortname": "ш.",
       "desc": "Шоссе",
-      "isactive": true,
       "level": 8
     }
   },
@@ -3395,10 +3380,10 @@
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Машино-место",
       "shortname": "м/м",
       "desc": "Машино-место",
-      "isactive": true,
       "level": 17
     }
   },
@@ -3410,10 +3395,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Абонентский ящик",
       "shortname": "а/я",
       "desc": "Абонентский ящик",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3425,10 +3410,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Аал",
       "shortname": "аал",
       "desc": "Аал",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3440,10 +3425,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Аллея",
       "shortname": "ал.",
       "desc": "Аллея",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3455,10 +3440,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Арбан",
       "shortname": "арбан",
       "desc": "Арбан",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3470,10 +3455,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Аул",
       "shortname": "аул",
       "desc": "Аул",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3485,10 +3470,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-12-14",
+      "isactive": true,
       "name": "Берег",
       "shortname": "б-г",
       "desc": "Берег",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3500,10 +3485,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Бульвар",
       "shortname": "б-р",
       "desc": "Бульвар",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3515,10 +3500,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Вал",
       "shortname": "вал",
       "desc": "Вал",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3530,10 +3515,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Въезд",
       "shortname": "взд.",
       "desc": "Въезд",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3545,10 +3530,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Городок",
       "shortname": "г-к",
       "desc": "Городок",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3560,10 +3545,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Гаражно-строительный кооп.",
       "shortname": "гск",
       "desc": "Гаражно-строительный кооператив",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3575,10 +3560,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Деревня",
       "shortname": "д.",
       "desc": "Деревня",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3590,10 +3575,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Дачное неком-е партнерство",
       "shortname": "днп",
       "desc": "Дачное некоммерческое партнерство",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3605,10 +3590,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Дорога",
       "shortname": "дор.",
       "desc": "Дорога",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3620,10 +3605,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Железнодорожная будка",
       "shortname": "ж/д б-ка",
       "desc": "Железнодорожная будка",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3635,10 +3620,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Железнодорожная казарма",
       "shortname": "ж/д к-ма",
       "desc": "Железнодорожная казарма",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3650,10 +3635,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Железнодорожная платформа",
       "shortname": "ж/д пл-ма",
       "desc": "Железнодорожная платформа",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3665,10 +3650,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Железнодорожный разъезд",
       "shortname": "ж/д рзд.",
       "desc": "Железнодорожный разъезд",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3680,10 +3665,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Железнодорожная станция",
       "shortname": "ж/д ст.",
       "desc": "Железнодорожная станция",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3695,10 +3680,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-12-14",
+      "isactive": true,
       "name": "Жилой район",
       "shortname": "ж/р",
       "desc": "Жилой район",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3710,10 +3695,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Заезд",
       "shortname": "ззд.",
       "desc": "Заезд",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3725,10 +3710,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Зона (массив)",
       "shortname": "зона",
       "desc": "Зона (массив)",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3740,10 +3725,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Квартал",
       "shortname": "кв-л",
       "desc": "Квартал",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3755,10 +3740,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Километр",
       "shortname": "км",
       "desc": "Километр",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3770,10 +3755,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Коса",
       "shortname": "коса",
       "desc": "Коса",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3785,10 +3770,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Кольцо",
       "shortname": "к-цо",
       "desc": "Кольцо",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3800,10 +3785,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Линия",
       "shortname": "лн.",
       "desc": "Линия",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3815,10 +3800,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Местность",
       "shortname": "местность",
       "desc": "Местность",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3830,10 +3815,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-12-14",
+      "isactive": true,
       "name": "Месторождение",
       "shortname": "месторожд.",
       "desc": "Месторождение",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3845,10 +3830,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Местечко",
       "shortname": "м-ко",
       "desc": "Местечко",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3860,10 +3845,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-15",
+      "isactive": true,
       "name": "Микрорайон",
       "shortname": "мкр",
       "desc": "Микрорайон",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3875,10 +3860,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Микрорайон",
       "shortname": "мкр.",
       "desc": "Микрорайон",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3890,10 +3875,10 @@
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Месторождение",
       "shortname": "мр.",
       "desc": "Месторождение",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3905,10 +3890,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Некоммерческое партнерство",
       "shortname": "н/п",
       "desc": "Некоммерческое партнерство",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3920,10 +3905,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Набережная",
       "shortname": "наб.",
       "desc": "Набережная",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3935,10 +3920,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Остров",
       "shortname": "ост-в",
       "desc": "Остров",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3950,10 +3935,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Поселок",
       "shortname": "п.",
       "desc": "Поселок",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3965,10 +3950,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-12-14",
+      "isactive": true,
       "name": "Промышленный район",
       "shortname": "п/р",
       "desc": "Промышленный район",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3980,10 +3965,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Парк",
       "shortname": "парк",
       "desc": "Парк",
-      "isactive": true,
       "level": 7
     }
   },
@@ -3995,10 +3980,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Переулок",
       "shortname": "пер.",
       "desc": "Переулок",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4010,10 +3995,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Переезд",
       "shortname": "пер-д",
       "desc": "Переезд",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4025,10 +4010,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Починок",
       "shortname": "п-к",
       "desc": "Починок",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4040,10 +4025,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Площадь",
       "shortname": "пл.",
       "desc": "Площадь",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4055,10 +4040,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-12-14",
+      "isactive": true,
       "name": "Платформа",
       "shortname": "платф.",
       "desc": "Платформа",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4070,10 +4055,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Площадка",
       "shortname": "пл-ка",
       "desc": "Площадка",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4085,10 +4070,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Порт",
       "shortname": "порт",
       "desc": "Порт",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4100,10 +4085,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Проезд",
       "shortname": "пр-д",
       "desc": "Проезд",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4115,10 +4100,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Просек",
       "shortname": "пр-к",
       "desc": "Просек",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4130,10 +4115,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Просека",
       "shortname": "пр-ка",
       "desc": "Просека",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4145,10 +4130,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Проспект",
       "shortname": "пр-кт",
       "desc": "Проспект",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4160,10 +4145,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Проселок",
       "shortname": "пр-лок",
       "desc": "Проселок",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4175,10 +4160,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Промышленная зона",
       "shortname": "промзона",
       "desc": "Промышленная зона",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4190,10 +4175,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Проулок",
       "shortname": "проул.",
       "desc": "Проулок",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4205,10 +4190,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Разъезд",
       "shortname": "рзд.",
       "desc": "Разъезд",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4220,10 +4205,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Район",
       "shortname": "р-н",
       "desc": "Район",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4235,10 +4220,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Село",
       "shortname": "с.",
       "desc": "Село",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4250,10 +4235,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Сад",
       "shortname": "сад",
       "desc": "Сад",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4265,10 +4250,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Спуск",
       "shortname": "с-к",
       "desc": "Спуск",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4280,10 +4265,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Сквер",
       "shortname": "сквер",
       "desc": "Сквер",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4295,25 +4280,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Слобода",
       "shortname": "сл.",
       "desc": "Слобода",
-      "isactive": true,
-      "level": 7
-    }
-  },
-  {
-    "model": "fias.addrobjtype",
-    "pk": 300,
-    "fields": {
-      "ver": 20221125,
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2017-02-14",
-      "name": "Садовое товарищество",
-      "shortname": "снт",
-      "desc": "Садовое товарищество",
-      "isactive": false,
       "level": 7
     }
   },
@@ -4325,10 +4295,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Сквер",
       "shortname": "с-р",
       "desc": "Сквер",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4340,10 +4310,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Станция",
       "shortname": "ст.",
       "desc": "Станция",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4355,10 +4325,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Строение",
       "shortname": "стр.",
       "desc": "Строение",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4370,10 +4340,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-15",
+      "isactive": true,
       "name": "Территория",
       "shortname": "тер",
       "desc": "Территория",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4385,10 +4355,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Территория",
       "shortname": "тер.",
       "desc": "Территория",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4400,10 +4370,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-12-14",
+      "isactive": true,
       "name": "Территория ГСК",
       "shortname": "тер. ГСК",
       "desc": "Территория ГСК",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4415,10 +4385,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
+      "isactive": true,
       "name": "Территория ДНО",
       "shortname": "тер. ДНО",
       "desc": "Территория дачных некоммерческих объединений граждан",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4430,10 +4400,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
+      "isactive": true,
       "name": "Территория ДНП",
       "shortname": "тер. ДНП",
       "desc": "Территория дачных некоммерческих партнерств",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4445,10 +4415,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
+      "isactive": true,
       "name": "Территория ДНТ",
       "shortname": "тер. ДНТ",
       "desc": "Территория дачных некоммерческих товариществ",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4460,10 +4430,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
+      "isactive": true,
       "name": "Территория ДПК",
       "shortname": "тер. ДПК",
       "desc": "Территория дачных потребительских кооперативов",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4475,10 +4445,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
+      "isactive": true,
       "name": "Территория ОНО",
       "shortname": "тер. ОНО",
       "desc": "Территория огороднических некоммерческих объединений граждан",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4490,10 +4460,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
+      "isactive": true,
       "name": "Территория ОНП",
       "shortname": "тер. ОНП",
       "desc": "Территория огороднических некоммерческих партнерств",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4505,10 +4475,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Территория ОНТ",
       "shortname": "тер. ОНТ",
       "desc": "Территория огороднического некоммерческого товарищества",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4520,10 +4490,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
+      "isactive": true,
       "name": "Территория ОПК",
       "shortname": "тер. ОПК",
       "desc": "Территория огороднических потребительских кооперативов",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4535,10 +4505,10 @@
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Территория ПК",
       "shortname": "тер. ПК",
       "desc": "Территория потребительского кооператива",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4550,10 +4520,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
+      "isactive": true,
       "name": "Территория СНО",
       "shortname": "тер. СНО",
       "desc": "Территория садоводческих некоммерческих объединений граждан",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4565,10 +4535,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
+      "isactive": true,
       "name": "Территория СНП",
       "shortname": "тер. СНП",
       "desc": "Территория садоводческих некоммерческих партнерств",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4580,10 +4550,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Территория СНТ",
       "shortname": "тер. СНТ",
       "desc": "Территория садоводческого некоммерческого товарищества",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4595,10 +4565,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2019-02-14",
+      "isactive": true,
       "name": "Территория СПК",
       "shortname": "тер. СПК",
       "desc": "Территория садоводческих потребительских кооперативов",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4610,10 +4580,10 @@
       "updatedate": "2019-02-14",
       "startdate": "2019-02-14",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Территория ТСЖ",
       "shortname": "тер. ТСЖ",
       "desc": "Территория товарищества собственников жилья",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4625,10 +4595,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Территория ТСН",
       "shortname": "тер. ТСН",
       "desc": "Территория товарищества собственников недвижимости",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4640,10 +4610,10 @@
       "updatedate": "2019-01-01",
       "startdate": "2019-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Территория СОСН",
       "shortname": "тер.СОСН",
       "desc": "Территория ведения гражданами садоводства или огородничества для собственных нужд",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4655,10 +4625,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-12-14",
+      "isactive": true,
       "name": "Территория ФХ",
       "shortname": "тер.ф.х.",
       "desc": "Территория ФХ",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4670,10 +4640,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Тракт",
       "shortname": "тракт",
       "desc": "Тракт",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4685,10 +4655,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Тупик",
       "shortname": "туп.",
       "desc": "Тупик",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4700,10 +4670,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Улица",
       "shortname": "ул.",
       "desc": "Улица",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4715,10 +4685,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2018-12-14",
+      "isactive": true,
       "name": "Усадьба",
       "shortname": "ус.",
       "desc": "Усадьба",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4730,10 +4700,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Фермерское хозяйство",
       "shortname": "ф/х",
       "desc": "Фермерское хозяйство",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4745,10 +4715,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Хутор",
       "shortname": "х.",
       "desc": "Хутор",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4760,10 +4730,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Шоссе",
       "shortname": "ш.",
       "desc": "Шоссе",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4775,10 +4745,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Юрты",
       "shortname": "ю.",
       "desc": "Юрты",
-      "isactive": true,
       "level": 7
     }
   },
@@ -4790,10 +4760,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Земельный участок",
       "shortname": "з/у",
       "desc": "Земельный участок",
-      "isactive": true,
       "level": 9
     }
   },
@@ -4805,10 +4775,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-05-11",
+      "isactive": true,
       "name": "Гаражно-строительный кооп.",
       "shortname": "гск",
       "desc": "Гаражно-строительный кооператив",
-      "isactive": true,
       "level": 15
     }
   },
@@ -4820,10 +4790,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-05-11",
+      "isactive": true,
       "name": "Дачное неком-е партнерство",
       "shortname": "днп",
       "desc": "Дачное некоммерческое партнерство",
-      "isactive": true,
       "level": 15
     }
   },
@@ -4835,10 +4805,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Местность",
       "shortname": "местность",
       "desc": "Местность",
-      "isactive": true,
       "level": 15
     }
   },
@@ -4850,10 +4820,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Микрорайон",
       "shortname": "мкр",
       "desc": "Микрорайон",
-      "isactive": true,
       "level": 15
     }
   },
@@ -4865,10 +4835,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Некоммерческое партнерство",
       "shortname": "н/п",
       "desc": "Некоммерческое партнерство",
-      "isactive": true,
       "level": 15
     }
   },
@@ -4880,10 +4850,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Промышленная зона",
       "shortname": "промзона",
       "desc": "Промышленная зона",
-      "isactive": true,
       "level": 15
     }
   },
@@ -4895,10 +4865,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Сад",
       "shortname": "сад",
       "desc": "Сад",
-      "isactive": true,
       "level": 15
     }
   },
@@ -4910,10 +4880,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Садовое товарищество",
       "shortname": "снт",
       "desc": "Садовое товарищество",
-      "isactive": true,
       "level": 15
     }
   },
@@ -4925,10 +4895,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Территория",
       "shortname": "тер",
       "desc": "Территория",
-      "isactive": true,
       "level": 15
     }
   },
@@ -4940,10 +4910,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Фермерское хозяйство",
       "shortname": "ф/х",
       "desc": "Фермерское хозяйство",
-      "isactive": true,
       "level": 15
     }
   },
@@ -4955,10 +4925,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
+      "isactive": true,
       "name": "Абонентский ящик",
       "shortname": "а/я",
       "desc": "Абонентский ящик",
-      "isactive": true,
       "level": 16
     }
   },
@@ -4970,10 +4940,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Аал",
       "shortname": "аал",
       "desc": "Аал",
-      "isactive": true,
       "level": 16
     }
   },
@@ -4985,10 +4955,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Аллея",
       "shortname": "аллея",
       "desc": "Аллея",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5000,10 +4970,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Арбан",
       "shortname": "арбан",
       "desc": "Арбан",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5015,10 +4985,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Аул",
       "shortname": "аул",
       "desc": "Аул",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5030,10 +5000,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Берег",
       "shortname": "берег",
       "desc": "Берег",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5045,10 +5015,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Бульвар",
       "shortname": "б-р",
       "desc": "Бульвар",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5060,10 +5030,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Вал",
       "shortname": "вал",
       "desc": "Вал",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5075,10 +5045,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
+      "isactive": true,
       "name": "Въезд",
       "shortname": "въезд",
       "desc": "Въезд",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5090,10 +5060,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Выселки(ок)",
       "shortname": "высел",
       "desc": "Выселки(ок)",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5105,10 +5075,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Городок",
       "shortname": "г-к",
       "desc": "Городок",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5120,10 +5090,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
+      "isactive": true,
       "name": "Гаражно-строит-ный кооператив",
       "shortname": "гск",
       "desc": "Гаражно-строительный кооператив",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5135,10 +5105,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Деревня",
       "shortname": "д",
       "desc": "Деревня",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5150,10 +5120,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Дорога",
       "shortname": "дор",
       "desc": "Дорога",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5165,10 +5135,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Железнодорожная будка",
       "shortname": "ж/д_будка",
       "desc": "Железнодорожная будка",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5180,10 +5150,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-11-05",
+      "isactive": true,
       "name": "Железнодорожная казарма",
       "shortname": "ж/д_казарм",
       "desc": "Железнодорожная казарма",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5195,10 +5165,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
+      "isactive": true,
       "name": "ж/д останов. (обгонный) пункт",
       "shortname": "ж/д_оп",
       "desc": "ж/д остановочный (обгонный) пункт",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5210,10 +5180,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Железнодорожная платформа",
       "shortname": "ж/д_платф",
       "desc": "Железнодорожная платформа",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5225,10 +5195,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
+      "isactive": true,
       "name": "Железнодорожный пост",
       "shortname": "ж/д_пост",
       "desc": "Железнодорожный пост",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5240,10 +5210,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Железнодорожный разъезд",
       "shortname": "ж/д_рзд",
       "desc": "Железнодорожный разъезд",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5255,10 +5225,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Железнодорожная станция",
       "shortname": "ж/д_ст",
       "desc": "Железнодорожная станция",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5270,10 +5240,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
+      "isactive": true,
       "name": "Животноводческая точка",
       "shortname": "жт",
       "desc": "Животноводческая точка",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5285,10 +5255,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Заезд",
       "shortname": "заезд",
       "desc": "Заезд",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5300,10 +5270,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Зона",
       "shortname": "зона",
       "desc": "Зона",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5315,10 +5285,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
+      "isactive": true,
       "name": "Казарма",
       "shortname": "казарма",
       "desc": "Казарма",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5330,10 +5300,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Квартал",
       "shortname": "кв-л",
       "desc": "Квартал",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5345,10 +5315,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Километр",
       "shortname": "км",
       "desc": "Километр",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5360,10 +5330,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Кольцо",
       "shortname": "кольцо",
       "desc": "Кольцо",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5375,10 +5345,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Коса",
       "shortname": "коса",
       "desc": "Коса",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5390,10 +5360,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Линия",
       "shortname": "линия",
       "desc": "Линия",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5405,10 +5375,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Местечко",
       "shortname": "м",
       "desc": "Местечко",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5420,10 +5390,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Микрорайон",
       "shortname": "мкр",
       "desc": "Микрорайон",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5435,10 +5405,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
+      "isactive": true,
       "name": "Мост",
       "shortname": "мост",
       "desc": "Мост",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5450,10 +5420,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2018-01-27",
+      "isactive": true,
       "name": "Набережная",
       "shortname": "наб",
       "desc": "Набережная",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5465,10 +5435,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
+      "isactive": true,
       "name": "Населенный пункт",
       "shortname": "нп",
       "desc": "Населенный пункт",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5480,10 +5450,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Остров",
       "shortname": "остров",
       "desc": "Остров",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5495,10 +5465,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Поселок",
       "shortname": "п",
       "desc": "Поселок",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5510,10 +5480,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
+      "isactive": true,
       "name": "Почтовое отделение",
       "shortname": "п/о",
       "desc": "Почтовое отделение",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5525,10 +5495,10 @@
       "updatedate": "2020-08-11",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
+      "isactive": true,
       "name": "Планировочный район",
       "shortname": "пл.р-н",
       "desc": "Планировочный район",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5540,10 +5510,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Поселок и(при) станция(и)",
       "shortname": "п/ст",
       "desc": "Поселок и(при) станция(и)",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5555,10 +5525,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Парк",
       "shortname": "парк",
       "desc": "Парк",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5570,10 +5540,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Переулок",
       "shortname": "пер",
       "desc": "Переулок",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5585,10 +5555,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Переезд",
       "shortname": "переезд",
       "desc": "Переезд",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5600,10 +5570,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Площадь",
       "shortname": "пл",
       "desc": "Площадь",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5615,10 +5585,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Платформа",
       "shortname": "платф",
       "desc": "Платформа",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5630,10 +5600,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Площадка",
       "shortname": "пл-ка",
       "desc": "Площадка",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5645,10 +5615,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Починок",
       "shortname": "починок",
       "desc": "Починок",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5660,10 +5630,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Проспект",
       "shortname": "пр-кт",
       "desc": "Проспект",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5675,10 +5645,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Проезд",
       "shortname": "проезд",
       "desc": "Проезд",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5690,10 +5660,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Просек",
       "shortname": "просек",
       "desc": "Просек",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5705,10 +5675,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Просека",
       "shortname": "просека",
       "desc": "Просека",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5720,10 +5690,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Проселок",
       "shortname": "проселок",
       "desc": "Проселок",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5735,10 +5705,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Проулок",
       "shortname": "проулок",
       "desc": "Проулок",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5750,10 +5720,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Разъезд",
       "shortname": "рзд",
       "desc": "Разъезд",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5765,10 +5735,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Ряды",
       "shortname": "ряды",
       "desc": "Ряды",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5780,10 +5750,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Село",
       "shortname": "с",
       "desc": "Село",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5795,10 +5765,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Сад",
       "shortname": "сад",
       "desc": "Сад",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5810,10 +5780,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Сквер",
       "shortname": "сквер",
       "desc": "Сквер",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5825,10 +5795,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Слобода",
       "shortname": "сл",
       "desc": "Слобода",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5840,10 +5810,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
+      "isactive": true,
       "name": "Садовое неком-е товарищество",
       "shortname": "снт",
       "desc": "Садовое некоммерческое товарищество",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5855,10 +5825,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Спуск",
       "shortname": "спуск",
       "desc": "Спуск",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5870,10 +5840,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Станция",
       "shortname": "ст",
       "desc": "Станция",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5885,10 +5855,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
+      "isactive": true,
       "name": "Строение",
       "shortname": "стр",
       "desc": "Строение",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5900,10 +5870,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Территория",
       "shortname": "тер",
       "desc": "Территория",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5915,10 +5885,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Тракт",
       "shortname": "тракт",
       "desc": "Тракт",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5930,10 +5900,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Тупик",
       "shortname": "туп",
       "desc": "Тупик",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5945,10 +5915,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Улица",
       "shortname": "ул",
       "desc": "Улица",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5960,10 +5930,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
+      "isactive": true,
       "name": "Участок",
       "shortname": "уч-к",
       "desc": "Участок",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5975,10 +5945,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2015-12-31",
+      "isactive": true,
       "name": "Ферма",
       "shortname": "ферма",
       "desc": "Ферма",
-      "isactive": true,
       "level": 16
     }
   },
@@ -5990,10 +5960,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Хутор",
       "shortname": "х",
       "desc": "Хутор",
-      "isactive": true,
       "level": 16
     }
   },
@@ -6005,10 +5975,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Шоссе",
       "shortname": "ш",
       "desc": "Шоссе",
-      "isactive": true,
       "level": 16
     }
   },
@@ -6020,10 +5990,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Городской округ",
       "shortname": "г.о.",
       "desc": "Городской округ",
-      "isactive": true,
       "level": 3
     }
   },
@@ -6035,10 +6005,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Муниципальный район",
       "shortname": "м.р-н",
       "desc": "Муниципальный район",
-      "isactive": true,
       "level": 3
     }
   },
@@ -6050,10 +6020,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "внутригородская территория (внутригородское муниципальное образование) города федерального значения",
       "shortname": "вн.тер.г.",
       "desc": "внутригородская территория (внутригородское муниципальное образование) города федерального значения",
-      "isactive": true,
       "level": 3
     }
   },
@@ -6065,10 +6035,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "сельское поселение",
       "shortname": "с.п.",
       "desc": "сельское поселение",
-      "isactive": true,
       "level": 4
     }
   },
@@ -6080,10 +6050,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "городское поселение",
       "shortname": "г.п.",
       "desc": "городское поселение",
-      "isactive": true,
       "level": 4
     }
   },
@@ -6095,10 +6065,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "внутригородской район",
       "shortname": "вн.р-н",
       "desc": "внутригородской район",
-      "isactive": true,
       "level": 4
     }
   },
@@ -6110,10 +6080,10 @@
       "updatedate": "2015-11-05",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "межселенная территория",
       "shortname": "межсел.тер.",
       "desc": "межселенная территория",
-      "isactive": true,
       "level": 4
     }
   },
@@ -6125,10 +6095,10 @@
       "updatedate": "2019-05-01",
       "startdate": "2019-05-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Муниципальный округ",
       "shortname": "м.о.",
       "desc": "Муниципальный округ",
-      "isactive": true,
       "level": 3
     }
   },
@@ -6140,10 +6110,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2015-11-05",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Город",
       "shortname": "г",
       "desc": "Город",
-      "isactive": true,
       "level": 2
     }
   },
@@ -6155,10 +6125,10 @@
       "updatedate": "2020-10-15",
       "startdate": "2015-11-05",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Поселок при станции (поселок станции)",
       "shortname": "п. ст.",
       "desc": "Поселок при станции (поселок станции)",
-      "isactive": true,
       "level": 6
     }
   },
@@ -6170,10 +6140,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2021-04-08",
       "enddate": "2022-09-30",
+      "isactive": true,
       "name": "Село",
       "shortname": "с",
       "desc": "Село",
-      "isactive": true,
       "level": 5
     }
   },
@@ -6185,10 +6155,10 @@
       "updatedate": "2021-12-10",
       "startdate": "2021-12-10",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Федеральная территория",
       "shortname": "ф.т.",
       "desc": "Федеральная территория",
-      "isactive": true,
       "level": 3
     }
   },
@@ -6200,10 +6170,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2017-02-14",
+      "isactive": true,
       "name": "Садовое товарищество",
       "shortname": "с/т",
       "desc": "Садовое товарищество",
-      "isactive": true,
       "level": 7
     }
   },
@@ -6215,10 +6185,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Город",
       "shortname": "г.",
       "desc": "Город",
-      "isactive": true,
       "level": 2
     }
   },
@@ -6230,10 +6200,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Рабочий поселок",
       "shortname": "рп.",
       "desc": "Рабочий поселок",
-      "isactive": true,
       "level": 5
     }
   },
@@ -6245,10 +6215,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Село",
       "shortname": "с.",
       "desc": "Село",
-      "isactive": true,
       "level": 5
     }
   },
@@ -6260,10 +6230,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Выселки",
       "shortname": "в-ки",
       "desc": "Выселки",
-      "isactive": true,
       "level": 6
     }
   },
@@ -6275,10 +6245,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Городской поселок",
       "shortname": "гп.",
       "desc": "Городской поселок",
-      "isactive": true,
       "level": 6
     }
   },
@@ -6290,10 +6260,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Деревня",
       "shortname": "д.",
       "desc": "Деревня",
-      "isactive": true,
       "level": 6
     }
   },
@@ -6305,10 +6275,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Железнодорожная станция",
       "shortname": "ж/д ст",
       "desc": "Железнодорожная станция",
-      "isactive": true,
       "level": 6
     }
   },
@@ -6320,10 +6290,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Железнодорожный разъезд",
       "shortname": "ж/д рзд",
       "desc": "Железнодорожный разъезд",
-      "isactive": true,
       "level": 6
     }
   },
@@ -6335,10 +6305,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Заимка",
       "shortname": "з-ка",
       "desc": "Заимка",
-      "isactive": true,
       "level": 6
     }
   },
@@ -6350,10 +6320,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Курортный поселок",
       "shortname": "кп.",
       "desc": "Курортный поселок",
-      "isactive": true,
       "level": 6
     }
   },
@@ -6365,10 +6335,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Местечко",
       "shortname": "м-ко",
       "desc": "Местечко",
-      "isactive": true,
       "level": 6
     }
   },
@@ -6380,10 +6350,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Поселок",
       "shortname": "п.",
       "desc": "Поселок",
-      "isactive": true,
       "level": 6
     }
   },
@@ -6395,10 +6365,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Поселок разъезда",
       "shortname": "пос.рзд.",
       "desc": "Поселок разъезда",
-      "isactive": true,
       "level": 6
     }
   },
@@ -6410,10 +6380,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Починок",
       "shortname": "п-к",
       "desc": "Починок",
-      "isactive": true,
       "level": 6
     }
   },
@@ -6425,10 +6395,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Рабочий поселок",
       "shortname": "рп.",
       "desc": "Рабочий поселок",
-      "isactive": true,
       "level": 6
     }
   },
@@ -6440,10 +6410,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Разъезд",
       "shortname": "рзд.",
       "desc": "Разъезд",
-      "isactive": true,
       "level": 6
     }
   },
@@ -6455,10 +6425,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Село",
       "shortname": "с.",
       "desc": "Село",
-      "isactive": true,
       "level": 6
     }
   },
@@ -6470,10 +6440,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Слобода",
       "shortname": "сл.",
       "desc": "Слобода",
-      "isactive": true,
       "level": 6
     }
   },
@@ -6485,10 +6455,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Станция",
       "shortname": "ст.",
       "desc": "Станция",
-      "isactive": true,
       "level": 6
     }
   },
@@ -6500,10 +6470,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Улус",
       "shortname": "у.",
       "desc": "Улус",
-      "isactive": true,
       "level": 6
     }
   },
@@ -6515,10 +6485,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Хутор",
       "shortname": "х.",
       "desc": "Хутор",
-      "isactive": true,
       "level": 6
     }
   },
@@ -6530,10 +6500,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Площадь",
       "shortname": "пл.",
       "desc": "Площадь",
-      "isactive": true,
       "level": 8
     }
   },
@@ -6545,10 +6515,10 @@
       "updatedate": "2022-10-14",
       "startdate": "2022-09-30",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Тупик",
       "shortname": "туп.",
       "desc": "Тупик",
-      "isactive": true,
       "level": 8
     }
   },
@@ -6560,10 +6530,11 @@
       "updatedate": "2019-07-16",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
-      "region": "99",
       "isactive": true,
+      "region": "99",
       "isactual": true,
       "objectguid": "3d855628-80ed-4ca5-a9de-378a76876ace",
+      "tree_ver": 20221125,
       "name": "Студенческая",
       "level": 8,
       "typename": "ул"
@@ -6577,10 +6548,11 @@
       "updatedate": "2019-07-16",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
-      "region": "99",
       "isactive": true,
+      "region": "99",
       "isactual": true,
       "objectguid": "3d855628-80ed-4ca5-a9de-378a76876acf",
+      "tree_ver": 20221125,
       "name": "Школьная",
       "level": 8,
       "typename": "ул"
@@ -6594,10 +6566,11 @@
       "updatedate": "2022-08-12",
       "startdate": "2022-08-12",
       "enddate": "2079-06-06",
-      "region": "99",
       "isactive": true,
+      "region": "99",
       "isactual": true,
       "objectguid": "b35f8e9f-35a5-4f5d-a216-f363f41aa585",
+      "tree_ver": 20221125,
       "name": "5-й",
       "level": 7,
       "typename": "мкр"
@@ -6611,10 +6584,11 @@
       "updatedate": "2011-09-13",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
-      "region": "99",
       "isactive": true,
+      "region": "99",
       "isactual": true,
       "objectguid": "63ed1a35-4be6-4564-a1ec-0c51f7383314",
+      "tree_ver": 20221125,
       "name": "Байконур",
       "level": 1,
       "typename": "г"
@@ -6734,44 +6708,16 @@
   },
   {
     "model": "fias.housetype",
-    "pk": 1,
-    "fields": {
-      "ver": 20221125,
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2015-11-05",
-      "name": "Владение",
-      "shortname": "влд.",
-      "desc": "Владение",
-      "isactive": false
-    }
-  },
-  {
-    "model": "fias.housetype",
     "pk": 2,
     "fields": {
       "ver": 20221125,
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Дом",
       "shortname": "д.",
-      "desc": "Дом",
-      "isactive": true
-    }
-  },
-  {
-    "model": "fias.housetype",
-    "pk": 3,
-    "fields": {
-      "ver": 20221125,
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2015-11-05",
-      "name": "Домовладение",
-      "shortname": "двлд.",
-      "desc": "Домовладение",
-      "isactive": false
+      "desc": "Дом"
     }
   },
   {
@@ -6782,10 +6728,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Гараж",
       "shortname": "г-ж",
-      "desc": "Гараж",
-      "isactive": true
+      "desc": "Гараж"
     }
   },
   {
@@ -6796,10 +6742,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Здание",
       "shortname": "зд.",
-      "desc": "Здание",
-      "isactive": true
+      "desc": "Здание"
     }
   },
   {
@@ -6810,10 +6756,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Шахта",
       "shortname": "шахта",
-      "desc": "Шахта",
-      "isactive": true
+      "desc": "Шахта"
     }
   },
   {
@@ -6824,10 +6770,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Строение",
       "shortname": "стр.",
-      "desc": "Строение",
-      "isactive": true
+      "desc": "Строение"
     }
   },
   {
@@ -6838,24 +6784,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Сооружение",
       "shortname": "соор.",
-      "desc": "Сооружение",
-      "isactive": true
-    }
-  },
-  {
-    "model": "fias.housetype",
-    "pk": 9,
-    "fields": {
-      "ver": 20221125,
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2015-12-25",
-      "name": "Литера",
-      "shortname": "литера",
-      "desc": "Литера",
-      "isactive": false
+      "desc": "Сооружение"
     }
   },
   {
@@ -6866,66 +6798,10 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Корпус",
       "shortname": "к.",
-      "desc": "Корпус",
-      "isactive": true
-    }
-  },
-  {
-    "model": "fias.housetype",
-    "pk": 11,
-    "fields": {
-      "ver": 20221125,
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2015-11-05",
-      "name": "Подвал",
-      "shortname": "подв.",
-      "desc": "Подвал",
-      "isactive": false
-    }
-  },
-  {
-    "model": "fias.housetype",
-    "pk": 12,
-    "fields": {
-      "ver": 20221125,
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2015-11-05",
-      "name": "Котельная",
-      "shortname": "кот.",
-      "desc": "Котельная",
-      "isactive": false
-    }
-  },
-  {
-    "model": "fias.housetype",
-    "pk": 13,
-    "fields": {
-      "ver": 20221125,
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2015-11-05",
-      "name": "Погреб",
-      "shortname": "п-б",
-      "desc": "Погреб",
-      "isactive": false
-    }
-  },
-  {
-    "model": "fias.housetype",
-    "pk": 14,
-    "fields": {
-      "ver": 20221125,
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2015-11-05",
-      "name": "Объект незавершенного строительства",
-      "shortname": "ОНС",
-      "desc": "Объект незавершенного строительства",
-      "isactive": false
+      "desc": "Корпус"
     }
   },
   {
@@ -6936,10 +6812,10 @@
       "updatedate": "2015-12-25",
       "startdate": "2015-12-25",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Корпус",
       "shortname": "к.",
-      "desc": "Корпус",
-      "isactive": true
+      "desc": "Корпус"
     }
   },
   {
@@ -6950,10 +6826,10 @@
       "updatedate": "2015-12-25",
       "startdate": "2015-12-25",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Строение",
       "shortname": "стр.",
-      "desc": "Строение",
-      "isactive": true
+      "desc": "Строение"
     }
   },
   {
@@ -6964,24 +6840,10 @@
       "updatedate": "2015-12-25",
       "startdate": "2015-12-25",
       "enddate": "2079-06-06",
+      "isactive": true,
       "name": "Сооружение",
       "shortname": "соор.",
-      "desc": "Сооружение",
-      "isactive": true
-    }
-  },
-  {
-    "model": "fias.addhousetype",
-    "pk": 4,
-    "fields": {
-      "ver": 20221125,
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2015-12-25",
-      "name": "Литера",
-      "shortname": "литера",
-      "desc": "Литера",
-      "isactive": false
+      "desc": "Сооружение"
     }
   },
   {
@@ -6992,10 +6854,11 @@
       "updatedate": "2019-07-16",
       "startdate": "2012-07-23",
       "enddate": "2079-06-06",
-      "region": "99",
       "isactive": true,
+      "region": "99",
       "isactual": true,
       "objectguid": "f818e827-a3e1-486b-8fa1-47adda987e9c",
+      "tree_ver": 20221125,
       "housenum": "30",
       "addnum1": "1",
       "addnum2": null,
@@ -7054,8 +6917,8 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
-      "region": "99",
       "isactive": true,
+      "region": "99",
       "objectid": 1460768,
       "parentobjid": 0
     }
@@ -7068,8 +6931,8 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
-      "region": "99",
       "isactive": true,
+      "region": "99",
       "objectid": 1456531,
       "parentobjid": 1460768
     }
@@ -7082,8 +6945,8 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
-      "region": "99",
       "isactive": true,
+      "region": "99",
       "objectid": 1456532,
       "parentobjid": 1460768
     }
@@ -7096,8 +6959,8 @@
       "updatedate": "2012-07-23",
       "startdate": "2012-07-23",
       "enddate": "2079-06-06",
-      "region": "99",
       "isactive": true,
+      "region": "99",
       "objectid": 19273112,
       "parentobjid": 1456532
     }
@@ -7110,8 +6973,8 @@
       "updatedate": "2022-08-12",
       "startdate": "2022-08-12",
       "enddate": "2079-06-06",
-      "region": "99",
       "isactive": true,
+      "region": "99",
       "objectid": 1456865,
       "parentobjid": 1460768
     }
@@ -7124,8 +6987,8 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
-      "region": "99",
       "isactive": true,
+      "region": "99",
       "objectid": 1460768,
       "parentobjid": 0
     }
@@ -7138,8 +7001,8 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
-      "region": "99",
       "isactive": true,
+      "region": "99",
       "objectid": 1456531,
       "parentobjid": 1460768
     }
@@ -7152,8 +7015,8 @@
       "updatedate": "1900-01-01",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
-      "region": "99",
       "isactive": true,
+      "region": "99",
       "objectid": 1456532,
       "parentobjid": 1460768
     }
@@ -7166,24 +7029,10 @@
       "updatedate": "2012-07-23",
       "startdate": "2012-07-23",
       "enddate": "2079-06-06",
-      "region": "99",
       "isactive": true,
+      "region": "99",
       "objectid": 19273112,
       "parentobjid": 1456532
-    }
-  },
-  {
-    "model": "fias.munhierarchy",
-    "pk": 107886334,
-    "fields": {
-      "ver": 20221125,
-      "updatedate": "1900-01-01",
-      "startdate": "1900-01-01",
-      "enddate": "2079-06-06",
-      "region": "99",
-      "isactive": true,
-      "objectid": 1456865,
-      "parentobjid": 1460768
     }
   },
   {
@@ -7218,7 +7067,7 @@
   },
   {
     "model": "fias.status",
-    "pk": 1,
+    "pk": 121,
     "fields": {
       "region": null,
       "table": "house_type",
@@ -7227,7 +7076,7 @@
   },
   {
     "model": "fias.status",
-    "pk": 2,
+    "pk": 122,
     "fields": {
       "region": null,
       "table": "add_house_type",
@@ -7236,7 +7085,7 @@
   },
   {
     "model": "fias.status",
-    "pk": 3,
+    "pk": 123,
     "fields": {
       "region": null,
       "table": "addr_obj_type",
@@ -7245,7 +7094,7 @@
   },
   {
     "model": "fias.status",
-    "pk": 4,
+    "pk": 124,
     "fields": {
       "region": null,
       "table": "param_type",
@@ -7254,7 +7103,7 @@
   },
   {
     "model": "fias.status",
-    "pk": 5,
+    "pk": 125,
     "fields": {
       "region": "99",
       "table": "house",
@@ -7263,7 +7112,7 @@
   },
   {
     "model": "fias.status",
-    "pk": 6,
+    "pk": 126,
     "fields": {
       "region": "99",
       "table": "house_param",
@@ -7272,7 +7121,7 @@
   },
   {
     "model": "fias.status",
-    "pk": 7,
+    "pk": 127,
     "fields": {
       "region": "99",
       "table": "addr_obj",
@@ -7281,7 +7130,7 @@
   },
   {
     "model": "fias.status",
-    "pk": 8,
+    "pk": 128,
     "fields": {
       "region": "99",
       "table": "addr_obj_param",
@@ -7290,7 +7139,7 @@
   },
   {
     "model": "fias.status",
-    "pk": 9,
+    "pk": 129,
     "fields": {
       "region": "99",
       "table": "adm_hierarchy",
@@ -7299,7 +7148,7 @@
   },
   {
     "model": "fias.status",
-    "pk": 10,
+    "pk": 130,
     "fields": {
       "region": "99",
       "table": "mun_hierarchy",

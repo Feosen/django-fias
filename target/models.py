@@ -5,7 +5,6 @@ __all__ = ("AddrObj", "House", "House78", "HouseType", "HouseAddType", "Status")
 
 class AbstractModel(models.Model):
     class Meta:
-        managed = True
         abstract = True
 
 

@@ -3,7 +3,7 @@ from __future__ import absolute_import, annotations, unicode_literals
 
 from typing import Tuple, TypeVar
 
-from django.db import models
+from django.db import connections, models
 
 from fias.models.fields import RefFieldMixin
 
@@ -26,6 +26,22 @@ class Manager(models.Manager[_M]):
                 res_c += c
                 res_d |= d
         return res_c, res_d
+
+    def update_tree_ver(self, min_ver: int) -> None:
+        src_table = self.model._meta.db_table
+        for field in self.model._meta.get_fields():
+            if isinstance(field, RefFieldMixin):
+                for model, pk_field_name in field.to:
+                    dst_table = model._meta.db_table
+                    raw_sql = f"""UPDATE {dst_table}
+                               SET tree_ver = {src_table}.ver
+                               FROM {src_table}
+                               WHERE {dst_table}.{pk_field_name} = {src_table}.{pk_field_name}
+                               AND {src_table}.ver >= {min_ver}
+                               AND {src_table}.ver > tree_ver"""
+                    connection = connections[self.db]
+                    with connection.cursor() as cursor:
+                        cursor.execute(raw_sql)
 
 
 class AbstractModel(models.Model):
@@ -53,6 +69,7 @@ class AbstractObj(AbstractIsActiveModel):
     isactual = models.BooleanField(verbose_name="статус актуальности")
     objectid = models.BigIntegerField(verbose_name="глобальный уникальный идентификатор объекта", primary_key=True)
     objectguid = models.UUIDField(verbose_name="глобальный уникальный идентификатор адресного объекта")
+    tree_ver = models.IntegerField(verbose_name="версия набора")
 
     class Meta(AbstractIsActiveModel.Meta):
         abstract = True

@@ -1,19 +1,14 @@
 # coding: utf-8
 from __future__ import absolute_import, unicode_literals
 
+import copy
 import logging
 from typing import List
 
 from fias import models as s_models
 from gar_loader.indexes import remove_indexes_from_model, restore_indexes_for_model
 from target import models as t_models
-from target.importer.loader import (
-    Cfg,
-    HierarchyCfg,
-    ParamCfg,
-    TableLoader,
-    TableUpdater,
-)
+from target.importer.loader import Cfg, TableLoader, TableUpdater
 from target.importer.loader import truncate as table_truncate
 from target.importer.signals import (
     post_drop_indexes,
@@ -25,6 +20,7 @@ from target.importer.signals import (
     pre_restore_indexes,
     pre_update,
 )
+from target.importer.sql import HierarchyCfg, ParamCfg
 
 logger = logging.getLogger(__name__)
 
@@ -122,6 +118,11 @@ def update_data() -> None:
     t_status = t_models.Status.objects.get()
 
     for cfg in _table_cfg:
+        if issubclass(cfg.src, s_models.AbstractObj):
+            cfg = copy.deepcopy(cfg)
+            if cfg.filters is None:
+                cfg.filters = []
+            cfg.filters.append(("tree_ver", ">=", ver.ver_id))
         loader = TableUpdater()
         loader.load(cfg, t_status.ver)
 

@@ -2,13 +2,14 @@
 from __future__ import absolute_import, unicode_literals
 
 from .addr_obj import AddrObj, AddrObjParam, AddrObjType
-from .common import AbstractIsActiveModel, AbstractModel, ParamType
+from .common import AbstractIsActiveModel, AbstractModel, AbstractObj, ParamType
 from .hierarchy import AdmHierarchy, MunHierarchy
 from .house import AddHouseType, House, HouseParam, HouseType
 from .version import Status, Version
 
 __all__ = [
     "AbstractModel",
+    "AbstractObj",
     "AbstractIsActiveModel",
     "ParamType",
     "AddrObj",

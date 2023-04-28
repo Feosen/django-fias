@@ -191,9 +191,9 @@ LOGGING = {
 FIAS_UNRAR_TOOL = Path(r"G:\Program Files\WinRAR\UnRAR.exe")
 
 _FRT = Union[Tuple[str, ...], str]
-FIAS_REGIONS: _FRT = "__all__"
-# FIAS_REGIONS: _FRT = ('99',)
-# FIAS_REGIONS: _FRT = ('99', '87')
+# FIAS_REGIONS: _FRT = "__all__"
+FIAS_REGIONS: _FRT = ("99",)
+# FIAS_REGIONS: _FRT = ("99", "87")
 # FIAS_REGIONS: _FRT = ('50',)
 
 _FHT = Union[Tuple[int, ...], str]

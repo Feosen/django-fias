@@ -64,8 +64,10 @@ def get_indexed_fields(model: Type[models.Model], pk: bool) -> Iterable[Tuple[_F
     for field in model._meta.fields:
         # Не удаляем индекс у первичных ключей и полей,
         # на которые есть ссылки из других моделей
-        if not pk and field.primary_key and any(
-            [rel for rel in get_all_related_objects(model._meta) if rel.field_name == field.name]
+        if (
+            not pk
+            and field.primary_key
+            and any([rel for rel in get_all_related_objects(model._meta) if rel.field_name == field.name])
         ):
             continue
 

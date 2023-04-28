@@ -152,11 +152,11 @@ class Table(object):
         cursor = connection.cursor()
 
         if connection.vendor == "postgresql":
-            cursor.execute("TRUNCATE TABLE {0} RESTART IDENTITY CASCADE".format(db_table))
+            cursor.execute(f"TRUNCATE TABLE {db_table} RESTART IDENTITY CASCADE")
         elif connection.vendor == "mysql":
-            cursor.execute("TRUNCATE TABLE `{0}`".format(db_table))
+            cursor.execute(f"TRUNCATE TABLE `{db_table}`")
         else:
-            cursor.execute("DELETE FROM {0}".format(db_table))
+            cursor.execute(f"DELETE FROM {db_table}")
 
     def truncate(self) -> None:
         self._truncate(self.model)

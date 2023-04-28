@@ -12,7 +12,6 @@ from .table import AbstractTableList, BadTableError, RowConvertor, Table, TableI
 
 _bom_header = b"\xef\xbb\xbf"
 
-
 field_map: Dict[str, Dict[str, str]] = {
     # 'house': {
     #    'id': 'recordid',
@@ -26,8 +25,8 @@ class XMLIterator(TableIterator):
 
         self.related_fields = dict(
             {
-                (f.name, f.remote_field.model)
-                for f in self.model._meta.get_fields()  # type: ignore
+                (f.name, f.remote_field.model)  # type: ignore
+                for f in self.model._meta.get_fields()
                 if f.one_to_one or f.many_to_one
             }
         )
@@ -141,7 +140,9 @@ class XMLTable(Table):
             pass
 
         try:
-            row_convertor = self.row_convertor_class(self.model, self.name, {"ver": self.ver, "region": self.region})
+            row_convertor = self.row_convertor_class(
+                self.model, self.name, {"ver": self.ver, "tree_ver": self.ver, "region": self.region}
+            )
             return self.iterator_class(xml, self.model, row_convertor)
         except etree.XMLSyntaxError as e:
             raise BadTableError("Error occured during opening table `{0}`: {1}".format(self.name, str(e)))

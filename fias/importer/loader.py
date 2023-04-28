@@ -11,7 +11,7 @@ from django.conf import settings
 from django.db import IntegrityError
 from progress import Infinite
 
-from fias.config import REMOVE_NOT_ACTUAL, TableName
+from fias.config import TableName
 from fias.importer.signals import post_import_table, pre_import_table
 from fias.importer.table.table import AbstractTableList, Table
 from fias.importer.validators import validate
@@ -82,7 +82,7 @@ class LoadingBar(Infinite):  # type: ignore
             elif stack_len < self.depth:
                 self.stack.append(regress_len_s)
             else:
-                self.stack = self.stack[0: self.depth]
+                self.stack = self.stack[0 : self.depth]
                 self.stack[self.depth - 1] = regress_len_s
 
             self.stack_str = "/".join(self.stack)
@@ -110,6 +110,12 @@ class TableLoader(object):
         except ValueError:
             return True
 
+    def filter(self, item: AbstractModel) -> bool:
+        if isinstance(item, AbstractIsActiveModel):
+            return item.isactive
+        else:
+            return True
+
     def regressive_create(self, table: Table, objects: List[AbstractModel], bar: LoadingBar, depth: int = 1) -> None:
         count = len(objects)
         batch_len = count // 3 or 1
@@ -118,7 +124,7 @@ class TableLoader(object):
             batch_count += 1
 
         for i in range(0, batch_count):
-            batch = objects[i * batch_len: (i + 1) * batch_len]
+            batch = objects[i * batch_len : (i + 1) * batch_len]
             bar.update(regress_depth=depth, regress_len=batch_len, regress_iteration=i + 1)
             try:
                 table.model.objects.bulk_create(batch)
@@ -156,7 +162,7 @@ class TableLoader(object):
 
         objects = set()
         for item in table.rows(tablelist=tablelist):
-            if item is None or not self.validate(table, item):
+            if item is None or not self.validate(table, item) or not self.filter(item):
                 self.skip_counter += 1
 
                 if self.skip_counter and self.skip_counter % self.limit == 0:
@@ -173,9 +179,6 @@ class TableLoader(object):
 
         if objects:
             self.create(table, list(objects), bar=bar)
-
-        if REMOVE_NOT_ACTUAL and issubclass(table.model, AbstractIsActiveModel):
-            table.model.objects.filter(isactive=False).delete()
 
         bar.update(loaded=self.counter, skipped=self.skip_counter)
         bar.finish()
@@ -216,9 +219,6 @@ class TableUpdater(TableLoader):
 
         if objects:
             self.create(table, list(objects), bar=bar)
-
-        if REMOVE_NOT_ACTUAL and issubclass(model, AbstractIsActiveModel):
-            model.objects.filter(isactive=False).delete()
 
         bar.update(loaded=self.counter, updated=self.upd_counter, skipped=self.skip_counter)
         bar.finish()

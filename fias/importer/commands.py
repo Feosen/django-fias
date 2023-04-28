@@ -29,7 +29,7 @@ from fias.importer.source import (
     TableListLoadingError,
 )
 from fias.importer.table import BadTableError
-from fias.models import AbstractModel, Status, Version
+from fias.models import AbstractIsActiveModel, AbstractModel, Status, Version
 from gar_loader.indexes import remove_indexes_from_model, restore_indexes_for_model
 
 logger = logging.getLogger(__name__)
@@ -77,6 +77,17 @@ def get_table_names(tables: Union[Tuple[str, ...], None]) -> Tuple[str, ...]:
 def remove_orphans(models: List[Type[AbstractModel]]) -> None:
     for model in models:
         model.objects.delete_orphans()
+
+
+def remove_not_active(models: List[Type[AbstractModel]]) -> None:
+    for model in models:
+        if issubclass(model, AbstractIsActiveModel):
+            model.objects.filter(isactive=False).delete()
+
+
+def update_tree_ver(models: List[Type[AbstractModel]], min_ver: int) -> None:
+    for model in models:
+        model.objects.update_tree_ver(min_ver)
 
 
 def load_complete_data(
@@ -144,6 +155,8 @@ def load_complete_data(
             restore_indexes_for_model(model=first_table.model, pk=process_pk)
             post_restore_indexes.send(sender=object.__class__, table=first_table)
 
+    update_tree_ver(processed_models, 0)
+    remove_not_active(processed_models)
     remove_orphans(processed_models)
 
     post_import.send(sender=object.__class__, version=tablelist.version)
@@ -179,8 +192,10 @@ def update_data(
                 continue
             if st.ver.ver >= tablelist.version.ver:
                 logger.info(
-                    (f"Update of the table `{table.name}` is not needed"
-                     f" [{st.ver.ver} <= {tablelist.version.ver}]. Skipping…")
+                    (
+                        f"Update of the table `{table.name}` is not needed "
+                        f"[{st.ver.ver} >= {tablelist.version.ver}]. Skipping…"
+                    )
                 )
                 continue
             loader = TableUpdater(limit=limit)
@@ -194,6 +209,8 @@ def update_data(
             st.ver = tablelist.version
             st.save()
 
+    update_tree_ver(processed_models, tablelist.version.ver)
+    remove_not_active(processed_models)
     remove_orphans(processed_models)
 
 

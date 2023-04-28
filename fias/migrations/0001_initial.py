@@ -76,6 +76,7 @@ class Migration(migrations.Migration):
                     "objectguid",
                     models.UUIDField(verbose_name="глобальный уникальный идентификатор адресного объекта"),
                 ),
+                ("tree_ver", models.IntegerField(verbose_name="версия набора")),
                 ("name", models.TextField(verbose_name="наименование")),
                 (
                     "level",
@@ -234,6 +235,7 @@ class Migration(migrations.Migration):
                     "objectguid",
                     models.UUIDField(verbose_name="глобальный уникальный идентификатор адресного объекта"),
                 ),
+                ("tree_ver", models.IntegerField(verbose_name="версия набора")),
                 (
                     "housenum",
                     models.CharField(blank=True, max_length=20, null=True, verbose_name="номер дома"),

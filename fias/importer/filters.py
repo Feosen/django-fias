@@ -10,26 +10,20 @@ from fias.models.common import AbstractObj
 from fias.models.hierarchy import AbstractHierarchy
 
 
-def filter_hierarchy_is_isactual(item: AbstractObj) -> Union[AbstractObj, None]:
+def filter_is_actual(item: AbstractObj) -> Union[AbstractObj, None]:
     if item.isactual:
         return item
     return None
 
 
-def filter_hierarchy_is_active(item: AbstractHierarchy) -> Union[AbstractHierarchy, None]:
+def filter_is_active(item: AbstractHierarchy) -> Union[AbstractHierarchy, None]:
     if item.isactive:
         return item
     return None
 
 
-def filter_obj_is_actual_and_active(item: AbstractObj) -> Union[AbstractObj, None]:
-    if item.isactive and item.isactual:
-        return item
-    return None
-
-
 def filter_house_type(item: House) -> Union[House, None]:
-    if item.housetype in config.HOUSE_TYPES:
+    if config.HOUSE_TYPES == config.ALL or item.housetype in config.HOUSE_TYPES:
         return item
     return None
 

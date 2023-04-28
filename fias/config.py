@@ -15,7 +15,7 @@ from django.db.utils import DEFAULT_DB_ALIAS
 from fias.enum import CEnumMeta
 from fias.models import AbstractModel
 
-__all__ = ["DEFAULT_DB_ALIAS", "DATABASE_ALIAS", "PARAM_MAP", "PROXY", "REMOVE_NOT_ACTUAL", "TableName"]
+__all__ = ["DEFAULT_DB_ALIAS", "DATABASE_ALIAS", "PARAM_MAP", "PROXY", "TableName"]
 
 
 ALL: Final = "__all__"
@@ -123,8 +123,6 @@ elif DATABASE_ALIAS != DEFAULT_DB_ALIAS and "fias.routers.FIASRouter" not in set
     )
 
 
-REMOVE_NOT_ACTUAL = getattr(settings, "FIAS_REMOVE_NOT_ACTUAL", True)
-
 """
 см. fias.importer.filters
 указывается список путей к функциям-фильтрам
@@ -148,23 +146,17 @@ row_filters: Dict[TableName, List[str]] = getattr(settings, "FIAS_TABLE_ROW_FILT
 TABLE_ROW_FILTERS: Dict[TableName, List[Callable[[AbstractModel], Union[AbstractModel, None]]]] = {}
 _DEFAULT_TABLE_ROW_FILTERS: Dict[TableName, List[str]] = {
     TableName.HOUSE: [
-        "fias.importer.filters.filter_hierarchy_is_isactual",
+        "fias.importer.filters.filter_is_actual",
     ],
     TableName.HOUSE_PARAM: [
         "fias.importer.filters.filter_house_param",
     ],
     TableName.ADDR_OBJ: [
-        "fias.importer.filters.filter_hierarchy_is_isactual",
+        "fias.importer.filters.filter_is_actual",
         "fias.importer.filters.replace_quotes_in_names",
     ],
     TableName.ADDR_OBJ_PARAM: [
         "fias.importer.filters.filter_addr_obj_param",
-    ],
-    TableName.ADM_HIERARCHY: [
-        "fias.importer.filters.filter_hierarchy_is_active",
-    ],
-    TableName.MUN_HIERARCHY: [
-        "fias.importer.filters.filter_hierarchy_is_active",
     ],
 }
 

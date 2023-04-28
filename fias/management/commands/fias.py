@@ -52,7 +52,7 @@ class Command(BaseCommandCompatible):
             "dest": "doit",
             "default": False,
             "help": "If data exist in any table, you should confirm their removal and replacement"
-                    ", as this may result in the removal of related data from other tables!",
+            ", as this may result in the removal of related data from other tables!",
         },
         "--update": {
             "action": "store_true",
@@ -111,19 +111,19 @@ class Command(BaseCommandCompatible):
     }
 
     def handle(
-            self,
-            src: str,
-            truncate: bool,
-            doit: bool,
-            update: bool,
-            skip: bool,
-            fmt: str,
-            limit: int,
-            tables: str,
-            update_version_info: str,
-            keep_indexes: str,
-            tempdir: str,
-            **options: Any,
+        self,
+        src: str,
+        truncate: bool,
+        doit: bool,
+        update: bool,
+        skip: bool,
+        fmt: str,
+        limit: int,
+        tables: str,
+        update_version_info: str,
+        keep_indexes: str,
+        tempdir: str,
+        **options: Any,
     ) -> None:
         remote = False
         src_path: Union[str, None]
