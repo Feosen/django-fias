@@ -22,6 +22,7 @@ logger = logging.getLogger(__name__)
 
 # Задаем UNRAR_TOOL глобально
 rarfile.UNRAR_TOOL = getattr(settings, "FIAS_UNRAR_TOOL", "unrar")
+print("<<<<<", getattr(settings, "FIAS_UNRAR_TOOL", "unrar"), rarfile.UNRAR_TOOL)
 
 
 class BadArchiveError(TableListLoadingError):
