@@ -39,4 +39,6 @@ jobs:
         python -m pip install --upgrade pip
         python -m pip install --upgrade tox tox-gh-actions
     - name: "Run tox targets for ${{ matrix.python-version }}"
+      env:
+        GITHUB_ACTIONS: true
       run: "python -m tox"
