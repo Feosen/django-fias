@@ -6570,7 +6570,7 @@
       "region": "99",
       "isactual": true,
       "objectguid": "63ed1a35-4be6-4564-a1ec-0c51f7383314",
-      "tree_ver": 20221125,
+      "tree_ver": 20221129,
       "name": "Байконур",
       "level": 1,
       "typename": "г"
@@ -6654,13 +6654,13 @@
     "model": "fias.addrobjparam",
     "pk": 22584648,
     "fields": {
-      "ver": 20221125,
+      "ver": 20221129,
       "updatedate": "2011-09-13",
       "startdate": "1900-01-01",
       "enddate": "2079-06-06",
       "region": "99",
       "typeid": 6,
-      "value": "55000000000",
+      "value": "55000000001",
       "objectid": 1460768
     }
   },

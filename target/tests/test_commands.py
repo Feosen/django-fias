@@ -85,6 +85,7 @@ class CommandUpdateTestCase(TestCase):
         ao = AddrObj.objects.get(objectid=1456865)
         self.assertEqual(1460768, ao.owner_adm)
         self.assertEqual(0, ao.owner_mun)
+        self.assertEqual("55000000000", AddrObj.objects.get(objectid=1460768).okato)
 
         args: List[Any] = []
         opts: Dict[str, Any] = {"update": True}
@@ -152,5 +153,7 @@ class CommandUpdateTestCase(TestCase):
         self.assertEqual("ул", ao2.typename)
         self.assertEqual("55000000000", ao2.okato)
         self.assertEqual("55000000", ao2.oktmo)
+
+        self.assertEqual("55000000001", AddrObj.objects.get(objectid=1460768).okato)
 
         self.assertEqual(20221129, Status.objects.get().ver)

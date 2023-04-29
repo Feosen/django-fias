@@ -189,6 +189,7 @@ class CommandUpdateTestCase(TestCase):
     def test_fias_update(self) -> None:
         self.assertTrue(AdmHierarchy.objects.filter(objectid=1456865).exists())
         self.assertFalse(MunHierarchy.objects.filter(objectid=1456865).exists())
+        self.assertEqual("55000000000", AddrObjParam.objects.get(objectid=1460768, typeid=6).value)
 
         BASE_DIR = Path(__file__).resolve().parent
         SRC = BASE_DIR / Path("data/fake/deltas")
@@ -297,6 +298,12 @@ class CommandUpdateTestCase(TestCase):
         self.assertEqual(20221125, ao2.ver)
         self.assertEqual(20221129, ao2.tree_ver)
 
+        ao3 = AddrObj.objects.get(objectid=1460768)
+        self.assertEqual(20221125, ao3.ver)
+        self.assertEqual(20221129, ao3.tree_ver)
+
+        self.assertEqual(20221129, AddrObj.objects.get(objectid=1460768).tree_ver)
+
         # TODO: как исключать из загрузки параметры удалённых объектов?
         self.assertEqual(8, AddrObjParam.objects.count())
         aop = AddrObjParam.objects.get(id=1362268938)
@@ -308,6 +315,7 @@ class CommandUpdateTestCase(TestCase):
         self.assertEqual(date(2022, 11, 28), aop.startdate)
         self.assertEqual(date(2079, 6, 6), aop.enddate)
         self.assertEqual(20221129, aop.ver)
+        self.assertEqual("55000000001", AddrObjParam.objects.get(objectid=1460768, typeid=6).value)
 
         self.assertEqual(5, AdmHierarchy.objects.count())
         self.assertFalse(AdmHierarchy.objects.filter(objectid=1456865).exists())
