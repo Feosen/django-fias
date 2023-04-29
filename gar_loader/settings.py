@@ -16,7 +16,7 @@ from typing import Tuple, Union
 
 TEST = len(sys.argv) > 1 and sys.argv[1] == "test"
 AUTOTEST = os.environ.get('GITHUB_ACTIONS', False)
-print("<<<<<<<<<<<<<<< AUTOTEST", AUTOTEST)
+print("<<<<<<<<<<<<<<< os.environ", os.environ)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
