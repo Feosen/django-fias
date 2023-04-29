@@ -9,11 +9,13 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+import os
 import sys
 from pathlib import Path
 from typing import Tuple, Union
 
 TEST = len(sys.argv) > 1 and sys.argv[1] == "test"
+AUTOTEST = os.environ.get('GITHUB_WORKFLOW') is not None
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -188,7 +190,8 @@ LOGGING = {
     },
 }
 
-FIAS_UNRAR_TOOL = Path(r"G:\Program Files\WinRAR\UnRAR.exe")
+if not AUTOTEST:
+    FIAS_UNRAR_TOOL = Path(r"G:\Program Files\WinRAR\UnRAR.exe")
 
 _FRT = Union[Tuple[str, ...], str]
 # FIAS_REGIONS: _FRT = "__all__"
