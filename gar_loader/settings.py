@@ -196,8 +196,8 @@ if not GITHUB_ACTIONS:
 
 _FRT = Union[Tuple[str, ...], str]
 # Region for processing: tuple of two-digits string or "__all__".
-# FIAS_REGIONS: _FRT = "__all__"
-FIAS_REGIONS: _FRT = ("99",)
+FIAS_REGIONS: _FRT = "__all__"
+# FIAS_REGIONS: _FRT = ("87", "99")
 
 _FHT = Union[Tuple[int, ...], str]
 # House types for processing or "__all__".
