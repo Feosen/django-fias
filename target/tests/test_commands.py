@@ -14,7 +14,11 @@ class CommandCreateTestCase(TestCase):
     def test_target_create(self) -> None:
         self.assertEqual(0, Status.objects.count())
 
-        call_command("target")
+        args: List[Any] = []
+        opts: Dict[str, Any] = {
+            "keep_indexes": "no",
+        }
+        call_command("target", *args, **opts)
 
         self.assertEqual(7, HouseType.objects.count())
         ht = HouseType.objects.get(id=7)

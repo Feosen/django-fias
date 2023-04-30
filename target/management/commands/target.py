@@ -15,7 +15,7 @@ from target.models import AddrObj, House, House78, HouseAddType, HouseType
 
 class Command(BaseCommandCompatible):
     help = "Fill or update target database"
-    usage_str = "Usage: ./manage.py target" " [--truncate]" " [--i-know-what-i-do]]" " [--update [--skip]]"
+    usage_str = "Usage: ./manage.py target" " [--truncate]" " [--i-know-what-i-do]]" " [--update]"
 
     arguments_dictionary = {
         "--truncate": {

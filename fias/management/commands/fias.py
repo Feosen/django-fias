@@ -27,9 +27,9 @@ class Command(BaseCommandCompatible):
         "Usage: ./manage.py fias [--src <path|filename|url|AUTO> [--truncate]"
         " [--i-know-what-i-do]]"
         " [--update [--skip]]"
-        " [--format <xml|dbf>] [--limit=<N>] [--tables=<{0}>]"
+        " [--format <xml>] [--limit=<N>] [--tables=<{0}>]"
         " [--update-version-info <yes|no>]"
-        " [--keep-indexes]"
+        " [--keep-indexes <yes|pk|no>]"
         " [--tempdir <path>]"
         "".format(",".join(TABLES))
     )
@@ -70,9 +70,9 @@ class Command(BaseCommandCompatible):
             "action": "store",
             "dest": "fmt",
             "type": str,
-            "choices": ["xml", "dbf"],
+            "choices": ["xml"],
             "default": "xml",
-            "help": "Preferred source data format. Possible choices: xml|dbf",
+            "help": "Preferred source data format. Possible choices: xml",
         },
         "--limit": {
             "action": "store",

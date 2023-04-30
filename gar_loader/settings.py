@@ -190,16 +190,19 @@ LOGGING = {
     },
 }
 
+# You can remove it at all, if there is unrar (or unrar.exe in MS Windows) in globals.
 if not GITHUB_ACTIONS:
     FIAS_UNRAR_TOOL = Path(r"G:\Program Files\WinRAR\UnRAR.exe")
 
 _FRT = Union[Tuple[str, ...], str]
+# Region for processing: tuple of two-digits string or "__all__".
 # FIAS_REGIONS: _FRT = "__all__"
 FIAS_REGIONS: _FRT = ("99",)
-# FIAS_REGIONS: _FRT = ("99", "87")
-# FIAS_REGIONS: _FRT = ('50',)
 
 _FHT = Union[Tuple[int, ...], str]
+# House types for processing or "__all__".
+# FIAS_HOUSE_TYPES: _FRT = "__all__"
 FIAS_HOUSE_TYPES: _FHT = (2, 5, 7, 10)
 
+# If true, django will create target tables in migrations.
 TARGET_MANAGE: bool = True
