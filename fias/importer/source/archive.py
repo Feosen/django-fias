@@ -2,6 +2,7 @@
 from __future__ import absolute_import, unicode_literals
 
 import logging
+import os
 import tempfile
 import zipfile
 from pathlib import Path
@@ -19,10 +20,12 @@ from .wrapper import RarArchiveWrapper, SourceWrapper
 
 logger = logging.getLogger(__name__)
 
+if os.name == "nt":
+    DEFAULT_UNRAR_TOOL = "unrar.exe"
+else:
+    DEFAULT_UNRAR_TOOL = "unrar"
 
-# Задаем UNRAR_TOOL глобально
-rarfile.UNRAR_TOOL = getattr(settings, "FIAS_UNRAR_TOOL", "unrar")
-print("<<<<<", getattr(settings, "FIAS_UNRAR_TOOL", "unrar"), rarfile.UNRAR_TOOL)
+rarfile.UNRAR_TOOL = getattr(settings, "FIAS_UNRAR_TOOL", DEFAULT_UNRAR_TOOL)
 
 
 class BadArchiveError(TableListLoadingError):

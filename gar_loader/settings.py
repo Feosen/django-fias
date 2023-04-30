@@ -15,8 +15,7 @@ from pathlib import Path
 from typing import Tuple, Union
 
 TEST = len(sys.argv) > 1 and sys.argv[1] == "test"
-AUTOTEST = os.environ.get('GITHUB_ACTIONS', False)
-print("<<<<<<<<<<<<<<< os.environ", os.environ)
+GITHUB_ACTIONS = os.environ.get("GITHUB_ACTIONS", False)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -191,7 +190,7 @@ LOGGING = {
     },
 }
 
-if not AUTOTEST:
+if not GITHUB_ACTIONS:
     FIAS_UNRAR_TOOL = Path(r"G:\Program Files\WinRAR\UnRAR.exe")
 
 _FRT = Union[Tuple[str, ...], str]
