@@ -67,6 +67,13 @@ poetry run tox
 poetry run manage.py test
 ```
 
+## Миграция
+Выполняется следующими командами
+```sh
+poetry run manage.py migrate
+poetry run manage.py migrate --database=gar
+```
+
 ## Команды
 ### fias
 Загружает первичные данные из файлов ГАР в служебные таблицы либо обновляет их из дельта-файлов.
@@ -139,15 +146,15 @@ poetry run manage.py fias --src G:\deltas --tempdir G:\tmp --update --update-ver
     Обновляет целевые таблицы.
     Если в БД ничего ещё не импортировалось, будет выдано сообщение об ошибке.
 
-`--keep-indexes <yes|pk|no>`
+`--keep-indexes`
     При первоначальном импорте удаляются все индексы из таблиц перед импортом и пересоздаются заново после.
-    Ключ отключает такое поведение для всех индексов (yes) или только для первичных ключей (pk).
+    Ключ отключает такое поведение для всех индексов.
     На процесс обновления никак не влияет.
 
 #### Примеры использования
 Первичная инициализация целевых таблиц
 ```sh
-poetry run manage.py target --truncate --i-know-what-i-do --keep-indexes no
+poetry run manage.py target --truncate --i-know-what-i-do
 ```
 Обновление целевых таблиц
 ```sh
