@@ -1,8 +1,11 @@
 on:
   push:
-    branches: [ dev ]
+    branches:
+      - dev
+      - gar_loader
   pull_request:
-    branches: [ dev ]
+    branches:
+      - gar_loader
 
 jobs:
   build:
