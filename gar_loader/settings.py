@@ -172,15 +172,17 @@ LOGGING = {
             "class": "django.utils.log.AdminEmailHandler",
             "include_html": True,
         },
+        "file": {
+            "level": "WARNING",
+            "formatter": "default",
+            "class": "logging.FileHandler",
+            "filename": os.path.join(BASE_DIR, "warning.log"),
+        },
     },
     "loggers": {
-        "fias": {
-            "handlers": ["console", "console_err"],
-            "level": "DEBUG",
-        },
-        "target": {
-            "handlers": ["console", "console_err"],
-            "level": "DEBUG",
+        "root": {
+            "handlers": ["console", "console_err", "file"],
+            "level": "INFO",
         },
         "django.request": {
             "handlers": ["mail_admins"],
