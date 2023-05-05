@@ -161,6 +161,8 @@ class SqlBuilder:
     @staticmethod
     def delete_on_field(dst: Type[Model], dst_field: str, src: Type[Model], src_field: str) -> str:
         table = dst._meta.db_table
+        if dst._meta.pk is None:
+            raise ValueError
         pk_field_name = dst._meta.pk.column
         other_table = src._meta.db_table
         return f"""

@@ -24,6 +24,8 @@ class Manager(models.Manager[_M]):
                     from_ls.append(f"LEFT JOIN {dst_table} ON {dst_table}.{pk_field_name} = {table}.{pk_field_name}")
                     where_ls.append(f"{dst_table}.{pk_field_name} IS NULL")
         if len(from_ls) > 0:
+            if self.model._meta.pk is None:
+                raise ValueError
             pk_field_name = self.model._meta.pk.column
             raw_sql = f"""
                 DELETE
