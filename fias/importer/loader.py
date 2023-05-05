@@ -134,6 +134,9 @@ class TableLoader(object):
                     self.skip_counter += 1
                     self.err_counter += 1
                     bar.update(loaded=self.counter, skipped=self.skip_counter, errors=self.err_counter)
+                    if batch_len > 0:
+                        obj_s = {f.name: getattr(batch[0], f.attname) for f in table.model._meta.fields}
+                        logger.warning(f'Region {table.region} table "{table.name}" skip invalid object {obj_s}.')
                     continue
                 else:
                     self.regressive_create(table, batch, bar=bar, depth=depth + 1)
