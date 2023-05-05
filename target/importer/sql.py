@@ -160,7 +160,14 @@ class SqlBuilder:
 
     @staticmethod
     def delete_on_field(dst: Type[Model], dst_field: str, src: Type[Model], src_field: str) -> str:
-        return (
-            f"DELETE FROM {dst._meta.db_table}"
-            f" WHERE {dst_field} NOT IN (SELECT {src_field} FROM {src._meta.db_table})"
-        )
+        table = dst._meta.db_table
+        pk_field_name = dst._meta.pk.column
+        other_table = src._meta.db_table
+        return f"""
+            DELETE
+            FROM {table}
+            WHERE {pk_field_name} IN (
+            SELECT {table}.{pk_field_name}
+            FROM {table} LEFT JOIN {other_table} ON {table}.{dst_field} = {other_table}.{src_field}
+            WHERE {other_table}.{src_field} IS NULL
+            )"""

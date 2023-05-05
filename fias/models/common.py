@@ -1,7 +1,7 @@
 # coding: utf-8
 from __future__ import absolute_import, annotations, unicode_literals
 
-from typing import Tuple, TypeVar
+from typing import List, TypeVar
 
 from django.db import connections, models
 
@@ -13,19 +13,30 @@ _M = TypeVar("_M", bound="AbstractModel", covariant=True)
 
 
 class Manager(models.Manager[_M]):
-    def delete_orphans(self) -> Tuple[int, dict[str, int]]:
-        res_c: int = 0
-        res_d: dict[str, int] = {}
+    def delete_orphans(self) -> None:
+        table = self.model._meta.db_table
+        where_ls: List[str] = []
+        from_ls: List[str] = []
         for field in self.model._meta.get_fields():
             if isinstance(field, RefFieldMixin):
-                # TODO: profile it
-                qs = self.get_queryset()
-                for cfg in field.to:
-                    qs = qs.exclude(**{f"{field.name}__in": cfg[0].objects.all()})
-                c, d = qs.delete()
-                res_c += c
-                res_d |= d
-        return res_c, res_d
+                for model, pk_field_name in field.to:
+                    dst_table = model._meta.db_table
+                    from_ls.append(f"LEFT JOIN {dst_table} ON {dst_table}.{pk_field_name} = {table}.{pk_field_name}")
+                    where_ls.append(f"{dst_table}.{pk_field_name} IS NULL")
+        if len(from_ls) > 0:
+            pk_field_name = self.model._meta.pk.column
+            raw_sql = f"""
+                DELETE
+                FROM {table}
+                WHERE {pk_field_name} IN (
+                SELECT {table}.{pk_field_name}
+                FROM {table}
+                {' '.join(from_ls)}
+                WHERE {' AND '.join(where_ls)}
+                )"""
+            connection = connections[self.db]
+            with connection.cursor() as cursor:
+                cursor.execute(raw_sql)
 
     def update_tree_ver(self, min_ver: int) -> None:
         src_table = self.model._meta.db_table

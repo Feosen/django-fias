@@ -181,7 +181,15 @@ class SqlBuilderTestCase(TestCase):
         self.assertEqual(self.strip(target), self.strip(result))
 
     def test_delete_on_field(self) -> None:
-        self.assertEqual(
-            "DELETE FROM gar_house WHERE owner_adm NOT IN (SELECT owner_mun FROM gar_house78)",
-            SqlBuilder.delete_on_field(t_models.House, "owner_adm", t_models.House78, "owner_mun"),
-        )
+        target = """
+                DELETE
+                FROM gar_house
+                WHERE id IN (
+                    SELECT gar_house.id
+                    FROM gar_house
+                    LEFT JOIN gar_house78 ON gar_house.owner_adm = gar_house78.owner_mun
+                    WHERE gar_house78.owner_mun IS NULL
+                )
+            """
+        result = SqlBuilder.delete_on_field(t_models.House, "owner_adm", t_models.House78, "owner_mun")
+        self.assertEqual(self.strip(target), self.strip(result))
