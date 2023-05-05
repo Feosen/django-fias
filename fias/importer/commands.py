@@ -75,6 +75,7 @@ def get_table_names(tables: Union[Tuple[str, ...], None]) -> Tuple[str, ...]:
 
 
 def remove_orphans(models: List[Type[AbstractModel]]) -> None:
+    # There are two levels of model hierarchy, so we can remove orphans in any order.
     for model in models:
         model.objects.delete_orphans()
 
