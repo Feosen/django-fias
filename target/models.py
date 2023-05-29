@@ -36,7 +36,7 @@ class AddrObj(AbstractModel):
         app_label = "target"
         verbose_name = "адресный объект"
         verbose_name_plural = "адресные объекты"
-        indexes = [
+        indexes = getattr(AbstractModel.Meta, "indexes", []) + [
             models.Index(fields=["objectid"]),
             models.Index(fields=["objectguid"]),
             models.Index(fields=["owner_adm"]),
@@ -71,7 +71,7 @@ class House(AbstractHouse):
         app_label = "target"
         verbose_name = "номер дома"
         verbose_name_plural = "номера домов"
-        indexes = [
+        indexes = getattr(AbstractModel.Meta, "indexes", []) + [
             models.Index(fields=["objectid"]),
             models.Index(fields=["objectguid"]),
             models.Index(fields=["owner_adm"]),
@@ -85,7 +85,7 @@ class House78(AbstractHouse):
         app_label = "target"
         verbose_name = "дом в г.Санкт-Петербург"
         verbose_name_plural = "дома в г.Санкт-Петербург"
-        indexes = [
+        indexes = getattr(AbstractModel.Meta, "indexes", []) + [
             models.Index(fields=["objectid"]),
             models.Index(fields=["objectguid"]),
             models.Index(fields=["owner_adm"]),

@@ -472,11 +472,8 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.AddIndex(
-            model_name="munhierarchy",
-            index=models.Index(
-                fields=["objectid", "parentobjid"],
-                name="fias_munhie_objecti_daa9b6_idx",
-            ),
+            model_name="house",
+            index=models.Index(condition=models.Q(("region", "78")), fields=["region"], name="fias_house_region78_idx"),
         ),
         migrations.AddIndex(
             model_name="houseparam",
@@ -487,17 +484,6 @@ class Migration(migrations.Migration):
             index=models.Index(fields=["typeid"], name="fias_housep_typeid_5015b6_idx"),
         ),
         migrations.AddIndex(
-            model_name="house",
-            index=models.Index(fields=["objectid"], name="fias_house_objecti_134e2e_idx"),
-        ),
-        migrations.AddIndex(
-            model_name="admhierarchy",
-            index=models.Index(
-                fields=["objectid", "parentobjid"],
-                name="fias_admhie_objecti_a335ac_idx",
-            ),
-        ),
-        migrations.AddIndex(
             model_name="addrobjparam",
             index=models.Index(fields=["objectid"], name="fias_addrob_objecti_ca4091_idx"),
         ),
@@ -505,12 +491,64 @@ class Migration(migrations.Migration):
             model_name="addrobjparam",
             index=models.Index(fields=["typeid"], name="fias_addrob_typeid_b74583_idx"),
         ),
-        migrations.AddIndex(
-            model_name="addrobj",
-            index=models.Index(fields=["objectguid"], name="fias_addrob_objectg_27e2a3_idx"),
-        ),
         migrations.AddConstraint(
             model_name="status",
             constraint=models.UniqueConstraint(fields=("region", "table"), name="unique_region_table"),
+        ),
+        migrations.AddIndex(
+            model_name="admhierarchy",
+            index=models.Index(fields=["objectid"], name="fias_admhie_objecti_e1bb4d_idx"),
+        ),
+        migrations.AddIndex(
+            model_name="munhierarchy",
+            index=models.Index(fields=["objectid"], name="fias_munhie_objecti_6ab8d3_idx"),
+        ),
+        migrations.AddIndex(
+            model_name="addrobj",
+            index=models.Index(fields=["tree_ver"], name="fias_addrob_tree_ve_40fa1b_idx"),
+        ),
+        migrations.AddIndex(
+            model_name="house",
+            index=models.Index(fields=["tree_ver"], name="fias_house_tree_ve_4bdad3_idx"),
+        ),
+        migrations.AddIndex(
+            model_name="addhousetype",
+            index=models.Index(fields=["ver"], name="fias_addhou_ver_50ac98_idx"),
+        ),
+        migrations.AddIndex(
+            model_name="addrobj",
+            index=models.Index(fields=["ver"], name="fias_addrob_ver_f2c6dc_idx"),
+        ),
+        migrations.AddIndex(
+            model_name="addrobjparam",
+            index=models.Index(fields=["ver"], name="fias_addrob_ver_ca8718_idx"),
+        ),
+        migrations.AddIndex(
+            model_name="addrobjtype",
+            index=models.Index(fields=["ver"], name="fias_addrob_ver_d9f032_idx"),
+        ),
+        migrations.AddIndex(
+            model_name="admhierarchy",
+            index=models.Index(fields=["ver"], name="fias_admhie_ver_d8bee3_idx"),
+        ),
+        migrations.AddIndex(
+            model_name="house",
+            index=models.Index(fields=["ver"], name="fias_house_ver_4fd60c_idx"),
+        ),
+        migrations.AddIndex(
+            model_name="houseparam",
+            index=models.Index(fields=["ver"], name="fias_housep_ver_4d190b_idx"),
+        ),
+        migrations.AddIndex(
+            model_name="housetype",
+            index=models.Index(fields=["ver"], name="fias_houset_ver_8c4136_idx"),
+        ),
+        migrations.AddIndex(
+            model_name="munhierarchy",
+            index=models.Index(fields=["ver"], name="fias_munhie_ver_661875_idx"),
+        ),
+        migrations.AddIndex(
+            model_name="paramtype",
+            index=models.Index(fields=["ver"], name="fias_paramt_ver_dae42d_idx"),
         ),
     ]

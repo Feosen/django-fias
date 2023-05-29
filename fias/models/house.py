@@ -47,7 +47,9 @@ class House(AbstractObj):
         abstract = False
         verbose_name = "номер дома"
         verbose_name_plural = "номера домов"
-        indexes = [models.Index(fields=["objectid"])]
+        indexes = getattr(AbstractObj.Meta, "indexes", []) + [
+            models.Index(fields=["region"], condition=models.Q(region="78"), name="fias_house_region78_idx")
+        ]
 
 
 class HouseParam(AbstractParam):

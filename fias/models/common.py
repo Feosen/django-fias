@@ -68,6 +68,7 @@ class AbstractModel(models.Model):
     class Meta:
         abstract = True
         app_label = "fias"
+        indexes = [models.Index(fields=["ver"])]
 
 
 class AbstractIsActiveModel(AbstractModel):
@@ -86,7 +87,7 @@ class AbstractObj(AbstractIsActiveModel):
 
     class Meta(AbstractIsActiveModel.Meta):
         abstract = True
-        indexes = [models.Index(fields=["objectguid"])]
+        indexes = getattr(AbstractIsActiveModel.Meta, "indexes", []) + [models.Index(fields=["tree_ver"])]
 
 
 class AbstractType(AbstractIsActiveModel):
@@ -107,9 +108,12 @@ class AbstractParam(AbstractModel):
     typeid = models.SmallIntegerField(verbose_name="тип")
     value = models.CharField(verbose_name="значение", max_length=250)
 
-    class Meta:
+    class Meta(AbstractModel.Meta):
         abstract = True
-        indexes = [models.Index(fields=["objectid"]), models.Index(fields=["typeid"])]
+        indexes = getattr(AbstractModel.Meta, "indexes", []) + [
+            models.Index(fields=["objectid"]),
+            models.Index(fields=["typeid"]),
+        ]
 
 
 class ParamType(AbstractType):

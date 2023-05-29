@@ -8,7 +8,7 @@ from pathlib import Path
 from typing import IO, Any, List, Union
 from zipfile import ZipFile
 
-from rarfile import RarFile
+from rarfile import NoRarEntry, RarFile
 
 
 class SourceWrapper(object):
@@ -22,12 +22,16 @@ class SourceWrapper(object):
         raise NotImplementedError()
 
     def get_date(self) -> datetime.date:
-        dates_s = set()
-        for file_name in self.get_file_list():
-            match = self._re_date.match(file_name)
-            if match is not None:
-                dates_s.add(match.group(1))
-        return sorted(map(lambda x: datetime.datetime.strptime(x, "%Y%m%d"), dates_s))[-1]
+        try:
+            date = datetime.datetime.strptime(self.source.read("version.txt").decode("utf-8"), "%Y.%m.%d")
+        except (KeyError, NoRarEntry):
+            dates_s = set()
+            for file_name in self.get_file_list():
+                match = self._re_date.match(file_name)
+                if match is not None:
+                    dates_s.add(match.group(1))
+            date = sorted(map(lambda x: datetime.datetime.strptime(x, "%Y%m%d"), dates_s))[-1]
+        return date
 
     def get_file_list(self) -> List[str]:
         raise NotImplementedError()

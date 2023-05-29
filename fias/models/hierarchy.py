@@ -21,6 +21,7 @@ class AbstractHierarchy(AbstractIsActiveModel):
 
     class Meta(AbstractIsActiveModel.Meta):
         abstract = True
+        indexes = getattr(AbstractIsActiveModel.Meta, "indexes", []) + [models.Index(fields=["objectid"])]
 
 
 class AdmHierarchy(AbstractHierarchy):
@@ -32,7 +33,6 @@ class AdmHierarchy(AbstractHierarchy):
         abstract = False
         verbose_name = "сведения по иерархии в административном делении"
         verbose_name_plural = "сведения по иерархии в административном делении"
-        indexes = [models.Index(fields=["objectid", "parentobjid"])]
 
 
 class MunHierarchy(AbstractHierarchy):
@@ -44,4 +44,3 @@ class MunHierarchy(AbstractHierarchy):
         abstract = False
         verbose_name = "сведения по иерархии в муниципальном делении"
         verbose_name_plural = "сведения по иерархии в муниципальном делении"
-        indexes = [models.Index(fields=["objectid", "parentobjid"])]
