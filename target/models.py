@@ -47,16 +47,20 @@ class AddrObj(AbstractModel):
 class AbstractHouse(AbstractModel):
     id = models.AutoField(verbose_name="id", primary_key=True)  # own, R
     region = models.CharField(verbose_name="код региона", max_length=2)  # T(=2), R
-    owner_adm = models.IntegerField(verbose_name="административная иерархия")  # as objectid, R
-    owner_mun = models.IntegerField(verbose_name="муниципальная иерархия")  # as objectid, R
+    owner_adm = models.BigIntegerField(verbose_name="административная иерархия")  # as objectid, R
+    owner_mun = models.BigIntegerField(verbose_name="муниципальная иерархия")  # as objectid, R
     objectid = models.BigIntegerField(verbose_name="глобальный уникальный идентификатор объекта")  # N(19), R
     objectguid = models.UUIDField(verbose_name="глобальный уникальный идентификатор адресного объекта")  # T(36), R
     housenum = models.TextField(verbose_name="номер дома", blank=True, null=True)  # T(1-50), O
     addnum1 = models.TextField(verbose_name="дополнительный номер дома 1", blank=True, null=True)  # T(1-50), O
     addnum2 = models.TextField(verbose_name="дополнительный номер дома 2", blank=True, null=True)  # T(1-50), O
-    housetype = models.IntegerField(verbose_name="основной тип дома")  # N(2), O
-    addtype1 = models.IntegerField(verbose_name="дополнительный тип номера дома 1", blank=True, null=True)  # N(2), O
-    addtype2 = models.IntegerField(verbose_name="дополнительный тип номера дома 2", blank=True, null=True)  # N(2), O
+    housetype = models.SmallIntegerField(verbose_name="основной тип дома")  # N(2), O
+    addtype1 = models.SmallIntegerField(
+        verbose_name="дополнительный тип номера дома 1", blank=True, null=True
+    )  # N(2), O
+    addtype2 = models.SmallIntegerField(
+        verbose_name="дополнительный тип номера дома 2", blank=True, null=True
+    )  # N(2), O
     postalcode = models.CharField(verbose_name="почтовый индекс", max_length=6, blank=True, null=True)  # T(6)
     okato = models.CharField(verbose_name="ОКАТО", max_length=11, blank=True, null=True)  # T(=11), R
     oktmo = models.CharField(verbose_name="ОКТМО", max_length=11, blank=True, null=True)  # T(=11), R

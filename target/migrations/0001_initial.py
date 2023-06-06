@@ -73,11 +73,11 @@ state_operations: List[Operation] = [
             ("region", models.CharField(max_length=2, verbose_name="код региона")),
             (
                 "owner_adm",
-                models.IntegerField(verbose_name="административная иерархия"),
+                models.BigIntegerField(verbose_name="административная иерархия"),
             ),
             (
                 "owner_mun",
-                models.IntegerField(verbose_name="муниципальная иерархия"),
+                models.BigIntegerField(verbose_name="муниципальная иерархия"),
             ),
             (
                 "objectid",
@@ -107,10 +107,10 @@ state_operations: List[Operation] = [
                     verbose_name="дополнительный номер дома 2",
                 ),
             ),
-            ("housetype", models.IntegerField(verbose_name="основной тип дома")),
+            ("housetype", models.SmallIntegerField(verbose_name="основной тип дома")),
             (
                 "addtype1",
-                models.IntegerField(
+                models.SmallIntegerField(
                     blank=True,
                     null=True,
                     verbose_name="дополнительный тип номера дома 1",
@@ -118,7 +118,7 @@ state_operations: List[Operation] = [
             ),
             (
                 "addtype2",
-                models.IntegerField(
+                models.SmallIntegerField(
                     blank=True,
                     null=True,
                     verbose_name="дополнительный тип номера дома 2",
@@ -159,11 +159,11 @@ state_operations: List[Operation] = [
             ("region", models.CharField(max_length=2, verbose_name="код региона")),
             (
                 "owner_adm",
-                models.IntegerField(verbose_name="административная иерархия"),
+                models.BigIntegerField(verbose_name="административная иерархия"),
             ),
             (
                 "owner_mun",
-                models.IntegerField(verbose_name="муниципальная иерархия"),
+                models.BigIntegerField(verbose_name="муниципальная иерархия"),
             ),
             (
                 "objectid",
@@ -193,10 +193,10 @@ state_operations: List[Operation] = [
                     verbose_name="дополнительный номер дома 2",
                 ),
             ),
-            ("housetype", models.IntegerField(verbose_name="основной тип дома")),
+            ("housetype", models.SmallIntegerField(verbose_name="основной тип дома")),
             (
                 "addtype1",
-                models.IntegerField(
+                models.SmallIntegerField(
                     blank=True,
                     null=True,
                     verbose_name="дополнительный тип номера дома 1",
@@ -204,7 +204,7 @@ state_operations: List[Operation] = [
             ),
             (
                 "addtype2",
-                models.IntegerField(
+                models.SmallIntegerField(
                     blank=True,
                     null=True,
                     verbose_name="дополнительный тип номера дома 2",
