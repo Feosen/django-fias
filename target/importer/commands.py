@@ -37,7 +37,6 @@ _table_cfg: List[Cfg] = [
         {"aolevel": "level"},
         ParamCfg(s_models.AddrObjParam, "objectid", [("okato", 6), ("oktmo", 7)]),
         [
-            HierarchyCfg(s_models.MunHierarchy, "objectid", "parentobjid", "owner_mun"),
             HierarchyCfg(s_models.AdmHierarchy, "objectid", "parentobjid", "owner_adm"),
         ],
     ),
@@ -50,7 +49,6 @@ _table_cfg: List[Cfg] = [
         None,
         ParamCfg(s_models.HouseParam, "objectid", [("postalcode", 5), ("okato", 6), ("oktmo", 7)]),
         [
-            HierarchyCfg(s_models.MunHierarchy, "objectid", "parentobjid", "owner_mun"),
             HierarchyCfg(s_models.AdmHierarchy, "objectid", "parentobjid", "owner_adm"),
         ],
     ),
@@ -63,7 +61,6 @@ _table_cfg: List[Cfg] = [
         None,
         ParamCfg(s_models.HouseParam, "objectid", [("postalcode", 5), ("okato", 6), ("oktmo", 7)]),
         [
-            HierarchyCfg(s_models.MunHierarchy, "objectid", "parentobjid", "owner_mun"),
             HierarchyCfg(s_models.AdmHierarchy, "objectid", "parentobjid", "owner_adm"),
         ],
     ),

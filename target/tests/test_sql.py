@@ -33,9 +33,9 @@ class SqlBuilderTestCase(TestCase):
 
     def test_create(self) -> None:
         target = """
-            INSERT INTO gar_addrobj (region, owner_adm, owner_mun, aolevel, objectid, objectguid, name, typename, okato,
+            INSERT INTO gar_addrobj (region, owner_adm, aolevel, objectid, objectguid, name, typename, okato,
                 oktmo)
-            SELECT fias_addrobj.region, COALESCE(owner_adm, 0) AS owner_adm, COALESCE(owner_mun, 0) AS owner_mun,
+            SELECT fias_addrobj.region, COALESCE(owner_adm, 0) AS owner_adm,
                 fias_addrobj.level AS aolevel, fias_addrobj.objectid, fias_addrobj.objectguid, fias_addrobj.name,
                 fias_addrobj.typename, okato, oktmo
             FROM fias_addrobj
@@ -45,15 +45,10 @@ class SqlBuilderTestCase(TestCase):
                 ) AS ct(objectid BIGINT, okato VARCHAR(11), oktmo VARCHAR(11))
                 ON fias_addrobj.objectid = ct.objectid
             LEFT JOIN (
-                SELECT objectid, parentobjid AS owner_mun
-                FROM fias_munhierarchy
-                WHERE isactive = true
-                ) AS h0 ON h0.objectid = fias_addrobj.objectid
-            LEFT JOIN (
                 SELECT objectid, parentobjid AS owner_adm
                 FROM fias_admhierarchy
                 WHERE isactive = true
-                ) AS h1 ON h1.objectid = fias_addrobj.objectid"""
+                ) AS h0 ON h0.objectid = fias_addrobj.objectid"""
 
         connection = connections[DATABASE_ALIAS]
         result = SqlBuilder.create(
@@ -66,7 +61,6 @@ class SqlBuilderTestCase(TestCase):
             {"aolevel": "level"},
             ParamCfg(s_models.AddrObjParam, "objectid", [("okato", 6), ("oktmo", 7)]),
             [
-                HierarchyCfg(s_models.MunHierarchy, "objectid", "parentobjid", "owner_mun"),
                 HierarchyCfg(s_models.AdmHierarchy, "objectid", "parentobjid", "owner_adm"),
             ],
         )
@@ -77,7 +71,6 @@ class SqlBuilderTestCase(TestCase):
             UPDATE gar_addrobj
             SET region = tmp_select_table.region,
                 owner_adm = tmp_select_table.owner_adm,
-                owner_mun = tmp_select_table.owner_mun,
                 aolevel = tmp_select_table.aolevel,
                 objectguid = tmp_select_table.objectguid,
                 name = tmp_select_table.name,
@@ -85,7 +78,7 @@ class SqlBuilderTestCase(TestCase):
                 okato = tmp_select_table.okato,
                 oktmo = tmp_select_table.oktmo
             FROM (
-                SELECT fias_addrobj.region, COALESCE(owner_adm, 0) AS owner_adm, COALESCE(owner_mun, 0) AS owner_mun,
+                SELECT fias_addrobj.region, COALESCE(owner_adm, 0) AS owner_adm,
                     fias_addrobj.level AS aolevel, fias_addrobj.objectid,
                     fias_addrobj.objectguid, fias_addrobj.name, fias_addrobj.typename, okato, oktmo
                 FROM fias_addrobj
@@ -95,15 +88,10 @@ class SqlBuilderTestCase(TestCase):
                     ) AS ct(objectid BIGINT, okato VARCHAR(11), oktmo VARCHAR(11))
                     ON fias_addrobj.objectid = ct.objectid
                 LEFT JOIN (
-                    SELECT objectid, parentobjid AS owner_mun
-                    FROM fias_munhierarchy
-                    WHERE isactive = true
-                    ) AS h0 ON h0.objectid = fias_addrobj.objectid
-                LEFT JOIN (
                     SELECT objectid, parentobjid AS owner_adm
                     FROM fias_admhierarchy
                     WHERE isactive = true
-                    ) AS h1 ON h1.objectid = fias_addrobj.objectid
+                    ) AS h0 ON h0.objectid = fias_addrobj.objectid
                 WHERE fias_addrobj.tree_ver > 2222 AND fias_addrobj.ver > 1111
                 ) AS tmp_select_table
             WHERE gar_addrobj.objectid = tmp_select_table.objectid
@@ -123,7 +111,6 @@ class SqlBuilderTestCase(TestCase):
             {"aolevel": "level"},
             ParamCfg(s_models.AddrObjParam, "objectid", [("okato", 6), ("oktmo", 7)]),
             [
-                HierarchyCfg(s_models.MunHierarchy, "objectid", "parentobjid", "owner_mun"),
                 HierarchyCfg(s_models.AdmHierarchy, "objectid", "parentobjid", "owner_adm"),
             ],
         )
@@ -131,7 +118,7 @@ class SqlBuilderTestCase(TestCase):
 
     def test_select(self) -> None:
         target = """
-            SELECT fias_addrobj.region, COALESCE(owner_adm, 0) AS owner_adm, COALESCE(owner_mun, 0) AS owner_mun,
+            SELECT fias_addrobj.region, COALESCE(owner_adm, 0) AS owner_adm,
                 fias_addrobj.level AS aolevel, fias_addrobj.objectid, fias_addrobj.objectguid, fias_addrobj.name,
                 fias_addrobj.typename, okato, oktmo
             FROM fias_addrobj
@@ -141,15 +128,10 @@ class SqlBuilderTestCase(TestCase):
                 ) AS ct(objectid BIGINT, okato VARCHAR(11), oktmo VARCHAR(11))
                 ON fias_addrobj.objectid = ct.objectid
             LEFT JOIN (
-                SELECT objectid, parentobjid AS owner_mun
-                FROM fias_munhierarchy
-                WHERE isactive = true
-                ) AS h0 ON h0.objectid = fias_addrobj.objectid
-            LEFT JOIN (
                 SELECT objectid, parentobjid AS owner_adm
                 FROM fias_admhierarchy
                 WHERE isactive = true
-                ) AS h1 ON h1.objectid = fias_addrobj.objectid
+                ) AS h0 ON h0.objectid = fias_addrobj.objectid
             """
 
         connection = connections[DATABASE_ALIAS]
@@ -161,7 +143,6 @@ class SqlBuilderTestCase(TestCase):
             [
                 "region",
                 "owner_adm",
-                "owner_mun",
                 "aolevel",
                 "objectid",
                 "objectguid",
@@ -174,7 +155,6 @@ class SqlBuilderTestCase(TestCase):
             {"aolevel": "level"},
             ParamCfg(s_models.AddrObjParam, "objectid", [("okato", 6), ("oktmo", 7)]),
             [
-                HierarchyCfg(s_models.MunHierarchy, "objectid", "parentobjid", "owner_mun"),
                 HierarchyCfg(s_models.AdmHierarchy, "objectid", "parentobjid", "owner_adm"),
             ],
         )

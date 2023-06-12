@@ -20,10 +20,6 @@ state_operations: List[Operation] = [
                 models.BigIntegerField(verbose_name="административная иерархия"),
             ),
             (
-                "owner_mun",
-                models.BigIntegerField(verbose_name="муниципальная иерархия"),
-            ),
-            (
                 "aolevel",
                 models.IntegerField(verbose_name="уровень адресного объекта"),
             ),
@@ -74,10 +70,6 @@ state_operations: List[Operation] = [
             (
                 "owner_adm",
                 models.BigIntegerField(verbose_name="административная иерархия"),
-            ),
-            (
-                "owner_mun",
-                models.BigIntegerField(verbose_name="муниципальная иерархия"),
             ),
             (
                 "objectid",
@@ -160,10 +152,6 @@ state_operations: List[Operation] = [
             (
                 "owner_adm",
                 models.BigIntegerField(verbose_name="административная иерархия"),
-            ),
-            (
-                "owner_mun",
-                models.BigIntegerField(verbose_name="муниципальная иерархия"),
             ),
             (
                 "objectid",
@@ -313,10 +301,6 @@ state_operations: List[Operation] = [
         index=models.Index(fields=["owner_adm"], name="gar_house78_owner_a_a33afd_idx"),
     ),
     migrations.AddIndex(
-        model_name="house78",
-        index=models.Index(fields=["owner_mun"], name="gar_house78_owner_m_318e68_idx"),
-    ),
-    migrations.AddIndex(
         model_name="house",
         index=models.Index(fields=["objectid"], name="gar_house_objecti_1911ad_idx"),
     ),
@@ -329,10 +313,6 @@ state_operations: List[Operation] = [
         index=models.Index(fields=["owner_adm"], name="gar_house_owner_a_f74513_idx"),
     ),
     migrations.AddIndex(
-        model_name="house",
-        index=models.Index(fields=["owner_mun"], name="gar_house_owner_m_fb80bc_idx"),
-    ),
-    migrations.AddIndex(
         model_name="addrobj",
         index=models.Index(fields=["objectid"], name="gar_addrobj_objecti_ee18f2_idx"),
     ),
@@ -343,10 +323,6 @@ state_operations: List[Operation] = [
     migrations.AddIndex(
         model_name="addrobj",
         index=models.Index(fields=["owner_adm"], name="gar_addrobj_owner_a_6877c5_idx"),
-    ),
-    migrations.AddIndex(
-        model_name="addrobj",
-        index=models.Index(fields=["owner_mun"], name="gar_addrobj_owner_m_3af51f_idx"),
     ),
 ]
 

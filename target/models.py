@@ -22,7 +22,6 @@ class AddrObj(AbstractModel):
     id = models.AutoField(verbose_name="id", primary_key=True)  # own, R
     region = models.CharField(verbose_name="код региона", max_length=2)  # T(=2), R
     owner_adm = models.BigIntegerField(verbose_name="административная иерархия")  # as objectid, R
-    owner_mun = models.BigIntegerField(verbose_name="муниципальная иерархия")  # as objectid, R
     aolevel = models.IntegerField(verbose_name="уровень адресного объекта")  # T(1-10), R
     objectid = models.BigIntegerField(verbose_name="глобальный уникальный идентификатор объекта")  # N(19), R
     objectguid = models.UUIDField(verbose_name="глобальный уникальный идентификатор адресного объекта")  # T(36), R
@@ -40,7 +39,6 @@ class AddrObj(AbstractModel):
             models.Index(fields=["objectid"]),
             models.Index(fields=["objectguid"]),
             models.Index(fields=["owner_adm"]),
-            models.Index(fields=["owner_mun"]),
         ]
 
 
@@ -48,7 +46,6 @@ class AbstractHouse(AbstractModel):
     id = models.AutoField(verbose_name="id", primary_key=True)  # own, R
     region = models.CharField(verbose_name="код региона", max_length=2)  # T(=2), R
     owner_adm = models.BigIntegerField(verbose_name="административная иерархия")  # as objectid, R
-    owner_mun = models.BigIntegerField(verbose_name="муниципальная иерархия")  # as objectid, R
     objectid = models.BigIntegerField(verbose_name="глобальный уникальный идентификатор объекта")  # N(19), R
     objectguid = models.UUIDField(verbose_name="глобальный уникальный идентификатор адресного объекта")  # T(36), R
     housenum = models.TextField(verbose_name="номер дома", blank=True, null=True)  # T(1-50), O
@@ -79,7 +76,6 @@ class House(AbstractHouse):
             models.Index(fields=["objectid"]),
             models.Index(fields=["objectguid"]),
             models.Index(fields=["owner_adm"]),
-            models.Index(fields=["owner_mun"]),
         ]
 
 
@@ -93,7 +89,6 @@ class House78(AbstractHouse):
             models.Index(fields=["objectid"]),
             models.Index(fields=["objectguid"]),
             models.Index(fields=["owner_adm"]),
-            models.Index(fields=["owner_mun"]),
         ]
 
 
