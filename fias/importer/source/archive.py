@@ -4,6 +4,7 @@ from __future__ import absolute_import, unicode_literals
 import logging
 import os
 import tempfile
+import urllib
 import zipfile
 from pathlib import Path
 from urllib.error import HTTPError
@@ -77,10 +78,15 @@ class RemoteArchiveTableList(LocalArchiveTableList):
         def update_progress(count: int, block_size: int, total_size: int) -> None:
             progress.goto(int(count * block_size * 100 / total_size))
 
+        if self.tempdir is not None:
+            p = urllib.parse.urlparse(source)
+            tmp_path = self.tempdir / p.path.split("/")[-1]
+        else:
+            tmp_path = None
         logger.info(f"Downloading from {source}.")
         pre_download.send(sender=self.__class__, url=source)
         try:
-            path = urlretrieve(source, reporthook=update_progress)[0]
+            path = urlretrieve(source, filename=tmp_path, reporthook=update_progress)[0]
         except HTTPError as e:
             raise RetrieveError(
                 'Can not download data archive at url `{0}`. Error occurred: "{1}"'.format(source, str(e))
