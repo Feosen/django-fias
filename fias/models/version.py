@@ -18,9 +18,6 @@ class VersionManager(models.Manager["Version"]):
 
 
 class Version(models.Model):
-    class Meta:
-        app_label = "fias"
-
     objects = VersionManager()
 
     ver = models.IntegerField(primary_key=True)
@@ -30,16 +27,19 @@ class Version(models.Model):
     complete_xml_url = models.CharField(max_length=255)
     delta_xml_url = models.CharField(max_length=255, blank=True, null=True)
 
+    class Meta:
+        app_label = "fias"
+
     def __str__(self) -> str:
         return f"{self.ver} from {self.dumpdate}"
 
 
 class Status(models.Model):
-    class Meta:
-        app_label = "fias"
-        constraints = [models.UniqueConstraint(fields=["region", "table"], name="unique_region_table")]
-
     # Null for house_type and other common tables.
     region = models.CharField(verbose_name="регион", max_length=2, null=True, blank=True)
     table = models.CharField(verbose_name="таблица", max_length=15)
     ver = models.ForeignKey(Version, verbose_name="версия", on_delete=models.CASCADE)
+
+    class Meta:
+        app_label = "fias"
+        constraints = [models.UniqueConstraint(fields=["region", "table"], name="unique_region_table")]
