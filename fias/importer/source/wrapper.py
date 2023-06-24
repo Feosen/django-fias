@@ -16,7 +16,8 @@ class SourceWrapper(object):
     _re_date = re.compile(r"[/\w]+_(\d{8})_.+")
 
     def __init__(self, source: Any, **kwargs: Any):
-        pass
+        super().__init__(**kwargs)
+        self.source = source
 
     def get_date_info(self, filename: str) -> datetime.date:
         raise NotImplementedError()
@@ -45,9 +46,8 @@ class DirectoryWrapper(SourceWrapper):
     source: Path
 
     def __init__(self, source: Path, is_temporary: bool = False, **kwargs: Any):
-        super(DirectoryWrapper, self).__init__(source=source, **kwargs)
+        super(DirectoryWrapper, self).__init__(source=source.absolute(), **kwargs)
         self.is_temporary = is_temporary
-        self.source = source.absolute()
 
     def get_date(self) -> datetime.datetime:
         raise NotImplementedError()
@@ -75,7 +75,6 @@ class RarArchiveWrapper(SourceWrapper):
 
     def __init__(self, source: Union[RarFile, ZipFile], **kwargs: Any):
         super(RarArchiveWrapper, self).__init__(source=source, **kwargs)
-        self.source = source
 
     def get_date_info(self, filename: str) -> datetime.date:
         info = self.source.getinfo(filename)
