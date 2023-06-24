@@ -156,8 +156,11 @@ def load_complete_data(
             restore_indexes_for_model(model=first_table.model, pk=process_pk)
             post_restore_indexes.send(sender=object.__class__, table=first_table)
 
+    logger.info("Update tree version.")
     update_tree_ver(processed_models, 0)
+    logger.info("Remove deactivated records.")
     remove_not_active(processed_models)
+    logger.info("Remove orphans.")
     remove_orphans(processed_models)
 
     post_import.send(sender=object.__class__, version=tablelist.version)
@@ -210,8 +213,11 @@ def update_data(
             st.ver = tablelist.version
             st.save()
 
+    logger.info("Update tree version.")
     update_tree_ver(processed_models, tablelist.version.ver)
+    logger.info("Remove deactivated records.")
     remove_not_active(processed_models)
+    logger.info("Remove orphans.")
     remove_orphans(processed_models)
 
 
