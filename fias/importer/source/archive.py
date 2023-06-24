@@ -3,12 +3,10 @@ from __future__ import absolute_import, unicode_literals
 
 import logging
 import os
-import tempfile
 import urllib
 import zipfile
 from pathlib import Path
 from urllib.error import HTTPError
-from urllib.request import urlretrieve
 
 import rarfile
 from django.conf import settings
@@ -16,6 +14,7 @@ from progress.bar import Bar
 
 from fias.importer.signals import post_download, pre_download
 
+from ..downloader import Downloader
 from .tablelist import TableList, TableListLoadingError
 from .wrapper import RarArchiveWrapper, SourceWrapper
 
@@ -39,12 +38,6 @@ class RetrieveError(TableListLoadingError):
 
 class LocalArchiveTableList(TableList):
     wrapper_class = RarArchiveWrapper
-
-    @staticmethod
-    def unpack(archive: rarfile.RarFile, tempdir: Path | None = None) -> str:
-        path = tempfile.mkdtemp(dir=tempdir)
-        archive.extractall(path)
-        return path
 
     def load_data(self, source: str) -> SourceWrapper:
         source_path = Path(source)
@@ -86,7 +79,8 @@ class RemoteArchiveTableList(LocalArchiveTableList):
         logger.info(f"Downloading from {source}.")
         pre_download.send(sender=self.__class__, url=source)
         try:
-            path = urlretrieve(source, filename=tmp_path, reporthook=update_progress)[0]
+            d = Downloader()
+            path, _ = d.download(source, file_name=tmp_path, reporthook=update_progress)
         except HTTPError as e:
             raise RetrieveError(
                 'Can not download data archive at url `{0}`. Error occurred: "{1}"'.format(source, str(e))
@@ -95,4 +89,4 @@ class RemoteArchiveTableList(LocalArchiveTableList):
         post_download.send(sender=self.__class__, url=source, path=path)
         logger.info(f"Downloaded from {source} into {path}.")
 
-        return super(RemoteArchiveTableList, self).load_data(source=path)
+        return super(RemoteArchiveTableList, self).load_data(source=str(path))
