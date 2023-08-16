@@ -208,3 +208,6 @@ FIAS_HOUSE_TYPES: _FHT = (2, 5, 7, 10)
 
 # If true, django will create target tables in migrations.
 TARGET_MANAGE: bool = True
+
+# If false, gar_house stay untouched.
+TARGET_LOAD_HOUSE: bool = True

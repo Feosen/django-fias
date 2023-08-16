@@ -8,6 +8,7 @@ from typing import List
 from fias import models as s_models
 from gar_loader.indexes import remove_indexes_from_model, restore_indexes_for_model
 from target import models as t_models
+from target.config import LOAD_HOUSE
 from target.importer.loader import Cfg, TableLoader, TableUpdater
 from target.importer.loader import truncate as table_truncate
 from target.importer.signals import (
@@ -41,18 +42,6 @@ _table_cfg: List[Cfg] = [
         ],
     ),
     Cfg(
-        t_models.House,
-        "objectid",
-        s_models.House,
-        "objectid",
-        None,
-        None,
-        ParamCfg(s_models.HouseParam, "objectid", [("postalcode", 5), ("okato", 6), ("oktmo", 7)]),
-        [
-            HierarchyCfg(s_models.AdmHierarchy, "objectid", "parentobjid", "owner_adm"),
-        ],
-    ),
-    Cfg(
         t_models.House78,
         "objectid",
         s_models.House,
@@ -65,6 +54,22 @@ _table_cfg: List[Cfg] = [
         ],
     ),
 ]
+
+if LOAD_HOUSE:
+    _table_cfg.append(
+        Cfg(
+            t_models.House,
+            "objectid",
+            s_models.House,
+            "objectid",
+            None,
+            None,
+            ParamCfg(s_models.HouseParam, "objectid", [("postalcode", 5), ("okato", 6), ("oktmo", 7)]),
+            [
+                HierarchyCfg(s_models.AdmHierarchy, "objectid", "parentobjid", "owner_adm"),
+            ],
+        )
+    )
 
 
 def load_complete_data(truncate: bool = False, keep_indexes: bool = False, keep_pk: bool = True) -> None:

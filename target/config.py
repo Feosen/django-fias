@@ -5,11 +5,12 @@ from django.conf import settings
 from django.core.exceptions import ImproperlyConfigured
 from django.db.utils import DEFAULT_DB_ALIAS
 
-__all__ = ["MANAGE", "DEFAULT_DB_ALIAS", "DATABASE_ALIAS"]
+__all__ = ["MANAGE", "DEFAULT_DB_ALIAS", "DATABASE_ALIAS", "LOAD_HOUSE"]
 
 
 DATABASE_ALIAS = getattr(settings, "TARGET_DATABASE_ALIAS", DEFAULT_DB_ALIAS)
 MANAGE = getattr(settings, "TARGET_MANAGE", True) or settings.TEST
+LOAD_HOUSE = getattr(settings, "TARGET_LOAD_HOUSE", True)
 
 if DATABASE_ALIAS not in settings.DATABASES:
     raise ImproperlyConfigured(f"TARGET: database alias `{DATABASE_ALIAS}` was not found in DATABASES")
