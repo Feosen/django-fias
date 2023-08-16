@@ -45,7 +45,7 @@ _table_cfg: List[Cfg] = [
         "objectid",
         s_models.House,
         "objectid",
-        [("region", "!=", "78")],
+        None,
         None,
         ParamCfg(s_models.HouseParam, "objectid", [("postalcode", 5), ("okato", 6), ("oktmo", 7)]),
         [
