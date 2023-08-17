@@ -40,14 +40,15 @@ class SqlBuilderTestCase(TestCase):
                 fias_addrobj.typename, okato, oktmo
             FROM fias_addrobj
             LEFT JOIN crosstab(
-                'SELECT objectid, typeid, value FROM fias_addrobjparam ORDER BY objectid, typeid',
+                'SELECT objectid, typeid, value FROM fias_addrobjparam
+                 WHERE fias_addrobjparam.region1 = \'\'35\'\' ORDER BY objectid, typeid',
                 'SELECT typeids FROM (values (6), (7)) t(typeids)'
                 ) AS ct(objectid BIGINT, okato VARCHAR(11), oktmo VARCHAR(11))
                 ON fias_addrobj.objectid = ct.objectid
             LEFT JOIN (
                 SELECT objectid, parentobjid AS owner_adm
                 FROM fias_admhierarchy
-                WHERE isactive = true
+                WHERE fias_admhierarchy.isactive = true AND fias_admhierarchy.region2 = '37'
                 ) AS h0 ON h0.objectid = fias_addrobj.objectid"""
 
         connection = connections[DATABASE_ALIAS]
@@ -59,9 +60,9 @@ class SqlBuilderTestCase(TestCase):
             "objectid",
             None,
             {"aolevel": "level"},
-            ParamCfg(s_models.AddrObjParam, "objectid", [("okato", 6), ("oktmo", 7)]),
+            ParamCfg(s_models.AddrObjParam, "objectid", [("okato", 6), ("oktmo", 7)], [("region1", "=", "35")]),
             [
-                HierarchyCfg(s_models.AdmHierarchy, "objectid", "parentobjid", "owner_adm"),
+                HierarchyCfg(s_models.AdmHierarchy, "objectid", "parentobjid", "owner_adm", [("region2", "=", "37")]),
             ],
         )
         self.assertEqual(self.strip(target), self.strip(result))
@@ -83,14 +84,15 @@ class SqlBuilderTestCase(TestCase):
                     fias_addrobj.objectguid, fias_addrobj.name, fias_addrobj.typename, okato, oktmo
                 FROM fias_addrobj
                 LEFT JOIN crosstab(
-                    'SELECT objectid, typeid, value FROM fias_addrobjparam ORDER BY objectid, typeid',
+                    'SELECT objectid, typeid, value FROM fias_addrobjparam
+                     WHERE fias_addrobjparam.region1 = \'\'35\'\' ORDER BY objectid, typeid',
                     'SELECT typeids FROM (values (6), (7)) t(typeids)'
                     ) AS ct(objectid BIGINT, okato VARCHAR(11), oktmo VARCHAR(11))
                     ON fias_addrobj.objectid = ct.objectid
                 LEFT JOIN (
                     SELECT objectid, parentobjid AS owner_adm
                     FROM fias_admhierarchy
-                    WHERE isactive = true
+                    WHERE fias_admhierarchy.isactive = true AND fias_admhierarchy.region2 = '37'
                     ) AS h0 ON h0.objectid = fias_addrobj.objectid
                 WHERE fias_addrobj.tree_ver > 2222 AND fias_addrobj.ver > 1111
                 ) AS tmp_select_table
@@ -109,9 +111,9 @@ class SqlBuilderTestCase(TestCase):
                 SqlBuilder.filter_value(s_models.AddrObj, "ver", ">", 1111),
             ],
             {"aolevel": "level"},
-            ParamCfg(s_models.AddrObjParam, "objectid", [("okato", 6), ("oktmo", 7)]),
+            ParamCfg(s_models.AddrObjParam, "objectid", [("okato", 6), ("oktmo", 7)], [("region1", "=", "35")]),
             [
-                HierarchyCfg(s_models.AdmHierarchy, "objectid", "parentobjid", "owner_adm"),
+                HierarchyCfg(s_models.AdmHierarchy, "objectid", "parentobjid", "owner_adm", [("region2", "=", "37")]),
             ],
         )
         self.assertEqual(self.strip(target), self.strip(result))
@@ -130,7 +132,7 @@ class SqlBuilderTestCase(TestCase):
             LEFT JOIN (
                 SELECT objectid, parentobjid AS owner_adm
                 FROM fias_admhierarchy
-                WHERE isactive = true
+                WHERE fias_admhierarchy.isactive = true
                 ) AS h0 ON h0.objectid = fias_addrobj.objectid
             """
 
@@ -153,9 +155,9 @@ class SqlBuilderTestCase(TestCase):
             ],
             None,
             {"aolevel": "level"},
-            ParamCfg(s_models.AddrObjParam, "objectid", [("okato", 6), ("oktmo", 7)]),
+            ParamCfg(s_models.AddrObjParam, "objectid", [("okato", 6), ("oktmo", 7)], None),
             [
-                HierarchyCfg(s_models.AdmHierarchy, "objectid", "parentobjid", "owner_adm"),
+                HierarchyCfg(s_models.AdmHierarchy, "objectid", "parentobjid", "owner_adm", None),
             ],
         )
         self.assertEqual(self.strip(target), self.strip(result))

@@ -19,6 +19,7 @@ class ParamCfg:
     model: Type[Model]
     pk: str
     type_map: List[Tuple[str, int]]
+    filter_value: Union[None, List[Tuple[str, str, Any]]]
 
 
 @dataclass
@@ -27,6 +28,7 @@ class HierarchyCfg:
     pk: str
     parent_pk: str
     parent_pk_as: str
+    filter_value: Union[None, List[Tuple[str, str, Any]]]
 
 
 class SqlBuilder:
@@ -36,6 +38,8 @@ class SqlBuilder:
             value = f"'{value}'"
         elif value is None:
             value = "NULL"
+        elif isinstance(value, bool):
+            value = "true" if value else "false"
         return f"{t1._meta.db_table}.{f1} {op} {value}"
 
     @staticmethod
@@ -118,10 +122,15 @@ class SqlBuilder:
         if hierarchy is not None:
             h_s = []
             for i, h_cfg in enumerate(hierarchy):
+                h_filters = [("isactive", "=", True)]
+                if h_cfg.filter_value is not None:
+                    h_filters.extend(h_cfg.filter_value)
+                h_where_l = list(map(lambda f: SqlBuilder.filter_value(h_cfg.model, *f), h_filters))
+                h_where_s = f"WHERE {' AND '.join(h_where_l)} "
                 h_s.append(
                     f"""LEFT JOIN (SELECT {h_cfg.pk}, {h_cfg.parent_pk} AS {h_cfg.parent_pk_as}
                            FROM {h_cfg.model._meta.db_table}
-                           WHERE isactive = true) AS h{i}
+                           {h_where_s} ) AS h{i}
                            ON h{i}.{h_cfg.pk} = {src._meta.db_table}.{src_pk}"""
                 )
             hierarchy_s = " ".join(h_s)
@@ -129,8 +138,14 @@ class SqlBuilder:
             hierarchy_s = ""
 
         if params is not None:
-            param_type_ids_s = ", ".join(map(lambda i: f"({i})", (i for _, i in params.type_map)))
-            ct_field_names = [src_pk] + [n for n, _ in params.type_map]
+            t_params: ParamCfg = params  # Because of mypy false error
+            if t_params.filter_value is not None:
+                params_where_l = map(lambda f: SqlBuilder.filter_value(t_params.model, *f), t_params.filter_value)
+                params_where_s = f"WHERE {' AND '.join(params_where_l)} ".replace("'", "''")
+            else:
+                params_where_s = ""
+            param_type_ids_s = ", ".join(map(lambda i: f"({i})", (i for _, i in t_params.type_map)))
+            ct_field_names = [src_pk] + [n for n, _ in t_params.type_map]
             ct_fields = [dst._meta.get_field(f) for f in ct_field_names]
             if not all(map(lambda f: isinstance(f, Field), ct_fields)):
                 raise ValueError
@@ -144,9 +159,10 @@ class SqlBuilder:
             ct_s = ", ".join(ct_l)
             params_s = f"""
             LEFT JOIN crosstab(
-                'SELECT {params.pk}, typeid, value FROM {params.model._meta.db_table} ORDER BY {params.pk}, typeid',
+                'SELECT {t_params.pk}, typeid, value FROM {t_params.model._meta.db_table} {params_where_s}
+                ORDER BY {t_params.pk}, typeid',
                 'SELECT typeids FROM (values {param_type_ids_s}) t(typeids)'
-            ) AS ct({ct_s}) ON {src._meta.db_table}.{src_pk} = ct.{params.pk}
+            ) AS ct({ct_s}) ON {src._meta.db_table}.{src_pk} = ct.{t_params.pk}
             """
         else:
             params_s = ""
