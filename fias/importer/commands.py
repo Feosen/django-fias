@@ -175,7 +175,7 @@ def update_data(
     limit: int = 10000,
     tables: Union[Tuple[str, ...], None] = None,
     tempdir: Union[Path, None] = None,
-) -> None:
+) -> Tuple[List[Type[AbstractModel]], int]:
     tablelist = get_tablelist(path=path, version=version, data_format=data_format, tempdir=tempdir)
 
     processed_models = []
@@ -213,12 +213,16 @@ def update_data(
             st.ver = tablelist.version
             st.save()
 
+    return processed_models, tablelist.version.ver
+
+
+def fix_data(models: List[Type[AbstractModel]], min_ver: int) -> None:
     logger.info("Update tree version.")
-    update_tree_ver(processed_models, tablelist.version.ver)
+    update_tree_ver(models, min_ver)
     logger.info("Remove deactivated records.")
-    remove_not_active(processed_models)
+    remove_not_active(models)
     logger.info("Remove orphans.")
-    remove_orphans(processed_models)
+    remove_orphans(models)
 
 
 def manual_update_data(
@@ -238,18 +242,23 @@ def manual_update_data(
         version_map[tablelist.version] = child
 
     if min_version is not None:
+        models = set()
+        least_version = None
+
         min_ver = Version.objects.get(ver=min_version)
 
         for version in Version.objects.filter(ver__gt=min_version).order_by("ver"):
             try:
                 src = version_map[version]
             except KeyError:
+                if least_version is not None:
+                    fix_data(list(models), least_version)
                 raise TableListLoadingError(f"No file for version {version}.")
 
             logger.info(f"Updating from v.{min_ver} to v.{version}.")
             pre_update.send(sender=object.__class__, before=min_ver, after=version)
 
-            update_data(
+            c_models, c_ver = update_data(
                 path=src,
                 version=version,
                 skip=skip,
@@ -258,10 +267,15 @@ def manual_update_data(
                 tables=tables,
                 tempdir=tempdir,
             )
+            models |= set(c_models)
+            if least_version is None:
+                least_version = c_ver
 
             post_update.send(sender=object.__class__, before=min_ver, after=version)
             logger.info(f"Data v.{min_ver} is updated to v.{version}.")
             min_ver = version
+        if least_version is not None:
+            fix_data(list(models), least_version)
     else:
         raise TableListLoadingError("Not available. Please import the data before updating")
 
@@ -278,11 +292,14 @@ def auto_update_data(
     if min_version is not None:
         min_ver = Version.objects.get(ver=min_version)
 
+        models = set()
+        least_version = None
+
         for version in Version.objects.filter(ver__gt=min_version).order_by("ver"):
             pre_update.send(sender=object.__class__, before=min_ver, after=version)
 
             url = getattr(version, "delta_{0}_url".format(data_format))
-            update_data(
+            c_models, c_ver = update_data(
                 path=url,
                 version=version,
                 skip=skip,
@@ -292,8 +309,15 @@ def auto_update_data(
                 tempdir=tempdir,
             )
 
+            models |= set(c_models)
+            if least_version is None:
+                least_version = c_ver
+
             post_update.send(sender=object.__class__, before=min_ver, after=version)
             logger.info(f"Data v.{min_ver} is updated to v.{version}.")
             min_ver = version
+
+        if least_version is not None:
+            fix_data(list(models), least_version)
     else:
         raise TableListLoadingError("Not available. Please import the data before updating")
