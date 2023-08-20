@@ -14,8 +14,12 @@ from progress import Infinite
 from fias.config import TableName
 from fias.importer.signals import post_import_table, pre_import_table
 from fias.importer.table.table import AbstractTableList, Table
-from fias.importer.validators import validate
-from fias.models import AbstractIsActiveModel, AbstractModel
+from fias.importer.validators import (
+    get_common_validator,
+    get_create_validator,
+    get_update_validator,
+)
+from fias.models import AbstractModel
 
 logger = logging.getLogger(__name__)
 
@@ -100,22 +104,6 @@ class TableLoader(object):
         self.err_counter = 0
         self.today = datetime.date.today()
 
-    def validate(self, table: Table, item: AbstractModel) -> bool:
-        if item.pk is None:
-            return False
-
-        try:
-            tn = TableName(table.name)
-            return validate(tn, item, today=self.today)
-        except ValueError:
-            return True
-
-    def filter(self, item: AbstractModel) -> bool:
-        if isinstance(item, AbstractIsActiveModel):
-            return item.isactive
-        else:
-            return True
-
     def regressive_create(self, table: Table, objects: List[AbstractModel], bar: LoadingBar, depth: int = 1) -> None:
         count = len(objects)
         batch_len = count // 3 or 1
@@ -163,9 +151,13 @@ class TableLoader(object):
         bar = LoadingBar(table=table.name, filename=table.filename)
         bar.update()
 
+        tn = TableName(table.name)
+        common_validator = get_common_validator(tn)
+        create_validator = get_create_validator(tn)
+
         objects = set()
         for item in table.rows(tablelist=tablelist):
-            if item is None or not self.validate(table, item) or not self.filter(item):
+            if item is None or not (common_validator(item, self.today) and create_validator(item, self.today)):
                 self.skip_counter += 1
 
                 if self.skip_counter and self.skip_counter % self.limit == 0:
@@ -196,18 +188,32 @@ class TableUpdater(TableLoader):
         bar = LoadingBar(table=table.name, filename=table.filename)
 
         model = table.model
+
+        tn = TableName(table.name)
+        common_validator = get_common_validator(tn)
+        create_validator = get_create_validator(tn)
+        update_validator = get_update_validator(tn)
+
         objects = set()
         for item in table.rows(tablelist=tablelist):
-            if item is None or not self.validate(table, item):
+            if item is None or not common_validator(item, self.today):
                 self.skip_counter += 1
                 continue
 
             try:
                 old_obj = model.objects.get(pk=item.pk)
             except model.DoesNotExist:
-                objects.add(item)
-                self.counter += 1
+                if not create_validator(item, self.today):
+                    self.skip_counter += 1
+                    continue
+                else:
+                    objects.add(item)
+                    self.counter += 1
+
             else:
+                if not update_validator(item, self.today):
+                    self.skip_counter += 1
+                    continue
                 if old_obj.updatedate < item.updatedate:
                     item.save()
                     self.upd_counter += 1

@@ -241,7 +241,7 @@ class CommandUpdateTestCase(TestCase):
         self.assertEqual(date(2022, 11, 28), h.startdate)
         self.assertEqual(date(2079, 6, 6), h.enddate)
         self.assertEqual(20221129, h.ver)
-        self.assertEqual(20221129, h.tree_ver)
+        self.assertEqual(20221202, h.tree_ver)
 
         self.assertEqual(5, HouseParam.objects.count())
         hp = HouseParam.objects.get(id=1346933308)
@@ -343,9 +343,9 @@ class CommandUpdateTestCase(TestCase):
         self.assertEqual(date(2079, 6, 6), mh.enddate)
         self.assertEqual(20221129, mh.ver)
 
-        self.assertEqual(3, Version.objects.count())
+        self.assertEqual(4, Version.objects.count())
         # TODO: всё ещё сомнения по поводу поиска ближайшей версии
-        ver = Version.objects.get(ver=20221129)
+        ver = Version.objects.get(ver=20221202)
 
         self.assertEqual(10, Status.objects.count())
 

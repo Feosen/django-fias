@@ -7066,6 +7066,16 @@
     }
   },
   {
+    "model": "fias.version",
+    "pk": 20221202,
+    "fields": {
+      "date": null,
+      "dumpdate": "2022-12-02",
+      "complete_xml_url": "https://fias-file.nalog.ru/downloads/2022.12.02/gar_xml.zip",
+      "delta_xml_url": "https://fias-file.nalog.ru/downloads/2022.12.02/gar_delta_xml.zip"
+    }
+  },
+  {
     "model": "fias.status",
     "pk": 121,
     "fields": {
