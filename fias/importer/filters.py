@@ -23,7 +23,7 @@ def filter_is_active(item: AbstractHierarchy) -> Union[AbstractHierarchy, None]:
 
 
 def filter_house_type(item: House) -> Union[House, None]:
-    if config.HOUSE_TYPES == config.ALL or item.housetype in config.HOUSE_TYPES:
+    if config.HOUSE_TYPES == config.ALL or item.housetype is not None and item.housetype in config.HOUSE_TYPES:
         return item
     return None
 

@@ -17,7 +17,7 @@ class AbstractHierarchy(AbstractIsActiveModel):
     objectid = BigIntegerRefField(
         to=[(AddrObj, "objectid"), (House, "objectid")], verbose_name="глобальный уникальный идентификатор объекта"
     )
-    parentobjid = models.BigIntegerField(verbose_name="идентификатор родительского объекта")
+    parentobjid = models.BigIntegerField(verbose_name="идентификатор родительского объекта", null=True, blank=True)
 
     class Meta(AbstractIsActiveModel.Meta):
         abstract = True

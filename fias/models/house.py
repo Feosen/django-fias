@@ -39,7 +39,7 @@ class House(AbstractObj):
     housenum = models.CharField(verbose_name="номер дома", max_length=20, blank=True, null=True)
     addnum1 = models.CharField(verbose_name="дополнительный номер дома 1", max_length=20, blank=True, null=True)
     addnum2 = models.CharField(verbose_name="дополнительный номер дома 2", max_length=20, blank=True, null=True)
-    housetype = models.IntegerField(verbose_name="основной тип дома")
+    housetype = models.IntegerField(verbose_name="основной тип дома", null=True, blank=True)
     addtype1 = models.IntegerField(verbose_name="дополнительный тип номера дома 1", blank=True, null=True)
     addtype2 = models.IntegerField(verbose_name="дополнительный тип номера дома 2", blank=True, null=True)
 

@@ -330,6 +330,10 @@ class CommandUpdateTestCase(TestCase):
         self.assertEqual(date(2079, 6, 6), ah.enddate)
         self.assertEqual(20221129, ah.ver)
 
+        ah1 = AdmHierarchy.objects.get(id=84785687)
+        self.assertEqual(1460768, ah1.objectid)
+        self.assertEqual(None, ah1.parentobjid)
+
         self.assertEqual(6, MunHierarchy.objects.count())
         self.assertTrue(MunHierarchy.objects.filter(objectid=1456865).exists())
 
