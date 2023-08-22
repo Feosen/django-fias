@@ -75,6 +75,7 @@ _table_cfg: List[TableCfg] = [
     ),
 ]
 
+
 _house_cfg = Cfg(
     t_models.House,
     "objectid",
@@ -88,13 +89,14 @@ _house_cfg = Cfg(
     ],
 )
 
-if LOAD_HOUSE_BULK_SIZE == 0:
+
+if LOAD_HOUSE_BULK_SIZE < 0:
     pass
 
-elif LOAD_HOUSE_BULK_SIZE == 1:
+elif LOAD_HOUSE_BULK_SIZE == 0:
     _table_cfg.append(TableCfg(_house_cfg, None))
 
-elif LOAD_HOUSE_BULK_SIZE > 1:
+else:
 
     def _bulk_houses() -> Iterable[Tuple[Cfg, str]]:
         house_statistic = s_models.House.objects.aggregate(min=Min("objectid"), max=Max("objectid"))
