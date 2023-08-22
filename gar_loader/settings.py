@@ -209,5 +209,5 @@ FIAS_HOUSE_TYPES: _FHT = (2, 5, 7, 10)
 # If true, django will create target tables in migrations.
 TARGET_MANAGE: bool = True
 
-# If false, gar_house stay untouched.
-TARGET_LOAD_HOUSE: bool = True
+# 0 - do not load data into TARGET_HOUSE, 1 - all data at once, > 1 - bulk size
+TARGET_LOAD_HOUSE_BULK_SIZE: int = 2000000
