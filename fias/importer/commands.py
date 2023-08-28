@@ -1,9 +1,11 @@
 # coding: utf-8
 from __future__ import absolute_import, unicode_literals
 
+import codecs
+import csv
 import logging
 from pathlib import Path
-from typing import List, Tuple, Type, Union
+from typing import List, Tuple, Type, Union, cast
 
 from django.core.exceptions import ValidationError
 from django.core.validators import URLValidator
@@ -29,7 +31,14 @@ from fias.importer.source import (
     TableListLoadingError,
 )
 from fias.importer.table import BadTableError
-from fias.models import AbstractIsActiveModel, AbstractModel, Status, Version
+from fias.models import (
+    AbstractIsActiveModel,
+    AbstractModel,
+    HouseParam,
+    ParamType,
+    Status,
+    Version,
+)
 from gar_loader.indexes import remove_indexes_from_model, restore_indexes_for_model
 
 logger = logging.getLogger(__name__)
@@ -225,6 +234,12 @@ def fix_data(models: List[Type[AbstractModel]], min_ver: int) -> None:
     remove_orphans(models)
 
 
+def _get_min_version() -> Union[int, None]:
+    return cast(
+        Union[int, None], Status.objects.filter(table__in=get_table_names(None)).aggregate(Min("ver"))["ver__min"]
+    )
+
+
 def manual_update_data(
     path: Path,
     skip: bool = False,
@@ -232,8 +247,8 @@ def manual_update_data(
     limit: int = 1000,
     tables: Union[Tuple[str, ...], None] = None,
     tempdir: Union[Path, None] = None,
-) -> None:
-    min_version = Status.objects.filter(table__in=get_table_names(None)).aggregate(Min("ver"))["ver__min"]
+) -> Union[int, None]:
+    min_version = _get_min_version()
 
     version_map = {}
 
@@ -276,6 +291,7 @@ def manual_update_data(
             min_ver = version
         if least_version is not None:
             fix_data(list(models), least_version)
+        return least_version
     else:
         raise TableListLoadingError("Not available. Please import the data before updating")
 
@@ -286,8 +302,8 @@ def auto_update_data(
     limit: int = 10000,
     tables: Union[Tuple[str, ...] | None] = None,
     tempdir: Union[Path, None] = None,
-) -> None:
-    min_version = Status.objects.filter(table__in=get_table_names(None)).aggregate(Min("ver"))["ver__min"]
+) -> Union[int, None]:
+    min_version = _get_min_version()
 
     if min_version is not None:
         min_ver = Version.objects.get(ver=min_version)
@@ -319,5 +335,26 @@ def auto_update_data(
 
         if least_version is not None:
             fix_data(list(models), least_version)
+        return least_version
     else:
         raise TableListLoadingError("Not available. Please import the data before updating")
+
+
+def validate_house_params(output: Path, min_ver: int | None, regions: List[str] | str = "__all__") -> None:
+    pt_qs = ParamType.objects.filter(id__in=(6, 7)).values_list("id", "name")
+    pt_names = {t_id: t_name for t_id, t_name in pt_qs}
+
+    hp_qs = HouseParam.objects.filter(typeid__in=pt_names.keys(), value__regex=r"^(.*\D|00|\d\d0|\d\d\d00).*$")
+
+    with open(output, "w+b") as ob_file:
+        ob_file.write(codecs.BOM_UTF8)
+    with open(output, "a", encoding="utf-8", newline="") as o_file:
+        writer = csv.writer(o_file)
+        writer.writerow(["objectid", "ver", "region", "type_id", "type_name", "value"])
+
+        if min_ver is not None:
+            hp_qs = hp_qs.filter(ver__gte=min_ver)
+        if regions != "__all__":
+            hp_qs = hp_qs.filter(region__in=regions)
+        for hp in hp_qs:
+            writer.writerow((hp.objectid, hp.ver, hp.region, hp.typeid, pt_names[hp.typeid], hp.value))

@@ -1,12 +1,13 @@
 from datetime import date
 from pathlib import Path
-from typing import Any, Dict, List
+from typing import TYPE_CHECKING, Any, Dict, List
 from uuid import UUID
 
 from django.core.management import call_command
 from django.test import TestCase
 
 from fias.config import TableName
+from fias.importer.commands import validate_house_params
 from fias.models import (
     AddHouseType,
     AddrObj,
@@ -17,26 +18,53 @@ from fias.models import (
     HouseParam,
     HouseType,
     MunHierarchy,
+    ParamType,
     Status,
     Version,
 )
 
+BASE_DIR = Path(__file__).resolve().parent
+TEMPDIR = BASE_DIR
 
-class CommandCreateTestCase(TestCase):
+
+if TYPE_CHECKING:
+    BaseTestMixin = TestCase
+else:
+    BaseTestMixin = object
+
+
+class ReportTestMixin(BaseTestMixin):
+    report_path: Path = BASE_DIR / Path("delete_me.csv")
+    reference_report_path: Path
+
+    def validate_report(self) -> None:
+        with open(self.report_path, encoding="utf-8") as s_file:
+            s_csv = s_file.read()
+        with open(self.reference_report_path, encoding="utf-8") as t_file:
+            t_csv = t_file.read()
+        self.assertEqual(t_csv, s_csv)
+
+    def tearDown(self) -> None:
+        self.report_path.unlink(True)
+        super().tearDown()
+
+
+class CommandCreateTestCase(ReportTestMixin, TestCase):
     databases = {"default", "gar"}
+    reference_report_path: Path = BASE_DIR / Path("data/test_fias_create.csv")
 
     def test_fias_create(self) -> None:
         Version.objects.create(ver=20221125, dumpdate=date(2022, 11, 25), complete_xml_url="complete_xml_url")
 
-        BASE_DIR = Path(__file__).resolve().parent
-        SRC = BASE_DIR / Path("data/fake/gar_99.rar")
-        TEMPRID = BASE_DIR
+        src = BASE_DIR / Path("data/fake/gar_99.rar")
         args: List[Any] = []
         opts: Dict[str, Any] = {
-            "src": str(SRC),
-            "tempdir": str(TEMPRID),
+            "src": str(src),
+            "tempdir": str(TEMPDIR),
             "update_version_info": False,
             "keep_indexes": "no",
+            "house_param_region": "99",
+            "house_param_report": self.report_path,
         }
         call_command("fias", *args, **opts)
 
@@ -181,25 +209,28 @@ class CommandCreateTestCase(TestCase):
         self.assertEqual("99", h_s.region)
         self.assertEqual(ver, h_s.ver)
 
+        self.validate_report()
 
-class CommandUpdateTestCase(TestCase):
+
+class CommandUpdateTestCase(ReportTestMixin, TestCase):
     databases = {"default", "gar"}
     fixtures = ["fias/tests/data/fixtures/gar_99.json"]
+    reference_report_path: Path = BASE_DIR / Path("data/test_fias_update.csv")
 
     def test_fias_update(self) -> None:
         self.assertTrue(AdmHierarchy.objects.filter(objectid=1456865).exists())
         self.assertFalse(MunHierarchy.objects.filter(objectid=1456865).exists())
         self.assertEqual("55000000000", AddrObjParam.objects.get(objectid=1460768, typeid=6).value)
 
-        BASE_DIR = Path(__file__).resolve().parent
-        SRC = BASE_DIR / Path("data/fake/deltas")
-        TEMPRID = BASE_DIR
+        src = BASE_DIR / Path("data/fake/deltas")
         args: List[Any] = []
         opts: Dict[str, Any] = {
-            "src": str(SRC),
-            "tempdir": str(TEMPRID),
+            "src": str(src),
+            "tempdir": str(TEMPDIR),
             "update": True,
             "update_version_info": False,
+            "house_param_region": "99",
+            "house_param_report": self.report_path,
         }
         call_command("fias", *args, **opts)
 
@@ -360,3 +391,155 @@ class CommandUpdateTestCase(TestCase):
         h_s = Status.objects.get(table=TableName.HOUSE)
         self.assertEqual("99", h_s.region)
         self.assertEqual(ver, h_s.ver)
+
+        self.validate_report()
+
+
+class CommandValidateHouseParamsTestCase(ReportTestMixin, TestCase):
+    databases = {"default", "gar"}
+    params: List[HouseParam]
+    param_types: List[ParamType]
+    reference_report_path: Path = BASE_DIR / Path("data/test_validate_house_params.csv")
+
+    def setUp(self) -> None:
+        super().setUp()
+        self.param_types = [
+            ParamType(
+                id=6,
+                name="ОКАТО",
+                desc="ОКАТО",
+                isactive=True,
+                ver=20220112,
+                updatedate=date(2022, 1, 12),
+                startdate=date(2022, 1, 12),
+                enddate=date(2079, 6, 6),
+            ),
+            ParamType(
+                id=7,
+                name="ОКТМО",
+                desc="ОКТМО",
+                isactive=True,
+                ver=20220112,
+                updatedate=date(2022, 1, 12),
+                startdate=date(2022, 1, 12),
+                enddate=date(2079, 6, 6),
+            ),
+        ]
+        for pt in self.param_types:
+            pt.full_clean()
+            pt.save()
+        # 0-4 symbols are important
+        self.params = [
+            HouseParam(
+                objectid=1,
+                ver=20220112,
+                updatedate=date(2022, 1, 12),
+                startdate=date(2022, 1, 12),
+                enddate=date(2079, 6, 6),
+                region=78,
+                typeid=6,
+                value="40290000000",
+            ),
+            HouseParam(
+                objectid=2,
+                ver=20220112,
+                updatedate=date(2022, 1, 12),
+                startdate=date(2022, 1, 12),
+                enddate=date(2079, 6, 6),
+                region=78,
+                typeid=6,
+                value="40090000000",
+            ),
+            HouseParam(
+                objectid=3,
+                ver=20220112,
+                updatedate=date(2022, 1, 12),
+                startdate=date(2022, 1, 12),
+                enddate=date(2079, 6, 6),
+                region=78,
+                typeid=6,
+                value="40000000000",
+            ),
+            HouseParam(
+                objectid=4,
+                ver=20220112,
+                updatedate=date(2022, 1, 12),
+                startdate=date(2022, 1, 12),
+                enddate=date(2079, 6, 6),
+                region=78,
+                typeid=7,
+                value="40395000",
+            ),
+            HouseParam(
+                objectid=5,
+                ver=20220112,
+                updatedate=date(2022, 1, 12),
+                startdate=date(2022, 1, 12),
+                enddate=date(2079, 6, 6),
+                region=78,
+                typeid=7,
+                value="40095000",
+            ),
+            HouseParam(
+                objectid=6,
+                ver=20220112,
+                updatedate=date(2022, 1, 12),
+                startdate=date(2022, 1, 12),
+                enddate=date(2079, 6, 6),
+                region=78,
+                typeid=7,
+                value="40000000",
+            ),
+            HouseParam(
+                objectid=7,
+                ver=20220110,
+                updatedate=date(2022, 1, 10),
+                startdate=date(2022, 1, 10),
+                enddate=date(2079, 6, 6),
+                region=78,
+                typeid=7,
+                value="40000000",
+            ),
+            HouseParam(
+                objectid=8,
+                ver=20220112,
+                updatedate=date(2022, 1, 12),
+                startdate=date(2022, 1, 12),
+                enddate=date(2079, 6, 6),
+                region=50,
+                typeid=6,
+                value="46437000000",
+            ),
+            HouseParam(
+                objectid=9,
+                ver=20220112,
+                updatedate=date(2022, 1, 12),
+                startdate=date(2022, 1, 12),
+                enddate=date(2079, 6, 6),
+                region=50,
+                typeid=6,
+                value="46037000000",
+            ),
+        ]
+        for p in self.params:
+            p.full_clean()
+            p.save()
+
+    def tearDown(self) -> None:
+        for pt in self.param_types:
+            pt.delete()
+        for p in self.params:
+            p.delete()
+        super().tearDown()
+
+    def test_cmd_validate_house_params(self) -> None:
+        args: List[Any] = []
+        opts: Dict[str, Any] = {"output": self.report_path, "region": "78", "min_ver": 20220112}
+        call_command("validate_house_params", *args, **opts)
+
+        self.validate_report()
+
+    def test_validate_house_params(self) -> None:
+        validate_house_params(self.report_path, 20220112, ["78"])
+
+        self.validate_report()

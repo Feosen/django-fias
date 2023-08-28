@@ -4,7 +4,7 @@ from __future__ import absolute_import, unicode_literals
 import os
 import sys
 from pathlib import Path
-from typing import Any, Tuple, Union
+from typing import Any, List, Tuple, Union
 
 from django.conf import settings
 from django.utils.translation import activate
@@ -14,6 +14,7 @@ from fias.importer.commands import (
     auto_update_data,
     load_complete_data,
     manual_update_data,
+    validate_house_params,
 )
 from fias.importer.source import TableListLoadingError
 from fias.importer.version import fetch_version_info
@@ -108,6 +109,20 @@ class Command(BaseCommandCompatible):
             "default": None,
             "help": "Path to the temporary files directory",
         },
+        "--house-param-report": {
+            "action": "store",
+            "dest": "house_param_report",
+            "type": Path,
+            "default": None,
+            "help": "Output CSV file path",
+        },
+        "--house-param-region": {
+            "action": "store",
+            "dest": "house_param_regions",
+            "type": str,
+            "default": "__all__",
+            "help": "Region to scan [,]",
+        },
     }
 
     def handle(
@@ -123,6 +138,8 @@ class Command(BaseCommandCompatible):
         update_version_info: str,
         keep_indexes: str,
         tempdir: str,
+        house_param_report: Path,
+        house_param_regions: str,
         **options: Any,
     ) -> None:
         remote = False
@@ -173,6 +190,13 @@ class Command(BaseCommandCompatible):
         keep_regular_indexes = keep_indexes == "yes"
         keep_pk_indexes = keep_indexes != "no"
 
+        validate_hp = house_param_report is not None
+
+        typed_house_param_regions: List[str] | str = house_param_regions
+        if typed_house_param_regions != "__all__":
+            typed_house_param_regions = house_param_regions.split(",")
+        least_new_version: int | None = None
+
         if (src_path or remote) and not update:
             try:
                 load_complete_data(
@@ -191,7 +215,7 @@ class Command(BaseCommandCompatible):
         if update:
             try:
                 if src_path:
-                    manual_update_data(
+                    least_new_version = manual_update_data(
                         path=Path(src_path),
                         skip=skip,
                         data_format=fmt,
@@ -200,9 +224,13 @@ class Command(BaseCommandCompatible):
                         tempdir=tempdir_path,
                     )
                 else:
-                    auto_update_data(skip=skip, data_format=fmt, limit=limit, tables=tables_tuple, tempdir=tempdir_path)
+                    least_new_version = auto_update_data(
+                        skip=skip, data_format=fmt, limit=limit, tables=tables_tuple, tempdir=tempdir_path
+                    )
             except TableListLoadingError as e:
                 self.error(str(e))
+        if validate_hp:
+            validate_house_params(house_param_report, least_new_version, typed_house_param_regions)
 
     def error(self, message: str, code: int | None = 1) -> None:
         print(message)
