@@ -12,6 +12,7 @@ from django.core.validators import URLValidator
 from django.db.models import Min
 
 from fias import config
+from fias.config import VALIDATE_HOUSE_PARAM_IDS
 from fias.importer.loader import TableLoader, TableUpdater
 from fias.importer.signals import (
     post_drop_indexes,
@@ -341,7 +342,7 @@ def auto_update_data(
 
 
 def validate_house_params(output: Path, min_ver: int | None, regions: List[str] | None) -> None:
-    pt_qs = ParamType.objects.filter(id__in=(6, 7)).values_list("id", "name")
+    pt_qs = ParamType.objects.filter(id__in=VALIDATE_HOUSE_PARAM_IDS).values_list("id", "name")
     pt_names = {t_id: t_name for t_id, t_name in pt_qs}
 
     hp_qs = HouseParam.objects.filter(typeid__in=pt_names.keys(), value__regex=r"^(.*\D|00|\d\d0|\d\d\d00).*$")

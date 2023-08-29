@@ -15,7 +15,7 @@ from django.db.utils import DEFAULT_DB_ALIAS
 from fias.enum import CEnumMeta
 from fias.models import AbstractModel
 
-__all__ = ["DEFAULT_DB_ALIAS", "DATABASE_ALIAS", "PARAM_MAP", "PROXY", "TableName"]
+__all__ = ["DEFAULT_DB_ALIAS", "DATABASE_ALIAS", "PARAM_MAP", "PROXY", "VALIDATE_HOUSE_PARAM_IDS", "TableName"]
 
 
 ALL: Final = "__all__"
@@ -121,6 +121,12 @@ elif DATABASE_ALIAS != DEFAULT_DB_ALIAS and "fias.routers.FIASRouter" not in set
         "FIAS: for use external database add `fias.routers.FIASRouter`"
         " into `DATABASE_ROUTERS` list in your settings.py"
     )
+
+VALIDATE_HOUSE_PARAM_IDS: Iterable[int] = getattr(settings, "FIAS_VALIDATE_HOUSE_PARAM_IDS", (6, 7))
+if not (
+    isinstance(VALIDATE_HOUSE_PARAM_IDS, tuple) and all(map(lambda x: isinstance(x, int), VALIDATE_HOUSE_PARAM_IDS))
+):
+    raise ImproperlyConfigured("FIAS_VALIDATE_HOUSE_PARAM_IDS must be tuple of int.")
 
 
 """
