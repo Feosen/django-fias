@@ -27,7 +27,7 @@ class Downloader:
                 mode = "ab"
             else:
                 mode = "wb"
-            tfp = open(file_name, mode)
+            tfp = file_name.open(mode)
         else:
             tfp = tempfile.NamedTemporaryFile(delete=False)
             file_name = Path(tfp.name)

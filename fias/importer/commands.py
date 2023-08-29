@@ -347,9 +347,9 @@ def validate_house_params(output: Path, min_ver: int | None, regions: List[str] 
 
     hp_qs = HouseParam.objects.filter(typeid__in=pt_names.keys(), value__regex=r"^(.*\D|00|\d\d0|\d\d\d00).*$")
 
-    with open(output, "w+b") as ob_file:
+    with output.open("w+b") as ob_file:
         ob_file.write(codecs.BOM_UTF8)
-    with open(output, "a", encoding="utf-8", newline="") as o_file:
+    with output.open("a", encoding="utf-8", newline="") as o_file:
         writer = csv.writer(o_file)
         writer.writerow(["objectid", "ver", "region", "type_id", "type_name", "value"])
 

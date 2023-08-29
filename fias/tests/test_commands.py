@@ -38,9 +38,9 @@ class ReportTestMixin(BaseTestMixin):
     reference_report_path: Path
 
     def validate_report(self) -> None:
-        with open(self.report_path, encoding="utf-8") as s_file:
+        with self.report_path.open(encoding="utf-8") as s_file:
             s_csv = s_file.read()
-        with open(self.reference_report_path, encoding="utf-8") as t_file:
+        with self.reference_report_path.open(encoding="utf-8") as t_file:
             t_csv = t_file.read()
         self.assertEqual(t_csv, s_csv)
 

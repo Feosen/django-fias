@@ -63,7 +63,7 @@ class DirectoryWrapper(SourceWrapper):
         return self.source / filename
 
     def open(self, filename: str) -> IO[bytes]:
-        return open(self.get_full_path(filename), "rb")
+        return self.get_full_path(filename).open("rb")
 
     def __del__(self) -> None:
         if self.is_temporary:

@@ -21,4 +21,4 @@ class Wrapper(SourceWrapper):
         return FAKE_FILES
 
     def open(self, filename: str) -> IO[bytes]:
-        return open(FAKE_DIR_PATH / filename, "rb")
+        return (FAKE_DIR_PATH / filename).open("rb")
