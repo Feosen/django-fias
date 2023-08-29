@@ -63,7 +63,7 @@ class CommandCreateTestCase(ReportTestMixin, TestCase):
             "tempdir": str(TEMPDIR),
             "update_version_info": False,
             "keep_indexes": "no",
-            "house_param_region": "99",
+            "house_param_regions": ["99"],
             "house_param_report": self.report_path,
         }
         call_command("fias", *args, **opts)
@@ -229,7 +229,7 @@ class CommandUpdateTestCase(ReportTestMixin, TestCase):
             "tempdir": str(TEMPDIR),
             "update": True,
             "update_version_info": False,
-            "house_param_region": "99",
+            "house_param_regions": ["99"],
             "house_param_report": self.report_path,
         }
         call_command("fias", *args, **opts)
@@ -534,7 +534,7 @@ class CommandValidateHouseParamsTestCase(ReportTestMixin, TestCase):
 
     def test_cmd_validate_house_params(self) -> None:
         args: List[Any] = []
-        opts: Dict[str, Any] = {"output": self.report_path, "region": "78", "min_ver": 20220112}
+        opts: Dict[str, Any] = {"output": self.report_path, "regions": ["78"], "min_ver": 20220112}
         call_command("validate_house_params", *args, **opts)
 
         self.validate_report()

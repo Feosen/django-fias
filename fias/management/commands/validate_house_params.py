@@ -25,17 +25,14 @@ class Command(BaseCommandCompatible):
             "default": None,
             "help": "Minimum version for searching",
         },
-        "--region": {
+        "--regions": {
             "action": "store",
             "dest": "regions",
+            "nargs": "+",
             "type": str,
-            "default": "__all__",
-            "help": "Region to scan [,]",
+            "help": "Region to scan (space separated)",
         },
     }
 
-    def handle(self, output: Path, min_ver: int | None, regions: str, **options: Any) -> None:
-        typed_regions: List[str] | str = regions
-        if typed_regions != "__all__":
-            typed_regions = regions.split(",")
-        validate_house_params(output, min_ver, typed_regions)
+    def handle(self, output: Path, min_ver: int | None, regions: List[str] | None, **options: Any) -> None:
+        validate_house_params(output, min_ver, regions)

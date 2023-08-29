@@ -340,7 +340,7 @@ def auto_update_data(
         raise TableListLoadingError("Not available. Please import the data before updating")
 
 
-def validate_house_params(output: Path, min_ver: int | None, regions: List[str] | str = "__all__") -> None:
+def validate_house_params(output: Path, min_ver: int | None, regions: List[str] | None) -> None:
     pt_qs = ParamType.objects.filter(id__in=(6, 7)).values_list("id", "name")
     pt_names = {t_id: t_name for t_id, t_name in pt_qs}
 
@@ -354,7 +354,7 @@ def validate_house_params(output: Path, min_ver: int | None, regions: List[str] 
 
         if min_ver is not None:
             hp_qs = hp_qs.filter(ver__gte=min_ver)
-        if regions != "__all__":
+        if regions is not None:
             hp_qs = hp_qs.filter(region__in=regions)
         for hp in hp_qs:
             writer.writerow((hp.objectid, hp.ver, hp.region, hp.typeid, pt_names[hp.typeid], hp.value))

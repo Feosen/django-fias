@@ -119,9 +119,9 @@ class Command(BaseCommandCompatible):
         "--house-param-region": {
             "action": "store",
             "dest": "house_param_regions",
+            "nargs": "+",
             "type": str,
-            "default": "__all__",
-            "help": "Region to scan [,]",
+            "help": "Region to scan space separated",
         },
     }
 
@@ -138,8 +138,8 @@ class Command(BaseCommandCompatible):
         update_version_info: str,
         keep_indexes: str,
         tempdir: str,
-        house_param_report: Path,
-        house_param_regions: str,
+        house_param_report: Path | None,
+        house_param_regions: List[str] | None,
         **options: Any,
     ) -> None:
         remote = False
@@ -190,11 +190,6 @@ class Command(BaseCommandCompatible):
         keep_regular_indexes = keep_indexes == "yes"
         keep_pk_indexes = keep_indexes != "no"
 
-        validate_hp = house_param_report is not None
-
-        typed_house_param_regions: List[str] | str = house_param_regions
-        if typed_house_param_regions != "__all__":
-            typed_house_param_regions = house_param_regions.split(",")
         least_new_version: int | None = None
 
         if (src_path or remote) and not update:
@@ -229,8 +224,8 @@ class Command(BaseCommandCompatible):
                     )
             except TableListLoadingError as e:
                 self.error(str(e))
-        if validate_hp:
-            validate_house_params(house_param_report, least_new_version, typed_house_param_regions)
+        if house_param_report is not None:
+            validate_house_params(house_param_report, least_new_version, house_param_regions)
 
     def error(self, message: str, code: int | None = 1) -> None:
         print(message)
