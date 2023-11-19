@@ -1,10 +1,12 @@
+from concurrent.futures import ThreadPoolExecutor
 from datetime import date
 from pathlib import Path
 from typing import TYPE_CHECKING, Any, Dict, List
+from unittest import mock
 from uuid import UUID
 
 from django.core.management import call_command
-from django.test import TestCase
+from django.test import TestCase, TransactionTestCase
 
 from fias.config import TableName
 from fias.importer.commands import validate_house_params
@@ -49,7 +51,7 @@ class ReportTestMixin(BaseTestMixin):
         super().tearDown()
 
 
-class CommandCreateTestCase(ReportTestMixin, TestCase):
+class CommandCreateTestCase(ReportTestMixin, TransactionTestCase):
     databases = {"default", "gar"}
     reference_report_path: Path = BASE_DIR / Path("data/test_fias_create.csv")
 
@@ -66,7 +68,10 @@ class CommandCreateTestCase(ReportTestMixin, TestCase):
             "house_param_regions": ["99"],
             "house_param_report": self.report_path,
         }
-        call_command("fias", *args, **opts)
+
+        # Can not run ProcessPoolExecutor inside tests=(
+        with mock.patch("fias.importer.commands.ProcessPoolExecutor", ThreadPoolExecutor):
+            call_command("fias", *args, **opts)
 
         self.assertEqual(7, HouseType.objects.count())
         ht = HouseType.objects.get(id=7)
@@ -212,7 +217,7 @@ class CommandCreateTestCase(ReportTestMixin, TestCase):
         self.validate_report()
 
 
-class CommandUpdateTestCase(ReportTestMixin, TestCase):
+class CommandUpdateTestCase(ReportTestMixin, TransactionTestCase):
     databases = {"default", "gar"}
     fixtures = ["fias/tests/data/fixtures/gar_99.json"]
     reference_report_path: Path = BASE_DIR / Path("data/test_fias_update.csv")
@@ -232,7 +237,10 @@ class CommandUpdateTestCase(ReportTestMixin, TestCase):
             "house_param_regions": ["99"],
             "house_param_report": self.report_path,
         }
-        call_command("fias", *args, **opts)
+
+        # Can not run ProcessPoolExecutor inside tests=(
+        with mock.patch("fias.importer.commands.ProcessPoolExecutor", ThreadPoolExecutor):
+            call_command("fias", *args, **opts)
 
         self.assertEqual(7, HouseType.objects.count())
         ht = HouseType.objects.get(id=7)

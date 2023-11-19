@@ -123,6 +123,13 @@ class Command(BaseCommandCompatible):
             "type": str,
             "help": "Region to scan space separated",
         },
+        "--threads": {
+            "action": "store",
+            "dest": "threads",
+            "type": int,
+            "default": None,
+            "help": "Running in parallel (using CPU count if value is empty)",
+        },
     }
 
     def handle(
@@ -140,6 +147,7 @@ class Command(BaseCommandCompatible):
         tempdir: str,
         house_param_report: Path | None,
         house_param_regions: List[str] | None,
+        threads: Union[int, None],
         **options: Any,
     ) -> None:
         remote = False
@@ -203,6 +211,7 @@ class Command(BaseCommandCompatible):
                     keep_indexes=keep_regular_indexes,
                     keep_pk=keep_pk_indexes,
                     tempdir=tempdir_path,
+                    threads=threads,
                 )
             except TableListLoadingError as e:
                 self.error(str(e))
@@ -217,10 +226,16 @@ class Command(BaseCommandCompatible):
                         limit=limit,
                         tables=tables_tuple,
                         tempdir=tempdir_path,
+                        threads=threads,
                     )
                 else:
                     least_new_version = auto_update_data(
-                        skip=skip, data_format=fmt, limit=limit, tables=tables_tuple, tempdir=tempdir_path
+                        skip=skip,
+                        data_format=fmt,
+                        limit=limit,
+                        tables=tables_tuple,
+                        tempdir=tempdir_path,
+                        threads=threads,
                     )
             except TableListLoadingError as e:
                 self.error(str(e))

@@ -4,11 +4,15 @@ from __future__ import absolute_import, unicode_literals
 import codecs
 import csv
 import logging
+from concurrent.futures import ProcessPoolExecutor
+from functools import partial
 from pathlib import Path
 from typing import List, Tuple, Type, Union, cast
 
+import django
 from django.core.exceptions import ValidationError
 from django.core.validators import URLValidator
+from django.db import connections
 from django.db.models import Min
 
 from fias import config
@@ -31,7 +35,7 @@ from fias.importer.source import (
     TableList,
     TableListLoadingError,
 )
-from fias.importer.table import BadTableError
+from fias.importer.table import BadTableError, Table
 from fias.models import (
     AbstractIsActiveModel,
     AbstractModel,
@@ -101,6 +105,24 @@ def update_tree_ver(models: List[Type[AbstractModel]], min_ver: int) -> None:
         model.objects.update_tree_ver(min_ver)
 
 
+def _w_load_data(
+    table: Table,
+    path: Union[Path, str, None],
+    version: Union[Version, None],
+    data_format: str,
+    tempdir: Union[Path, None],
+    limit: int,
+) -> int:
+    tablelist = get_tablelist(path=path, version=version, data_format=data_format, tempdir=tempdir)
+    loader = TableLoader(limit=limit)
+    loader.load(tablelist=tablelist, table=table)
+    st = Status(region=table.region, table=table.name, ver=tablelist.version)
+    st.save()
+
+    connections.close_all()
+    return 0
+
+
 def load_complete_data(
     path: str | None = None,
     data_format: str = "xml",
@@ -110,6 +132,7 @@ def load_complete_data(
     keep_indexes: bool = False,
     keep_pk: bool = True,
     tempdir: Union[Path, None] = None,
+    threads: Union[int, None] = None,
 ) -> None:
     tablelist = get_tablelist(path=path, data_format=data_format, tempdir=tempdir)
 
@@ -154,11 +177,16 @@ def load_complete_data(
             post_drop_indexes.send(sender=object.__class__, table=first_table)
 
         # Импортируем все таблицы модели
-        for table in tablelist.tables[tbl]:
-            loader = TableLoader(limit=limit)
-            loader.load(tablelist=tablelist, table=table)
-            st = Status(region=table.region, table=tbl, ver=tablelist.version)
-            st.save()
+        worker = partial(
+            _w_load_data, path=path, version=tablelist.version, data_format=data_format, tempdir=tempdir, limit=limit
+        )
+
+        if 1 == threads:
+            for t in tablelist.tables[tbl]:
+                worker(t)
+        else:
+            with ProcessPoolExecutor(max_workers=threads, initializer=django.setup) as executor:
+                executor.map(worker, tablelist.tables[tbl])
 
         # Восстанавливаем удалённые индексы
         if not keep_indexes:
@@ -177,6 +205,44 @@ def load_complete_data(
     logger.info(f"Data v.{tablelist.version} loaded.")
 
 
+def _w_update_data(
+    table: Table,
+    path: Union[Path, str, None],
+    version: Union[Version, None],
+    data_format: str,
+    tempdir: Union[Path, None],
+    skip: bool,
+    limit: int,
+) -> int:
+    tablelist = get_tablelist(path=path, version=version, data_format=data_format, tempdir=tempdir)
+    try:
+        st = Status.objects.get(table=table.name, region=table.region)
+    except Status.DoesNotExist:
+        logger.info(f"Can not update table `{table.name}`, region `{table.region}`: no data in database. Skipping…")
+        return 1
+    if st.ver.ver >= tablelist.version.ver:
+        logger.info(
+            (
+                f"Update of the table `{table.name}` is not needed "
+                f"[{st.ver.ver} >= {tablelist.version.ver}]. Skipping…"
+            )
+        )
+        return 1
+    loader = TableUpdater(limit=limit)
+    try:
+        loader.load(tablelist=tablelist, table=table)
+    except BadTableError as e:
+        if skip:
+            logger.error(str(e))
+        else:
+            raise
+    st.ver = tablelist.version
+    st.save()
+
+    connections.close_all()
+    return 0
+
+
 def update_data(
     path: Union[Path, None] = None,
     version: Union[Version, None] = None,
@@ -185,9 +251,15 @@ def update_data(
     limit: int = 10000,
     tables: Union[Tuple[str, ...], None] = None,
     tempdir: Union[Path, None] = None,
+    threads: Union[int, None] = None,
 ) -> Tuple[List[Type[AbstractModel]], int]:
     tablelist = get_tablelist(path=path, version=version, data_format=data_format, tempdir=tempdir)
 
+    worker = partial(
+        _w_update_data, path=path, version=version, data_format=data_format, tempdir=tempdir, skip=skip, limit=limit
+    )
+
+    tables_to_process: List[Table] = []
     processed_models = []
     for tbl in get_table_names(tables):
         # Пропускаем таблицы, которых нет в архиве
@@ -195,33 +267,14 @@ def update_data(
             continue
 
         processed_models.append(tablelist.tables[tbl][0].model)
+        tables_to_process += tablelist.tables[tbl]
 
-        for table in tablelist.tables[tbl]:
-            try:
-                st = Status.objects.get(table=table.name, region=table.region)
-            except Status.DoesNotExist:
-                logger.info(
-                    f"Can not update table `{table.name}`, region `{table.region}`: no data in database. Skipping…"
-                )
-                continue
-            if st.ver.ver >= tablelist.version.ver:
-                logger.info(
-                    (
-                        f"Update of the table `{table.name}` is not needed "
-                        f"[{st.ver.ver} >= {tablelist.version.ver}]. Skipping…"
-                    )
-                )
-                continue
-            loader = TableUpdater(limit=limit)
-            try:
-                loader.load(tablelist=tablelist, table=table)
-            except BadTableError as e:
-                if skip:
-                    logger.error(str(e))
-                else:
-                    raise
-            st.ver = tablelist.version
-            st.save()
+    if 1 == threads:
+        for t in tables_to_process:
+            worker(t)
+    else:
+        with ProcessPoolExecutor(max_workers=threads, initializer=django.setup) as executor:
+            executor.map(worker, tables_to_process)
 
     return processed_models, tablelist.version.ver
 
@@ -248,6 +301,7 @@ def manual_update_data(
     limit: int = 1000,
     tables: Union[Tuple[str, ...], None] = None,
     tempdir: Union[Path, None] = None,
+    threads: Union[int, None] = None,
 ) -> Union[int, None]:
     min_version = _get_min_version()
 
@@ -282,6 +336,7 @@ def manual_update_data(
                 limit=limit,
                 tables=tables,
                 tempdir=tempdir,
+                threads=threads,
             )
             models |= set(c_models)
             if least_version is None:
@@ -303,6 +358,7 @@ def auto_update_data(
     limit: int = 10000,
     tables: Union[Tuple[str, ...] | None] = None,
     tempdir: Union[Path, None] = None,
+    threads: Union[int, None] = None,
 ) -> Union[int, None]:
     min_version = _get_min_version()
 
@@ -324,6 +380,7 @@ def auto_update_data(
                 limit=limit,
                 tables=tables,
                 tempdir=tempdir,
+                threads=threads,
             )
 
             models |= set(c_models)

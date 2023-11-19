@@ -13,7 +13,7 @@ table_xml_pattern = (
 table_xml_re = re.compile(table_xml_pattern, re.I)
 
 
-__all__ = ["BadTableError", "TableFactory"]
+__all__ = ["Table", "BadTableError", "TableFactory"]
 
 
 class BadTableNameError(Exception):
