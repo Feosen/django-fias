@@ -12,7 +12,7 @@ __all__ = ["get_common_validator", "get_create_validator", "get_update_validator
 
 
 def new_common_validator(item: AbstractModel, today: date) -> bool:
-    return item.startdate < today < item.enddate
+    return item.startdate <= today < item.enddate
 
 
 def new_obj_validator(item: AbstractModel, today: date) -> bool:

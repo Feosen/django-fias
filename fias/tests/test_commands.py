@@ -251,7 +251,7 @@ class CommandUpdateTestCase(ReportTestMixin, TransactionTestCase):
         self.assertEqual(date(1900, 1, 1), ht.startdate)
         self.assertEqual(date(2079, 6, 6), ht.enddate)
         self.assertTrue(ht.isactive)
-        self.assertEqual(20221125, ht.ver)
+        self.assertEqual(20221202, ht.ver)
 
         self.assertEqual(3, AddHouseType.objects.count())
         aht = AddHouseType.objects.get(id=1)
@@ -262,7 +262,7 @@ class CommandUpdateTestCase(ReportTestMixin, TransactionTestCase):
         self.assertEqual(date(2015, 12, 25), aht.startdate)
         self.assertEqual(date(2079, 6, 6), aht.enddate)
         self.assertTrue(aht.isactive)
-        self.assertEqual(20221125, aht.ver)
+        self.assertEqual(20221202, aht.ver)
 
         self.assertEqual(2, House.objects.count())
         h = House.objects.get(objectid=157269039)
@@ -303,7 +303,7 @@ class CommandUpdateTestCase(ReportTestMixin, TransactionTestCase):
         self.assertEqual(date(2022, 9, 30), aot.enddate)
         self.assertEqual(2, aot.level)
         self.assertTrue(aot.isactive)
-        self.assertEqual(20221125, aot.ver)
+        self.assertEqual(20221202, aot.ver)
 
         self.assertEqual(4, AddrObj.objects.count())
         self.assertListEqual(

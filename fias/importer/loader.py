@@ -214,7 +214,7 @@ class TableUpdater(TableLoader):
                 if not update_validator(item, self.today):
                     self.skip_counter += 1
                     continue
-                if old_obj.updatedate < item.updatedate:
+                if old_obj.updatedate <= item.updatedate:
                     item.save()
                     self.upd_counter += 1
 
