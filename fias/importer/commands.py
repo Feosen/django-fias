@@ -186,7 +186,7 @@ def load_complete_data(
                 worker(t)
         else:
             with ProcessPoolExecutor(max_workers=threads, initializer=django.setup) as executor:
-                executor.map(worker, tablelist.tables[tbl])
+                print(list(executor.map(worker, tablelist.tables[tbl])))
 
         # Восстанавливаем удалённые индексы
         if not keep_indexes:
@@ -274,7 +274,7 @@ def update_data(
             worker(t)
     else:
         with ProcessPoolExecutor(max_workers=threads, initializer=django.setup) as executor:
-            executor.map(worker, tables_to_process)
+            print(list(executor.map(worker, tables_to_process)))
 
     return processed_models, tablelist.version.ver
 
