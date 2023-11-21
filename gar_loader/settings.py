@@ -206,6 +206,9 @@ _FHT = Union[Tuple[int, ...], str]
 # FIAS_HOUSE_TYPES: _FRT = "__all__"
 FIAS_HOUSE_TYPES: _FHT = (2, 5, 7, 10)
 
+# Store deactivated values in these tables. Default are ("house_type", "add_house_type")
+# FIAS_STORE_INACTIVE_TABLES: Tuple[str, ...] = ("house_type", "add_house_type")
+
 # If true, django will create target tables in migrations.
 TARGET_MANAGE: bool = True
 

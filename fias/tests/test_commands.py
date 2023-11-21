@@ -73,7 +73,7 @@ class CommandCreateTestCase(ReportTestMixin, TransactionTestCase):
         with mock.patch("fias.importer.commands.ProcessPoolExecutor", ThreadPoolExecutor):
             call_command("fias", *args, **opts)
 
-        self.assertEqual(7, HouseType.objects.count())
+        self.assertEqual(14, HouseType.objects.count())
         ht = HouseType.objects.get(id=7)
         self.assertEqual("Строение", ht.name)
         self.assertEqual("стр.", ht.shortname)
@@ -84,7 +84,7 @@ class CommandCreateTestCase(ReportTestMixin, TransactionTestCase):
         self.assertTrue(ht.isactive)
         self.assertEqual(20221125, ht.ver)
 
-        self.assertEqual(3, AddHouseType.objects.count())
+        self.assertEqual(4, AddHouseType.objects.count())
         aht = AddHouseType.objects.get(id=1)
         self.assertEqual("Корпус", aht.name)
         self.assertEqual("к.", aht.shortname)
@@ -242,7 +242,7 @@ class CommandUpdateTestCase(ReportTestMixin, TransactionTestCase):
         with mock.patch("fias.importer.commands.ProcessPoolExecutor", ThreadPoolExecutor):
             call_command("fias", *args, **opts)
 
-        self.assertEqual(7, HouseType.objects.count())
+        self.assertEqual(14, HouseType.objects.count())
         ht = HouseType.objects.get(id=7)
         self.assertEqual("Строение", ht.name)
         self.assertEqual("стр.", ht.shortname)
@@ -253,7 +253,7 @@ class CommandUpdateTestCase(ReportTestMixin, TransactionTestCase):
         self.assertTrue(ht.isactive)
         self.assertEqual(20221202, ht.ver)
 
-        self.assertEqual(3, AddHouseType.objects.count())
+        self.assertEqual(4, AddHouseType.objects.count())
         aht = AddHouseType.objects.get(id=1)
         self.assertEqual("Корпус", aht.name)
         self.assertEqual("к.", aht.shortname)

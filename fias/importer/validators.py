@@ -4,7 +4,8 @@ from __future__ import absolute_import, unicode_literals
 from datetime import date
 from typing import Callable, List, Tuple
 
-from fias.config import TableName
+from fias.config import STORE_INACTIVE_TABLES, TableName
+from fias.importer.table import get_model
 from fias.models import AbstractModel
 from fias.models.common import AbstractIsActiveModel, AbstractObj
 
@@ -42,7 +43,12 @@ _validators_create: _ValidatorMapType = [
         new_common_validator,
     ),
     ([TableName.ADDR_OBJ, TableName.HOUSE], new_obj_validator),
-    ([TableName.ADDR_OBJ, TableName.HOUSE, TableName.ADM_HIERARCHY, TableName.MUN_HIERARCHY], new_isactive_validator),
+    (
+        list(
+            t for t in TableName if t not in STORE_INACTIVE_TABLES and issubclass(get_model(t), AbstractIsActiveModel)
+        ),
+        new_isactive_validator,
+    ),
 ]
 
 _validators_update: _ValidatorMapType = []

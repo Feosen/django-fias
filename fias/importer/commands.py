@@ -7,7 +7,7 @@ import logging
 from concurrent.futures import ProcessPoolExecutor
 from functools import partial
 from pathlib import Path
-from typing import List, Tuple, Type, Union, cast
+from typing import List, Tuple, Union, cast
 
 import django
 from django.core.exceptions import ValidationError
@@ -16,7 +16,7 @@ from django.db import connections
 from django.db.models import Min
 
 from fias import config
-from fias.config import VALIDATE_HOUSE_PARAM_IDS
+from fias.config import STORE_INACTIVE_TABLES, VALIDATE_HOUSE_PARAM_IDS, TableName
 from fias.importer.loader import TableLoader, TableUpdater
 from fias.importer.signals import (
     post_drop_indexes,
@@ -35,15 +35,8 @@ from fias.importer.source import (
     TableList,
     TableListLoadingError,
 )
-from fias.importer.table import BadTableError, Table
-from fias.models import (
-    AbstractIsActiveModel,
-    AbstractModel,
-    HouseParam,
-    ParamType,
-    Status,
-    Version,
-)
+from fias.importer.table import BadTableError, Table, get_model
+from fias.models import AbstractIsActiveModel, HouseParam, ParamType, Status, Version
 from gar_loader.indexes import remove_indexes_from_model, restore_indexes_for_model
 
 logger = logging.getLogger(__name__)
@@ -84,25 +77,26 @@ def get_tablelist(
     return tablelist
 
 
-def get_table_names(tables: Union[Tuple[str, ...], None]) -> Tuple[str, ...]:
+def get_table_names(tables: Union[Tuple[TableName, ...], None]) -> Tuple[TableName, ...]:
     return tables if tables else config.TABLES
 
 
-def remove_orphans(models: List[Type[AbstractModel]]) -> None:
+def remove_orphans(tables: List[TableName]) -> None:
     # There are two levels of model hierarchy, so we can remove orphans in any order.
-    for model in models:
-        model.objects.delete_orphans()
+    for table in tables:
+        get_model(table).objects.delete_orphans()
 
 
-def remove_not_active(models: List[Type[AbstractModel]]) -> None:
-    for model in models:
+def remove_not_active(tables: List[TableName]) -> None:
+    for table in filter(lambda t: t not in STORE_INACTIVE_TABLES, tables):
+        model = get_model(table)
         if issubclass(model, AbstractIsActiveModel):
             model.objects.filter(isactive=False).delete()
 
 
-def update_tree_ver(models: List[Type[AbstractModel]], min_ver: int) -> None:
-    for model in models:
-        model.objects.update_tree_ver(min_ver)
+def update_tree_ver(tables: List[TableName], min_ver: int) -> None:
+    for table in tables:
+        get_model(table).objects.update_tree_ver(min_ver)
 
 
 def _w_load_data(
@@ -128,7 +122,7 @@ def load_complete_data(
     data_format: str = "xml",
     truncate: bool = False,
     limit: int = 10000,
-    tables: Union[Tuple[str, ...], None] = None,
+    tables: Union[Tuple[TableName, ...], None] = None,
     keep_indexes: bool = False,
     keep_pk: bool = True,
     tempdir: Union[Path, None] = None,
@@ -139,7 +133,7 @@ def load_complete_data(
     logger.info(f"Loading data v.{tablelist.version}.")
     pre_import.send(sender=object.__class__, version=tablelist.version)
 
-    processed_models = []
+    processed: List[TableName] = []
 
     for tbl in get_table_names(tables):
         # Пропускаем таблицы, которых нет в архиве
@@ -162,7 +156,7 @@ def load_complete_data(
                 continue
         # Берём для работы любую таблицу с именем tbl
         first_table = tablelist.tables[tbl][0]
-        processed_models.append(first_table.model)
+        processed.append(tbl)
 
         # Очищаем таблицу перед импортом
         if truncate:
@@ -195,11 +189,11 @@ def load_complete_data(
             post_restore_indexes.send(sender=object.__class__, table=first_table)
 
     logger.info("Update tree version.")
-    update_tree_ver(processed_models, 0)
+    update_tree_ver(processed, 0)
     logger.info("Remove deactivated records.")
-    remove_not_active(processed_models)
+    remove_not_active(processed)
     logger.info("Remove orphans.")
-    remove_orphans(processed_models)
+    remove_orphans(processed)
 
     post_import.send(sender=object.__class__, version=tablelist.version)
     logger.info(f"Data v.{tablelist.version} loaded.")
@@ -249,10 +243,10 @@ def update_data(
     skip: bool = False,
     data_format: str = "xml",
     limit: int = 10000,
-    tables: Union[Tuple[str, ...], None] = None,
+    tables: Union[Tuple[TableName, ...], None] = None,
     tempdir: Union[Path, None] = None,
     threads: Union[int, None] = None,
-) -> Tuple[List[Type[AbstractModel]], int]:
+) -> Tuple[List[TableName], int]:
     tablelist = get_tablelist(path=path, version=version, data_format=data_format, tempdir=tempdir)
 
     worker = partial(
@@ -260,13 +254,13 @@ def update_data(
     )
 
     tables_to_process: List[Table] = []
-    processed_models = []
+    processed: List[TableName] = []
     for tbl in get_table_names(tables):
         # Пропускаем таблицы, которых нет в архиве
         if tbl not in tablelist.tables:
             continue
 
-        processed_models.append(tablelist.tables[tbl][0].model)
+        processed.append(tbl)
         tables_to_process += tablelist.tables[tbl]
 
     if 1 == threads:
@@ -276,16 +270,16 @@ def update_data(
         with ProcessPoolExecutor(max_workers=threads, initializer=django.setup) as executor:
             print(list(executor.map(worker, tables_to_process)))
 
-    return processed_models, tablelist.version.ver
+    return processed, tablelist.version.ver
 
 
-def fix_data(models: List[Type[AbstractModel]], min_ver: int) -> None:
+def fix_data(tables: List[TableName], min_ver: int) -> None:
     logger.info("Update tree version.")
-    update_tree_ver(models, min_ver)
+    update_tree_ver(tables, min_ver)
     logger.info("Remove deactivated records.")
-    remove_not_active(models)
+    remove_not_active(tables)
     logger.info("Remove orphans.")
-    remove_orphans(models)
+    remove_orphans(tables)
 
 
 def _get_min_version() -> Union[int, None]:
@@ -299,7 +293,7 @@ def manual_update_data(
     skip: bool = False,
     data_format: str = "xml",
     limit: int = 1000,
-    tables: Union[Tuple[str, ...], None] = None,
+    tables: Union[Tuple[TableName, ...], None] = None,
     tempdir: Union[Path, None] = None,
     threads: Union[int, None] = None,
 ) -> Union[int, None]:
@@ -312,7 +306,7 @@ def manual_update_data(
         version_map[tablelist.version] = child
 
     if min_version is not None:
-        models = set()
+        processed = set()
         least_version = None
 
         min_ver = Version.objects.get(ver=min_version)
@@ -322,13 +316,13 @@ def manual_update_data(
                 src = version_map[version]
             except KeyError:
                 if least_version is not None:
-                    fix_data(list(models), least_version)
+                    fix_data(list(processed), least_version)
                 raise TableListLoadingError(f"No file for version {version}.")
 
             logger.info(f"Updating from v.{min_ver} to v.{version}.")
             pre_update.send(sender=object.__class__, before=min_ver, after=version)
 
-            c_models, c_ver = update_data(
+            c_processed, c_ver = update_data(
                 path=src,
                 version=version,
                 skip=skip,
@@ -338,7 +332,7 @@ def manual_update_data(
                 tempdir=tempdir,
                 threads=threads,
             )
-            models |= set(c_models)
+            processed |= set(c_processed)
             if least_version is None:
                 least_version = c_ver
 
@@ -346,7 +340,7 @@ def manual_update_data(
             logger.info(f"Data v.{min_ver} is updated to v.{version}.")
             min_ver = version
         if least_version is not None:
-            fix_data(list(models), least_version)
+            fix_data(list(processed), least_version)
         return least_version
     else:
         raise TableListLoadingError("Not available. Please import the data before updating")
@@ -356,7 +350,7 @@ def auto_update_data(
     skip: bool,
     data_format: str = "xml",
     limit: int = 10000,
-    tables: Union[Tuple[str, ...] | None] = None,
+    tables: Union[Tuple[TableName, ...] | None] = None,
     tempdir: Union[Path, None] = None,
     threads: Union[int, None] = None,
 ) -> Union[int, None]:
@@ -365,14 +359,14 @@ def auto_update_data(
     if min_version is not None:
         min_ver = Version.objects.get(ver=min_version)
 
-        models = set()
+        processed = set()
         least_version = None
 
         for version in Version.objects.filter(ver__gt=min_version).order_by("ver"):
             pre_update.send(sender=object.__class__, before=min_ver, after=version)
 
             url = getattr(version, "delta_{0}_url".format(data_format))
-            c_models, c_ver = update_data(
+            c_processed, c_ver = update_data(
                 path=url,
                 version=version,
                 skip=skip,
@@ -383,7 +377,7 @@ def auto_update_data(
                 threads=threads,
             )
 
-            models |= set(c_models)
+            processed |= set(c_processed)
             if least_version is None:
                 least_version = c_ver
 
@@ -392,7 +386,7 @@ def auto_update_data(
             min_ver = version
 
         if least_version is not None:
-            fix_data(list(models), least_version)
+            fix_data(list(processed), least_version)
         return least_version
     else:
         raise TableListLoadingError("Not available. Please import the data before updating")

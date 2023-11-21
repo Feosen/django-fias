@@ -9,7 +9,7 @@ from typing import Any, List, Tuple, Union
 from django.conf import settings
 from django.utils.translation import activate
 
-from fias.config import TABLES
+from fias.config import TABLES, TableName
 from fias.importer.commands import (
     auto_update_data,
     load_complete_data,
@@ -193,7 +193,7 @@ class Command(BaseCommandCompatible):
         if not tables_set.issubset(set(TABLES)):
             diff = ", ".join(tables_set.difference(set(TABLES)))
             self.error("Tables `{0}` are not listed in the FIAS_TABLES and can not be processed".format(diff))
-        tables_tuple: Tuple[str, ...] = tuple(str(x) for x in TABLES if x in tables_set)
+        tables_tuple: Tuple[TableName, ...] = tuple(x for x in TABLES if x in tables_set)
 
         keep_regular_indexes = keep_indexes == "yes"
         keep_pk_indexes = keep_indexes != "no"

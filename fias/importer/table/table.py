@@ -35,6 +35,11 @@ table_names: Dict[TableName, Type[AbstractModel]] = {
 
 assert len(table_names) == len(TableName)
 
+
+def get_model(table: TableName) -> Type[AbstractModel]:
+    return table_names[table]
+
+
 name_trans: Dict[str, str] = {
     "houses": TableName.HOUSE,
     "house_types": TableName.HOUSE_TYPE,

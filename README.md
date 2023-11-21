@@ -60,6 +60,8 @@ poetry run tox
 либо строку ```"__all__"```, если необходимо обрабатывать все.
 #### FIAS_VALIDATE_HOUSE_PARAM_IDS
 ID типов параметров для проверки командой validate_house_params, по умолчанию (6, 7) - ОКАТО и ОКТМО.
+#### FIAS_STORE_INACTIVE_TABLES
+Названия таблиц, для которых сохраняются записи с аттрибутом ISACTIVE = False. По умолчанию add_house_type и house_type.
 #### TARGET_MANAGE
 Указывает приложению, создавать ли целевые таблицы во время миграции (True) или пользователь создаёт их самостоятельно.
 #### TARGET_LOAD_HOUSE_BULK_SIZE

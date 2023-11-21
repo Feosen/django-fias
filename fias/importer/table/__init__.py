@@ -4,7 +4,7 @@ from __future__ import absolute_import, unicode_literals
 import re
 from typing import Any, Union
 
-from .table import BadTableError, Table, UnregisteredTable
+from .table import BadTableError, Table, UnregisteredTable, get_model
 from .xml import XMLTable
 
 table_xml_pattern = (
@@ -13,7 +13,7 @@ table_xml_pattern = (
 table_xml_re = re.compile(table_xml_pattern, re.I)
 
 
-__all__ = ["Table", "BadTableError", "TableFactory"]
+__all__ = ["Table", "BadTableError", "TableFactory", "get_model"]
 
 
 class BadTableNameError(Exception):

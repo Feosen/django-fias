@@ -5,7 +5,7 @@ import os
 import re
 from enum import StrEnum
 from importlib import import_module
-from typing import Callable, Dict, Final, Iterable, List, Tuple, Union
+from typing import Callable, Dict, Final, Iterable, List, Set, Tuple, Union
 
 from django.apps import apps
 from django.conf import settings
@@ -15,8 +15,15 @@ from django.db.utils import DEFAULT_DB_ALIAS
 from fias.enum import CEnumMeta
 from fias.models import AbstractModel
 
-__all__ = ["DEFAULT_DB_ALIAS", "DATABASE_ALIAS", "PARAM_MAP", "PROXY", "VALIDATE_HOUSE_PARAM_IDS", "TableName"]
-
+__all__ = [
+    "DEFAULT_DB_ALIAS",
+    "DATABASE_ALIAS",
+    "PARAM_MAP",
+    "PROXY",
+    "VALIDATE_HOUSE_PARAM_IDS",
+    "STORE_INACTIVE_TABLES",
+    "TableName",
+]
 
 ALL: Final = "__all__"
 
@@ -76,7 +83,6 @@ if hasattr(settings, "FIAS_TABLES"):
 else:
     TABLES += TABLES_DEFAULT
 
-
 # Auto area
 re_region = re.compile(r"\d\d")
 
@@ -112,6 +118,15 @@ if hasattr(settings, "FIAS_HOUSE_TYPES"):
 else:
     HOUSE_TYPES = ALL
 
+_FIAS_STORE_INACTIVE_TABLES: Set[str] = set(
+    getattr(settings, "FIAS_STORE_INACTIVE_TABLES", (TableName.HOUSE_TYPE, TableName.ADD_HOUSE_TYPE))
+)
+unknown_tables = _FIAS_STORE_INACTIVE_TABLES - set(TableName)
+if unknown_tables:
+    raise ImproperlyConfigured(f"FIAS_STORE_INACTIVE contains unknown tables: {', '.join(unknown_tables)}")
+
+STORE_INACTIVE_TABLES: Iterable[TableName] = tuple(map(TableName, _FIAS_STORE_INACTIVE_TABLES))
+
 DATABASE_ALIAS = getattr(settings, "FIAS_DATABASE_ALIAS", DEFAULT_DB_ALIAS)
 
 if DATABASE_ALIAS not in settings.DATABASES:
@@ -127,7 +142,6 @@ if not (
     isinstance(VALIDATE_HOUSE_PARAM_IDS, tuple) and all(map(lambda x: isinstance(x, int), VALIDATE_HOUSE_PARAM_IDS))
 ):
     raise ImproperlyConfigured("FIAS_VALIDATE_HOUSE_PARAM_IDS must be tuple of int.")
-
 
 """
 см. fias.importer.filters
