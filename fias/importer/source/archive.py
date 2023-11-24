@@ -64,8 +64,14 @@ class DlProgressBar(Bar):  # type: ignore
 
 class RemoteArchiveTableList(LocalArchiveTableList):
     download_progress_class = DlProgressBar
+    _path: Path
 
     def load_data(self, source: str) -> SourceWrapper:
+        if not hasattr(self, '_path'):
+            self._path = self._download_data(source)
+        return super().load_data(source=str(self._path))
+
+    def _download_data(self, source: str) -> Path:
         progress = self.download_progress_class()
 
         def update_progress(count: int, block_size: int, total_size: int) -> None:
@@ -82,11 +88,8 @@ class RemoteArchiveTableList(LocalArchiveTableList):
             d = Downloader()
             path, _ = d.download(source, file_name=tmp_path, reporthook=update_progress)
         except HTTPError as e:
-            raise RetrieveError(
-                'Can not download data archive at url `{0}`. Error occurred: "{1}"'.format(source, str(e))
-            )
+            raise RetrieveError(f'Can not download data archive at url `{source}`. Error occurred: "{e}"')
         progress.finish()
         post_download.send(sender=self.__class__, url=source, path=path)
         logger.info(f"Downloaded from {source} into {path}.")
-
-        return super(RemoteArchiveTableList, self).load_data(source=str(path))
+        return path

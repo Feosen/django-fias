@@ -21,6 +21,7 @@ class TableListLoadingError(Exception):
 
 
 class TableList(AbstractTableList):
+    src: Any
     wrapper_class: Type[SourceWrapper] = SourceWrapper
     wrapper: SourceWrapper
 
@@ -28,6 +29,7 @@ class TableList(AbstractTableList):
     version_info: Union[Version, None] = None
 
     def __init__(self, src: Any, version: Union[Version, None] = None, tempdir: Union[Path, None] = None):
+        self.src = src
         self.version_info = version
         self.tempdir = tempdir
 
@@ -35,10 +37,21 @@ class TableList(AbstractTableList):
             assert isinstance(version, Version), "version must be an instance of Version model"
 
             self.date = version.dumpdate
+        self._init_wrapper()
 
-        pre_load.send(sender=self.__class__, src=src)
-        self.wrapper = self.load_data(src)
+    def _init_wrapper(self) -> None:
+        pre_load.send(sender=self.__class__, src=self.src)
+        self.wrapper = self.load_data(self.src)
         post_load.send(sender=self.__class__, wrapper=self.wrapper)
+
+    def __getstate__(self) -> Dict[str, Any]:
+        state = self.__dict__.copy()
+        del state["wrapper"]
+        return state
+
+    def __setstate__(self, state: Dict[str, Any]) -> None:
+        self.__dict__.update(state)
+        self._init_wrapper()
 
     def load_data(self, source: Any) -> SourceWrapper:
         return self.wrapper_class(source=source)

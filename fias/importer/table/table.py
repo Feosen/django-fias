@@ -126,6 +126,12 @@ class AbstractTableList:
     def open(self, filename: str) -> IO[bytes]:
         raise NotImplementedError()
 
+    def __getstate__(self) -> Dict[str, Any]:
+        raise NotImplementedError()
+
+    def __setstate__(self, state: Dict[str, Any]) -> None:
+        raise NotImplementedError()
+
 
 class Table(object):
     name: TableName

@@ -101,13 +101,9 @@ def update_tree_ver(tables: List[TableName], min_ver: int) -> None:
 
 def _w_load_data(
     table: Table,
-    path: Union[Path, str, None],
-    version: Union[Version, None],
-    data_format: str,
-    tempdir: Union[Path, None],
+    tablelist: TableList,
     limit: int,
 ) -> int:
-    tablelist = get_tablelist(path=path, version=version, data_format=data_format, tempdir=tempdir)
     loader = TableLoader(limit=limit)
     loader.load(tablelist=tablelist, table=table)
     st = Status(region=table.region, table=table.name, ver=tablelist.version)
@@ -171,9 +167,7 @@ def load_complete_data(
             post_drop_indexes.send(sender=object.__class__, table=first_table)
 
         # Импортируем все таблицы модели
-        worker = partial(
-            _w_load_data, path=path, version=tablelist.version, data_format=data_format, tempdir=tempdir, limit=limit
-        )
+        worker = partial(_w_load_data, tablelist=tablelist, limit=limit)
 
         if 1 == threads:
             for t in tablelist.tables[tbl]:
@@ -201,14 +195,10 @@ def load_complete_data(
 
 def _w_update_data(
     table: Table,
-    path: Union[Path, str, None],
-    version: Union[Version, None],
-    data_format: str,
-    tempdir: Union[Path, None],
+    tablelist: TableList,
     skip: bool,
     limit: int,
 ) -> int:
-    tablelist = get_tablelist(path=path, version=version, data_format=data_format, tempdir=tempdir)
     try:
         st = Status.objects.get(table=table.name, region=table.region)
     except Status.DoesNotExist:
@@ -249,9 +239,7 @@ def update_data(
 ) -> Tuple[List[TableName], int]:
     tablelist = get_tablelist(path=path, version=version, data_format=data_format, tempdir=tempdir)
 
-    worker = partial(
-        _w_update_data, path=path, version=version, data_format=data_format, tempdir=tempdir, skip=skip, limit=limit
-    )
+    worker = partial(_w_update_data, tablelist=tablelist, skip=skip, limit=limit)
 
     tables_to_process: List[Table] = []
     processed: List[TableName] = []

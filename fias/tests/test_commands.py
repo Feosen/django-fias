@@ -1,7 +1,10 @@
+import shutil
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date
+from http.client import HTTPMessage
 from pathlib import Path
-from typing import TYPE_CHECKING, Any, Dict, List
+from tempfile import TemporaryDirectory
+from typing import TYPE_CHECKING, Any, Callable, Dict, List, Tuple
 from unittest import mock
 from uuid import UUID
 
@@ -222,7 +225,44 @@ class CommandUpdateTestCase(ReportTestMixin, TransactionTestCase):
     fixtures = ["fias/tests/data/fixtures/gar_99.json"]
     reference_report_path: Path = BASE_DIR / Path("data/test_fias_update.csv")
 
-    def test_fias_update(self) -> None:
+    def test_fias_remote_update(self) -> None:
+        self.assertTrue(AdmHierarchy.objects.filter(objectid=1456865).exists())
+        self.assertFalse(MunHierarchy.objects.filter(objectid=1456865).exists())
+        self.assertEqual("55000000000", AddrObjParam.objects.get(objectid=1460768, typeid=6).value)
+
+        src_map = {
+            "https://fias-file.nalog.ru/downloads/2022.11.29/gar_delta_xml.zip": BASE_DIR
+            / Path("data/fake/deltas/gar_delta_99_20221128.rar"),
+            "https://fias-file.nalog.ru/downloads/2022.12.02/gar_delta_xml.zip": BASE_DIR
+            / Path("data/fake/deltas/gar_delta_99_20221202.rar"),
+        }
+
+        def _download(
+            url: str, file_name: Path, reporthook: Callable[[int, int, int], None]
+        ) -> Tuple[Path, HTTPMessage]:
+            src_file = src_map[url]
+            shutil.copy2(src_file, file_name)
+            return file_name, HTTPMessage()
+
+        with mock.patch("fias.importer.source.archive.Downloader.download", side_effect=_download) as mock_download:
+            # Can not run ProcessPoolExecutor inside tests=(
+            with mock.patch("fias.importer.commands.ProcessPoolExecutor", ThreadPoolExecutor):
+                with TemporaryDirectory() as temp_dir:
+                    args: List[Any] = []
+                    opts: Dict[str, Any] = {
+                        "tempdir": str(temp_dir),
+                        "update": True,
+                        "update_version_info": False,
+                        "house_param_regions": ["99"],
+                        "house_param_report": self.report_path,
+                    }
+                    call_command("fias", *args, **opts)
+
+                    self.assertEqual(2, mock_download.call_count)
+
+        self.validate()
+
+    def test_fias_local_update(self) -> None:
         self.assertTrue(AdmHierarchy.objects.filter(objectid=1456865).exists())
         self.assertFalse(MunHierarchy.objects.filter(objectid=1456865).exists())
         self.assertEqual("55000000000", AddrObjParam.objects.get(objectid=1460768, typeid=6).value)
@@ -242,6 +282,9 @@ class CommandUpdateTestCase(ReportTestMixin, TransactionTestCase):
         with mock.patch("fias.importer.commands.ProcessPoolExecutor", ThreadPoolExecutor):
             call_command("fias", *args, **opts)
 
+        self.validate()
+
+    def validate(self) -> None:
         self.assertEqual(14, HouseType.objects.count())
         ht = HouseType.objects.get(id=7)
         self.assertEqual("Строение", ht.name)
