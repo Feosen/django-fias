@@ -67,7 +67,7 @@ class RemoteArchiveTableList(LocalArchiveTableList):
     _path: Path
 
     def load_data(self, source: str) -> SourceWrapper:
-        if not hasattr(self, '_path'):
+        if not hasattr(self, "_path"):
             self._path = self._download_data(source)
         return super().load_data(source=str(self._path))
 

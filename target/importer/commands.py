@@ -4,14 +4,14 @@ from __future__ import absolute_import, unicode_literals
 import copy
 import logging
 from dataclasses import dataclass
-from typing import Callable, Generator, Iterable, List, Tuple
+from typing import Any, Callable, Generator, Iterable, List, Tuple, Type
 
 from django.db.models import Max, Min
 
 from fias import models as s_models
 from gar_loader.indexes import remove_indexes_from_model, restore_indexes_for_model
 from target import models as t_models
-from target.config import LOAD_HOUSE_BULK_SIZE
+from target.config import LOAD_HOUSE_78_ONLY, LOAD_HOUSE_BULK_SIZE
 from target.importer.loader import Cfg, TableLoader, TableUpdater
 from target.importer.loader import truncate as table_truncate
 from target.importer.signals import (
@@ -25,6 +25,7 @@ from target.importer.signals import (
     pre_update,
 )
 from target.importer.sql import HierarchyCfg, ParamCfg
+from target.models import AbstractHouse
 
 logger = logging.getLogger(__name__)
 
@@ -35,110 +36,126 @@ class TableCfg:
     fn: Callable[[], Iterable[Tuple[Cfg, str]]] | None
 
 
-_table_cfg: List[TableCfg] = [
-    TableCfg(Cfg(t_models.HouseType, "id", s_models.HouseType, "id", None, None, None, None), None),
-    TableCfg(Cfg(t_models.HouseAddType, "id", s_models.AddHouseType, "id", None, None, None, None), None),
-    TableCfg(
-        Cfg(
-            t_models.AddrObj,
-            "objectid",
-            s_models.AddrObj,
-            "objectid",
-            None,
-            {"aolevel": "level"},
-            ParamCfg(s_models.AddrObjParam, "objectid", [("okato", 6), ("oktmo", 7)], None),
-            [
-                HierarchyCfg(s_models.AdmHierarchy, "objectid", "parentobjid", "owner_adm", None),
-            ],
-        ),
-        None,
-    ),
-    TableCfg(
-        Cfg(
-            t_models.House78,
+def id_gen(first: int, last: int, step: int) -> Generator[Tuple[int, int], None, None]:
+    assert last >= first >= 0
+    while first <= last:
+        prev_first = first
+        first += step
+        yield prev_first, min(first, last + 1)
+
+
+def bulk_house_factory(target: Type[AbstractHouse]) -> Callable[[], Iterable[Tuple[Cfg, str]]]:
+    assert target in (t_models.House78, t_models.House)
+
+    extra_filters = []
+    if target == t_models.House78:
+        extra_filters.append(("region", "=", "78"))
+
+    def build_cfg(args: Tuple[int, int]) -> Tuple[Cfg, str]:
+        min_objectid, max_objectid = args
+
+        filters: List[Tuple[str, str, Any]] = extra_filters + [
+            ("objectid", ">=", min_objectid),
+            ("objectid", "<", max_objectid),
+        ]
+
+        cfg = Cfg(
+            target,
             "objectid",
             s_models.House,
             "objectid",
-            [("region", "=", "78")],
+            filters,
             None,
             ParamCfg(
                 s_models.HouseParam,
                 "objectid",
                 [("postalcode", 5), ("okato", 6), ("oktmo", 7)],
-                [("region", "=", "78")],
+                filters,
             ),
             [
-                HierarchyCfg(s_models.AdmHierarchy, "objectid", "parentobjid", "owner_adm", [("region", "=", "78")]),
-            ],
-        ),
-        None,
-    ),
-]
-
-
-_house_cfg = Cfg(
-    t_models.House,
-    "objectid",
-    s_models.House,
-    "objectid",
-    None,
-    None,
-    ParamCfg(s_models.HouseParam, "objectid", [("postalcode", 5), ("okato", 6), ("oktmo", 7)], None),
-    [
-        HierarchyCfg(s_models.AdmHierarchy, "objectid", "parentobjid", "owner_adm", None),
-    ],
-)
-
-
-if LOAD_HOUSE_BULK_SIZE < 0:
-    pass
-
-elif LOAD_HOUSE_BULK_SIZE == 0:
-    _table_cfg.append(TableCfg(_house_cfg, None))
-
-else:
-
-    def _bulk_houses() -> Iterable[Tuple[Cfg, str]]:
-        house_statistic = s_models.House.objects.aggregate(min=Min("objectid"), max=Max("objectid"))
-
-        def gen(first: int, last: int, step: int) -> Generator[Tuple[int, int], None, None]:
-            assert last >= first >= 0
-            while first <= last:
-                prev_first = first
-                first += step
-                yield prev_first, min(first, last + 1)
-
-        def build_cfg(args: Tuple[int, int]) -> Tuple[Cfg, str]:
-            min_objectid, max_objectid = args
-            cfg = Cfg(
-                t_models.House,
-                "objectid",
-                s_models.House,
-                "objectid",
-                [("objectid", ">=", min_objectid), ("objectid", "<", max_objectid)],
-                None,
-                ParamCfg(
-                    s_models.HouseParam,
+                HierarchyCfg(
+                    s_models.AdmHierarchy,
                     "objectid",
-                    [("postalcode", 5), ("okato", 6), ("oktmo", 7)],
-                    [("objectid", ">=", min_objectid), ("objectid", "<", max_objectid)],
+                    "parentobjid",
+                    "owner_adm",
+                    filters,
                 ),
+            ],
+        )
+        desc = f"objectid in [{min_objectid}; {max_objectid})"
+        return cfg, desc
+
+    def bulk_houses() -> Iterable[Tuple[Cfg, str]]:
+        house_statistic = s_models.House.objects.aggregate(min=Min("objectid"), max=Max("objectid"))
+        return map(build_cfg, id_gen(house_statistic["min"], house_statistic["max"], LOAD_HOUSE_BULK_SIZE))
+
+    return bulk_houses
+
+
+def get_table_cfg() -> List[TableCfg]:
+    table_cfg: List[TableCfg] = [
+        TableCfg(Cfg(t_models.HouseType, "id", s_models.HouseType, "id", None, None, None, None), None),
+        TableCfg(Cfg(t_models.HouseAddType, "id", s_models.AddHouseType, "id", None, None, None, None), None),
+        TableCfg(
+            Cfg(
+                t_models.AddrObj,
+                "objectid",
+                s_models.AddrObj,
+                "objectid",
+                None,
+                {"aolevel": "level"},
+                ParamCfg(s_models.AddrObjParam, "objectid", [("okato", 6), ("oktmo", 7)], None),
                 [
-                    HierarchyCfg(
-                        s_models.AdmHierarchy,
-                        "objectid",
-                        "parentobjid",
-                        "owner_adm",
-                        [("objectid", ">=", min_objectid), ("objectid", "<", max_objectid)],
-                    ),
+                    HierarchyCfg(s_models.AdmHierarchy, "objectid", "parentobjid", "owner_adm", None),
                 ],
-            )
-            desc = f"objectid in [{min_objectid}; {max_objectid})"
-            return cfg, desc
+            ),
+            None,
+        ),
+    ]
 
-        return map(build_cfg, gen(house_statistic["min"], house_statistic["max"], LOAD_HOUSE_BULK_SIZE))
+    house_78_cfg = Cfg(
+        t_models.House78,
+        "objectid",
+        s_models.House,
+        "objectid",
+        [("region", "=", "78")],
+        None,
+        ParamCfg(
+            s_models.HouseParam,
+            "objectid",
+            [("postalcode", 5), ("okato", 6), ("oktmo", 7)],
+            [("region", "=", "78")],
+        ),
+        [
+            HierarchyCfg(s_models.AdmHierarchy, "objectid", "parentobjid", "owner_adm", [("region", "=", "78")]),
+        ],
+    )
 
-    _table_cfg.append(TableCfg(_house_cfg, _bulk_houses))
+    house_cfg = Cfg(
+        t_models.House,
+        "objectid",
+        s_models.House,
+        "objectid",
+        None,
+        None,
+        ParamCfg(s_models.HouseParam, "objectid", [("postalcode", 5), ("okato", 6), ("oktmo", 7)], None),
+        [
+            HierarchyCfg(s_models.AdmHierarchy, "objectid", "parentobjid", "owner_adm", None),
+        ],
+    )
+
+    if LOAD_HOUSE_BULK_SIZE <= 0:
+        table_cfg.append(TableCfg(house_78_cfg, None))
+    else:
+        table_cfg.append(TableCfg(house_78_cfg, bulk_house_factory(t_models.House78)))
+
+    if not LOAD_HOUSE_78_ONLY:
+        if LOAD_HOUSE_BULK_SIZE <= 0:
+            table_cfg.append(TableCfg(house_cfg, None))
+        else:
+            table_cfg.append(TableCfg(house_cfg, bulk_house_factory(t_models.House)))
+
+    return table_cfg
 
 
 def load_complete_data(truncate: bool = False, keep_indexes: bool = False, keep_pk: bool = True) -> None:
@@ -148,7 +165,7 @@ def load_complete_data(truncate: bool = False, keep_indexes: bool = False, keep_
     logger.info(f"Loading data v.{ver.ver_id}.")
     pre_import.send(sender=object.__class__, version=ver.ver_id)
 
-    for t_cfg in _table_cfg:
+    for t_cfg in get_table_cfg():
         # Очищаем таблицу перед импортом
         if truncate:
             table_truncate(t_cfg.cfg)
@@ -194,7 +211,7 @@ def update_data() -> None:
 
     t_status = t_models.Status.objects.get()
 
-    for t_cfg in _table_cfg:
+    for t_cfg in get_table_cfg():
         cfg = t_cfg.cfg
         if issubclass(cfg.src, s_models.AbstractObj):
             cfg = copy.deepcopy(cfg)
