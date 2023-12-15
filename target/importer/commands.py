@@ -4,7 +4,7 @@ from __future__ import absolute_import, unicode_literals
 import copy
 import logging
 from dataclasses import dataclass
-from typing import Any, Callable, Generator, Iterable, List, Tuple, Type
+from typing import Any, Callable, Generator, Iterable, List, Tuple, Type, Union
 
 from django.db.models import Max, Min
 
@@ -44,33 +44,46 @@ def id_gen(first: int, last: int, step: int) -> Generator[Tuple[int, int], None,
         yield prev_first, min(first, last + 1)
 
 
-def bulk_house_factory(target: Type[AbstractHouse]) -> Callable[[], Iterable[Tuple[Cfg, str]]]:
+def bulk_house_factory(
+    target: Type[AbstractHouse], abstract_object_filters: Union[None, List[Tuple[str, str, Any]]]
+) -> Callable[[], Iterable[Tuple[Cfg, str]]]:
     assert target in (t_models.House78, t_models.House)
 
-    extra_filters = []
+    region_filters: List[Tuple[str, str, Any]] = []
     if target == t_models.House78:
-        extra_filters.append(("region", "=", "78"))
+        region_filters.append(("region", "=", "78"))
 
     def build_cfg(args: Tuple[int, int]) -> Tuple[Cfg, str]:
         min_objectid, max_objectid = args
 
-        filters: List[Tuple[str, str, Any]] = extra_filters + [
+        base_filters = region_filters + [
             ("objectid", ">=", min_objectid),
             ("objectid", "<", max_objectid),
         ]
+
+        assert issubclass(s_models.House, s_models.AbstractObj)
+        house_filters = copy.deepcopy(base_filters)
+        if abstract_object_filters:
+            house_filters.extend(abstract_object_filters)
+
+        assert not issubclass(s_models.HouseParam, s_models.AbstractObj)
+        house_param_filters = copy.deepcopy(base_filters)
+
+        assert not issubclass(s_models.AdmHierarchy, s_models.AbstractObj)
+        hierarchy_filters = copy.deepcopy(base_filters)
 
         cfg = Cfg(
             target,
             "objectid",
             s_models.House,
             "objectid",
-            filters,
+            house_filters,
             None,
             ParamCfg(
                 s_models.HouseParam,
                 "objectid",
                 [("postalcode", 5), ("okato", 6), ("oktmo", 7)],
-                filters,
+                house_param_filters,
             ),
             [
                 HierarchyCfg(
@@ -78,7 +91,7 @@ def bulk_house_factory(target: Type[AbstractHouse]) -> Callable[[], Iterable[Tup
                     "objectid",
                     "parentobjid",
                     "owner_adm",
-                    filters,
+                    hierarchy_filters,
                 ),
             ],
         )
@@ -92,7 +105,14 @@ def bulk_house_factory(target: Type[AbstractHouse]) -> Callable[[], Iterable[Tup
     return bulk_houses
 
 
-def get_table_cfg() -> List[TableCfg]:
+def get_table_cfg(abstract_obj_filters: Union[None, List[Tuple[str, str, Any]]]) -> List[TableCfg]:
+    addr_obj_cfg_filters = None
+
+    assert issubclass(s_models.AddrObj, s_models.AbstractObj)
+    if abstract_obj_filters:
+        addr_obj_cfg_filters = []
+        addr_obj_cfg_filters.extend(abstract_obj_filters)
+
     table_cfg: List[TableCfg] = [
         TableCfg(Cfg(t_models.HouseType, "id", s_models.HouseType, "id", None, None, None, None), None),
         TableCfg(Cfg(t_models.HouseAddType, "id", s_models.AddHouseType, "id", None, None, None, None), None),
@@ -102,7 +122,7 @@ def get_table_cfg() -> List[TableCfg]:
                 "objectid",
                 s_models.AddrObj,
                 "objectid",
-                None,
+                addr_obj_cfg_filters,
                 {"aolevel": "level"},
                 ParamCfg(s_models.AddrObjParam, "objectid", [("okato", 6), ("oktmo", 7)], None),
                 [
@@ -113,12 +133,18 @@ def get_table_cfg() -> List[TableCfg]:
         ),
     ]
 
+    house_78_cfg_filters = [("region", "=", "78")]
+
+    assert issubclass(s_models.House, s_models.AbstractObj)
+    if abstract_obj_filters:
+        house_78_cfg_filters.extend(abstract_obj_filters)
+
     house_78_cfg = Cfg(
         t_models.House78,
         "objectid",
         s_models.House,
         "objectid",
-        [("region", "=", "78")],
+        house_78_cfg_filters,
         None,
         ParamCfg(
             s_models.HouseParam,
@@ -131,12 +157,19 @@ def get_table_cfg() -> List[TableCfg]:
         ],
     )
 
+    house_cfg_filters = None
+
+    assert issubclass(s_models.House, s_models.AbstractObj)
+    if abstract_obj_filters:
+        house_cfg_filters = []
+        house_cfg_filters.extend(abstract_obj_filters)
+
     house_cfg = Cfg(
         t_models.House,
         "objectid",
         s_models.House,
         "objectid",
-        None,
+        house_cfg_filters,
         None,
         ParamCfg(s_models.HouseParam, "objectid", [("postalcode", 5), ("okato", 6), ("oktmo", 7)], None),
         [
@@ -147,13 +180,13 @@ def get_table_cfg() -> List[TableCfg]:
     if LOAD_HOUSE_BULK_SIZE <= 0:
         table_cfg.append(TableCfg(house_78_cfg, None))
     else:
-        table_cfg.append(TableCfg(house_78_cfg, bulk_house_factory(t_models.House78)))
+        table_cfg.append(TableCfg(house_78_cfg, bulk_house_factory(t_models.House78, abstract_obj_filters)))
 
     if not LOAD_HOUSE_78_ONLY:
         if LOAD_HOUSE_BULK_SIZE <= 0:
             table_cfg.append(TableCfg(house_cfg, None))
         else:
-            table_cfg.append(TableCfg(house_cfg, bulk_house_factory(t_models.House)))
+            table_cfg.append(TableCfg(house_cfg, bulk_house_factory(t_models.House, abstract_obj_filters)))
 
     return table_cfg
 
@@ -165,7 +198,7 @@ def load_complete_data(truncate: bool = False, keep_indexes: bool = False, keep_
     logger.info(f"Loading data v.{ver.ver_id}.")
     pre_import.send(sender=object.__class__, version=ver.ver_id)
 
-    for t_cfg in get_table_cfg():
+    for t_cfg in get_table_cfg(None):
         # Очищаем таблицу перед импортом
         if truncate:
             table_truncate(t_cfg.cfg)
@@ -211,15 +244,15 @@ def update_data() -> None:
 
     t_status = t_models.Status.objects.get()
 
-    for t_cfg in get_table_cfg():
-        cfg = t_cfg.cfg
-        if issubclass(cfg.src, s_models.AbstractObj):
-            cfg = copy.deepcopy(cfg)
-            if cfg.filters is None:
-                cfg.filters = []
-            cfg.filters.append(("tree_ver", ">=", ver.ver_id))
-        loader = TableUpdater()
-        loader.load(cfg, t_status.ver)
+    for t_cfg in get_table_cfg([("tree_ver", ">=", ver.ver_id)]):
+        if t_cfg.fn is None:
+            loader = TableUpdater()
+            loader.load(t_cfg.cfg, t_status.ver)
+        else:
+            for cfg, desc in t_cfg.fn():
+                logger.info(f"Range {desc}.")
+                loader = TableUpdater()
+                loader.load(cfg, t_status.ver)
 
     t_status.ver = ver.ver_id
     t_status.full_clean()
