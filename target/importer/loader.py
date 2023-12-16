@@ -39,14 +39,14 @@ def truncate(cfg: Cfg) -> None:
 
 
 class TableLoader(object):
-    def load(self, cfg: Cfg, ver: int = 0) -> None:
+    def load(self, cfg: Cfg, ver: int = 0, first_call: bool = True, last_call: bool = True) -> None:
         logger.info(f'Table "{cfg.dst._meta.object_name}" is loading.')
         pre_import_table.send(sender=self.__class__, cfg=cfg)
-        self.do_load(cfg, ver)
+        self.do_load(cfg, ver, first_call, last_call)
         post_import_table.send(sender=self.__class__, cfg=cfg)
         logger.info(f'Table "{cfg.dst._meta.object_name}" has been loaded.')
 
-    def do_load(self, cfg: Cfg, ver: int) -> None:
+    def do_load(self, cfg: Cfg, ver: int, first_call: bool, last_call: bool) -> None:
         connection = connections[DATABASE_ALIAS]
         with connection.cursor() as cursor:
             if cfg.filters is not None:
@@ -60,13 +60,14 @@ class TableLoader(object):
 
 
 class TableUpdater(TableLoader):
-    def do_load(self, cfg: Cfg, ver: int) -> None:
+    def do_load(self, cfg: Cfg, ver: int, first_call: bool, last_call: bool) -> None:
         connection = connections[DATABASE_ALIAS]
         with transaction.atomic():
             # Delete rows
-            with connection.cursor() as cursor:
-                query = SqlBuilder.delete_on_field(cfg.dst, cfg.dst_pk, cfg.src, cfg.src_pk)
-                cursor.execute(query)
+            if first_call:
+                with connection.cursor() as cursor:
+                    query = SqlBuilder.delete_on_field(cfg.dst, cfg.dst_pk, cfg.src, cfg.src_pk)
+                    cursor.execute(query)
 
             current_obj_sql = SqlBuilder.select(
                 connection, cfg.dst, cfg.dst, cfg.dst_pk, [cfg.dst_pk], None, None, None, None
