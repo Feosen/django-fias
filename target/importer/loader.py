@@ -39,14 +39,14 @@ def truncate(cfg: Cfg) -> None:
 
 
 class TableLoader(object):
-    def load(self, cfg: Cfg, ver: int = 0, first_call: bool = True, last_call: bool = True) -> None:
+    def load(self, cfg: Cfg, first_call: bool = True, last_call: bool = True) -> None:
         logger.info(f'Table "{cfg.dst._meta.object_name}" is loading.')
         pre_import_table.send(sender=self.__class__, cfg=cfg)
-        self.do_load(cfg, ver, first_call, last_call)
+        self.do_load(cfg, first_call, last_call)
         post_import_table.send(sender=self.__class__, cfg=cfg)
         logger.info(f'Table "{cfg.dst._meta.object_name}" has been loaded.')
 
-    def do_load(self, cfg: Cfg, ver: int, first_call: bool, last_call: bool) -> None:
+    def do_load(self, cfg: Cfg, first_call: bool, last_call: bool) -> None:
         connection = connections[DATABASE_ALIAS]
         with connection.cursor() as cursor:
             if cfg.filters is not None:
@@ -60,7 +60,7 @@ class TableLoader(object):
 
 
 class TableUpdater(TableLoader):
-    def do_load(self, cfg: Cfg, ver: int, first_call: bool, last_call: bool) -> None:
+    def do_load(self, cfg: Cfg, first_call: bool, last_call: bool) -> None:
         connection = connections[DATABASE_ALIAS]
         with transaction.atomic():
             # Delete rows

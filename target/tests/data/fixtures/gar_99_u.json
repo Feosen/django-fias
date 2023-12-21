@@ -6871,7 +6871,7 @@
     "model": "fias.house",
     "pk": 157269039,
     "fields": {
-      "ver": 20221129,
+      "ver": 20221125,
       "updatedate": "2022-11-28",
       "startdate": "2022-11-28",
       "enddate": "2079-06-06",
@@ -6879,7 +6879,7 @@
       "region": "99",
       "isactual": true,
       "objectguid": "d3beec37-2c9e-4e7e-987d-a8eb827d7084",
-      "tree_ver": 20221129,
+      "tree_ver": 20221125,
       "housenum": "70а",
       "addnum1": null,
       "addnum2": null,

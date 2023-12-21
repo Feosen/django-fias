@@ -244,15 +244,15 @@ def update_data() -> None:
 
     t_status = t_models.Status.objects.get()
 
-    for t_cfg in get_table_cfg([("tree_ver", ">=", ver.ver_id)]):
+    for t_cfg in get_table_cfg([("tree_ver", ">=", t_status.ver)]):
         loader = TableUpdater()
         if t_cfg.fn is None:
-            loader.load(t_cfg.cfg, t_status.ver)
+            loader.load(t_cfg.cfg)
         else:
             first_call = True
             for cfg, desc in t_cfg.fn():
                 logger.info(f"Range {desc}.")
-                loader.load(cfg, t_status.ver, first_call)
+                loader.load(cfg, first_call)
                 first_call = False
 
     t_status.ver = ver.ver_id
