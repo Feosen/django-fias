@@ -24,7 +24,8 @@ class SourceWrapper(object):
 
     def get_date(self) -> datetime.date:
         try:
-            date = datetime.datetime.strptime(self.source.read("version.txt").decode("utf-8"), "%Y.%m.%d")
+            version_info = self.source.read("version.txt").decode("utf-8").splitlines()
+            date = datetime.datetime.strptime(version_info[0], "%Y.%m.%d")
         except (KeyError, NoRarEntry):
             dates_s = set()
             for file_name in self.get_file_list():
