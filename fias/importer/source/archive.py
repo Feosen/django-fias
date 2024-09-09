@@ -3,10 +3,10 @@ from __future__ import absolute_import, unicode_literals
 
 import logging
 import os
-import urllib
 import zipfile
 from pathlib import Path
 from urllib.error import HTTPError
+from urllib.parse import urlparse
 
 import rarfile
 from django.conf import settings
@@ -78,7 +78,7 @@ class RemoteArchiveTableList(LocalArchiveTableList):
             progress.goto(int(count * block_size * 100 / total_size))
 
         if self.tempdir is not None:
-            p = urllib.parse.urlparse(source)
+            p = urlparse(source)
             tmp_path = self.tempdir / p.path.split("/")[-1]
         else:
             tmp_path = None
