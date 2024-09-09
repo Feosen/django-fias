@@ -2,9 +2,10 @@ import shutil
 from concurrent.futures import ThreadPoolExecutor
 from datetime import date
 from http.client import HTTPMessage
+from multiprocessing.context import BaseContext
 from pathlib import Path
 from tempfile import TemporaryDirectory
-from typing import TYPE_CHECKING, Any, Callable, Dict, List, Tuple
+from typing import TYPE_CHECKING, Any, Callable, Dict, List, Tuple, Union
 from unittest import mock
 from uuid import UUID
 
@@ -36,6 +37,19 @@ if TYPE_CHECKING:
     BaseTestMixin = TestCase
 else:
     BaseTestMixin = object
+
+
+class MockProcessPoolExecutor(ThreadPoolExecutor):
+    def __init__(
+        self,
+        max_workers: Union[int, None] = None,
+        mp_context: Union[BaseContext, None] = None,
+        initializer: Union[Callable[[None], None], None] = None,
+        initargs: Tuple[Any, ...] = (),
+        *,
+        max_tasks_per_child: Union[int, None] = None
+    ):
+        super().__init__(max_workers=max_workers, thread_name_prefix="", initializer=initializer, initargs=initargs)
 
 
 class ReportTestMixin(BaseTestMixin):
@@ -73,7 +87,7 @@ class CommandCreateTestCase(ReportTestMixin, TransactionTestCase):
         }
 
         # Can not run ProcessPoolExecutor inside tests=(
-        with mock.patch("fias.importer.commands.ProcessPoolExecutor", ThreadPoolExecutor):
+        with mock.patch("fias.importer.commands.ProcessPoolExecutor", MockProcessPoolExecutor):
             call_command("fias", *args, **opts)
 
         self.assertEqual(14, HouseType.objects.count())
@@ -246,7 +260,7 @@ class CommandUpdateTestCase(ReportTestMixin, TransactionTestCase):
 
         with mock.patch("fias.importer.source.archive.Downloader.download", side_effect=_download) as mock_download:
             # Can not run ProcessPoolExecutor inside tests=(
-            with mock.patch("fias.importer.commands.ProcessPoolExecutor", ThreadPoolExecutor):
+            with mock.patch("fias.importer.commands.ProcessPoolExecutor", MockProcessPoolExecutor):
                 with TemporaryDirectory() as temp_dir:
                     args: List[Any] = []
                     opts: Dict[str, Any] = {
@@ -279,7 +293,7 @@ class CommandUpdateTestCase(ReportTestMixin, TransactionTestCase):
         }
 
         # Can not run ProcessPoolExecutor inside tests=(
-        with mock.patch("fias.importer.commands.ProcessPoolExecutor", ThreadPoolExecutor):
+        with mock.patch("fias.importer.commands.ProcessPoolExecutor", MockProcessPoolExecutor):
             call_command("fias", *args, **opts)
 
         self.validate()

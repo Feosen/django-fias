@@ -4,6 +4,7 @@ from __future__ import absolute_import, unicode_literals
 import codecs
 import csv
 import logging
+import multiprocessing
 from concurrent.futures import ProcessPoolExecutor
 from functools import partial
 from pathlib import Path
@@ -255,7 +256,9 @@ def update_data(
         for t in tables_to_process:
             worker(t)
     else:
-        with ProcessPoolExecutor(max_workers=threads, initializer=django.setup) as executor:
+        with ProcessPoolExecutor(
+            max_workers=threads, initializer=django.setup, mp_context=multiprocessing.get_context("spawn")
+        ) as executor:
             print(list(executor.map(worker, tables_to_process)))
 
     return processed, tablelist.version.ver
