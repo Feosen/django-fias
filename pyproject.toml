@@ -8,13 +8,13 @@ packages = [{include = "gar_loader"}]
 
 [tool.poetry.dependencies]
 python = "^3.11"
-django = "^4.2"
+django = "<4.2"
 rarfile = "^4.0"
 six = "^1.16.0"
 progress = "^1.6"
 suds = "^1.1.2"
-psycopg = {extras = ["binary"], version = "^3.1.8"}
 lxml = "^5.3.0"
+psycopg2 = {extras = ["binary"], version = "^2.9.11"}
 
 [tool.poetry.group.dev.dependencies]
 lxml-stubs = "^0.4.0"
