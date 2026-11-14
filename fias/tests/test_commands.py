@@ -131,6 +131,11 @@ class CommandCreateTestCase(ReportTestMixin, TransactionTestCase):
         self.assertEqual(20221125, h.tree_ver)
 
         self.assertEqual(3, HouseParam.objects.count())
+        self.assertListEqual(
+            [119564345, 119564350, 668832883],
+            list(HouseParam.objects.order_by("id").values_list("id", flat=True)),
+        )
+
         hp = HouseParam.objects.get(id=119564345)
         self.assertEqual("99", hp.region)
         self.assertEqual(19273112, hp.objectid)
@@ -243,6 +248,7 @@ class CommandUpdateTestCase(ReportTestMixin, TransactionTestCase):
         self.assertTrue(AdmHierarchy.objects.filter(objectid=1456865).exists())
         self.assertFalse(MunHierarchy.objects.filter(objectid=1456865).exists())
         self.assertEqual("55000000000", AddrObjParam.objects.get(objectid=1460768, typeid=6).value)
+        self.assertTrue(HouseParam.objects.filter(id=668832883).exists())
 
         src_map = {
             "https://fias-file.nalog.ru/downloads/2022.11.29/gar_delta_xml.zip": BASE_DIR
@@ -280,6 +286,7 @@ class CommandUpdateTestCase(ReportTestMixin, TransactionTestCase):
         self.assertTrue(AdmHierarchy.objects.filter(objectid=1456865).exists())
         self.assertFalse(MunHierarchy.objects.filter(objectid=1456865).exists())
         self.assertEqual("55000000000", AddrObjParam.objects.get(objectid=1460768, typeid=6).value)
+        self.assertTrue(HouseParam.objects.filter(id=668832883).exists())
 
         src = BASE_DIR / Path("data/fake/deltas")
         args: List[Any] = []
@@ -340,15 +347,27 @@ class CommandUpdateTestCase(ReportTestMixin, TransactionTestCase):
         self.assertEqual(20221202, h.tree_ver)
 
         self.assertEqual(5, HouseParam.objects.count())
-        hp = HouseParam.objects.get(id=1346933308)
-        self.assertEqual("99", hp.region)
-        self.assertEqual(157269039, hp.objectid)
-        self.assertEqual(6, hp.typeid)
-        self.assertEqual("55000000000", hp.value)
-        self.assertEqual(date(2022, 11, 28), hp.updatedate)
-        self.assertEqual(date(2022, 11, 28), hp.startdate)
-        self.assertEqual(date(2079, 6, 6), hp.enddate)
-        self.assertEqual(20221129, hp.ver)
+        hp1 = HouseParam.objects.get(id=1346933308)
+        self.assertEqual("99", hp1.region)
+        self.assertEqual(157269039, hp1.objectid)
+        self.assertEqual(6, hp1.typeid)
+        self.assertEqual("55000000000", hp1.value)
+        self.assertEqual(date(2022, 11, 28), hp1.updatedate)
+        self.assertEqual(date(2022, 11, 28), hp1.startdate)
+        self.assertEqual(date(2079, 6, 6), hp1.enddate)
+        self.assertEqual(20221129, hp1.ver)
+
+        self.assertFalse(HouseParam.objects.filter(id=668832883).exists())
+
+        hp2 = HouseParam.objects.get(id=1346933314)
+        self.assertEqual("99", hp2.region)
+        self.assertEqual(19273112, hp2.objectid)
+        self.assertEqual(5, hp2.typeid)
+        self.assertEqual("468300", hp2.value)
+        self.assertEqual(date(2022, 11, 23), hp2.updatedate)
+        self.assertEqual(date(2022, 11, 23), hp2.startdate)
+        self.assertEqual(date(2079, 6, 6), hp2.enddate)
+        self.assertEqual(20221129, hp2.ver)
 
         self.assertEqual(419, AddrObjType.objects.count())
         aot = AddrObjType.objects.get(id=423)
@@ -401,7 +420,7 @@ class CommandUpdateTestCase(ReportTestMixin, TransactionTestCase):
         self.assertEqual(20221129, AddrObj.objects.get(objectid=1460768).tree_ver)
 
         # TODO: как исключать из загрузки параметры удалённых объектов?
-        self.assertEqual(8, AddrObjParam.objects.count())
+        self.assertEqual(10, AddrObjParam.objects.count())
         aop = AddrObjParam.objects.get(id=1362268938)
         self.assertEqual("99", aop.region)
         self.assertEqual(157289164, aop.objectid)

@@ -9,7 +9,7 @@ from fias.importer.table import get_model
 from fias.models import AbstractModel
 from fias.models.common import AbstractIsActiveModel, AbstractObj
 
-__all__ = ["get_common_validator", "get_create_validator", "get_update_validator"]
+__all__ = ["get_common_validator", "get_create_validator", "get_update_validator", "get_delete_validator"]
 
 
 def new_common_validator(item: AbstractModel, today: date) -> bool:
@@ -53,6 +53,20 @@ _validators_create: _ValidatorMapType = [
 
 _validators_update: _ValidatorMapType = []
 
+_validators_delete: _ValidatorMapType = [
+    (
+        [
+            TableName.ADDR_OBJ,
+            TableName.ADDR_OBJ_PARAM,
+            TableName.HOUSE,
+            TableName.HOUSE_PARAM,
+            TableName.ADM_HIERARCHY,
+            TableName.MUN_HIERARCHY,
+        ],
+        new_common_validator,
+    ),
+]
+
 
 def common_validator(item: AbstractModel, today: date) -> bool:
     return item.pk is not None
@@ -80,3 +94,7 @@ def get_create_validator(name: TableName) -> ValidatorType:
 
 def get_update_validator(name: TableName) -> ValidatorType:
     return _get_validators(name, _validators_update)
+
+
+def get_delete_validator(name: TableName) -> ValidatorType:
+    return _get_validators(name, _validators_delete)

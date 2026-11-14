@@ -160,7 +160,7 @@ class SqlBuilder:
             params_s = f"""
             LEFT JOIN crosstab(
                 'SELECT {t_params.pk}, typeid, value FROM {t_params.model._meta.db_table} {params_where_s}
-                ORDER BY {t_params.pk}, typeid',
+                ORDER BY {t_params.pk}, typeid, startdate, value',
                 'SELECT typeids FROM (values {param_type_ids_s}) t(typeids)'
             ) AS ct({ct_s}) ON {src._meta.db_table}.{src_pk} = ct.{t_params.pk}
             """

@@ -17,6 +17,7 @@ from fias.importer.table.table import AbstractTableList, Table
 from fias.importer.validators import (
     get_common_validator,
     get_create_validator,
+    get_delete_validator,
     get_update_validator,
 )
 from fias.models import AbstractModel
@@ -193,6 +194,7 @@ class TableUpdater(TableLoader):
         common_validator = get_common_validator(tn)
         create_validator = get_create_validator(tn)
         update_validator = get_update_validator(tn)
+        delete_validator = get_delete_validator(tn)
 
         objects = set()
         for item in table.rows(tablelist=tablelist):
@@ -215,7 +217,10 @@ class TableUpdater(TableLoader):
                     self.skip_counter += 1
                     continue
                 if old_obj.updatedate <= item.updatedate:
-                    item.save()
+                    if delete_validator(item, self.today):
+                        item.save()
+                    else:
+                        old_obj.delete()
                     self.upd_counter += 1
 
             if self.counter and self.counter % self.limit == 0:

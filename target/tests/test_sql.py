@@ -41,7 +41,7 @@ class SqlBuilderTestCase(TestCase):
             FROM fias_addrobj
             LEFT JOIN crosstab(
                 'SELECT objectid, typeid, value FROM fias_addrobjparam
-                 WHERE fias_addrobjparam.region1 = \'\'35\'\' ORDER BY objectid, typeid',
+                 WHERE fias_addrobjparam.region1 = \'\'35\'\' ORDER BY objectid, typeid, startdate, value',
                 'SELECT typeids FROM (values (6), (7)) t(typeids)'
                 ) AS ct(objectid BIGINT, okato VARCHAR(11), oktmo VARCHAR(11))
                 ON fias_addrobj.objectid = ct.objectid
@@ -85,7 +85,7 @@ class SqlBuilderTestCase(TestCase):
                 FROM fias_addrobj
                 LEFT JOIN crosstab(
                     'SELECT objectid, typeid, value FROM fias_addrobjparam
-                     WHERE fias_addrobjparam.region1 = \'\'35\'\' ORDER BY objectid, typeid',
+                     WHERE fias_addrobjparam.region1 = \'\'35\'\' ORDER BY objectid, typeid, startdate, value',
                     'SELECT typeids FROM (values (6), (7)) t(typeids)'
                     ) AS ct(objectid BIGINT, okato VARCHAR(11), oktmo VARCHAR(11))
                     ON fias_addrobj.objectid = ct.objectid
@@ -125,7 +125,7 @@ class SqlBuilderTestCase(TestCase):
                 fias_addrobj.typename, okato, oktmo
             FROM fias_addrobj
             LEFT JOIN crosstab(
-                'SELECT objectid, typeid, value FROM fias_addrobjparam ORDER BY objectid, typeid',
+                'SELECT objectid, typeid, value FROM fias_addrobjparam ORDER BY objectid, typeid, startdate, value',
                 'SELECT typeids FROM (values (6), (7)) t(typeids)'
                 ) AS ct(objectid BIGINT, okato VARCHAR(11), oktmo VARCHAR(11))
                 ON fias_addrobj.objectid = ct.objectid
