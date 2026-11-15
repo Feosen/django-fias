@@ -25,7 +25,7 @@ class TestIndexes(TestCase):
             for constraint, params in connection.introspection.get_constraints(cursor, table_name).items():
                 if params["primary_key"]:
                     pk_constraints.append(constraint)
-                else:
+                elif params["unique"] or params["index"]:
                     other_constraints.append(constraint)
             return pk_constraints, other_constraints
 
